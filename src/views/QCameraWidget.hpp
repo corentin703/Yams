@@ -13,6 +13,7 @@
 // Qt
 #include <QTimer>
 #include <QtDebug>
+#include <QMessageBox>
 
 // OpenCV
 #include <opencv2/highgui.hpp>

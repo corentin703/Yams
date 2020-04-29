@@ -67,13 +67,7 @@ void QCameraWidget::_findDices()
 		_findDicesByBlob(nDicesDetectedByBlob);
 	}
 
-	//char buffer[64];
-	//sprintf_s(buffer, "Cnt ( %d )", lDetectedDices.size());
-	//QMessageBox::information(
-	//this,
-	//tr("Pos"),
-	//tr(buffer));
-
+	// On regarde si les deux algorithmes comptent le même total 
 	if (nDicesDetectedByMinArea == nDicesDetectedByBlob)
 	{
 		if (m_lDices.size() == 0)
@@ -85,39 +79,19 @@ void QCameraWidget::_findDices()
 			
 			return;
 		}
-		
-		/*for (shared_ptr<CDice>& detectedDice : lDetectedDices)
-		{
-			for (shared_ptr<CDice>& dice : m_lDices)
-			{
-				if (detectedDice->getCount() == dice->getCount())
-				{
-					const float fX = std::abs<float>(detectedDice->getDiceRect().boundingRect().x - dice->getDiceRect().boundingRect().x);
-					const float fY = std::abs<float>(detectedDice->getDiceRect().boundingRect().y - dice->getDiceRect().boundingRect().y);
 
-					if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
-					{
-						m_lDicesBuffer.push_back(detectedDice);
-						lDetectedDices.remove(detectedDice);
-					}
-				}
-				else
-				{
-					m_lDicesBuffer.push_back(detectedDice);
-					lDetectedDices.remove(detectedDice);
-				}
-			}
-		}*/
-
+		// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d'être détéctés
 		for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); itDetectedDices++)
 		{
 			for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); itDice++)
 			{
-				if (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end())
+				// Si le dé est un faux positif ou si on l'a déjà traité, on passe
+				if (((*itDetectedDices)->getCount() == 0) || (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end()))
 				{
 					continue;
 				}
-				
+
+				// Si le numéro est le même, on compare la position pour savoir si c'est le même dé (avec une marge d'erreur / tolérance)
 				if ((*itDetectedDices)->getCount() == (*itDice)->getCount())
 				{
 					const float fX = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().x - (*itDice)->getDiceRect().boundingRect().x);
@@ -127,10 +101,6 @@ void QCameraWidget::_findDices()
 					{
 						m_lDicesBuffer.push_back(*itDetectedDices);
 					}
-					else
-					{
-						m_lDicesBuffer.push_back(*itDice);
-					}
 				}
 				else
 				{
@@ -139,15 +109,22 @@ void QCameraWidget::_findDices()
 			}
 		}
 
+		if (m_lDicesBuffer.size() > 5)
+		{
+			QMessageBox messageBox;
+			messageBox.setText(QString::fromLatin1("Plus de 5 dés détectés !"));
+			messageBox.exec();
+		}
+
+		// DEBUG
 		int i = 0;
 		QString qs = "";
 		for (auto dice : m_lDicesBuffer)
 		{
 			QString s = QString::number((int)dice->getCount());
-			qs = qs + QString::number(i) + " : " + s + "\n";
+			qs = qs + QString::number(i++) + " : " + s + "\n";
 		}
 		
-		//m_ui.lblDebug->setText(QString::number(static_cast<int>(m_lDicesBuffer.size())));
 		m_ui.lblDebug->setText(qs);
 
 		m_lDices.clear();
@@ -155,7 +132,7 @@ void QCameraWidget::_findDices()
 		m_lDicesBuffer.clear();
 	}
 
-	_debug(nDicesDetectedByMinArea, nDicesDetectedByBlob);
+	//_debug(nDicesDetectedByMinArea, nDicesDetectedByBlob);
 }
 
 void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices)
