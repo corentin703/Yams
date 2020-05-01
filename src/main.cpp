@@ -1,4 +1,4 @@
-#include "views/QGameWindow.hpp"
+#include "QYams.hpp"
 #include <QtWidgets/QApplication>
 
 #include <QtDebug>
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	try {
 		QApplication a(argc, argv);
 
-		QGameWindow w;
+		QYams w;
 		w.show();
 
 		return a.exec();

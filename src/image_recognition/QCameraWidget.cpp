@@ -117,15 +117,15 @@ void QCameraWidget::_findDices()
 		}
 
 		// DEBUG
-		int i = 0;
-		QString qs = "";
-		for (auto dice : m_lDicesBuffer)
-		{
-			QString s = QString::number((int)dice->getCount());
-			qs = qs + QString::number(i++) + " : " + s + "\n";
-		}
-		
-		m_ui.lblDebug->setText(qs);
+		//int i = 0;
+		//QString qs = "";
+		//for (auto dice : m_lDicesBuffer)
+		//{
+		//	QString s = QString::number((int)dice->getCount());
+		//	qs = qs + QString::number(i++) + " : " + s + "\n";
+		//}
+		//
+		//m_ui.lblDebug->setText(qs);
 
 		m_lDices.clear();
 		m_lDices = m_lDicesBuffer;
@@ -254,7 +254,7 @@ void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices)
 	iNDetectedDices = keypoints.size();
 }
 
-void QCameraWidget::_debug(int iNDicesDetectedByMinArea, int iNDicesDetectedByBlob)
+void QCameraWidget::_debug(int& const iNDicesDetectedByMinArea, int& const iNDicesDetectedByBlob)
 {
 	static bool bOK = false;
 

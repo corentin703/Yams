@@ -63,14 +63,14 @@ public:
 	QCameraWidget(QWidget* parent = Q_NULLPTR);
 	~QCameraWidget();
 
-	std::list< std::shared_ptr<CDice>> getDices() { return m_lDices; };
+	std::list<std::shared_ptr<CDice>> getDices() { return m_lDices; };
 
 private:
 	void _updateWindow();
 
 	void _findDicesByMinArea(std::list<std::shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices);
 	void _findDicesByBlob(size_t& iNDetectedDices);
-	void _debug(int iNDicesDetectedByMinArea, int iNDicesDetectedByBlob);
+	void _debug(int& const iNDicesDetectedByMinArea, int& const iNDicesDetectedByBlob);
 
 private slots: 
 	void _findDices();

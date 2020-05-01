@@ -36,27 +36,30 @@ set(CLASS_SRCS
 set(QT_CLASS_HEADERS
     src/models/QPlayerGrid.hpp
 
-    src/views/QGameWindow.hpp
-    src/views/QCameraWidget.hpp
-    src/views/QPlayerGridWidget.hpp
+    src/QYams.hpp
+    src/image_recognition/QCameraWidget.hpp
+    src/QPlayerGridsWidget.hpp
+    src/QPlayerGridWidget.hpp
 )
 
 set(QT_CLASS_SRCS
     src/models/QPlayerGrid.cpp
 
-    src/views/QGameWindow.cpp
-    src/views/QCameraWidget.cpp
-    src/views/QPlayerGridWidget.cpp
+    src/QYams.cpp
+    src/image_recognition/QCameraWidget.cpp
+    src/QPlayerGridsWidget.cpp
+    src/QPlayerGridWidget.cpp
 )
 
 set(QT_VIEW
-    src/views/QGameWindow.ui
-    src/views/QCameraWidget.ui
-    src/views/QPlayerGridWidget.ui
+    src/QYams.ui
+    src/image_recognition/QCameraWidget.ui
+    src/QPlayerGridsWidget.ui
+    src/QPlayerGridWidget.ui
 )
 
 set(QT_RESSOURCES
-    src/views/QGameWindow.qrc
+    src/QYams.qrc
 )
 
 add_executable( ${PROJECT_NAME} 

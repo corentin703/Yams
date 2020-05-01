@@ -3,8 +3,15 @@
 
 #pragma once
 
+// STL
+#include <list>
+#include <map>
+
+// Qt
 #include <QWidget>
 #include "ui_QPlayerGridWidget.h"
+
+#include "models/QPlayerGrid.hpp"
 
 class QPlayerGridWidget : public QWidget
 {
@@ -12,12 +19,15 @@ class QPlayerGridWidget : public QWidget
 
 private:
 	Ui::QPlayerGridWidget m_ui;
+	QPlayerGrid* m_ptrQPlayerGrids;
 
 public:
-	QPlayerGridWidget(QWidget *parent = Q_NULLPTR);
+	QPlayerGridWidget(QWidget* parent, QPlayerGrid* ptrPlayerGrid);
 	~QPlayerGridWidget();
 
-
+public slots:
+	void updateGrid();
+	
 };
 
 #endif // QPLAYERGRIDWIDGET_H

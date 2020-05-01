@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>QGameWindow</class>
- <widget class="QMainWindow" name="QGameWindow">
+ <class>QYams</class>
+ <widget class="QMainWindow" name="QYams">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -21,7 +21,7 @@
        <widget class="QCameraWidget" name="qCameraWidget" native="true"/>
       </item>
       <item>
-       <widget class="QPlayerGridWidget" name="qPlayerGridWidget" native="true"/>
+       <widget class="QPlayerGridsWidget" name="qPlayerGridsWidget" native="true"/>
       </item>
      </layout>
     </item>
@@ -174,18 +174,17 @@
   <customwidget>
    <class>QCameraWidget</class>
    <extends>QWidget</extends>
-   <header>QCameraWidget.hpp</header>
+   <header>image_recognition/QCameraWidget.hpp</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QPlayerGridWidget</class>
+   <class>QPlayerGridsWidget</class>
    <extends>QWidget</extends>
-   <header>QPlayerGridWidget.hpp</header>
-   <container>1</container>
+   <header>QPlayerGridsWidget.hpp</header>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="QGameWindow.qrc"/>
+  <include location="QYams.qrc"/>
  </resources>
  <connections/>
 </ui>
