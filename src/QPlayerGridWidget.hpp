@@ -1,5 +1,5 @@
-#ifndef QPLAYERGRIDWIDGET_H
-#define QPLAYERGRIDWIDGET_H
+#ifndef Q_PLAYER_GRID_WIDGET_H
+#define Q_PLAYER_GRID_WIDGET_H
 
 #pragma once
 
@@ -30,4 +30,4 @@ public slots:
 	
 };
 
-#endif // QPLAYERGRIDWIDGET_H
+#endif // Q_PLAYER_GRID_WIDGET_H

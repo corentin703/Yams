@@ -121,29 +121,20 @@
     <property name="title">
      <string>Fichier</string>
     </property>
-    <addaction name="actionOuvrir"/>
-    <addaction name="actionSauvegarder_sous"/>
-    <addaction name="separator"/>
+    <addaction name="actionRecommencer"/>
     <addaction name="actionQuitte"/>
    </widget>
+   <widget class="QMenu" name="menu_propos">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="actionRules"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuFichier"/>
+   <addaction name="menu_propos"/>
   </widget>
-  <action name="actionOuvrir">
-   <property name="text">
-    <string>Ouvrir</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+O</string>
-   </property>
-  </action>
-  <action name="actionSauvegarder_sous">
-   <property name="text">
-    <string>Sauvegarder sous</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+S</string>
-   </property>
-  </action>
   <action name="actionQuitte">
    <property name="text">
     <string>Quitter</string>
@@ -152,20 +143,19 @@
     <string>Ctrl+Q</string>
    </property>
   </action>
-  <action name="actionRetour">
+  <action name="actionAbout">
    <property name="text">
-    <string>Précédent</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Z</string>
+    <string>À propos...</string>
    </property>
   </action>
-  <action name="actionSuivant">
+  <action name="actionRules">
    <property name="text">
-    <string>Suivant</string>
+    <string>Règles du jeu</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+Y</string>
+  </action>
+  <action name="actionRecommencer">
+   <property name="text">
+    <string>Recommencer</string>
    </property>
   </action>
  </widget>

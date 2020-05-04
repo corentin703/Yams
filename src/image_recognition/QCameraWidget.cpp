@@ -86,7 +86,7 @@ void QCameraWidget::_findDices()
 			for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); itDice++)
 			{
 				// Si le dé est un faux positif ou si on l'a déjà traité, on passe
-				if (((*itDetectedDices)->getCount() == 0) || (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end()))
+				if (((*itDetectedDices)->getCount() == 0) || (*itDetectedDices)->getCount() > 6 || (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end()))
 				{
 					continue;
 				}
@@ -109,26 +109,40 @@ void QCameraWidget::_findDices()
 			}
 		}
 
+		// Si on détecte plus de 5 dés
 		if (m_lDicesBuffer.size() > 5)
 		{
 			QMessageBox messageBox;
 			messageBox.setText(QString::fromLatin1("Plus de 5 dés détectés !"));
 			messageBox.exec();
+			
 		}
+		else if (m_lDicesBuffer.size() == 5)
+		{
+			m_lDices.clear();
+			m_lDices = m_lDicesBuffer;
 
-		// DEBUG
-		//int i = 0;
-		//QString qs = "";
-		//for (auto dice : m_lDicesBuffer)
-		//{
-		//	QString s = QString::number((int)dice->getCount());
-		//	qs = qs + QString::number(i++) + " : " + s + "\n";
-		//}
-		//
-		//m_ui.lblDebug->setText(qs);
+			// On compte les dés par capacité
+			int* pDiceSet = new int[6]{ 0, 0, 0, 0, 0, 0 };
+			for (shared_ptr<CDice>& const dice : m_lDices)
+			{
+				pDiceSet[dice->getCount() - 1]++;
+			}
 
-		m_lDices.clear();
-		m_lDices = m_lDicesBuffer;
+			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
+			for (int i = 0; i < 6; ++i)
+			{
+				if (pDiceSet[i] != m_pLastDiceSet[i])
+				{
+					delete m_pLastDiceSet;
+					m_pLastDiceSet = pDiceSet;
+					
+					emit dicesUpdated(pDiceSet);
+					break;
+				}
+			}
+		}
+		
 		m_lDicesBuffer.clear();
 	}
 

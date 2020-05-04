@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>QPlayerGridsWidget</class>
  <widget class="QWidget" name="QPlayerGridsWidget">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,6 +19,20 @@
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="lnlPlayerName">
+       <property name="text">
+        <string>Noms des joueurs</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QLabel" name="lbl1">
        <property name="text">

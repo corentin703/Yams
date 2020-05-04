@@ -14,80 +14,121 @@ class QPlayerGrid : public QObject
 	Q_OBJECT
 	
 private:
-	std::string m_sPlayerName;
+	QString m_sPlayerName;
 
 	// Partie supérieure
-	int m_iTotal1 = 0;
-	int m_iTotal2 = 0;
-	int m_iTotal3 = 0;
-	int m_iTotal4 = 0;
-	int m_iTotal5 = 0;
-	int m_iTotal6 = 0;
-	bool m_bIsBonus = false;
+	int m_iAces ;
+	bool m_bIsAcesAlreadySet;
+	
+	int m_iTwos;
+	bool m_bIsTwosAlreadySet;
+	
+	int m_iThrees;
+	bool m_bIsThreesAlreadySet;
+	
+	int m_iFours;
+	bool m_bIsFoursAlreadySet;
+	
+	int m_iFives;
+	bool m_bIsFivesAlreadySet;
+	
+	int m_iSixes;
+	bool m_bIsSixesAlreadySet;
+	
+	bool m_bIsBonus;
 
 	// Partie inférieure
-	int m_iBrelan = 0;
-	int m_iCarre = 0;
-	bool m_bIsFull = false;
-	bool m_bIsSmallStraight = false;
-	bool m_bIsLargeStraight = false;
-	bool m_bIsYams = false;
-	bool m_bIsSuperYams = false;
-	int m_iChance = 0;
+	int m_iBrelan;
+	bool m_bIsBrelanAlreadySet;
+	
+	int m_iCarre;
+	bool m_bIsCarreAlreadySet;
+	
+	bool m_bIsFull;
+	bool m_bIsFullAlreadySet;
+	
+	bool m_bIsSmallStraight;
+	bool m_bIsSmallStraightAlreadySet;
+	
+	bool m_bIsLargeStraight;
+	bool m_bIsLargeStraightAlreadySet;
+	
+	bool m_bIsYams;
+	bool m_bIsYamsAlreadySet;
+	
+	bool m_bIsSuperYams;
+	bool m_bIsSuperYamsAlreadySet;
+	
+	int m_iChance;
+	bool m_bIsChanceAlreadySet;
 
 public:
-	QPlayerGrid(std::string sPlayerName);
+	QPlayerGrid(QString sPlayerName);
 	~QPlayerGrid();
 
-	std::string getPlayerName() { return m_sPlayerName; }
+	QString getPlayerName() { return m_sPlayerName; }
 
 
 	// Getter / Setter partie supérieure
-	int getTotal1() { return m_iTotal1; }
-	void setTotal1(int iValue) { m_iTotal1 = iValue; _checkBonus(); emit gridUpdated(); }
+	int& const getAces() { return m_iAces; }
+	bool& const IsAcesAlreadySet() { return m_bIsAcesAlreadySet; }
+	void setAces(int& const iValue);
 
-	int getTotal2() { return m_iTotal2; }
-	void setTotal2(int iValue) { m_iTotal2 = iValue; _checkBonus(); emit gridUpdated(); }
+	int& const getTwos() { return m_iTwos; }
+	bool& const IsTwosAlreadySet() { return m_bIsTwosAlreadySet; }
+	void setTwos(int& const iValue);
 
-	int getTotal3() { return m_iTotal3; }
-	void setTotal3(int iValue) { m_iTotal3 = iValue; _checkBonus(); emit gridUpdated(); }
+	int& const getThrees() { return m_iThrees; }
+	bool& const IsThreesAlreadySet() { return m_bIsThreesAlreadySet; }
+	void setThrees(int& const iValue);
 
-	int getTotal4() { return m_iTotal4; }
-	void setTotal4(int iValue) { m_iTotal4 = iValue; _checkBonus(); emit gridUpdated(); }
+	int& const getFours() { return m_iFours; }
+	bool& const IsFoursAlreadySet() { return m_bIsFoursAlreadySet; }
+	void setFours(int& const iValue);
 
-	int getTotal5() { return m_iTotal5; }
-	void setTotal5(int iValue) { m_iTotal5 = iValue; _checkBonus(); emit gridUpdated(); }
+	int& const getFives() { return m_iFives; }
+	bool& const IsFivesAlreadySet() { return m_bIsFivesAlreadySet; }
+	void setFives(int& const iValue);
 
-	int getTotal6() { return m_iTotal6; }
-	void setTotal6(int iValue) { m_iTotal6 = iValue; _checkBonus(); emit gridUpdated(); }
-	
+	int& const getSixes() { return m_iSixes; }
+	bool& const IsSixesAlreadySet() { return m_bIsSixesAlreadySet; }
+	void setSixes(int& const iValue);
+
 	int getBonus() { return (m_bIsBonus) ? 35 : 0; }
 
 
 	// Getter / Setter partie inférieure
-	int getBrelan() { return m_iBrelan; }
-	void setBrelan(int iValue) { m_iBrelan = iValue; emit gridUpdated(); }
+	int& const getBrelan() { return m_iBrelan; }
+	bool& const IsBrelanAlreadySet() { return m_bIsBrelanAlreadySet; }
+	void setBrelan(int& const iValue);
 
-	int getCarre() { return m_iCarre; }
-	void setCarre(int iValue) { m_iCarre = iValue; emit gridUpdated(); }
+	int& const getCarre() { return m_iCarre; }
+	bool& const IsCarreAlreadySet() { return m_bIsCarreAlreadySet; }
+	void setCarre(int& const iValue);
 
 	int getFull() { if (m_bIsFull) return 25; else return 0; }
-	void setFull(bool bIsFull) { m_bIsFull = bIsFull; emit gridUpdated(); }
+	bool& const IsFullAlreadySet() { return m_bIsFullAlreadySet; }
+	void setFull(bool& const bIsFull);
 
 	int getSmallStraight() { return (m_bIsSmallStraight) ? 30 : 0; }
-	void setSmallStraight(bool bIsSmallStraight) { m_bIsSmallStraight = bIsSmallStraight; emit gridUpdated(); }
+	bool& const IsSmallStraightAlreadySet() { return m_bIsSmallStraightAlreadySet; }
+	void setSmallStraight(bool& const bIsSmallStraight);
 
 	int getLargeStraight() { return (m_bIsLargeStraight) ? 40 : 0; }
-	void setLargeStraight(bool bIsLargeStraight) { m_bIsLargeStraight = bIsLargeStraight; emit gridUpdated(); }
+	bool& const IsLargeStraightAlreadySet() { return m_bIsLargeStraightAlreadySet; }
+	void setLargeStraight(bool& const bIsLargeStraight);
 
 	int getYams() { return (m_bIsYams) ? 50 : 0; }
-	void setYams(bool bIsYams) { m_bIsYams = bIsYams; emit gridUpdated(); }
-
-	int getChance() { return m_iChance; }
-	void setChance(int iChance) { m_iChance = iChance; emit gridUpdated(); }
+	bool& const IsYamsAlreadySet() { return m_bIsYamsAlreadySet; }
+	void setYams(bool& const bIsYams);
 
 	int getSuperYams() { return (m_bIsSuperYams) ? 100 : 0; }
-	void setSuperYams(bool bIsSuperYams) { m_bIsSuperYams = bIsSuperYams; emit gridUpdated(); }
+	bool& const IsSuperYamsAlreadySet() { return m_bIsSuperYamsAlreadySet; }
+	void setSuperYams(bool& const bIsSuperYams);
+	
+	int& const getChance() { return m_iChance; }
+	bool& const IsChanceAlreadySet() { return m_bIsChanceAlreadySet; }
+	void setChance(int& const iChance);
 
 
 	/**

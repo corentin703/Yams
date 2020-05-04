@@ -1,5 +1,5 @@
-#ifndef QPLAYERGRIDSWIDGET_H
-#define QPLAYERGRIDSWIDGET_H
+#ifndef Q_PLAYER_GRIDS_WIDGET_H
+#define Q_PLAYER_GRIDS_WIDGET_H
 
 #pragma once
 
@@ -30,4 +30,4 @@ public:
 
 };
 
-#endif // QPLAYERGRIDSWIDGET_H
+#endif // Q_PLAYER_GRIDS_WIDGET_H

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QYamsStartFormWidget</class>
+ <widget class="QWidget" name="QYamsStartFormWidget">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>250</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Édition des joueurs</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="lytInputs">
+     <item>
+      <widget class="QYamsStartPlayerNameInputWidget" name="player_1" native="true"/>
+     </item>
+     <item>
+      <widget class="QYamsStartPlayerNameInputWidget" name="player_2" native="true"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnAddPlayer">
+     <property name="text">
+      <string>Ajouter joueur</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnSubmit">
+     <property name="text">
+      <string>Confirmer</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QYamsStartPlayerNameInputWidget</class>
+   <extends>QWidget</extends>
+   <header>QYamsStartPlayerNameInputWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -5,6 +5,9 @@ QPlayerGridWidget::QPlayerGridWidget(QWidget *parent, QPlayerGrid* ptrPlayerGrid
 {
 	m_ui.setupUi(this);
 	m_ptrQPlayerGrids = ptrPlayerGrid;
+
+	// On défini le nom du joueur
+	m_ui.lblPlayerName->setText(m_ptrQPlayerGrids->getPlayerName());
 }
 
 QPlayerGridWidget::~QPlayerGridWidget()
@@ -14,12 +17,12 @@ QPlayerGridWidget::~QPlayerGridWidget()
 void QPlayerGridWidget::updateGrid()
 {
 	// Partie supérieure
-	m_ui.lbl1->setText(QString::number(m_ptrQPlayerGrids->getTotal1()));
-	m_ui.lbl2->setText(QString::number(m_ptrQPlayerGrids->getTotal2()));
-	m_ui.lbl3->setText(QString::number(m_ptrQPlayerGrids->getTotal3()));
-	m_ui.lbl4->setText(QString::number(m_ptrQPlayerGrids->getTotal4()));
-	m_ui.lbl5->setText(QString::number(m_ptrQPlayerGrids->getTotal5()));
-	m_ui.lbl6->setText(QString::number(m_ptrQPlayerGrids->getTotal6()));
+	m_ui.lbl1->setText(QString::number(m_ptrQPlayerGrids->getAces()));
+	m_ui.lbl2->setText(QString::number(m_ptrQPlayerGrids->getTwos()));
+	m_ui.lbl3->setText(QString::number(m_ptrQPlayerGrids->getThrees()));
+	m_ui.lbl4->setText(QString::number(m_ptrQPlayerGrids->getFours()));
+	m_ui.lbl5->setText(QString::number(m_ptrQPlayerGrids->getFives()));
+	m_ui.lbl6->setText(QString::number(m_ptrQPlayerGrids->getSixes()));
 	m_ui.lblPreTotalSup->setText(QString::number(m_ptrQPlayerGrids->getPreUpperTotal()));
 	m_ui.lblBonus->setText(QString::number(m_ptrQPlayerGrids->getBonus()));
 	m_ui.lblTotalSup->setText(QString::number(m_ptrQPlayerGrids->getUpperTotal()));

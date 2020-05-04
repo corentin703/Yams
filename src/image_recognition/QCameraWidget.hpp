@@ -1,5 +1,5 @@
-#ifndef QCAMERAWIDGET_H
-#define QCAMERAWIDGET_H
+#ifndef Q_CAMERAWIDGET_H
+#define Q_CAMERAWIDGET_H
 
 #pragma once
 
@@ -56,6 +56,8 @@ private:
 	std::list<std::shared_ptr<CDice>> m_lDices;
 	std::list<std::shared_ptr<CDice>> m_lDicesBuffer;
 
+	int* m_pLastDiceSet = new int[6]{ 0, 0, 0, 0, 0, 0 };
+
 	bool m_bThreadsEnabled = false;
 	std::list<std::unique_ptr<std::thread>> m_lThreads;
 
@@ -77,6 +79,7 @@ private slots:
 
 signals:
 	void cameraImgUpdated();
+	void dicesUpdated(int* diceSet);
 };
 
-#endif // QCAMERAWIDGET_H
+#endif // Q_CAMERAWIDGET_H

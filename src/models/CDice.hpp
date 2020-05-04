@@ -1,5 +1,5 @@
-#ifndef CDICE_H
-#define CDICE_H
+#ifndef C_DICE_H
+#define C_DICE_H
 
 #pragma once
 
@@ -30,4 +30,4 @@ public:
 
 };
 
-#endif // CDICE_H
+#endif // C_DICE_H

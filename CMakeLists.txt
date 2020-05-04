@@ -40,6 +40,11 @@ set(QT_CLASS_HEADERS
     src/image_recognition/QCameraWidget.hpp
     src/QPlayerGridsWidget.hpp
     src/QPlayerGridWidget.hpp
+
+    src/QYamsStartFormWidget.hpp
+    src/QYamsStartPlayerNameInputWidget.hpp
+
+    src/QAboutWidget.hpp
 )
 
 set(QT_CLASS_SRCS
@@ -49,6 +54,11 @@ set(QT_CLASS_SRCS
     src/image_recognition/QCameraWidget.cpp
     src/QPlayerGridsWidget.cpp
     src/QPlayerGridWidget.cpp
+
+    src/QYamsStartFormWidget.cpp
+    src/QYamsStartPlayerNameInputWidget.cpp
+
+    src/QAboutWidget.cpp
 )
 
 set(QT_VIEW
@@ -56,6 +66,11 @@ set(QT_VIEW
     src/image_recognition/QCameraWidget.ui
     src/QPlayerGridsWidget.ui
     src/QPlayerGridWidget.ui
+
+    src/QYamsStartFormWidget.ui
+    src/QYamsStartPlayerNameInputWidget.ui
+
+    src/QAboutWidget.ui
 )
 
 set(QT_RESSOURCES
