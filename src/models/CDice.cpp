@@ -1,6 +1,6 @@
 #include "CDice.hpp"
 
-CDice::CDice(cv::RotatedRect& const diceRect)
+CDice::CDice(const cv::RotatedRect& diceRect)
 {
 	m_diceRect = diceRect;
 }

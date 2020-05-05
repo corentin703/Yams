@@ -58,12 +58,12 @@ QPlayerGrid::~QPlayerGrid()
 {
 }
 
-void QPlayerGrid::setAces(int& const iValue)
+void QPlayerGrid::setAces(const uint& iValue)
 {
-	if (m_bIsAcesAlreadySet)
+	/*if (m_bIsAcesAlreadySet)
 	{
 		throw new exception("Les as ont déjà été défini");
-	}
+	}*/
 	
 	m_iAces = iValue;
 	m_bIsAcesAlreadySet = true;
@@ -72,12 +72,12 @@ void QPlayerGrid::setAces(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setTwos(int& const iValue)
+void QPlayerGrid::setTwos(const uint& iValue)
 {
-	if (m_bIsTwosAlreadySet)
+	/*if (m_bIsTwosAlreadySet)
 	{
 		throw new exception("Les deux ont déjà été défini");
-	}
+	}*/
 	
 	m_iTwos = iValue;
 	m_bIsTwosAlreadySet = true;
@@ -86,12 +86,12 @@ void QPlayerGrid::setTwos(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setThrees(int& const iValue)
+void QPlayerGrid::setThrees(const uint& iValue)
 {
-	if (m_bIsThreesAlreadySet)
+	/*if (m_bIsThreesAlreadySet)
 	{
 		throw new exception("Les trois ont déjà été défini");
-	}
+	}*/
 	
 	m_iThrees = iValue;
 	m_bIsThreesAlreadySet = true;
@@ -100,7 +100,7 @@ void QPlayerGrid::setThrees(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setFours(int& const iValue)
+void QPlayerGrid::setFours(const uint& iValue)
 {
 	if (m_bIsFoursAlreadySet)
 	{
@@ -114,12 +114,12 @@ void QPlayerGrid::setFours(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setFives(int& const iValue)
+void QPlayerGrid::setFives(const uint& iValue)
 {
-	if (m_bIsFivesAlreadySet)
+	/*if (m_bIsFivesAlreadySet)
 	{
 		throw new exception("Les cinq ont déjà été défini");
-	}
+	}*/
 	
 	m_iFives = iValue;
 	m_bIsFivesAlreadySet = true;
@@ -128,13 +128,13 @@ void QPlayerGrid::setFives(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setSixes(int& const iValue)
-{
+void QPlayerGrid::setSixes(const uint& iValue)
+{/*
 	if (m_bIsFivesAlreadySet)
 	{
 		throw new exception("Les six ont déjà été défini");
 	}
-	
+	*/
 	m_iSixes = iValue;
 	m_bIsSixesAlreadySet = true;
 	
@@ -142,12 +142,12 @@ void QPlayerGrid::setSixes(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setBrelan(int& const iValue)
+void QPlayerGrid::setBrelan(const uint& iValue)
 {
-	if (m_bIsBrelanAlreadySet)
+	/*if (m_bIsBrelanAlreadySet)
 	{
 		throw new exception("Le brelan a déjà été défini");
-	}
+	}*/
 	
 	m_iBrelan = iValue;
 	m_bIsBrelanAlreadySet = true;
@@ -155,7 +155,7 @@ void QPlayerGrid::setBrelan(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setCarre(int& const iValue)
+void QPlayerGrid::setCarre(const uint& iValue)
 {
 	if (m_bIsCarreAlreadySet)
 	{
@@ -168,7 +168,7 @@ void QPlayerGrid::setCarre(int& const iValue)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setFull(bool& const bIsFull)
+void QPlayerGrid::setFull(const bool& bIsFull)
 {
 	if (m_bIsFullAlreadySet)
 	{
@@ -181,7 +181,7 @@ void QPlayerGrid::setFull(bool& const bIsFull)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setSmallStraight(bool& const bIsSmallStraight)
+void QPlayerGrid::setSmallStraight(const bool& bIsSmallStraight)
 {
 	if (m_bIsSmallStraightAlreadySet)
 	{
@@ -194,7 +194,7 @@ void QPlayerGrid::setSmallStraight(bool& const bIsSmallStraight)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setLargeStraight(bool& const bIsLargeStraight)
+void QPlayerGrid::setLargeStraight(const bool& bIsLargeStraight)
 {
 	if (m_bIsSmallStraightAlreadySet)
 	{
@@ -207,7 +207,7 @@ void QPlayerGrid::setLargeStraight(bool& const bIsLargeStraight)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setYams(bool& const bIsYams)
+void QPlayerGrid::setYams(const bool& bIsYams)
 {
 	if (m_bIsYamsAlreadySet)
 	{
@@ -220,7 +220,7 @@ void QPlayerGrid::setYams(bool& const bIsYams)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setSuperYams(bool& const bIsSuperYams)
+void QPlayerGrid::setSuperYams(const bool& bIsSuperYams)
 {
 	if (m_bIsSuperYamsAlreadySet)
 	{
@@ -233,7 +233,7 @@ void QPlayerGrid::setSuperYams(bool& const bIsSuperYams)
 	emit gridUpdated();
 }
 
-void QPlayerGrid::setChance(int& const iChance)
+void QPlayerGrid::setChance(const uint& iChance)
 {
 	if (m_bIsChanceAlreadySet)
 	{
@@ -247,7 +247,7 @@ void QPlayerGrid::setChance(int& const iChance)
 }
 
 
-int QPlayerGrid::getPreUpperTotal()
+const uint& QPlayerGrid::getPreUpperTotal()
 {
 	return (
 		getAces() +
@@ -259,7 +259,7 @@ int QPlayerGrid::getPreUpperTotal()
 	);
 }
 
-int QPlayerGrid::getLowerTotal()
+const uint& QPlayerGrid::getLowerTotal()
 {
 	return (
 		getBrelan() +

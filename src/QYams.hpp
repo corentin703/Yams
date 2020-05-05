@@ -16,6 +16,7 @@
 #include "QAboutWidget.hpp"
 #include "image_recognition/QCameraWidget.hpp"
 #include "models/QPlayerGrid.hpp"
+#include "models/CDiceSet.hpp"
 
 #include "ui_QYams.h"
 
@@ -23,22 +24,12 @@ class QYams : public QMainWindow
 {
 	Q_OBJECT
 
-	Ui::QYams m_ui;
-	QPlayerGridsWidget* m_ptrQPlayerGridWidget;
-	QYamsStartFormWidget* m_ptrQYamsStartFrom;
-	QCameraWidget* m_ptrQCameraWidget;
-	QAboutWidget* m_ptrAboutWindow = nullptr;
-
-	std::list<QPlayerGrid*> m_lpQPlayerGrids;
-	QPlayerGrid* m_ptrCurrentPlayer;
-
-	int m_iNbrTurn = 0;
-	std::list<QPlayerGrid*>::iterator m_itPlayerGrids;
-
 public:
-	
+
 	enum EYamsActions
 	{
+		NOTHING = 0,
+		
 		ACES = 1,
 		TWOS = 2,
 		THREES = 3,
@@ -55,13 +46,15 @@ public:
 		SUPER_YAMS = 13,
 		CHANCE = 14,
 	};
-	
-	QYams(QWidget *parent = Q_NULLPTR);
 
-private:
-	void _updateChoices(std::list<CDice>& const lDices);
-	void closeEvent(QCloseEvent* event) override;
-	std::shared_ptr<std::vector<std::pair<EYamsActions, uint>*>> const _simulate(int* diceSet);
+	enum EChoices
+	{
+		ANYTHING = 0,
+
+		ONE = 1,
+		TWO = 2,
+		THREE = 3,
+	};
 
 	QString m_YamsActionsNames[14] = {
 		QString::fromLatin1("As"),
@@ -80,14 +73,44 @@ private:
 		QString::fromLatin1("Super Yams"),
 		QString::fromLatin1("Chance"),
 	};
+
+private:
+
+	Ui::QYams m_ui;
+	QPlayerGridsWidget* m_ptrQPlayerGridsWidget;
+	QYamsStartFormWidget* m_ptrQYamsStartFrom;
+	QCameraWidget* m_ptrQCameraWidget;
+	QAboutWidget* m_ptrAboutWindow = nullptr;
+
+	std::list<QPlayerGrid*> m_lpQPlayerGrids;
+	QPlayerGrid* m_ptrCurrentPlayer;
+
+	int m_iNbrTurn = 0;
+	std::list<QPlayerGrid*>::iterator m_itPlayerGrids;
+
+	EYamsActions m_choice1;
+	EYamsActions m_choice2;
+	EYamsActions m_choice3;
+	
+public:
+	QYams(QWidget *parent = Q_NULLPTR);
+
+	
+private:
+	void _updateChoices(std::list<CDice>& const lDices);
+	void closeEvent(QCloseEvent* event) override;
+	std::shared_ptr<std::vector<std::pair<QYams::EYamsActions, uint>>> const _simulate(CDiceSet& diceSet);
+
+	void _resetChoices(const EChoices& choice = ANYTHING);
 	
 	
 public slots:
 	void start();
 	void restart();
 	void quit();
-	void onChoiceChoosed();
-	void updateTurn(int* const diceSet);
+
+	void doAction(const EYamsActions& selectedAction);
+	void updateTurn(CDiceSet& diceSet);
 	void launchGame(std::list<QString>* ptrLPlayerNames);
 	
 	void showAboutWindow();

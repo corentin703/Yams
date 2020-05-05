@@ -17,31 +17,31 @@ private:
 	QString m_sPlayerName;
 
 	// Partie supérieure
-	int m_iAces ;
+	uint m_iAces ;
 	bool m_bIsAcesAlreadySet;
 	
-	int m_iTwos;
+	uint m_iTwos;
 	bool m_bIsTwosAlreadySet;
 	
-	int m_iThrees;
+	uint m_iThrees;
 	bool m_bIsThreesAlreadySet;
 	
-	int m_iFours;
+	uint m_iFours;
 	bool m_bIsFoursAlreadySet;
 	
-	int m_iFives;
+	uint m_iFives;
 	bool m_bIsFivesAlreadySet;
 	
-	int m_iSixes;
+	uint m_iSixes;
 	bool m_bIsSixesAlreadySet;
 	
 	bool m_bIsBonus;
 
 	// Partie inférieure
-	int m_iBrelan;
+	uint m_iBrelan;
 	bool m_bIsBrelanAlreadySet;
 	
-	int m_iCarre;
+	uint m_iCarre;
 	bool m_bIsCarreAlreadySet;
 	
 	bool m_bIsFull;
@@ -59,7 +59,7 @@ private:
 	bool m_bIsSuperYams;
 	bool m_bIsSuperYamsAlreadySet;
 	
-	int m_iChance;
+	uint m_iChance;
 	bool m_bIsChanceAlreadySet;
 
 public:
@@ -70,94 +70,94 @@ public:
 
 
 	// Getter / Setter partie supérieure
-	int& const getAces() { return m_iAces; }
-	bool& const IsAcesAlreadySet() { return m_bIsAcesAlreadySet; }
-	void setAces(int& const iValue);
+	const uint& getAces() { return m_iAces; }
+	const bool& IsAcesAlreadySet() { return m_bIsAcesAlreadySet; } 
+	void setAces(const uint& iValue);
 
-	int& const getTwos() { return m_iTwos; }
-	bool& const IsTwosAlreadySet() { return m_bIsTwosAlreadySet; }
-	void setTwos(int& const iValue);
+	const uint& getTwos() { return m_iTwos; }
+	const bool& IsTwosAlreadySet() { return m_bIsTwosAlreadySet; }
+	void setTwos(const uint& iValue);
 
-	int& const getThrees() { return m_iThrees; }
-	bool& const IsThreesAlreadySet() { return m_bIsThreesAlreadySet; }
-	void setThrees(int& const iValue);
+	const uint& getThrees() { return m_iThrees; }
+	const bool& IsThreesAlreadySet() { return m_bIsThreesAlreadySet; }
+	void setThrees(const uint& iValue);
 
-	int& const getFours() { return m_iFours; }
-	bool& const IsFoursAlreadySet() { return m_bIsFoursAlreadySet; }
-	void setFours(int& const iValue);
+	const uint& getFours() { return m_iFours; }
+	const bool& IsFoursAlreadySet() { return m_bIsFoursAlreadySet; }
+	void setFours(const uint& iValue);
 
-	int& const getFives() { return m_iFives; }
-	bool& const IsFivesAlreadySet() { return m_bIsFivesAlreadySet; }
-	void setFives(int& const iValue);
+	const uint& getFives() { return m_iFives; }
+	const bool& IsFivesAlreadySet() { return m_bIsFivesAlreadySet; }
+	void setFives(const uint& iValue);
 
-	int& const getSixes() { return m_iSixes; }
-	bool& const IsSixesAlreadySet() { return m_bIsSixesAlreadySet; }
-	void setSixes(int& const iValue);
+	const uint& getSixes() { return m_iSixes; }
+	const bool& IsSixesAlreadySet() { return m_bIsSixesAlreadySet; }
+	void setSixes(const uint& iValue);
 
-	int getBonus() { return (m_bIsBonus) ? 35 : 0; }
+	uint getBonus() { return (m_bIsBonus) ? 35 : 0; }
 
 
 	// Getter / Setter partie inférieure
-	int& const getBrelan() { return m_iBrelan; }
-	bool& const IsBrelanAlreadySet() { return m_bIsBrelanAlreadySet; }
-	void setBrelan(int& const iValue);
+	const uint& getBrelan() { return m_iBrelan; }
+	const bool& IsBrelanAlreadySet() { return m_bIsBrelanAlreadySet; }
+	void setBrelan(const uint& iValue);
 
-	int& const getCarre() { return m_iCarre; }
-	bool& const IsCarreAlreadySet() { return m_bIsCarreAlreadySet; }
-	void setCarre(int& const iValue);
+	const uint& getCarre() { return m_iCarre; }
+	const bool& IsCarreAlreadySet() { return m_bIsCarreAlreadySet; }
+	void setCarre(const uint& iValue);
 
-	int getFull() { if (m_bIsFull) return 25; else return 0; }
-	bool& const IsFullAlreadySet() { return m_bIsFullAlreadySet; }
-	void setFull(bool& const bIsFull);
+	const uint getFull() { if (m_bIsFull) return 25; else return 0; }
+	const bool& IsFullAlreadySet() { return m_bIsFullAlreadySet; }
+	void setFull(const bool& bIsFull);
 
-	int getSmallStraight() { return (m_bIsSmallStraight) ? 30 : 0; }
-	bool& const IsSmallStraightAlreadySet() { return m_bIsSmallStraightAlreadySet; }
-	void setSmallStraight(bool& const bIsSmallStraight);
+	const uint& getSmallStraight() { return (m_bIsSmallStraight) ? 30 : 0; }
+	const bool& IsSmallStraightAlreadySet() { return m_bIsSmallStraightAlreadySet; }
+	void setSmallStraight(const bool& bIsSmallStraight);
 
-	int getLargeStraight() { return (m_bIsLargeStraight) ? 40 : 0; }
-	bool& const IsLargeStraightAlreadySet() { return m_bIsLargeStraightAlreadySet; }
-	void setLargeStraight(bool& const bIsLargeStraight);
+	const uint& getLargeStraight() { return (m_bIsLargeStraight) ? 40 : 0; }
+	const bool& IsLargeStraightAlreadySet() { return m_bIsLargeStraightAlreadySet; }
+	void setLargeStraight(const bool& bIsLargeStraight);
 
-	int getYams() { return (m_bIsYams) ? 50 : 0; }
-	bool& const IsYamsAlreadySet() { return m_bIsYamsAlreadySet; }
-	void setYams(bool& const bIsYams);
+	const uint& getYams() { return (m_bIsYams) ? 50 : 0; }
+	const bool& IsYamsAlreadySet() { return m_bIsYamsAlreadySet; }
+	void setYams(const bool& bIsYams);
 
-	int getSuperYams() { return (m_bIsSuperYams) ? 100 : 0; }
-	bool& const IsSuperYamsAlreadySet() { return m_bIsSuperYamsAlreadySet; }
-	void setSuperYams(bool& const bIsSuperYams);
+	const uint& getSuperYams() { return (m_bIsSuperYams) ? 100 : 0; }
+	const bool& IsSuperYamsAlreadySet() { return m_bIsSuperYamsAlreadySet; }
+	void setSuperYams(const bool& bIsSuperYams);
 	
-	int& const getChance() { return m_iChance; }
-	bool& const IsChanceAlreadySet() { return m_bIsChanceAlreadySet; }
-	void setChance(int& const iChance);
+	const uint& getChance() { return m_iChance; }
+	const bool& IsChanceAlreadySet() { return m_bIsChanceAlreadySet; }
+	void setChance(const uint& iChance);
 
 
 	/**
 	  * Retourne le pré-total de la partie supérieure (sans le bonus)
 	  *
-	  * @return int
+	  * @return uint
 	  */
-	int getPreUpperTotal();
+	const uint& getPreUpperTotal();
 
 	/**
 	  * Retourne le total de la partie supérieure en contant le bonus si besoin est
 	  *
-	  * @return int
+	  * @return uint
 	  */
-	int getUpperTotal() { return getPreUpperTotal() + getBonus(); }
+	const uint& getUpperTotal() { return getPreUpperTotal() + getBonus(); }
 
 	/**
 	  * Retourne le total de la partie inférieure
 	  *
-	  * @return int
+	  * @return uint
 	  */
-	int getLowerTotal();
+	const uint& getLowerTotal();
 
 	/**
 	  * Retourne le total de la partie
 	  *
-	  *	@return int
+	  *	@return uint
 	  */
-	int getTotal() { return getPreUpperTotal() + getLowerTotal(); }
+	const uint& getTotal() { return getPreUpperTotal() + getLowerTotal(); }
 
 private:
 	void _checkBonus();

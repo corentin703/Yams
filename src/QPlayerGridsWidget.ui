@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>160</width>
-    <height>450</height>
+    <width>224</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,44 +34,44 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl1">
+      <widget class="QPushButton" name="btnAces">
        <property name="text">
-        <string>Total des 1</string>
+        <string>As</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl2">
+      <widget class="QPushButton" name="btnTwos">
        <property name="text">
-        <string>Total des 2</string>
+        <string>Deux</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl3">
+      <widget class="QPushButton" name="btnThrees">
        <property name="text">
-        <string>Total des 3</string>
+        <string>Trois</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl4">
+      <widget class="QPushButton" name="btnFours">
        <property name="text">
-        <string>Total des 4</string>
+        <string>Quatre</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl5">
+      <widget class="QPushButton" name="btnFives">
        <property name="text">
-        <string>Total des 5</string>
+        <string>Cinq</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbl6">
+      <widget class="QPushButton" name="btnSixes">
        <property name="text">
-        <string>Total des 6</string>
+        <string>Sixes</string>
        </property>
       </widget>
      </item>
@@ -80,12 +80,18 @@
        <property name="text">
         <string>Pré-total</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="lblBonus">
        <property name="text">
         <string>Bonus</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -100,6 +106,9 @@
        <property name="text">
         <string>Total partie supérieure</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item>
@@ -110,56 +119,56 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblBrelan">
+      <widget class="QPushButton" name="btnBrelan">
        <property name="text">
         <string>Brelan</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblCarre">
+      <widget class="QPushButton" name="btnCarre">
        <property name="text">
         <string>Carré</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblFull">
+      <widget class="QPushButton" name="btnFull">
        <property name="text">
         <string>Full</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblSmallStraight">
+      <widget class="QPushButton" name="btnSmallStraight">
        <property name="text">
         <string>Petite suite</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblLargeStraight">
+      <widget class="QPushButton" name="btnLargeStraight">
        <property name="text">
         <string>Grande suite</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblYams">
+      <widget class="QPushButton" name="btnYams">
        <property name="text">
         <string>Yams</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblChance">
+      <widget class="QPushButton" name="btnChance">
        <property name="text">
         <string>Chance</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lblSuperYams">
+      <widget class="QPushButton" name="btnSuperYams">
        <property name="text">
         <string>Super Yams</string>
        </property>
@@ -175,6 +184,9 @@
        </property>
        <property name="text">
         <string>Total partie inférieure</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -195,6 +207,9 @@
        </property>
        <property name="text">
         <string>Total</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>

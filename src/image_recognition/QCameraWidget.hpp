@@ -21,7 +21,8 @@
 #include <opencv2/features2d.hpp>
 
 
-#include "..\models\CDice.hpp"
+#include "../models/CDice.hpp"
+#include "../models/CDiceSet.hpp"
 
 // UI
 #include "ui_QCameraWidget.h"
@@ -56,7 +57,8 @@ private:
 	std::list<std::shared_ptr<CDice>> m_lDices;
 	std::list<std::shared_ptr<CDice>> m_lDicesBuffer;
 
-	int* m_pLastDiceSet = new int[6]{ 0, 0, 0, 0, 0, 0 };
+	//int* m_pLastDiceSet = new int[6]{ 0, 0, 0, 0, 0, 0 };
+	CDiceSet* m_pLastDiceSet;
 
 	bool m_bThreadsEnabled = false;
 	std::list<std::unique_ptr<std::thread>> m_lThreads;
@@ -65,21 +67,23 @@ public:
 	QCameraWidget(QWidget* parent = Q_NULLPTR);
 	~QCameraWidget();
 
-	std::list<std::shared_ptr<CDice>> getDices() { return m_lDices; };
+	//std::list<std::shared_ptr<CDice>> getDices() { return m_lDices; };
+	//int* const getDiceSet() { return m_pLastDiceSet; }
+	CDiceSet& const getDiceSet() { return *m_pLastDiceSet; }
 
 private:
 	void _updateWindow();
 
 	void _findDicesByMinArea(std::list<std::shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices);
 	void _findDicesByBlob(size_t& iNDetectedDices);
-	void _debug(int& const iNDicesDetectedByMinArea, int& const iNDicesDetectedByBlob);
+	//void _debug(int& const iNDicesDetectedByMinArea, int& const iNDicesDetectedByBlob);
 
 private slots: 
 	void _findDices();
 
 signals:
 	void cameraImgUpdated();
-	void dicesUpdated(int* diceSet);
+	void dicesUpdated(CDiceSet& diceSet);
 };
 
 #endif // Q_CAMERAWIDGET_H

@@ -18,14 +18,14 @@ private:
 	std::list<cv::RotatedRect> m_lDotRects;
 
 public:
-	CDice(cv::RotatedRect& const diceRect);
+	CDice(const cv::RotatedRect& diceRect);
 	~CDice();
 
-	cv::RotatedRect& const getDiceRect() { return m_diceRect; }
-	void setDiceRect(cv::RotatedRect& const diceRect) { m_diceRect = diceRect; }
+	const cv::RotatedRect& getDiceRect() { return m_diceRect; }
+	void setDiceRect(const cv::RotatedRect& diceRect) { m_diceRect = diceRect; }
 
-	std::list<cv::RotatedRect>& const getDotRects() { return m_lDotRects; }
-	void addDotRect(cv::RotatedRect& const dotRect) { m_lDotRects.push_back(dotRect); }
+	const std::list<cv::RotatedRect>& getDotRects() { return m_lDotRects; }
+	void addDotRect(const cv::RotatedRect& dotRect) { m_lDotRects.push_back(dotRect); }
 	unsigned int getCount() { return m_lDotRects.size(); }
 
 };

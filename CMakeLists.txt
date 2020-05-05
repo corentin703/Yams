@@ -27,6 +27,7 @@ set(SRCS
 
 set(CLASS_HEADERS
     src/models/CDice.hpp
+    src/models/CDiceSet.hpp
 )
 
 set(CLASS_SRCS
