@@ -25,24 +25,26 @@ public:
 	QPlayerGridsWidget(QWidget *parent = Q_NULLPTR);
 	~QPlayerGridsWidget();
 
-	const QPushButton* getAcesButton() { return m_ui.btnAces; }
-	const QPushButton* getTwosButton() { return m_ui.btnTwos; }
-	const QPushButton* getThreeButton() { return m_ui.btnThrees; }
-	const QPushButton* getFoursButton() { return m_ui.btnFours; }
-	const QPushButton* getFivesButton() { return m_ui.btnFives; }
-	const QPushButton* getSixesButton() { return m_ui.btnSixes; }
+	const QPushButton* getAcesButton() const { return m_ui.btnAces; }
+	const QPushButton* getTwosButton() const { return m_ui.btnTwos; }
+	const QPushButton* getThreeButton() const { return m_ui.btnThrees; }
+	const QPushButton* getFoursButton() const { return m_ui.btnFours; }
+	const QPushButton* getFivesButton() const { return m_ui.btnFives; }
+	const QPushButton* getSixesButton() const { return m_ui.btnSixes; }
 	
-	const QPushButton* getBrelanButton() { return m_ui.btnBrelan; }
-	const QPushButton* getCarreButton() { return m_ui.btnCarre; }
-	const QPushButton* getFullButton() { return m_ui.btnFull; }
-	const QPushButton* getSmallStraightButton() { return m_ui.btnSmallStraight; }
-	const QPushButton* getLargeStraightButton() { return m_ui.btnLargeStraight; }
-	const QPushButton* getYamsButton() { return m_ui.btnYams; }
-	const QPushButton* getChanceButton() { return m_ui.btnChance; }
-	const QPushButton* getSuperYamsButton() { return m_ui.btnSuperYams; }
+	const QPushButton* getBrelanButton() const { return m_ui.btnBrelan; }
+	const QPushButton* getCarreButton() const { return m_ui.btnCarre; }
+	const QPushButton* getFullButton() const { return m_ui.btnFull; }
+	const QPushButton* getSmallStraightButton() const { return m_ui.btnSmallStraight; }
+	const QPushButton* getLargeStraightButton() const { return m_ui.btnLargeStraight; }
+	const QPushButton* getYamsButton() const { return m_ui.btnYams; }
+	const QPushButton* getChanceButton() const { return m_ui.btnChance; }
+	const QPushButton* getSuperYamsButton() const { return m_ui.btnSuperYams; }
 	
-	void addGrid(QPlayerGrid* const ptrQPlayerGrids);
+	void addGrid(QPlayerGrid* ptrQPlayerGrids);
 
+public slots:
+	void actualizeActionButtons(QPlayerGrid& playerGrid) const;
 };
 
 #endif // Q_PLAYER_GRIDS_WIDGET_H

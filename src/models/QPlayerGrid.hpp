@@ -63,72 +63,72 @@ private:
 	bool m_bIsChanceAlreadySet;
 
 public:
-	QPlayerGrid(QString sPlayerName);
+	QPlayerGrid(const QString& sPlayerName);
 	~QPlayerGrid();
 
-	QString getPlayerName() { return m_sPlayerName; }
+	QString getPlayerName() const { return m_sPlayerName; }
 
 
 	// Getter / Setter partie supérieure
-	const uint& getAces() { return m_iAces; }
-	const bool& IsAcesAlreadySet() { return m_bIsAcesAlreadySet; } 
-	void setAces(const uint& iValue);
+	const uint& getAces() const { return m_iAces; }
+	const bool& IsAcesAlreadySet() const { return m_bIsAcesAlreadySet; }
+	void setAces(uint iValue); 
 
-	const uint& getTwos() { return m_iTwos; }
-	const bool& IsTwosAlreadySet() { return m_bIsTwosAlreadySet; }
-	void setTwos(const uint& iValue);
+	const uint& getTwos() const { return m_iTwos; }
+	const bool& IsTwosAlreadySet() const { return m_bIsTwosAlreadySet; }
+	void setTwos(uint iValue);
 
-	const uint& getThrees() { return m_iThrees; }
-	const bool& IsThreesAlreadySet() { return m_bIsThreesAlreadySet; }
-	void setThrees(const uint& iValue);
+	const uint& getThrees() const { return m_iThrees; }
+	const bool& IsThreesAlreadySet() const { return m_bIsThreesAlreadySet; }
+	void setThrees(uint iValue);
 
-	const uint& getFours() { return m_iFours; }
-	const bool& IsFoursAlreadySet() { return m_bIsFoursAlreadySet; }
-	void setFours(const uint& iValue);
+	const uint& getFours() const { return m_iFours; }
+	const bool& IsFoursAlreadySet() const { return m_bIsFoursAlreadySet; }
+	void setFours(uint iValue);
 
-	const uint& getFives() { return m_iFives; }
-	const bool& IsFivesAlreadySet() { return m_bIsFivesAlreadySet; }
-	void setFives(const uint& iValue);
+	const uint& getFives() const  { return m_iFives; }
+	const bool& IsFivesAlreadySet() const { return m_bIsFivesAlreadySet; }
+	void setFives(uint iValue);
 
-	const uint& getSixes() { return m_iSixes; }
-	const bool& IsSixesAlreadySet() { return m_bIsSixesAlreadySet; }
-	void setSixes(const uint& iValue);
+	const uint& getSixes() const { return m_iSixes; }
+	const bool& IsSixesAlreadySet() const { return m_bIsSixesAlreadySet; }
+	void setSixes(uint iValue);
 
-	uint getBonus() { return (m_bIsBonus) ? 35 : 0; }
+	const uint& getBonus() const { return (m_bIsBonus) ? 35 : 0; }
 
 
 	// Getter / Setter partie inférieure
-	const uint& getBrelan() { return m_iBrelan; }
-	const bool& IsBrelanAlreadySet() { return m_bIsBrelanAlreadySet; }
-	void setBrelan(const uint& iValue);
+	const uint& getBrelan() const { return m_iBrelan; }
+	const bool& IsBrelanAlreadySet() const { return m_bIsBrelanAlreadySet; }
+	void setBrelan(uint iValue);
 
-	const uint& getCarre() { return m_iCarre; }
-	const bool& IsCarreAlreadySet() { return m_bIsCarreAlreadySet; }
-	void setCarre(const uint& iValue);
+	const uint& getCarre() const { return m_iCarre; }
+	const bool& IsCarreAlreadySet() const { return m_bIsCarreAlreadySet; }
+	void setCarre(uint iValue);
 
-	const uint getFull() { if (m_bIsFull) return 25; else return 0; }
-	const bool& IsFullAlreadySet() { return m_bIsFullAlreadySet; }
-	void setFull(const bool& bIsFull);
+	const uint& getFull() const { if (m_bIsFull) return 25; else return 0; }
+	const bool& IsFullAlreadySet() const { return m_bIsFullAlreadySet; }
+	void setFull(bool bIsFull);
 
-	const uint& getSmallStraight() { return (m_bIsSmallStraight) ? 30 : 0; }
-	const bool& IsSmallStraightAlreadySet() { return m_bIsSmallStraightAlreadySet; }
-	void setSmallStraight(const bool& bIsSmallStraight);
+	const uint& getSmallStraight() const { return (m_bIsSmallStraight) ? 30 : 0; }
+	const bool& IsSmallStraightAlreadySet() const { return m_bIsSmallStraightAlreadySet; }
+	void setSmallStraight(bool bIsSmallStraight);
 
-	const uint& getLargeStraight() { return (m_bIsLargeStraight) ? 40 : 0; }
-	const bool& IsLargeStraightAlreadySet() { return m_bIsLargeStraightAlreadySet; }
-	void setLargeStraight(const bool& bIsLargeStraight);
+	const uint& getLargeStraight() const { return (m_bIsLargeStraight) ? 40 : 0; }
+	const bool& IsLargeStraightAlreadySet() const { return m_bIsLargeStraightAlreadySet; }
+	void setLargeStraight(bool bIsLargeStraight);
 
-	const uint& getYams() { return (m_bIsYams) ? 50 : 0; }
-	const bool& IsYamsAlreadySet() { return m_bIsYamsAlreadySet; }
-	void setYams(const bool& bIsYams);
+	const uint& getYams() const { return (m_bIsYams) ? 50 : 0; }
+	const bool& IsYamsAlreadySet() const { return m_bIsYamsAlreadySet; }
+	void setYams(bool bIsYams);
 
-	const uint& getSuperYams() { return (m_bIsSuperYams) ? 100 : 0; }
-	const bool& IsSuperYamsAlreadySet() { return m_bIsSuperYamsAlreadySet; }
-	void setSuperYams(const bool& bIsSuperYams);
+	const uint& getSuperYams() const { return (m_bIsSuperYams) ? 100 : 0; }
+	const bool& IsSuperYamsAlreadySet() const { return m_bIsSuperYamsAlreadySet; }
+	void setSuperYams(bool bIsSuperYams);
 	
-	const uint& getChance() { return m_iChance; }
-	const bool& IsChanceAlreadySet() { return m_bIsChanceAlreadySet; }
-	void setChance(const uint& iChance);
+	const uint& getChance() const { return m_iChance; }
+	const bool& IsChanceAlreadySet() const { return m_bIsChanceAlreadySet; }
+	void setChance(uint iChance);
 
 
 	/**
@@ -136,28 +136,35 @@ public:
 	  *
 	  * @return uint
 	  */
-	const uint& getPreUpperTotal();
+	uint getPreUpperTotal() const;
 
 	/**
 	  * Retourne le total de la partie supérieure en contant le bonus si besoin est
 	  *
 	  * @return uint
 	  */
-	const uint& getUpperTotal() { return getPreUpperTotal() + getBonus(); }
+	uint getUpperTotal() const { return getPreUpperTotal() + getBonus(); }
 
 	/**
 	  * Retourne le total de la partie inférieure
 	  *
 	  * @return uint
 	  */
-	const uint& getLowerTotal();
+	uint getLowerTotal() const;
 
 	/**
 	  * Retourne le total de la partie
 	  *
 	  *	@return uint
 	  */
-	const uint& getTotal() { return getPreUpperTotal() + getLowerTotal(); }
+	uint getTotal() const { return getPreUpperTotal() + getLowerTotal(); }
+
+	/**
+	  * Retourne vrai si la grille est complétée
+	  *
+	  *	@return bool
+	  */
+	bool isGridFinished() const;
 
 private:
 	void _checkBonus();

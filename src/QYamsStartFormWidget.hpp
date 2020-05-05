@@ -17,7 +17,7 @@ class QYamsStartFormWidget : public QWidget
 	Q_OBJECT
 
 public:
-	QYamsStartFormWidget(QWidget *parent = Q_NULLPTR);
+	QYamsStartFormWidget(QWidget* parent = Q_NULLPTR);
 	~QYamsStartFormWidget();
 
 private:

@@ -21,12 +21,12 @@ public:
 	CDice(const cv::RotatedRect& diceRect);
 	~CDice();
 
-	const cv::RotatedRect& getDiceRect() { return m_diceRect; }
+	const cv::RotatedRect& getDiceRect() const { return m_diceRect; }
 	void setDiceRect(const cv::RotatedRect& diceRect) { m_diceRect = diceRect; }
 
-	const std::list<cv::RotatedRect>& getDotRects() { return m_lDotRects; }
+	const std::list<cv::RotatedRect>& getDotRects() const { return m_lDotRects; }
 	void addDotRect(const cv::RotatedRect& dotRect) { m_lDotRects.push_back(dotRect); }
-	unsigned int getCount() { return m_lDotRects.size(); }
+	uint getCount() const { return m_lDotRects.size(); }
 
 };
 

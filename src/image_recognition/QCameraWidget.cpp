@@ -48,13 +48,13 @@ void QCameraWidget::_findDices()
 {
 	list<shared_ptr<CDice>> lDetectedDices;
 
-	size_t nDicesDetectedByMinArea;
-	size_t nDicesDetectedByBlob;
+	size_t nDotsDetectedByMinArea;
+	size_t nDotsDetectedByBlob;
 
 	if (m_bThreadsEnabled)
 	{
-		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByMinArea, this, ref(lDetectedDices), ref(nDicesDetectedByMinArea)));
-		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByBlob, this, ref(nDicesDetectedByBlob)));
+		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByMinArea, this, ref(lDetectedDices), ref(nDotsDetectedByMinArea)));
+		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByBlob, this, ref(nDotsDetectedByBlob)));
 
 		for (unique_ptr<std::thread>& thread : m_lThreads)
 		{
@@ -65,13 +65,16 @@ void QCameraWidget::_findDices()
 	}
 	else
 	{
-		_findDicesByMinArea(lDetectedDices, nDicesDetectedByMinArea);
-		_findDicesByBlob(nDicesDetectedByBlob);
+		_findDicesByMinArea(lDetectedDices, nDotsDetectedByMinArea);
+		_findDicesByBlob(nDotsDetectedByBlob);
 	}
 
 	// On regarde si les deux algorithmes comptent le même total 
-	if (nDicesDetectedByMinArea == nDicesDetectedByBlob)
+	if (nDotsDetectedByMinArea == nDotsDetectedByBlob)
 	{
+
+		//QMessageBox::information(this, "", QString::number(nDotsDetectedByMinArea));
+		
 		if (m_lDices.size() == 0)
 		{
 			for (shared_ptr<CDice> dice : lDetectedDices)
@@ -101,16 +104,18 @@ void QCameraWidget::_findDices()
 
 					if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
 					{
-						m_lDicesBuffer.push_back(*itDice);
+						m_lDicesBuffer.push_back(*itDetectedDices);
+					}
+					else
+					{
+						//m_lDicesBuffer.push_back(*itDetectedDices);
 					}
 				}
-				else
-				{
-					m_lDicesBuffer.push_back(*itDetectedDices);
-				}
+				
+				m_lDicesBuffer.push_back(*itDetectedDices);
 			}
 		}
-
+		
 		// Si on détecte plus de 5 dés
 		if (m_lDicesBuffer.size() > 5)
 		{
@@ -135,12 +140,10 @@ void QCameraWidget::_findDices()
 			for (int i = 1; i < 7; ++i)
 			{
 				if (*pDiceSet != *m_pLastDiceSet)
-				{
-					//QMessageBox::information(this, "OK", QString::number(pDiceSet->getTotal()));
-					
+				{					
 					delete m_pLastDiceSet;
 					m_pLastDiceSet = pDiceSet;
-					
+
 					emit dicesUpdated(*pDiceSet);
 					break;
 				}
@@ -151,7 +154,7 @@ void QCameraWidget::_findDices()
 	}
 }
 
-void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices)
+void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices) const
 {
 	iNDetectedDices = 0;
 
@@ -246,7 +249,7 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 	}
 }
 
-void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices)
+void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices) const
 {
 	Mat grayImage;
 	cvtColor(m_matImageCaptured, grayImage, COLOR_BGR2GRAY);
@@ -269,21 +272,3 @@ void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices)
 
 	iNDetectedDices = keypoints.size();
 }
-
-//void QCameraWidget::_debug(int& const iNDicesDetectedByMinArea, int& const iNDicesDetectedByBlob)
-//{
-//	static bool bOK = false;
-//
-//	if (iNDicesDetectedByBlob == iNDicesDetectedByMinArea && iNDicesDetectedByBlob != 0) {
-//		bOK = true;
-//	}
-//	
-//	char buffer[64];
-//	sprintf_s(buffer, "Dice: %s : MinArea : %d - Blob : %d", (bOK) ? "OK" : "NN", iNDicesDetectedByMinArea, iNDicesDetectedByBlob);
-//	putText(m_matImageCaptured, buffer, Point(20, 30), FONT_HERSHEY_DUPLEX, 0.8, Scalar(0, 255, 0), 1, LINE_AA);
-//
-//	m_ui.label->setPixmap(QPixmap::fromImage(
-//		QImage(m_matImageCaptured.data, m_matImageCaptured.cols, m_matImageCaptured.rows, QImage::Format_RGB888)
-//		));
-//	m_ui.label->resize(m_ui.label->pixmap()->size());
-//}

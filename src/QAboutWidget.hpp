@@ -15,7 +15,7 @@ class QAboutWidget : public QWidget
 	Q_OBJECT
 
 public:
-	QAboutWidget(QWidget *parent = Q_NULLPTR);
+	QAboutWidget(QWidget* parent = Q_NULLPTR);
 	~QAboutWidget();
 	
 private:

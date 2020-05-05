@@ -46,6 +46,7 @@ set(QT_CLASS_HEADERS
     src/QYamsStartPlayerNameInputWidget.hpp
 
     src/QAboutWidget.hpp
+    src/QEndGameWidget.hpp
 )
 
 set(QT_CLASS_SRCS
@@ -60,6 +61,7 @@ set(QT_CLASS_SRCS
     src/QYamsStartPlayerNameInputWidget.cpp
 
     src/QAboutWidget.cpp
+    src/QEndGameWidget.cpp
 )
 
 set(QT_VIEW
@@ -72,6 +74,7 @@ set(QT_VIEW
     src/QYamsStartPlayerNameInputWidget.ui
 
     src/QAboutWidget.ui
+    src/QEndGameWidget.ui
 )
 
 set(QT_RESSOURCES

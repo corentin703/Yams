@@ -12,10 +12,10 @@ class QYamsStartPlayerNameInputWidget : public QWidget
 	Q_OBJECT
 
 public:
-	QYamsStartPlayerNameInputWidget(QWidget *parent = Q_NULLPTR);
+	QYamsStartPlayerNameInputWidget(QWidget* parent = Q_NULLPTR);
 	~QYamsStartPlayerNameInputWidget();
 
-	QLineEdit* const getPlayerNameInput() { return m_ui.iptPlayerName; }
+	QLineEdit* getPlayerNameInput() const { return m_ui.iptPlayerName; }
 
 private:
 	static int ms_iNbrPlayer;

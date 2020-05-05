@@ -1,14 +1,12 @@
 #include "QYams.hpp"
 #include <QtWidgets/QApplication>
 
-#include <QtDebug>
-#include <exception>
-
-#include "opencv2/core.hpp"
+//#include <QtDebug>
+//#include <exception>
 
 int main(int argc, char *argv[])
 {
-	try {
+	/*try {
 		QApplication a(argc, argv);
 
 		QYams w;
@@ -16,9 +14,15 @@ int main(int argc, char *argv[])
 
 		return a.exec();
 	}
-	catch (cv::Exception cvException) {
-		qDebug() << cvException.what();
-		qDebug() << cvException.msg.c_str();
-	}
-	
+	catch (std::exception exception) {
+		qDebug() << exception.what();
+	}*/
+
+
+	QApplication a(argc, argv);
+
+	QYams w;
+	w.show();
+
+	return a.exec();
 }

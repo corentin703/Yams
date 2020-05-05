@@ -32,15 +32,15 @@ class QCameraWidget : public QWidget
 	Q_OBJECT
 
 private:
-	const unsigned int MIN_DICE_WIDTH = 1000;
-	const unsigned int MAX_DICE_WIDTH = 6000;
-	const unsigned int MIN_DICE_DOT_WIDTH = 8;
-	const unsigned int MAX_DICE_DOT_WIDTH = 300;
+	const uint MIN_DICE_WIDTH = 1000;
+	const uint MAX_DICE_WIDTH = 6000;
+	const uint MIN_DICE_DOT_WIDTH = 8;
+	const uint MAX_DICE_DOT_WIDTH = 300;
 	const cv::Size DEFAULT_KERNEL = cv::Size(3, 3);
 
-	const unsigned int MIN_THRESHOLD = 170;
-	const unsigned int MAX_THRESHOLD = 255;
-	const unsigned int MIN_AREA = 10;
+	const uint MIN_THRESHOLD = 170;
+	const uint MAX_THRESHOLD = 255;
+	const uint MIN_AREA = 10;
 	const float MIN_CIRCULARITY = 0.3;
 	const float MIN_INERTIA_RATIO = 0.5;
 
@@ -57,7 +57,6 @@ private:
 	std::list<std::shared_ptr<CDice>> m_lDices;
 	std::list<std::shared_ptr<CDice>> m_lDicesBuffer;
 
-	//int* m_pLastDiceSet = new int[6]{ 0, 0, 0, 0, 0, 0 };
 	CDiceSet* m_pLastDiceSet;
 
 	bool m_bThreadsEnabled = false;
@@ -67,16 +66,13 @@ public:
 	QCameraWidget(QWidget* parent = Q_NULLPTR);
 	~QCameraWidget();
 
-	//std::list<std::shared_ptr<CDice>> getDices() { return m_lDices; };
-	//int* const getDiceSet() { return m_pLastDiceSet; }
-	CDiceSet& const getDiceSet() { return *m_pLastDiceSet; }
+	const CDiceSet& getDiceSet() const { return *m_pLastDiceSet; }
 
 private:
 	void _updateWindow();
 
-	void _findDicesByMinArea(std::list<std::shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices);
-	void _findDicesByBlob(size_t& iNDetectedDices);
-	//void _debug(int& const iNDicesDetectedByMinArea, int& const iNDicesDetectedByBlob);
+	void _findDicesByMinArea(std::list<std::shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices) const;
+	void _findDicesByBlob(size_t& iNDetectedDices) const;
 
 private slots: 
 	void _findDices();

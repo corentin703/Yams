@@ -17,6 +17,7 @@
 #include "image_recognition/QCameraWidget.hpp"
 #include "models/QPlayerGrid.hpp"
 #include "models/CDiceSet.hpp"
+#include "QEndGameWidget.hpp"
 
 #include "ui_QYams.h"
 
@@ -56,24 +57,24 @@ public:
 		THREE = 3,
 	};
 
-	QString m_YamsActionsNames[14] = {
-		QString::fromLatin1("As"),
-		QString::fromLatin1("Deux"),
-		QString::fromLatin1("Trois"),
-		QString::fromLatin1("Quatre"),
-		QString::fromLatin1("Cinq"),
-		QString::fromLatin1("Six"),
-
-		QString::fromLatin1("Brelan"),
-		QString::fromLatin1("Carré"),
-		QString::fromLatin1("Full"),
-		QString::fromLatin1("Petite suite"),
-		QString::fromLatin1("Grande suite"),
-		QString::fromLatin1("Yams"),
-		QString::fromLatin1("Super Yams"),
-		QString::fromLatin1("Chance"),
+	std::map<EYamsActions, QString> m_YamsActionsNames = {
+		{EYamsActions::ACES, QString::fromLatin1("As")},
+		{EYamsActions::TWOS, QString::fromLatin1("Deux")},
+		{EYamsActions::THREES, QString::fromLatin1("Trois")},
+		{EYamsActions::FOURS, QString::fromLatin1("Quatre")},
+		{EYamsActions::FiVES, QString::fromLatin1("Cinq")},
+		{EYamsActions::SIXES, QString::fromLatin1("Six")},
+		
+		{EYamsActions::BRELAN, QString::fromLatin1("Brelan")},
+		{EYamsActions::CARRE, QString::fromLatin1("Carré")},
+		{EYamsActions::FULL, QString::fromLatin1("Full")},
+		{EYamsActions::SMALL_STRAIGHT, QString::fromLatin1("Petite suite")},
+		{EYamsActions::LARGE_STRAIGHT, QString::fromLatin1("Grande suite")},
+		{EYamsActions::YAMS, QString::fromLatin1("Yams")},
+		{EYamsActions::SUPER_YAMS, QString::fromLatin1("Super Yams")},
+		{EYamsActions::CHANCE, QString::fromLatin1("Chance")},
 	};
-
+	
 private:
 
 	Ui::QYams m_ui;
@@ -81,9 +82,10 @@ private:
 	QYamsStartFormWidget* m_ptrQYamsStartFrom;
 	QCameraWidget* m_ptrQCameraWidget;
 	QAboutWidget* m_ptrAboutWindow = nullptr;
+	QEndGameWidget* m_ptrEndGameWidget = nullptr;
+	
 
 	std::list<QPlayerGrid*> m_lpQPlayerGrids;
-	QPlayerGrid* m_ptrCurrentPlayer;
 
 	int m_iNbrTurn = 0;
 	std::list<QPlayerGrid*>::iterator m_itPlayerGrids;
@@ -97,11 +99,12 @@ public:
 
 	
 private:
-	void _updateChoices(std::list<CDice>& const lDices);
 	void closeEvent(QCloseEvent* event) override;
-	std::shared_ptr<std::vector<std::pair<QYams::EYamsActions, uint>>> const _simulate(CDiceSet& diceSet);
+	const std::shared_ptr<std::vector<std::pair<QYams::EYamsActions, uint>>> _simulate(CDiceSet& diceSet) const;
 
-	void _resetChoices(const EChoices& choice = ANYTHING);
+	void _nextPlayer();
+	void _onEndGame();
+	void _resetChoices(EChoices choice = ANYTHING);
 	
 	
 public slots:
@@ -109,11 +112,14 @@ public slots:
 	void restart();
 	void quit();
 
-	void doAction(const EYamsActions& selectedAction);
+	void doAction(EYamsActions selectedAction);
 	void updateTurn(CDiceSet& diceSet);
 	void launchGame(std::list<QString>* ptrLPlayerNames);
 	
 	void showAboutWindow();
+
+signals:
+	void playerUpdated(QPlayerGrid& playerGrid);
 
 
 };
