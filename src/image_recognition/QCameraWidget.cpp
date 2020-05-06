@@ -20,13 +20,19 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	m_qTimer.start(20);
 
 	m_ui.setupUi(this);
-
-	m_pLastDiceSet = new CDiceSet();
 }
 
 QCameraWidget::~QCameraWidget()
 {
 	m_videoCapture.release();
+}
+
+void QCameraWidget::onWrongDetection()
+{
+	m_lDices.clear();
+	m_pLastDiceSet = nullptr;
+
+	m_bIsWrongDetection = true;
 }
 
 void QCameraWidget::_updateWindow()
@@ -72,47 +78,46 @@ void QCameraWidget::_findDices()
 	// On regarde si les deux algorithmes comptent le même total 
 	if (nDotsDetectedByMinArea == nDotsDetectedByBlob)
 	{
-
-		//QMessageBox::information(this, "", QString::number(nDotsDetectedByMinArea));
-		
 		if (m_lDices.size() == 0)
 		{
 			for (shared_ptr<CDice> dice : lDetectedDices)
 			{
-				m_lDices.push_back(dice);
+				m_lDicesBuffer.push_back(dice);
 			}
 			
-			return;
+			//return;
 		}
-
-		// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d'être détéctés
-		for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); itDetectedDices++)
+		else
 		{
-			for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); itDice++)
+			// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d'être détéctés
+			for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); itDetectedDices++)
 			{
-				// Si le dé est un faux positif ou si on l'a déjà traité, on passe
-				if (((*itDetectedDices)->getCount() == 0) || (*itDetectedDices)->getCount() > 6 || (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end()))
+				for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); itDice++)
 				{
-					continue;
-				}
-
-				// Si le numéro est le même, on compare la position pour savoir si c'est le même dé (avec une marge d'erreur / tolérance)
-				if ((*itDetectedDices)->getCount() == (*itDice)->getCount())
-				{
-					const float fX = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().x - (*itDice)->getDiceRect().boundingRect().x);
-					const float fY = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().y - (*itDice)->getDiceRect().boundingRect().y);
-
-					if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
+					// Si le dé est un faux positif ou si on l'a déjà traité, on passe
+					if (((*itDetectedDices)->getCount() == 0) || (*itDetectedDices)->getCount() > 6 || (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end()))
 					{
-						m_lDicesBuffer.push_back(*itDetectedDices);
+						continue;
 					}
-					else
+
+					// Si le numéro est le même, on compare la position pour savoir si c'est le même dé (avec une marge d'erreur / tolérance)
+					if ((*itDetectedDices)->getCount() == (*itDice)->getCount())
 					{
-						//m_lDicesBuffer.push_back(*itDetectedDices);
+						const float fX = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().x - (*itDice)->getDiceRect().boundingRect().x);
+						const float fY = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().y - (*itDice)->getDiceRect().boundingRect().y);
+
+						if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
+						{
+							m_lDicesBuffer.push_back(*itDice);
+						}
+						else
+						{
+							m_lDicesBuffer.push_back(*itDetectedDices);
+						}
 					}
+
+					m_lDicesBuffer.push_back(*itDetectedDices);
 				}
-				
-				m_lDicesBuffer.push_back(*itDetectedDices);
 			}
 		}
 		
@@ -130,7 +135,7 @@ void QCameraWidget::_findDices()
 			m_lDices = m_lDicesBuffer;
 
 			// On compte les dés par capacité
-			CDiceSet* pDiceSet = new CDiceSet();
+			shared_ptr<CDiceSet> pDiceSet = make_shared<CDiceSet>();
 			for (shared_ptr<CDice>& const dice : m_lDices)
 			{
 				(*pDiceSet)[dice->getCount()]++ ;
@@ -139,12 +144,16 @@ void QCameraWidget::_findDices()
 			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
 			for (int i = 1; i < 7; ++i)
 			{
-				if (*pDiceSet != *m_pLastDiceSet)
+				if (m_bIsWrongDetection)
+					QMessageBox::information(this, "OK", "OK");
+				
+				if (m_pLastDiceSet == nullptr || *pDiceSet != *m_pLastDiceSet)
 				{					
-					delete m_pLastDiceSet;
 					m_pLastDiceSet = pDiceSet;
 
-					emit dicesUpdated(*pDiceSet);
+					emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
+					m_bIsWrongDetection = false;
+					
 					break;
 				}
 			}

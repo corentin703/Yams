@@ -21,14 +21,7 @@
     <number>4</number>
    </property>
    <item>
-    <layout class="QVBoxLayout" name="lytInputs">
-     <item>
-      <widget class="QYamsStartPlayerNameInputWidget" name="player_1" native="true"/>
-     </item>
-     <item>
-      <widget class="QYamsStartPlayerNameInputWidget" name="player_2" native="true"/>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="lytInputs"/>
    </item>
    <item>
     <widget class="QPushButton" name="btnAddPlayer">
@@ -53,14 +46,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QYamsStartPlayerNameInputWidget</class>
-   <extends>QWidget</extends>
-   <header>QYamsStartPlayerNameInputWidget.hpp</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

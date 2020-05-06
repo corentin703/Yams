@@ -69,7 +69,7 @@ void QPlayerGrid::setAces(uint iValue)
 	m_bIsAcesAlreadySet = true;
 	
 	_checkBonus();
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setTwos(uint iValue)
@@ -83,7 +83,7 @@ void QPlayerGrid::setTwos(uint iValue)
 	m_bIsTwosAlreadySet = true;
 	
 	_checkBonus();
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setThrees(uint iValue)
@@ -97,7 +97,7 @@ void QPlayerGrid::setThrees(uint iValue)
 	m_bIsThreesAlreadySet = true;
 	
 	_checkBonus();
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setFours(uint iValue) 
@@ -111,7 +111,7 @@ void QPlayerGrid::setFours(uint iValue)
 	m_bIsFoursAlreadySet = true;
 	
 	_checkBonus();
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setFives(uint iValue)
@@ -125,7 +125,7 @@ void QPlayerGrid::setFives(uint iValue)
 	m_bIsFivesAlreadySet = true;
 	
 	_checkBonus();
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setSixes(uint iValue)
@@ -139,7 +139,7 @@ void QPlayerGrid::setSixes(uint iValue)
 	m_bIsSixesAlreadySet = true;
 	
 	_checkBonus();
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setBrelan(uint iValue)
@@ -152,7 +152,7 @@ void QPlayerGrid::setBrelan(uint iValue)
 	m_iBrelan = iValue;
 	m_bIsBrelanAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setCarre(uint iValue)
@@ -165,7 +165,7 @@ void QPlayerGrid::setCarre(uint iValue)
 	m_iCarre = iValue;
 	m_bIsCarreAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setFull(bool bIsFull)
@@ -178,7 +178,7 @@ void QPlayerGrid::setFull(bool bIsFull)
 	m_bIsFull = bIsFull;
 	m_bIsFullAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setSmallStraight(bool bIsSmallStraight)
@@ -191,7 +191,7 @@ void QPlayerGrid::setSmallStraight(bool bIsSmallStraight)
 	m_bIsSmallStraight = bIsSmallStraight;
 	m_bIsSmallStraightAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setLargeStraight(bool bIsLargeStraight)
@@ -204,7 +204,7 @@ void QPlayerGrid::setLargeStraight(bool bIsLargeStraight)
 	m_bIsLargeStraight = bIsLargeStraight;
 	m_bIsLargeStraightAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setYams(bool bIsYams)
@@ -217,7 +217,7 @@ void QPlayerGrid::setYams(bool bIsYams)
 	m_bIsYams = bIsYams;
 	m_bIsYamsAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setSuperYams(bool bIsSuperYams)
@@ -230,20 +230,20 @@ void QPlayerGrid::setSuperYams(bool bIsSuperYams)
 	m_bIsSuperYams = bIsSuperYams;
 	m_bIsSuperYamsAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 void QPlayerGrid::setChance(uint iChance) 
 {
 	if (m_bIsChanceAlreadySet)
 	{
-		throw new exception("Le Yams a déjà été défini");
+		throw new exception("La chance a déjà été définie");
 	}
 	
 	m_iChance = iChance;
 	m_bIsChanceAlreadySet = true;
 	
-	emit gridUpdated();
+	emit gridUpdated(this);
 }
 
 
@@ -276,21 +276,21 @@ uint QPlayerGrid::getLowerTotal() const
 bool QPlayerGrid::isGridFinished() const
 {
 	return (
-		IsAcesAlreadySet() &&
-		IsTwosAlreadySet() &&
-		IsThreesAlreadySet() &&
-		IsFoursAlreadySet() &&
-		IsFivesAlreadySet() &&
-		IsSixesAlreadySet() &&
+		isAcesAlreadySet() &&
+		isTwosAlreadySet() &&
+		isThreesAlreadySet() &&
+		isFoursAlreadySet() &&
+		isFivesAlreadySet() &&
+		isSixesAlreadySet() &&
 
-		IsBrelanAlreadySet() &&
-		IsCarreAlreadySet() &&
-		IsFullAlreadySet() &&
-		IsSmallStraightAlreadySet() &&
-		IsLargeStraightAlreadySet() &&
-		IsYamsAlreadySet() &&
+		isBrelanAlreadySet() &&
+		isCarreAlreadySet() &&
+		isFullAlreadySet() &&
+		isSmallStraightAlreadySet() &&
+		isLargeStraightAlreadySet() &&
+		isYamsAlreadySet() &&
 		IsSuperYamsAlreadySet() &&
-		IsChanceAlreadySet()
+		isChanceAlreadySet()
 	);
 }
 
@@ -299,6 +299,6 @@ void QPlayerGrid::_checkBonus()
 	if (getPreUpperTotal() > 63)
 	{
 		m_bIsBonus = true;
-		emit gridUpdated();
+		emit gridUpdated(this);
 	};
 }

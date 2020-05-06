@@ -114,6 +114,13 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="btnRedetection">
+             <property name="text">
+              <string>Redétecter</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </item>
         </layout>
@@ -171,8 +178,8 @@
     <property name="title">
      <string>Fichier</string>
     </property>
-    <addaction name="actionRecommencer"/>
-    <addaction name="actionQuitte"/>
+    <addaction name="actionRestart"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menu_propos">
     <property name="title">
@@ -185,7 +192,7 @@
    <addaction name="menuFichier"/>
    <addaction name="menu_propos"/>
   </widget>
-  <action name="actionQuitte">
+  <action name="actionQuit">
    <property name="text">
     <string>Quitter</string>
    </property>
@@ -203,7 +210,7 @@
     <string>Règles du jeu</string>
    </property>
   </action>
-  <action name="actionRecommencer">
+  <action name="actionRestart">
    <property name="text">
     <string>Recommencer</string>
    </property>

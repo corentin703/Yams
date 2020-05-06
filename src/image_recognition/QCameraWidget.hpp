@@ -57,7 +57,8 @@ private:
 	std::list<std::shared_ptr<CDice>> m_lDices;
 	std::list<std::shared_ptr<CDice>> m_lDicesBuffer;
 
-	CDiceSet* m_pLastDiceSet;
+	std::shared_ptr<CDiceSet> m_pLastDiceSet = nullptr;
+	bool m_bIsWrongDetection = false;
 
 	bool m_bThreadsEnabled = false;
 	std::list<std::unique_ptr<std::thread>> m_lThreads;
@@ -66,8 +67,11 @@ public:
 	QCameraWidget(QWidget* parent = Q_NULLPTR);
 	~QCameraWidget();
 
-	const CDiceSet& getDiceSet() const { return *m_pLastDiceSet; }
+	const std::shared_ptr<CDiceSet>& getDiceSet() const { return m_pLastDiceSet; }
 
+public slots:
+	void onWrongDetection();
+	
 private:
 	void _updateWindow();
 
@@ -79,7 +83,7 @@ private slots:
 
 signals:
 	void cameraImgUpdated();
-	void dicesUpdated(CDiceSet& diceSet);
+	void dicesUpdated(CDiceSet& diceSet, bool isDetectionCorrection);
 };
 
 #endif // Q_CAMERAWIDGET_H

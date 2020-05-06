@@ -5,16 +5,32 @@
 
 // STL
 #include <list>
+#include <memory>
 
 // Qt
 #include <QWidget>
-#include "ui_QYamsStartFormWidget.h"
+#include <QLabel>
+#include <QLineEdit>
+#include <QMessageBox>
 
-#include "QYamsStartPlayerNameInputWidget.hpp"
+#include "ui_QYamsStartFormWidget.h"
 
 class QYamsStartFormWidget : public QWidget
 {
 	Q_OBJECT
+
+	class CPlayerForm
+	{
+		QHBoxLayout* m_HBoxLayout;
+		QLabel* m_lblPlayerNum;
+		QLineEdit* m_iptPlayerName;
+		
+	public:
+		CPlayerForm(QYamsStartFormWidget* parent, uint iPlayerNumber);
+
+		QString getInputName() const { return m_iptPlayerName->text(); }
+		QHBoxLayout* getQWidget() const { return m_HBoxLayout; }
+	};
 
 public:
 	QYamsStartFormWidget(QWidget* parent = Q_NULLPTR);
@@ -23,7 +39,7 @@ public:
 private:
 	Ui::QYamsStartFormWidget m_ui;
 
-	std::list<QLineEdit*> m_lPlayerNameInputs;
+	std::list<std::unique_ptr<CPlayerForm>> m_lPlayerNameInputs;
 
 private slots:
 	void addPlayerNameInput();

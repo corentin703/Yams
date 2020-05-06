@@ -4,22 +4,59 @@
 #pragma once
 
 // STL
-//#include <list>
+#include <map>
 #include <memory>
 
 // Qt
 #include <QWidget>
 #include "ui_QPlayerGridsWidget.h"
 
-#include "QPlayerGridWidget.hpp"
 #include "models/QPlayerGrid.hpp"
 
 class QPlayerGridsWidget : public QWidget
 {
 	Q_OBJECT
 
+	class CPlayerGridView
+	{
+	public :
+		QLabel* lblPlayerName;
+		//QFrame* lineName;
+		
+		QLabel* lblAs;
+		QLabel* lblTwos;
+		QLabel* lblThrees;
+		QLabel* lblFours;
+		QLabel* lblFives;
+		QLabel* lblSixes;
+		QLabel* lblPreTotalSup;
+		QLabel* lblBonus;
+		QLabel* lblTotalSup;
+
+		//QFrame* lineSup;
+		
+		QLabel* lblBrelan;
+		QLabel* lblCarre;
+		QLabel* lblFull;
+		QLabel* lblSmallStraight;
+		QLabel* lblLargeStraight;
+		QLabel* lblYams;
+		QLabel* lblSuperYams;
+		QLabel* lblChance;
+		QLabel* lblTotalInf;
+
+		//QFrame* lineInf;
+		
+		QLabel* lblTotal;
+
+		CPlayerGridView(QPlayerGridsWidget* parent, const QString& sPlayerName);
+	};
+	
 private:
 	Ui::QPlayerGridsWidget m_ui;
+
+	std::map<QPlayerGrid*, std::unique_ptr<CPlayerGridView>> m_mapPlayerGridViews;
+	
 
 public:
 	QPlayerGridsWidget(QWidget *parent = Q_NULLPTR);
@@ -41,10 +78,11 @@ public:
 	const QPushButton* getChanceButton() const { return m_ui.btnChance; }
 	const QPushButton* getSuperYamsButton() const { return m_ui.btnSuperYams; }
 	
-	void addGrid(QPlayerGrid* ptrQPlayerGrids);
+	void addGrid(QPlayerGrid* ptrQPlayerGrid);
 
 public slots:
 	void actualizeActionButtons(QPlayerGrid& playerGrid) const;
+	void updateGrid(QPlayerGrid* ptrQPlayerGrid);
 };
 
 #endif // Q_PLAYER_GRIDS_WIDGET_H

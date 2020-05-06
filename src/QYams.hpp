@@ -113,7 +113,7 @@ public slots:
 	void quit();
 
 	void doAction(EYamsActions selectedAction);
-	void updateTurn(CDiceSet& diceSet);
+	void updateTurn(CDiceSet& diceSet, bool isDetectionCorrection);
 	void launchGame(std::list<QString>* ptrLPlayerNames);
 	
 	void showAboutWindow();

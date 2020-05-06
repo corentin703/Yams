@@ -71,27 +71,27 @@ public:
 
 	// Getter / Setter partie supérieure
 	const uint& getAces() const { return m_iAces; }
-	const bool& IsAcesAlreadySet() const { return m_bIsAcesAlreadySet; }
+	const bool& isAcesAlreadySet() const { return m_bIsAcesAlreadySet; }
 	void setAces(uint iValue); 
 
 	const uint& getTwos() const { return m_iTwos; }
-	const bool& IsTwosAlreadySet() const { return m_bIsTwosAlreadySet; }
+	const bool& isTwosAlreadySet() const { return m_bIsTwosAlreadySet; }
 	void setTwos(uint iValue);
 
 	const uint& getThrees() const { return m_iThrees; }
-	const bool& IsThreesAlreadySet() const { return m_bIsThreesAlreadySet; }
+	const bool& isThreesAlreadySet() const { return m_bIsThreesAlreadySet; }
 	void setThrees(uint iValue);
 
 	const uint& getFours() const { return m_iFours; }
-	const bool& IsFoursAlreadySet() const { return m_bIsFoursAlreadySet; }
+	const bool& isFoursAlreadySet() const { return m_bIsFoursAlreadySet; }
 	void setFours(uint iValue);
 
 	const uint& getFives() const  { return m_iFives; }
-	const bool& IsFivesAlreadySet() const { return m_bIsFivesAlreadySet; }
+	const bool& isFivesAlreadySet() const { return m_bIsFivesAlreadySet; }
 	void setFives(uint iValue);
 
 	const uint& getSixes() const { return m_iSixes; }
-	const bool& IsSixesAlreadySet() const { return m_bIsSixesAlreadySet; }
+	const bool& isSixesAlreadySet() const { return m_bIsSixesAlreadySet; }
 	void setSixes(uint iValue);
 
 	const uint& getBonus() const { return (m_bIsBonus) ? 35 : 0; }
@@ -99,27 +99,27 @@ public:
 
 	// Getter / Setter partie inférieure
 	const uint& getBrelan() const { return m_iBrelan; }
-	const bool& IsBrelanAlreadySet() const { return m_bIsBrelanAlreadySet; }
+	const bool& isBrelanAlreadySet() const { return m_bIsBrelanAlreadySet; }
 	void setBrelan(uint iValue);
 
 	const uint& getCarre() const { return m_iCarre; }
-	const bool& IsCarreAlreadySet() const { return m_bIsCarreAlreadySet; }
+	const bool& isCarreAlreadySet() const { return m_bIsCarreAlreadySet; }
 	void setCarre(uint iValue);
 
 	const uint& getFull() const { if (m_bIsFull) return 25; else return 0; }
-	const bool& IsFullAlreadySet() const { return m_bIsFullAlreadySet; }
+	const bool& isFullAlreadySet() const { return m_bIsFullAlreadySet; }
 	void setFull(bool bIsFull);
 
 	const uint& getSmallStraight() const { return (m_bIsSmallStraight) ? 30 : 0; }
-	const bool& IsSmallStraightAlreadySet() const { return m_bIsSmallStraightAlreadySet; }
+	const bool& isSmallStraightAlreadySet() const { return m_bIsSmallStraightAlreadySet; }
 	void setSmallStraight(bool bIsSmallStraight);
 
 	const uint& getLargeStraight() const { return (m_bIsLargeStraight) ? 40 : 0; }
-	const bool& IsLargeStraightAlreadySet() const { return m_bIsLargeStraightAlreadySet; }
+	const bool& isLargeStraightAlreadySet() const { return m_bIsLargeStraightAlreadySet; }
 	void setLargeStraight(bool bIsLargeStraight);
 
 	const uint& getYams() const { return (m_bIsYams) ? 50 : 0; }
-	const bool& IsYamsAlreadySet() const { return m_bIsYamsAlreadySet; }
+	const bool& isYamsAlreadySet() const { return m_bIsYamsAlreadySet; }
 	void setYams(bool bIsYams);
 
 	const uint& getSuperYams() const { return (m_bIsSuperYams) ? 100 : 0; }
@@ -127,7 +127,7 @@ public:
 	void setSuperYams(bool bIsSuperYams);
 	
 	const uint& getChance() const { return m_iChance; }
-	const bool& IsChanceAlreadySet() const { return m_bIsChanceAlreadySet; }
+	const bool& isChanceAlreadySet() const { return m_bIsChanceAlreadySet; }
 	void setChance(uint iChance);
 
 
@@ -170,7 +170,7 @@ private:
 	void _checkBonus();
 
 signals:
-	void gridUpdated();
+	void gridUpdated(QPlayerGrid* playerGrid);
 
 };
 

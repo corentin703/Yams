@@ -19,7 +19,7 @@ class CDiceSet
 public:
 	CDiceSet();
 	
-	uint getAs() const { return m_iAs; }
+	uint getAces() const { return m_iAs; }
 	//void setAs(uint iAs) const { m_iAs = iAs; }
 	
 	uint getTwos() const { return 2 * m_iTwos; }
@@ -37,7 +37,7 @@ public:
 	uint getSixes() const { return 6 * m_iSixes; }
 	//void setSixes(uint iSixes) const { m_iSixes = iSixes; }
 
-	uint getTotal() const { return getAs() + getTwos() + getThrees() + getFours() + getFives() + getSixes(); }
+	uint getTotal() const { return getAces() + getTwos() + getThrees() + getFours() + getFives() + getSixes(); }
 
 	uint& operator[](uint iDiceNumber);
 	
