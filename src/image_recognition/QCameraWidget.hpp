@@ -33,13 +33,16 @@ class QCameraWidget : public QWidget
 
 private:
 	const uint MIN_DICE_WIDTH = 1000;
-	const uint MAX_DICE_WIDTH = 6000;
-	const uint MIN_DICE_DOT_WIDTH = 8;
-	const uint MAX_DICE_DOT_WIDTH = 300;
-	const cv::Size DEFAULT_KERNEL = cv::Size(3, 3);
+	const uint MAX_DICE_WIDTH = 4000;
+	const uint MIN_DICE_DOT_WIDTH = 10;
+	const uint MAX_DICE_DOT_WIDTH = 100;
+	const cv::Size DEFAULT_KERNEL = cv::Size(5, 5);
 
-	const uint MIN_THRESHOLD = 170;
-	const uint MAX_THRESHOLD = 255;
+	const uint MIN_CANNY_THRESHOLD = 200;
+	const uint MAX_CANNY_THRESHOLD = 255;
+
+	const uint MIN_BLOB_THRESHOLD = 160;
+	const uint MAX_BLOB_THRESHOLD = 255;
 	const uint MIN_AREA = 10;
 	const float MIN_CIRCULARITY = 0.3;
 	const float MIN_INERTIA_RATIO = 0.5;
@@ -66,8 +69,6 @@ private:
 public:
 	QCameraWidget(QWidget* parent = Q_NULLPTR);
 	~QCameraWidget();
-
-	const std::shared_ptr<CDiceSet>& getDiceSet() const { return m_pLastDiceSet; }
 
 public slots:
 	void onWrongDetection();

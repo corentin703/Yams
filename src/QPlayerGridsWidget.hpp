@@ -21,7 +21,6 @@ class QPlayerGridsWidget : public QWidget
 	{
 	public :
 		QLabel* lblPlayerName;
-		//QFrame* lineName;
 		
 		QLabel* lblAs;
 		QLabel* lblTwos;
@@ -32,8 +31,6 @@ class QPlayerGridsWidget : public QWidget
 		QLabel* lblPreTotalSup;
 		QLabel* lblBonus;
 		QLabel* lblTotalSup;
-
-		//QFrame* lineSup;
 		
 		QLabel* lblBrelan;
 		QLabel* lblCarre;
@@ -44,12 +41,11 @@ class QPlayerGridsWidget : public QWidget
 		QLabel* lblSuperYams;
 		QLabel* lblChance;
 		QLabel* lblTotalInf;
-
-		//QFrame* lineInf;
 		
 		QLabel* lblTotal;
 
 		CPlayerGridView(QPlayerGridsWidget* parent, const QString& sPlayerName);
+		~CPlayerGridView();
 	};
 	
 private:
@@ -79,6 +75,8 @@ public:
 	const QPushButton* getSuperYamsButton() const { return m_ui.btnSuperYams; }
 	
 	void addGrid(QPlayerGrid* ptrQPlayerGrid);
+	void removeGrid(QPlayerGrid* ptrQPlayerGrid);
+	void enableActionButtons(bool bEnable) const;
 
 public slots:
 	void actualizeActionButtons(QPlayerGrid& playerGrid) const;

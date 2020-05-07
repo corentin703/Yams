@@ -80,6 +80,11 @@ void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
 
 }
 
+void QPlayerGridsWidget::removeGrid(QPlayerGrid* ptrQPlayerGrid)
+{
+	m_mapPlayerGridViews.erase(ptrQPlayerGrid);
+}
+
 void QPlayerGridsWidget::actualizeActionButtons(QPlayerGrid& playerGrid) const
 {
 	m_ui.btnAces->setEnabled(!playerGrid.isAcesAlreadySet());
@@ -127,41 +132,95 @@ void QPlayerGridsWidget::updateGrid(QPlayerGrid* ptrQPlayerGrid)
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTotal->setText(QString::number(ptrQPlayerGrid->getTotal()));
 }
 
+void QPlayerGridsWidget::enableActionButtons(bool bEnable) const
+{
+	m_ui.btnAces->setEnabled(bEnable);
+	m_ui.btnTwos->setEnabled(bEnable);
+	m_ui.btnThrees->setEnabled(bEnable);
+	m_ui.btnFours->setEnabled(bEnable);
+	m_ui.btnFives->setEnabled(bEnable);
+	m_ui.btnSixes->setEnabled(bEnable);
+
+	m_ui.btnBrelan->setEnabled(bEnable);
+	m_ui.btnCarre->setEnabled(bEnable);
+	m_ui.btnFull->setEnabled(bEnable);
+	m_ui.btnSmallStraight->setEnabled(bEnable);
+	m_ui.btnLargeStraight->setEnabled(bEnable);
+	m_ui.btnYams->setEnabled(bEnable);
+	m_ui.btnSuperYams->setEnabled(bEnable);
+	m_ui.btnChance->setEnabled(bEnable);
+}
+
 QPlayerGridsWidget::CPlayerGridView::CPlayerGridView(QPlayerGridsWidget* parent, const QString& sPlayerName)
 {
 	lblPlayerName = new QLabel(sPlayerName, parent);
-	
-	//lineName = new QFrame(parent);
-	//lineName->setFrameShape(QFrame::HLine);
-	//lineName->setFrameShadow(QFrame::Sunken);
+	lblPlayerName->setAlignment(Qt::AlignHCenter);
 	
 	lblAs = new QLabel("0", parent);
+	lblAs->setAlignment(Qt::AlignHCenter);
 	lblTwos = new QLabel("0", parent);
+	lblTwos->setAlignment(Qt::AlignHCenter);
 	lblThrees = new QLabel("0", parent);
+	lblThrees->setAlignment(Qt::AlignHCenter);
 	lblFours = new QLabel("0", parent);
+	lblFours->setAlignment(Qt::AlignHCenter);
 	lblFives = new QLabel("0", parent);
+	lblFives->setAlignment(Qt::AlignHCenter);
 	lblSixes = new QLabel("0", parent);
+	lblSixes->setAlignment(Qt::AlignHCenter);
 	lblPreTotalSup = new QLabel("0", parent);
+	lblPreTotalSup->setAlignment(Qt::AlignHCenter);
 	lblBonus = new QLabel("0", parent);
+	lblBonus->setAlignment(Qt::AlignHCenter);
 	lblTotalSup = new QLabel("0", parent);
-
-	//lineSup = new QFrame(parent);
-	//lineSup->setFrameShape(QFrame::HLine);
-	//lineSup->setFrameShadow(QFrame::Sunken);
+	lblTotalSup->setAlignment(Qt::AlignHCenter);
 
 	lblBrelan = new QLabel("0", parent);
+	lblBrelan->setAlignment(Qt::AlignHCenter);
 	lblCarre = new QLabel("0", parent);
+	lblCarre->setAlignment(Qt::AlignHCenter);
 	lblFull = new QLabel("0", parent);
+	lblFull->setAlignment(Qt::AlignHCenter);
 	lblSmallStraight = new QLabel("0", parent);
+	lblSmallStraight->setAlignment(Qt::AlignHCenter);
 	lblLargeStraight = new QLabel("0", parent);
+	lblLargeStraight->setAlignment(Qt::AlignHCenter);
 	lblYams = new QLabel("0", parent);
+	lblYams->setAlignment(Qt::AlignHCenter);
 	lblSuperYams = new QLabel("0", parent);
+	lblSuperYams->setAlignment(Qt::AlignHCenter);
 	lblChance = new QLabel("0", parent);
+	lblChance->setAlignment(Qt::AlignHCenter);
 	lblTotalInf = new QLabel("0", parent);
-
-	//lineInf = new QFrame(parent);
-	//lineInf->setFrameShape(QFrame::HLine);
-	//lineInf->setFrameShadow(QFrame::Sunken);
+	lblTotalInf->setAlignment(Qt::AlignHCenter);
 
 	lblTotal = new QLabel("0", parent);
+	lblTotal->setAlignment(Qt::AlignHCenter);
+}
+
+QPlayerGridsWidget::CPlayerGridView::~CPlayerGridView()
+{
+	delete lblPlayerName;
+	 
+	delete lblAs;
+	delete lblTwos;
+	delete lblThrees;
+	delete lblFours;
+	delete lblFives;
+	delete lblSixes;
+	delete lblPreTotalSup;
+	delete lblBonus;
+	delete lblTotalSup;
+	 
+	delete lblBrelan;
+	delete lblCarre;
+	delete lblFull;
+	delete lblSmallStraight;
+	delete lblLargeStraight;
+	delete lblYams;
+	delete lblSuperYams;
+	delete lblChance;
+	delete lblTotalInf;
+	 
+	delete lblTotal;
 }

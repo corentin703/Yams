@@ -20,6 +20,8 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	m_qTimer.start(20);
 
 	m_ui.setupUi(this);
+
+	m_bThreadsEnabled = false;
 }
 
 QCameraWidget::~QCameraWidget()
@@ -31,7 +33,6 @@ void QCameraWidget::onWrongDetection()
 {
 	m_lDices.clear();
 	m_pLastDiceSet = nullptr;
-
 	m_bIsWrongDetection = true;
 }
 
@@ -81,11 +82,7 @@ void QCameraWidget::_findDices()
 		if (m_lDices.size() == 0)
 		{
 			for (shared_ptr<CDice> dice : lDetectedDices)
-			{
 				m_lDicesBuffer.push_back(dice);
-			}
-			
-			//return;
 		}
 		else
 		{
@@ -107,13 +104,9 @@ void QCameraWidget::_findDices()
 						const float fY = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().y - (*itDice)->getDiceRect().boundingRect().y);
 
 						if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
-						{
 							m_lDicesBuffer.push_back(*itDice);
-						}
 						else
-						{
 							m_lDicesBuffer.push_back(*itDetectedDices);
-						}
 					}
 
 					m_lDicesBuffer.push_back(*itDetectedDices);
@@ -137,20 +130,18 @@ void QCameraWidget::_findDices()
 			// On compte les dés par capacité
 			shared_ptr<CDiceSet> pDiceSet = make_shared<CDiceSet>();
 			for (shared_ptr<CDice>& const dice : m_lDices)
-			{
-				(*pDiceSet)[dice->getCount()]++ ;
-			}
+				(*pDiceSet)[dice->getCount()]++;
 
 			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
 			for (int i = 1; i < 7; ++i)
 			{
-				if (m_bIsWrongDetection)
-					QMessageBox::information(this, "OK", "OK");
-				
 				if (m_pLastDiceSet == nullptr || *pDiceSet != *m_pLastDiceSet)
 				{					
 					m_pLastDiceSet = pDiceSet;
 
+					if (m_bIsWrongDetection)
+						QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dès mis à jour"));
+					
 					emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
 					m_bIsWrongDetection = false;
 					
@@ -173,10 +164,10 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 	cvtColor(m_matImageCaptured, matImageBuffer, COLOR_BGR2GRAY);
 	
 	// Suppression du bruit
-	blur(matImageBuffer, matImageBuffer, Size(3, 3));
+	blur(matImageBuffer, matImageBuffer, DEFAULT_KERNEL);
 	
 	// Filtre de Canny afin d'extraire les contours
-	Canny(matImageBuffer, matImageBuffer, MIN_THRESHOLD, MAX_THRESHOLD);
+	Canny(matImageBuffer, matImageBuffer, MIN_CANNY_THRESHOLD, MAX_CANNY_THRESHOLD);
 
 	// Extraction des contours et de la hierarchie
 	vector<vector<Point>> vContours;
@@ -207,11 +198,10 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 			}
 
 			if (bProcess)
-			{
 				lDetectedDices.push_back(make_shared<CDice>(rect));
-			}
 		}
 	}
+
 	
 	// On compte les points de chaque dé
 	for (shared_ptr<CDice>& dice : lDetectedDices)
@@ -239,6 +229,8 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 			if ((aspect < 0.4) && (rect.size.area() > MIN_DICE_DOT_WIDTH) && (rect.size.area() < MAX_DICE_DOT_WIDTH)) {
 				bool process = true;
 
+				//QMessageBox::information((QWidget*)this, QString::fromLatin1("ksj"), QString::number(rect.size.area()));
+				
 				for (RotatedRect dotRect : dice->getDotRects())
 				{
 					float dist = norm(rect.center - dotRect.center);
@@ -260,16 +252,16 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 
 void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices) const
 {
-	Mat grayImage;
-	cvtColor(m_matImageCaptured, grayImage, COLOR_BGR2GRAY);
-	blur(grayImage, grayImage, Size(3, 3));
+	Mat matImageBuffer;
+	cvtColor(m_matImageCaptured, matImageBuffer, COLOR_BGR2GRAY);
+	blur(matImageBuffer, matImageBuffer, Size(3, 3));
 
 	SimpleBlobDetector::Params detectorParams;
 	detectorParams.filterByArea = true;
 	detectorParams.filterByCircularity = true;
 	detectorParams.filterByInertia = true;
-	detectorParams.minThreshold = MIN_THRESHOLD;
-	detectorParams.maxThreshold = MAX_THRESHOLD;
+	detectorParams.minThreshold = MIN_BLOB_THRESHOLD;
+	detectorParams.maxThreshold = MAX_BLOB_THRESHOLD;
 	detectorParams.minArea = MIN_AREA;
 	detectorParams.minCircularity = MIN_CIRCULARITY;
 	detectorParams.minInertiaRatio = MIN_INERTIA_RATIO;
@@ -277,7 +269,7 @@ void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices) const
 	const Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(detectorParams);
 
 	std::vector<KeyPoint> keypoints;
-	detector->detect(grayImage, keypoints);
+	detector->detect(matImageBuffer, keypoints);
 
 	iNDetectedDices = keypoints.size();
 }

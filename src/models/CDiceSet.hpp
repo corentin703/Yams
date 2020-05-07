@@ -20,28 +20,21 @@ public:
 	CDiceSet();
 	
 	uint getAces() const { return m_iAs; }
-	//void setAs(uint iAs) const { m_iAs = iAs; }
 	
 	uint getTwos() const { return 2 * m_iTwos; }
-	//void setTwos(uint iTwos) const { m_iTwos = iTwos; }
 	
 	uint getThrees() const { return 3 * m_iThrees; }
-	//void setThrees(uint iThrees) const { m_iThrees = iThrees; }
 	
 	uint getFours() const { return 4 * m_iFours; }
-	//void setFours(uint iFours) const { m_iFours = iFours; }
 	
 	uint getFives() const { return 5 * m_iFives; }
-	//void setFives(uint iFives) const { m_iFives = iFives; }
 	
 	uint getSixes() const { return 6 * m_iSixes; }
-	//void setSixes(uint iSixes) const { m_iSixes = iSixes; }
 
 	uint getTotal() const { return getAces() + getTwos() + getThrees() + getFours() + getFives() + getSixes(); }
 
 	uint& operator[](uint iDiceNumber);
 	
-	//bool operator==(CDiceSet& const diceSet) { return (getTotal() == diceSet.getTotal()); };
 	const bool& operator==(CDiceSet& diceSet);
 	bool operator!=(CDiceSet& diceSet) { return !(operator==(diceSet)); }
 	

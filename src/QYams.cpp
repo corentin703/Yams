@@ -7,16 +7,10 @@ QYams::QYams(QWidget *parent)
 {
 	m_ui.setupUi(this);
 
-	m_ui.wdgGameBar->hide();
-
-	// Affichage des boutons de démarrage et de sortie
-	m_ui.btnStart->show();
-	m_ui.btnQuit->show();
-
 	m_ptrQPlayerGridsWidget = m_ui.qPlayerGridsWidget;
-	m_ptrQPlayerGridsWidget->hide();
-
 	m_ptrQCameraWidget = m_ui.qCameraWidget;
+
+	_beforeStart();
 
 	// Connexion des boutons démarrer et quitter
 	connect(m_ui.btnStart, &QPushButton::clicked, this, &QYams::start);
@@ -61,73 +55,68 @@ void QYams::closeEvent(QCloseEvent* event)
 	quit();
 }
 
-const shared_ptr<vector<pair<QYams::EYamsActions, uint>>> QYams::_simulate(CDiceSet& diceSet) const
+void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActions, uint>>& vSortedSimulationResult)
 {
-	shared_ptr<vector<pair<QYams::EYamsActions, uint>>> vActionResult = make_shared<vector<pair<QYams::EYamsActions, uint>>>();
-
+	m_mapLastSimulation.clear();
+	
 	// Simulation pour les as
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::ACES,
 		(!(*m_itPlayerGrids)->isAcesAlreadySet()) ? diceSet.getAces() : 0
-		});
+	});
 
 	// Simulation pour les deux
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::TWOS,
 		(!(*m_itPlayerGrids)->isTwosAlreadySet()) ? diceSet.getTwos() : 0
 		});
 
 	// Simulation pour les trois
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::THREES,
 		(!(*m_itPlayerGrids)->isThreesAlreadySet()) ? diceSet.getThrees() : 0
 		});
 
 	// Simulation pour les quatre
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::FOURS,
 		(!(*m_itPlayerGrids)->isFoursAlreadySet()) ? diceSet.getFours() : 0
 		});
 
 	// Simulation pour les cinq
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::FiVES,
 		(!(*m_itPlayerGrids)->isFivesAlreadySet()) ? diceSet.getFives() : 0
 	});
 
 	// Simulation pour les six
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::SIXES,
 		(!(*m_itPlayerGrids)->isSixesAlreadySet()) ? diceSet.getSixes() : 0
 		});
 
 	uint iSmallStraight = 0;
 	uint iLargeStraight = 0;
-	uint iYams = 0;
 	bool bIsBrelan = false;
 	bool bIsCarre = false;
 	bool bIsFull = false;
+	bool bYams = false;
 
 	for (int i = 1; i <= 6; ++i)
 	{
 		// Simulation du Brelan
 		if (diceSet[i] == 3)
-		{
 			bIsBrelan = true;
-		}
 
 		// Simulation du Carre
 		if (diceSet[i] == 3)
-		{
 			bIsCarre = true;
-		}
 
 		// Simulation du Full
 		if (!bIsFull)
 		{
 			for (int j = 1; j <= 6; ++j)
 			{
-
 				if ((diceSet[i] == 3 && diceSet[j] == 2) || (diceSet[i] == 2 && diceSet[j] == 3))
 				{
 					bIsFull = true;
@@ -137,85 +126,79 @@ const shared_ptr<vector<pair<QYams::EYamsActions, uint>>> QYams::_simulate(CDice
 		}
 
 		// Simulation de la petite suite
-		if (diceSet[i] < 1)
-		{
+		if (diceSet[i] >= 1)
 			iSmallStraight++;
-		}
 		else if (iSmallStraight < 4)
-		{
 			iSmallStraight = 0;
-		}
 
 		// Simulation de la grande suite
-		if (diceSet[i] < 1)
-		{
+		if (diceSet[i] >= 1)
 			iLargeStraight++;
-		}
 		else if (iLargeStraight < 5)
-		{
 			iLargeStraight = 0;
-		}
 
-		if (diceSet[i] == 1)
-		{
-			iYams++;
-		}
+		if (diceSet[i] == 5)
+			bYams = true;
 	}
 
 	// Résultat du Brelan
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::BRELAN,
 		(bIsBrelan && !(*m_itPlayerGrids)->isBrelanAlreadySet()) ? diceSet.getTotal() : 0
 		});
 
 	// Résultat du Carré
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::CARRE,
 		(bIsCarre && !(*m_itPlayerGrids)->isCarreAlreadySet()) ? diceSet.getTotal() : 0
 		});
 
 	// Résultat du Full
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::FULL,
 		(bIsFull && !(*m_itPlayerGrids)->isFullAlreadySet()) ? 25 : 0
 		});
 
 	// Résultat de la petite suite
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::SMALL_STRAIGHT,
 		(iSmallStraight >= 4 && !(*m_itPlayerGrids)->isSmallStraightAlreadySet()) ? 30 : 0
 		});
 
 	// Résultat de la grande suite
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::LARGE_STRAIGHT,
 		(iLargeStraight == 5 && !(*m_itPlayerGrids)->isLargeStraightAlreadySet()) ? 40 : 0
 		});
 
 	// Résultat du Yams
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::YAMS,
-		(iYams == 5 && !(*m_itPlayerGrids)->isYamsAlreadySet()) ? 50 : 0
+		(bYams && !(*m_itPlayerGrids)->isYamsAlreadySet()) ? 50 : 0
 		});
 
 	// Résultat du super Yams (le Yams doit être réalisé)
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::SUPER_YAMS,
-		(iYams == 5 && (*m_itPlayerGrids)->isYamsAlreadySet() && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet()) ? 100 : 0
+		(bYams && (*m_itPlayerGrids)->isYamsAlreadySet() && !(*m_itPlayerGrids)->getYams() == 0 && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet()) ? 100 : 0
 		});
 
 	// Simulation de la chance
-	vActionResult->push_back({
+	m_mapLastSimulation.insert({
 		EYamsActions::CHANCE,
 		(!(*m_itPlayerGrids)->isChanceAlreadySet()) ? diceSet.getTotal() : 0
 	});
+	
+	for (pair<EYamsActions, uint> simulation : m_mapLastSimulation)
+		vSortedSimulationResult.push_back(simulation);
 
-	std::sort(vActionResult->begin(), vActionResult->end(), [](pair<QYams::EYamsActions, uint> a, pair<QYams::EYamsActions, uint> b)
+	std::sort(vSortedSimulationResult.begin(), vSortedSimulationResult.end(), [](pair<QYams::EYamsActions, uint> a, pair<QYams::EYamsActions, uint> b)
 	{
+		if (a.first == EYamsActions::CHANCE && b.second > 0)
+			return false;
+		
 		return a.second > b.second;
 	});
-
-	return vActionResult;
 }
 
 void QYams::_nextPlayer()
@@ -234,7 +217,9 @@ void QYams::_nextPlayer()
 	m_ui.lblTurn->setText(QString::number(m_iNbrTurn));
 
 	emit playerUpdated(*(*m_itPlayerGrids));
+	
 	_resetChoices();
+	m_ptrQPlayerGridsWidget->enableActionButtons(false);
 }
 
 void QYams::_onEndGame()
@@ -244,55 +229,52 @@ void QYams::_onEndGame()
 	connect(m_ptrEndGameWidget->getQuitButton(), &QPushButton::clicked, this, &QYams::quit);
 }
 
-
 void QYams::doAction(EYamsActions selectedAction)
-{
-	CDiceSet diceSet = *m_ptrQCameraWidget->getDiceSet();
-	
+{	
 	switch (selectedAction)
 	{
 	case ACES :
-		(*m_itPlayerGrids)->setAces(diceSet[1]);
+		(*m_itPlayerGrids)->setAces(m_mapLastSimulation[EYamsActions::ACES]);
 		break;
 	case TWOS :
-		(*m_itPlayerGrids)->setTwos(diceSet[2] * 2);
+		(*m_itPlayerGrids)->setTwos(m_mapLastSimulation[EYamsActions::TWOS]);
 		break;
 	case THREES :
-		(*m_itPlayerGrids)->setThrees(diceSet[3] * 3);
+		(*m_itPlayerGrids)->setThrees(m_mapLastSimulation[EYamsActions::THREES]);
 		break;
 	case FOURS :
-		(*m_itPlayerGrids)->setFours(diceSet[4] * 4);
+		(*m_itPlayerGrids)->setFours(m_mapLastSimulation[EYamsActions::FOURS]);
 		break;
 	case FiVES :
-		(*m_itPlayerGrids)->setFives(diceSet[5] * 5);
+		(*m_itPlayerGrids)->setFives(m_mapLastSimulation[EYamsActions::FiVES]);
 		break;
 	case SIXES :
-		(*m_itPlayerGrids)->setSixes(diceSet[6] * 6);
+		(*m_itPlayerGrids)->setSixes(m_mapLastSimulation[EYamsActions::SIXES]);
 		break;
 
 	case BRELAN :
-		(*m_itPlayerGrids)->setBrelan(diceSet.getTotal());
+		(*m_itPlayerGrids)->setBrelan(m_mapLastSimulation[EYamsActions::BRELAN]);
 		break;
 	case CARRE :
-		(*m_itPlayerGrids)->setCarre(diceSet.getTotal());
+		(*m_itPlayerGrids)->setCarre(m_mapLastSimulation[EYamsActions::CARRE]);
 		break;
 	case FULL :
-		(*m_itPlayerGrids)->setFull(true);
+		(*m_itPlayerGrids)->setFull(m_mapLastSimulation[EYamsActions::FULL] > 0);
 		break;
 	case SMALL_STRAIGHT :
-		(*m_itPlayerGrids)->setSmallStraight(true);
+		(*m_itPlayerGrids)->setSmallStraight(m_mapLastSimulation[EYamsActions::SMALL_STRAIGHT] > 0);
 		break;
 	case LARGE_STRAIGHT :
-		(*m_itPlayerGrids)->setLargeStraight(true);
+		(*m_itPlayerGrids)->setLargeStraight(m_mapLastSimulation[EYamsActions::LARGE_STRAIGHT] > 0);
 		break;
 	case YAMS :
-		(*m_itPlayerGrids)->setYams(true);
+		(*m_itPlayerGrids)->setYams(m_mapLastSimulation[EYamsActions::YAMS] > 0);
 		break;
 	case SUPER_YAMS :
-		(*m_itPlayerGrids)->setSuperYams(true);
+		(*m_itPlayerGrids)->setSuperYams(m_mapLastSimulation[EYamsActions::SUPER_YAMS] > 0);
 		break;
 	case CHANCE :
-		(*m_itPlayerGrids)->setChance(diceSet.getTotal());
+		(*m_itPlayerGrids)->setChance(m_mapLastSimulation[EYamsActions::CHANCE]);
 		break;
 
 	default:
@@ -329,6 +311,29 @@ void QYams::_resetChoices(EChoices choice)
 		m_ui.btnRedetection->setEnabled(false);
 }
 
+void QYams::_hideGameBar(bool hide)
+{
+	m_ui.lblTurnText->setHidden(hide);
+	m_ui.lblTurn->setHidden(hide);
+	m_ui.btnChoice1->setHidden(hide);
+	m_ui.btnChoice2->setHidden(hide);
+	m_ui.btnChoice3->setHidden(hide);
+	m_ui.btnRedetection->setHidden(hide);
+}
+
+void QYams::_beforeStart()
+{
+	// Affichage des boutons de démarrage et de sortie
+	m_ui.btnStart->show();
+	m_ui.btnQuit->show();
+
+	m_ui.actionRestart->setEnabled(false);
+	m_ptrQPlayerGridsWidget->hide();
+
+	m_ptrQPlayerGridsWidget->enableActionButtons(false);
+	_hideGameBar(true);
+}
+
 void QYams::start()
 {
 	m_ptrQYamsStartFrom = new QYamsStartFormWidget();
@@ -340,7 +345,7 @@ void QYams::start()
 }
 
 void QYams::restart()
-{
+{	
 	if (m_ptrEndGameWidget != nullptr)
 	{
 		disconnect(m_ptrEndGameWidget->getRestartButton(), &QPushButton::clicked, this, &QYams::restart);
@@ -352,10 +357,14 @@ void QYams::restart()
 
 	for (QPlayerGrid* playerGrid : m_lpQPlayerGrids)
 	{
+		m_ptrQPlayerGridsWidget->removeGrid(playerGrid);
 		delete playerGrid;
 	}
 	
 	m_lpQPlayerGrids.clear();
+
+	_beforeStart();
+	start();
 }
 
 void QYams::quit()
@@ -365,9 +374,10 @@ void QYams::quit()
 
 void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 {
-	vector<pair<QYams::EYamsActions, uint>> vSimulation = *_simulate(diceSet);
+	vector<pair<QYams::EYamsActions, uint>> vSimulation;
+	_simulate(diceSet, vSimulation);
 	
-	if (m_iNbrTurn > 0)
+	if (m_iNbrTurn > 0 || isDetectionCorrection)
 	{
 		m_ui.btnChoice1->setText(m_YamsActionsNames[vSimulation[0].first] + " (" + QString::number(vSimulation[0].second) + ")");
 		m_choice1 = vSimulation[0].first;
@@ -380,9 +390,7 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 			m_ui.btnChoice2->setEnabled(true);
 		}
 		else
-		{
 			_resetChoices(EChoices::TWO);
-		}
 		
 		if (vSimulation[2].second > 0)
 		{
@@ -391,9 +399,7 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 			m_ui.btnChoice3->setEnabled(true);
 		}
 		else
-		{
 			_resetChoices(EChoices::THREE);
-		}
 
 		if (!isDetectionCorrection)
 		{
@@ -403,6 +409,7 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 			if (!m_ui.btnRedetection->isEnabled())
 			{
 				m_ui.btnRedetection->setEnabled(true);
+				m_ptrQPlayerGridsWidget->enableActionButtons(true);
 			}
 		}
 	}
@@ -411,9 +418,7 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 void QYams::showAboutWindow()
 {
 	if (m_ptrAboutWindow == nullptr)
-	{
 		m_ptrAboutWindow = new QAboutWidget();
-	}
 
 	// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l'application
 	m_ptrAboutWindow->setWindowModality(Qt::ApplicationModal);
@@ -423,6 +428,8 @@ void QYams::showAboutWindow()
 void QYams::launchGame(list<QString>* ptrLPlayerNames)
 {	
 	delete m_ptrQYamsStartFrom;
+
+	m_ui.actionRestart->setEnabled(true);
 	
 	QPlayerGrid* playerGrid = nullptr;
 	
@@ -431,14 +438,12 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 		playerGrid = new QPlayerGrid(sPlayerName);
 		
 		m_lpQPlayerGrids.emplace_back(playerGrid);
-		//m_lpQPlayerGrids.emplace_back(QPlayerGrid(sPlayerName));
 		m_ptrQPlayerGridsWidget->addGrid(playerGrid);
 		
 		playerGrid = nullptr;
 	}
 	
 	m_itPlayerGrids = m_lpQPlayerGrids.begin();
-	//m_ptrCurrentPlayer = (*m_itPlayerGrids);
 	
 	// Affichage de la grille de jeu
 	m_ptrQPlayerGridsWidget->show();
@@ -448,7 +453,7 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 	m_ui.btnQuit->hide();
 
 	// On active les 3 boutons de choix
-	m_ui.wdgGameBar->show();
+	_hideGameBar(false);
 
 	m_ui.btnChoice1->setDisabled(true);
 	m_ui.btnChoice2->setDisabled(true);

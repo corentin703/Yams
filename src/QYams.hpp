@@ -83,6 +83,8 @@ private:
 	QCameraWidget* m_ptrQCameraWidget;
 	QAboutWidget* m_ptrAboutWindow = nullptr;
 	QEndGameWidget* m_ptrEndGameWidget = nullptr;
+
+	std::map<QYams::EYamsActions, uint> m_mapLastSimulation;
 	
 
 	std::list<QPlayerGrid*> m_lpQPlayerGrids;
@@ -100,11 +102,13 @@ public:
 	
 private:
 	void closeEvent(QCloseEvent* event) override;
-	const std::shared_ptr<std::vector<std::pair<QYams::EYamsActions, uint>>> _simulate(CDiceSet& diceSet) const;
+	void _simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActions, uint>>& vSortedSimulationResult);
 
 	void _nextPlayer();
 	void _onEndGame();
 	void _resetChoices(EChoices choice = ANYTHING);
+	void _hideGameBar(bool hide);
+	void _beforeStart();
 	
 	
 public slots:
