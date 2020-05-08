@@ -6,7 +6,6 @@
 #include <QWidget>
 #include <QMessageBox>
 
-//#include "QYams.hpp"
 #include "ui_QEndGameWidget.h"
 
 class QEndGameWidget : public QWidget

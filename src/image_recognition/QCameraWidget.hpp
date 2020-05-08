@@ -50,12 +50,14 @@ private:
 	const float SAME_POS_TOLERANCE = 10;
 
 
+
 	Ui::QCameraWidget m_ui;
 
 	cv::VideoCapture m_videoCapture;
 	cv::Mat m_matImageCaptured;
 
-	QTimer m_qTimer;
+	QTimer m_qTimerFrame;
+	std::chrono::time_point<std::chrono::system_clock> m_chronoLastSet;
 	
 	std::list<std::shared_ptr<CDice>> m_lDices;
 	std::list<std::shared_ptr<CDice>> m_lDicesBuffer;

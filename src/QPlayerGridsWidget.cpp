@@ -116,7 +116,7 @@ void QPlayerGridsWidget::updateGrid(QPlayerGrid* ptrQPlayerGrid)
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblPreTotalSup->setText(QString::number(ptrQPlayerGrid->getPreUpperTotal()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblBonus->setText(QString::number(ptrQPlayerGrid->getBonus()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTotalSup->setText(QString::number(ptrQPlayerGrid->getUpperTotal()));
-
+	
 	// Partie inférieure
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblBrelan->setText(QString::number(ptrQPlayerGrid->getBrelan()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblCarre->setText(QString::number(ptrQPlayerGrid->getCarre()));

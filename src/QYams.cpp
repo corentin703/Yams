@@ -58,42 +58,60 @@ void QYams::closeEvent(QCloseEvent* event)
 void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActions, uint>>& vSortedSimulationResult)
 {
 	m_mapLastSimulation.clear();
+
+	if (!(*m_itPlayerGrids)->isAcesAlreadySet())
+	{
+		// Simulation pour les as
+		m_mapLastSimulation.insert({
+			EYamsActions::ACES,
+			diceSet.getAces()
+		});
+	}
+
+	if (!(*m_itPlayerGrids)->isTwosAlreadySet())
+	{
+		// Simulation pour les deux
+		m_mapLastSimulation.insert({
+			EYamsActions::TWOS,
+			diceSet.getTwos()
+		});
+	}
 	
-	// Simulation pour les as
-	m_mapLastSimulation.insert({
-		EYamsActions::ACES,
-		(!(*m_itPlayerGrids)->isAcesAlreadySet()) ? diceSet.getAces() : 0
-	});
-
-	// Simulation pour les deux
-	m_mapLastSimulation.insert({
-		EYamsActions::TWOS,
-		(!(*m_itPlayerGrids)->isTwosAlreadySet()) ? diceSet.getTwos() : 0
+	if (!(*m_itPlayerGrids)->isThreesAlreadySet())
+	{
+		// Simulation pour les trois
+		m_mapLastSimulation.insert({
+			EYamsActions::THREES,
+			diceSet.getThrees()
 		});
-
-	// Simulation pour les trois
-	m_mapLastSimulation.insert({
-		EYamsActions::THREES,
-		(!(*m_itPlayerGrids)->isThreesAlreadySet()) ? diceSet.getThrees() : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isFoursAlreadySet())
+	{
+		// Simulation pour les quatre
+		m_mapLastSimulation.insert({
+			EYamsActions::FOURS,
+			diceSet.getFours()
 		});
-
-	// Simulation pour les quatre
-	m_mapLastSimulation.insert({
-		EYamsActions::FOURS,
-		(!(*m_itPlayerGrids)->isFoursAlreadySet()) ? diceSet.getFours() : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isFivesAlreadySet())
+	{
+		// Simulation pour les cinq
+		m_mapLastSimulation.insert({
+			EYamsActions::FiVES,
+			diceSet.getFives()
 		});
-
-	// Simulation pour les cinq
-	m_mapLastSimulation.insert({
-		EYamsActions::FiVES,
-		(!(*m_itPlayerGrids)->isFivesAlreadySet()) ? diceSet.getFives() : 0
-	});
-
-	// Simulation pour les six
-	m_mapLastSimulation.insert({
-		EYamsActions::SIXES,
-		(!(*m_itPlayerGrids)->isSixesAlreadySet()) ? diceSet.getSixes() : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isSixesAlreadySet())
+	{
+		// Simulation pour les six
+		m_mapLastSimulation.insert({
+			EYamsActions::SIXES,
+			diceSet.getSixes()
 		});
+	}
 
 	uint iSmallStraight = 0;
 	uint iLargeStraight = 0;
@@ -141,53 +159,78 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 			bYams = true;
 	}
 
-	// Résultat du Brelan
-	m_mapLastSimulation.insert({
-		EYamsActions::BRELAN,
-		(bIsBrelan && !(*m_itPlayerGrids)->isBrelanAlreadySet()) ? diceSet.getTotal() : 0
+	if (!(*m_itPlayerGrids)->isBrelanAlreadySet())
+	{
+		// Résultat du Brelan
+		m_mapLastSimulation.insert({
+			EYamsActions::BRELAN,
+			(bIsBrelan) ? diceSet.getTotal() : 0
 		});
-
-	// Résultat du Carré
-	m_mapLastSimulation.insert({
-		EYamsActions::CARRE,
-		(bIsCarre && !(*m_itPlayerGrids)->isCarreAlreadySet()) ? diceSet.getTotal() : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isCarreAlreadySet())
+	{
+		// Résultat du Carré
+		m_mapLastSimulation.insert({
+			EYamsActions::CARRE,
+			(bIsCarre) ? diceSet.getTotal() : 0
 		});
-
-	// Résultat du Full
-	m_mapLastSimulation.insert({
-		EYamsActions::FULL,
-		(bIsFull && !(*m_itPlayerGrids)->isFullAlreadySet()) ? 25 : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isFullAlreadySet())
+	{
+		// Résultat du Full
+		m_mapLastSimulation.insert({
+			EYamsActions::FULL,
+			(bIsFull) ? 25 : 0
 		});
-
-	// Résultat de la petite suite
-	m_mapLastSimulation.insert({
-		EYamsActions::SMALL_STRAIGHT,
-		(iSmallStraight >= 4 && !(*m_itPlayerGrids)->isSmallStraightAlreadySet()) ? 30 : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isSmallStraightAlreadySet())
+	{
+		// Résultat de la petite suite
+		m_mapLastSimulation.insert({
+			EYamsActions::SMALL_STRAIGHT,
+			(iSmallStraight >= 4) ? 30 : 0
 		});
-
-	// Résultat de la grande suite
-	m_mapLastSimulation.insert({
-		EYamsActions::LARGE_STRAIGHT,
-		(iLargeStraight == 5 && !(*m_itPlayerGrids)->isLargeStraightAlreadySet()) ? 40 : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isLargeStraightAlreadySet())
+	{
+		// Résultat de la grande suite
+		m_mapLastSimulation.insert({
+			EYamsActions::LARGE_STRAIGHT,
+			(iLargeStraight == 5) ? 40 : 0
 		});
-
-	// Résultat du Yams
-	m_mapLastSimulation.insert({
-		EYamsActions::YAMS,
-		(bYams && !(*m_itPlayerGrids)->isYamsAlreadySet()) ? 50 : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isYamsAlreadySet())
+	{
+		// Résultat du Yams
+		m_mapLastSimulation.insert({
+			EYamsActions::YAMS,
+			(bYams) ? 50 : 0
 		});
-
-	// Résultat du super Yams (le Yams doit être réalisé)
-	m_mapLastSimulation.insert({
-		EYamsActions::SUPER_YAMS,
-		(bYams && (*m_itPlayerGrids)->isYamsAlreadySet() && !(*m_itPlayerGrids)->getYams() == 0 && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet()) ? 100 : 0
+	}
+	
+	if (!(*m_itPlayerGrids)->isYamsAlreadySet())
+	{
+		// Résultat du super Yams (le Yams doit être réalisé)
+		m_mapLastSimulation.insert({
+			EYamsActions::SUPER_YAMS,
+			(bYams && !(*m_itPlayerGrids)->getYams() == 0 && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet()) ? 100 : 0
 		});
+	}
 
-	// Simulation de la chance
-	m_mapLastSimulation.insert({
-		EYamsActions::CHANCE,
-		(!(*m_itPlayerGrids)->isChanceAlreadySet()) ? diceSet.getTotal() : 0
-	});
+	if (!(*m_itPlayerGrids)->isChanceAlreadySet())
+	{
+		// Simulation de la chance
+		m_mapLastSimulation.insert({
+			EYamsActions::CHANCE,
+			diceSet.getTotal()
+		});
+	}
+	
 	
 	for (pair<EYamsActions, uint> simulation : m_mapLastSimulation)
 		vSortedSimulationResult.push_back(simulation);
@@ -202,15 +245,21 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 }
 
 void QYams::_nextPlayer()
-{
+{	
 	++m_itPlayerGrids;
 	
 	if (m_itPlayerGrids == m_lpQPlayerGrids.end())
-		m_itPlayerGrids = m_lpQPlayerGrids.begin();
-	else if ((*m_itPlayerGrids)->isGridFinished())
 	{
-		_onEndGame();
-		return;
+		--m_itPlayerGrids;
+
+		if ((*m_itPlayerGrids)->isGridFinished())
+		{
+			emit playerUpdated(*(*m_itPlayerGrids));
+			_onEndGame();
+			return;
+		}
+		
+		m_itPlayerGrids = m_lpQPlayerGrids.begin();
 	}
 
 	m_iNbrTurn = 3;
@@ -224,9 +273,13 @@ void QYams::_nextPlayer()
 
 void QYams::_onEndGame()
 {
-	m_ptrEndGameWidget = new QEndGameWidget((*m_itPlayerGrids)->getPlayerName(), this);
+	if (m_ptrEndGameWidget == nullptr)
+		m_ptrEndGameWidget = new QEndGameWidget((*m_itPlayerGrids)->getPlayerName());
+	
 	connect(m_ptrEndGameWidget->getRestartButton(), &QPushButton::clicked, this, &QYams::restart);
 	connect(m_ptrEndGameWidget->getQuitButton(), &QPushButton::clicked, this, &QYams::quit);
+	m_ptrEndGameWidget->setWindowModality(Qt::ApplicationModal);
+	m_ptrEndGameWidget->show();
 }
 
 void QYams::doAction(EYamsActions selectedAction)
@@ -267,10 +320,13 @@ void QYams::doAction(EYamsActions selectedAction)
 	case LARGE_STRAIGHT :
 		(*m_itPlayerGrids)->setLargeStraight(m_mapLastSimulation[EYamsActions::LARGE_STRAIGHT] > 0);
 		break;
-	case YAMS :
-		(*m_itPlayerGrids)->setYams(m_mapLastSimulation[EYamsActions::YAMS] > 0);
+	case YAMS:
+		if (m_mapLastSimulation[EYamsActions::YAMS] == 0 && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet())
+			(*m_itPlayerGrids)->setSuperYams(false); // Le super Yams nécessite que le Yams soit réalisé pour pouvoir être fait
+		else 
+			(*m_itPlayerGrids)->setYams(m_mapLastSimulation[EYamsActions::YAMS] > 0);
 		break;
-	case SUPER_YAMS :
+	case SUPER_YAMS:
 		(*m_itPlayerGrids)->setSuperYams(m_mapLastSimulation[EYamsActions::SUPER_YAMS] > 0);
 		break;
 	case CHANCE :

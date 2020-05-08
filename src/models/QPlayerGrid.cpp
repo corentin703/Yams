@@ -130,7 +130,7 @@ void QPlayerGrid::setFives(uint iValue)
 
 void QPlayerGrid::setSixes(uint iValue)
 {
-	if (m_bIsFivesAlreadySet)
+	if (m_bIsSixesAlreadySet)
 	{
 		throw new exception("Les six ont déjà été défini");
 	}

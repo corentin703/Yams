@@ -15,9 +15,10 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	// On vérifie si la machine prend en charge au moins deux threads sinon l'analyse d'image se fera en monothread
 	m_bThreadsEnabled = (thread::hardware_concurrency() >= 2);
 	
-	connect(&m_qTimer, &QTimer::timeout, this, &QCameraWidget::_updateWindow);
+	connect(&m_qTimerFrame, &QTimer::timeout, this, &QCameraWidget::_updateWindow);
 	connect(this, &QCameraWidget::cameraImgUpdated, this, &QCameraWidget::_findDices);
-	m_qTimer.start(20);
+	m_qTimerFrame.start(20);
+	m_chronoLastSet = chrono::system_clock::now();
 
 	m_ui.setupUi(this);
 
@@ -132,22 +133,37 @@ void QCameraWidget::_findDices()
 			for (shared_ptr<CDice>& const dice : m_lDices)
 				(*pDiceSet)[dice->getCount()]++;
 
-			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
-			for (int i = 1; i < 7; ++i)
-			{
-				if (m_pLastDiceSet == nullptr || *pDiceSet != *m_pLastDiceSet)
-				{					
-					m_pLastDiceSet = pDiceSet;
+			//QString st;
+			//for (int i = 1; i < 7; ++i)
+			//	st = st + " " + QString::number((*pDiceSet)[i]);
 
-					if (m_bIsWrongDetection)
-						QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dès mis à jour"));
-					
-					emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
-					m_bIsWrongDetection = false;
-					
-					break;
+			//QMessageBox::information(this, "", st);
+			
+
+			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
+
+			const int elapsedTime = chrono::duration_cast<std::chrono::milliseconds>(chrono::system_clock::now() - m_chronoLastSet).count();
+			//QMessageBox::information(this, "", QString::number(elapsedTime));
+			if (elapsedTime > 500)
+			{
+				for (int i = 1; i < 7; ++i)
+				{
+					if (m_pLastDiceSet == nullptr || *pDiceSet != *m_pLastDiceSet)
+					{
+						m_chronoLastSet = chrono::system_clock::now();
+						m_pLastDiceSet = pDiceSet;
+
+						if (m_bIsWrongDetection)
+							QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dès mis à jour"));
+
+						emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
+						m_bIsWrongDetection = false;
+
+						break;
+					}
 				}
 			}
+			
 		}
 		
 		m_lDicesBuffer.clear();
