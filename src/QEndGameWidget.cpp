@@ -5,7 +5,7 @@ QEndGameWidget::QEndGameWidget(const QString& sWinnerName, QWidget* parent)
 {
 	m_ui.setupUi(this);
 
-	m_ui.lblPlayerName->setText(sWinnerName);
+	m_ui.lblPlayerName->setText(sWinnerName + QString::fromLatin1(" a gagné !"));
 }
 
 QEndGameWidget::~QEndGameWidget()
