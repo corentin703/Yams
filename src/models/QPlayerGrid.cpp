@@ -6,7 +6,7 @@ QPlayerGrid::QPlayerGrid(const QString& sName)
 {
 	m_sPlayerName = sName;
 
-	// Partie supÈrieure
+	// Partie sup√©rieure
 	m_iAces = 0;
 	m_bIsAcesAlreadySet = false;
 
@@ -27,7 +27,7 @@ QPlayerGrid::QPlayerGrid(const QString& sName)
 
 	m_bIsBonus = false;
 
-	// Partie infÈrieure
+	// Partie inf√©rieure
 	m_iBrelan = 0;
 	m_bIsBrelanAlreadySet = false;
 
@@ -58,7 +58,7 @@ void QPlayerGrid::setAces(uint iValue)
 {
 	if (m_bIsAcesAlreadySet)
 	{
-		throw new exception("Les as ont dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Les as ont d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iAces = iValue;
@@ -72,7 +72,7 @@ void QPlayerGrid::setTwos(uint iValue)
 {
 	if (m_bIsTwosAlreadySet)
 	{
-		throw new exception("Les deux ont dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Les deux ont d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iTwos = iValue;
@@ -86,7 +86,7 @@ void QPlayerGrid::setThrees(uint iValue)
 {
 	if (m_bIsThreesAlreadySet)
 	{
-		throw new exception("Les trois ont dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Les trois ont d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iThrees = iValue;
@@ -100,7 +100,7 @@ void QPlayerGrid::setFours(uint iValue)
 {
 	if (m_bIsFoursAlreadySet)
 	{
-		throw new exception("Les quatre ont dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Les quatre ont d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iFours = iValue;
@@ -114,7 +114,7 @@ void QPlayerGrid::setFives(uint iValue)
 {
 	if (m_bIsFivesAlreadySet)
 	{
-		throw new exception("Les cinq ont dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Les cinq ont d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iFives = iValue;
@@ -128,7 +128,7 @@ void QPlayerGrid::setSixes(uint iValue)
 {
 	if (m_bIsSixesAlreadySet)
 	{
-		throw new exception("Les six ont dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Les six ont d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iSixes = iValue;
@@ -142,7 +142,7 @@ void QPlayerGrid::setBrelan(uint iValue)
 {
 	if (m_bIsBrelanAlreadySet)
 	{
-		throw new exception("Le brelan a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Le brelan a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iBrelan = iValue;
@@ -155,7 +155,7 @@ void QPlayerGrid::setCarre(uint iValue)
 {
 	if (m_bIsCarreAlreadySet)
 	{
-		throw new exception("Le carrÈ a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Le carr√© a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_iCarre = iValue;
@@ -168,7 +168,7 @@ void QPlayerGrid::setFull(bool bIsFull)
 {
 	if (m_bIsFullAlreadySet)
 	{
-		throw new exception("Le full a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Le full a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_bIsFull = bIsFull;
@@ -181,7 +181,7 @@ void QPlayerGrid::setSmallStraight(bool bIsSmallStraight)
 {
 	if (m_bIsSmallStraightAlreadySet)
 	{
-		throw new exception("La petite suite a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("La petite suite a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_bIsSmallStraight = bIsSmallStraight;
@@ -194,7 +194,7 @@ void QPlayerGrid::setLargeStraight(bool bIsLargeStraight)
 {
 	if (m_bIsLargeStraightAlreadySet)
 	{
-		throw new exception("La grande suite a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("La grande suite a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_bIsLargeStraight = bIsLargeStraight;
@@ -207,7 +207,7 @@ void QPlayerGrid::setYams(bool bIsYams)
 {
 	if (m_bIsYamsAlreadySet)
 	{
-		throw new exception("Le Yams a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Le Yams a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_bIsYams = bIsYams;
@@ -220,7 +220,7 @@ void QPlayerGrid::setSuperYams(bool bIsSuperYams)
 {
 	if (m_bIsSuperYamsAlreadySet)
 	{
-		throw new exception("Le Super Yams a dÈj‡ ÈtÈ dÈfini");
+		throw new exception("Le Super Yams a d√©j√† √©t√© d√©fini");
 	}
 	
 	m_bIsSuperYams = bIsSuperYams;
@@ -233,7 +233,7 @@ void QPlayerGrid::setChance(uint iChance)
 {
 	if (m_bIsChanceAlreadySet)
 	{
-		throw new exception("La chance a dÈj‡ ÈtÈ dÈfinie");
+		throw new exception("La chance a d√©j√† √©t√© d√©finie");
 	}
 	
 	m_iChance = iChance;

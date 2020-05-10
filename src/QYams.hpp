@@ -17,7 +17,7 @@
 // Reconnaissance d'image
 #include "image_recognition/QCameraWidget.hpp"
 
-// Mod�les
+// Modèles
 #include "models/QPlayerGrid.hpp"
 #include "models/CDiceSet.hpp"
 
@@ -26,13 +26,21 @@
 #include "QPlayerGridsWidget.hpp"
 #include "QYamsStartFormWidget.hpp"
 
-
+/**
+ * @brief Contôleur du jeu Yams
+ *
+ * @author Corentin VÉROT
+ * @date 2020-05-15
+ */
 class QYams : public QMainWindow
 {
 	Q_OBJECT
 
 public:
 
+    /**
+     * @brief Toutes les actions réalisables par le joueur
+     */
 	enum EYamsActions
 	{
 		NOTHING = 0,
@@ -54,6 +62,9 @@ public:
 		CHANCE = 14,
 	};
 
+	/**
+	 * @brief Les choix possibles (1 choix = 1 bouton)
+	 */
 	enum EChoices
 	{
 		ANYTHING = 0,
@@ -63,6 +74,9 @@ public:
 		THREE = 3,
 	};
 
+	/**
+	 * @brief Associe une action à un texte pour l'affichage
+	 */
 	std::map<EYamsActions, QString> m_YamsActionsNames = {
 		{EYamsActions::ACES, QString::fromLatin1("As")},
 		{EYamsActions::TWOS, QString::fromLatin1("Deux")},
@@ -72,7 +86,7 @@ public:
 		{EYamsActions::SIXES, QString::fromLatin1("Six")},
 		
 		{EYamsActions::BRELAN, QString::fromLatin1("Brelan")},
-		{EYamsActions::CARRE, QString::fromLatin1("Carr�")},
+		{EYamsActions::CARRE, QString::fromLatin1("Carré")},
 		{EYamsActions::FULL, QString::fromLatin1("Full")},
 		{EYamsActions::SMALL_STRAIGHT, QString::fromLatin1("Petite suite")},
 		{EYamsActions::LARGE_STRAIGHT, QString::fromLatin1("Grande suite")},
@@ -83,54 +97,205 @@ public:
 	
 private:
 
+    /**
+     * @brief Interface utilisateur / vue
+     */
 	Ui::QYams m_ui;
+
+	/**
+	 * @brief Vue des grilles des joueurs
+	 */
 	QPlayerGridsWidget* m_ptrQPlayerGridsWidget;
+
+	/**
+	 * @brief Menu de début de jeu
+	 *
+	 * Permet d'entrer les noms des joueurs
+	 */
 	QYamsStartFormWidget* m_ptrQYamsStartFrom;
+
+	/**
+	 * @brief Widget réalisant la reconnaissance d'image
+	 *
+	 * La reconnaissance d'image est réalisée grâce à la bibliothèque OpenCV
+	 */
 	QCameraWidget* m_ptrQCameraWidget;
+
+	/**
+	 * @brief Fenêtre "À propos"
+	 */
 	QAboutWidget* m_ptrAboutWindow = nullptr;
+
+	/**
+	 * @brief Menu de fin de jeu
+	 *
+	 * Affiche le nom du gagnant et des boutons permettant de rejouer ou de quitter le jeu
+	 */
 	QEndGameWidget* m_ptrEndGameWidget = nullptr;
 
+	/**
+	 * @brief Contient la dernière simulation des scores
+	 *
+	 * La simulation est réutilisée lorsque le joueur choisis quelle action effectuer afin d'éviter de
+	 * recalculer plusieurs fois les coups
+	 */
 	std::map<QYams::EYamsActions, uint> m_mapLastSimulation;
 	
-
+    /**
+     * @brief Liste contenant toutes les grilles des joueurs
+     */
 	std::list<QPlayerGrid*> m_lpQPlayerGrids;
 
+	/**
+	 * @brief Nombre de lancer effectués durant le tour présent
+	 */
 	int m_iNbrTurn = 0;
+
+	/**
+	 * @brief Joueur actuel
+	 *
+	 * Itérateur de la liste @link QYams::m_lpQPlayerGrids @endlink
+	 * Incrémenté à chaque fin de jours pour obtenir le joueur suivant
+	 */
 	std::list<QPlayerGrid*>::iterator m_itPlayerGrids;
 
+	/**
+	 * @brief Action du bouton "Choix 1"
+	 */
 	EYamsActions m_choice1;
+
+    /**
+     * @brief Action du bouton "Choix 2"
+     */
 	EYamsActions m_choice2;
+
+    /**
+     * @brief Action du bouton "Choix 3"
+     */
 	EYamsActions m_choice3;
 	
 public:
+    /**
+     * @brief Constructeur
+     *
+     * @param parent : QWidget* - Widget parent, défaut Q_NULLPTR
+     */
 	QYams(QWidget *parent = Q_NULLPTR);
+
+	/**
+	 * @brief Destructeur
+	 */
 	~QYams();
 
 	
 private:
+    /**
+     * @brief Action effectué lors de la fermeture de la fenêtre
+     *
+     * Quitte l'application étant donné que cette fenêtre est la fenêtre principale
+     *
+     * @param event : QCloseEvent*
+     */
 	void closeEvent(QCloseEvent* event) override;
+
+	/**
+	 * @brief Simule les score pouvant être obtenus avec la combinaison de dés détectée
+	 *
+	 * @param diceSet : CDiceSet& - Jeu de dés
+	 * @param vSortedSimulationResult : std::vector<std::pair<QYams::EYamsActions, uint>>& - Vecteur allant contenir les simulations
+	 * triées de la solution optimale à la moins bonne
+	 */
 	void _simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActions, uint>>& vSortedSimulationResult);
 
+	/**
+	 * @brief Passe au joueur suivant
+	 */
 	void _nextPlayer();
+
+	/**
+	 * @brief Action à effectuer à la fin de la partie
+	 */
 	void _onEndGame();
+
+	/**
+	 * @brief Remet le ou les bouton(s) de choix à leur état d'origine
+	 *
+	 * Si le paramètre fourni est EChoices::ANYTHING (valeur par défaut), tous les boutons de choix
+	 * seront remis à leur état d'origine
+	 *
+	 * @param choice : EChoice - Valeur par défaut EChoices::ANYTHING
+	 */
 	void _resetChoices(EChoices choice = ANYTHING);
+
+	/**
+	 * @brief Cache le layout contenant les boutons de choix et le compteur de tour
+	 *
+	 * @param hide : bool - Si vrai : masque, si faux : affiche
+	 */
 	void _hideGameBar(bool hide);
+
+	/**
+	 * @brief Action à effectuer avant de démarrer la partie
+	 */
 	void _beforeStart();
+
+	/**
+	 * @brief Affiche le menu des règles
+	 */
 	void _showRules();
 	
 	
 public slots:
+    /**
+     * @brief Démarre une partie
+     *
+     * Affiche le menu d'entrée des noms de joueur
+     */
 	void start();
+
+	/**
+	 * @brief Redémarre le jeu
+	 */
 	void restart();
+
+	/**
+	 * @brief Quitte l'application
+	 */
 	void quit();
 
+	/**
+	 * @brief Effectue l'action choisie par le joueur
+	 *
+	 * @param selectedAction : EYamsActions - Action choisie par le joueur
+	 */
 	void doAction(EYamsActions selectedAction);
+
+	/** TODO : onDiceSetUpdate
+	 * @brief Réagit lorsqu'un nouveau jeu de dés est détecté
+	 *
+	 * @param diceSet : CDiceSet& - Jeu de dés
+	 * @param isDetectionCorrection : bool - S'agit-il de la suite d'une erreur signalée par le joueur ?
+	 */
 	void updateTurn(CDiceSet& diceSet, bool isDetectionCorrection);
+
+	/**
+	 * @brief Lance le jeu après la saisie des noms de joueurs
+	 *
+	 * @param ptrLPlayerNames : std::list<QString>* - Liste des noms saisis
+	 */
 	void launchGame(std::list<QString>* ptrLPlayerNames);
-	
+
+	/**
+	 * @brief Affiche la fenêtre "À propos"
+	 */
 	void showAboutWindow();
 
 signals:
+    /**
+     * @brief Signal émit lorsque le tour du joueur a évolué
+     *
+     * @param playerGrid : QPlayerGrid& - Joueur concerné
+     */
 	void playerUpdated(QPlayerGrid& playerGrid);
 
 
