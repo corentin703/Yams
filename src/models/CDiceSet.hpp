@@ -67,6 +67,7 @@ inline uint& CDiceSet::operator[](uint iDiceNumber)
 	case 6 :
 		return m_iSixes;
 	default:
+		qDebug() << "Pb des " << iDiceNumber;
 		throw new std::exception("Dé demandé inconnu");
 	}
 }

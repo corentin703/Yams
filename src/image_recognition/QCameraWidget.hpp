@@ -35,34 +35,34 @@ private:
 	const uint MIN_DICE_WIDTH = 1000;
 	const uint MAX_DICE_WIDTH = 4000;
 	const uint MIN_DICE_DOT_WIDTH = 10;
-	const uint MAX_DICE_DOT_WIDTH = 100;
-	const cv::Size DEFAULT_KERNEL = cv::Size(5, 5);
+	const uint MAX_DICE_DOT_WIDTH = 200;
+	const cv::Size DEFAULT_KERNEL = cv::Size(3, 3);
 
-	const uint MIN_CANNY_THRESHOLD = 200;
+	const uint MIN_CANNY_THRESHOLD = 210;
 	const uint MAX_CANNY_THRESHOLD = 255;
+	const uint MIN_DISTANCE_FROM_DICE_CENTER = 7;
 
-	const uint MIN_BLOB_THRESHOLD = 160;
+	const uint MIN_BLOB_THRESHOLD = 100;
 	const uint MAX_BLOB_THRESHOLD = 255;
-	const uint MIN_AREA = 10;
+	const uint MIN_AREA = 5;
+	const uint MAX_AREA = 200;
 	const float MIN_CIRCULARITY = 0.3;
 	const float MIN_INERTIA_RATIO = 0.5;
 
 	const float SAME_POS_TOLERANCE = 10;
 
-
-
 	Ui::QCameraWidget m_ui;
 
 	cv::VideoCapture m_videoCapture;
-	cv::Mat m_matImageCaptured;
-
+	std::unique_ptr<cv::Mat> m_matImageCaptured = nullptr;
+	
 	QTimer m_qTimerFrame;
-	std::chrono::time_point<std::chrono::system_clock> m_chronoLastSet;
 	
 	std::list<std::shared_ptr<CDice>> m_lDices;
 	std::list<std::shared_ptr<CDice>> m_lDicesBuffer;
 
 	std::shared_ptr<CDiceSet> m_pLastDiceSet = nullptr;
+	std::shared_ptr<CDiceSet> m_pLastValidatedDiceSet = nullptr;
 	bool m_bIsWrongDetection = false;
 
 	bool m_bThreadsEnabled = false;

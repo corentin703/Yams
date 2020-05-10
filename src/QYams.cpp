@@ -48,6 +48,18 @@ QYams::QYams(QWidget *parent)
 	_resetChoices();
 }
 
+QYams::~QYams()
+{
+	if (m_ptrAboutWindow != nullptr)
+		delete m_ptrAboutWindow;
+
+	if (m_ptrQYamsStartFrom != nullptr)
+		delete m_ptrQYamsStartFrom;
+
+	if (m_ptrEndGameWidget != nullptr)
+		delete m_ptrEndGameWidget;
+}
+
 void QYams::closeEvent(QCloseEvent* event)
 {
 	QMainWindow::closeEvent(event);
@@ -127,7 +139,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 			bIsBrelan = true;
 
 		// Simulation du Carre
-		if (diceSet[i] == 3)
+		if (diceSet[i] == 4)
 			bIsCarre = true;
 
 		// Simulation du Full
@@ -254,7 +266,8 @@ void QYams::_nextPlayer()
 
 		if ((*m_itPlayerGrids)->isGridFinished())
 		{
-			emit playerUpdated(*(*m_itPlayerGrids));
+			//emit playerUpdated(*(*m_itPlayerGrids));
+			m_ptrQPlayerGridsWidget->enableActionButtons(false);
 			_onEndGame();
 			return;
 		}
@@ -265,7 +278,7 @@ void QYams::_nextPlayer()
 	m_iNbrTurn = 3;
 	m_ui.lblTurn->setText(QString::number(m_iNbrTurn));
 
-	emit playerUpdated(*(*m_itPlayerGrids));
+	//emit playerUpdated(*(*m_itPlayerGrids));
 	
 	_resetChoices();
 	m_ptrQPlayerGridsWidget->enableActionButtons(false);
@@ -467,6 +480,8 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 				m_ui.btnRedetection->setEnabled(true);
 				m_ptrQPlayerGridsWidget->enableActionButtons(true);
 			}
+
+			emit playerUpdated(*(*m_itPlayerGrids));
 		}
 	}
 }

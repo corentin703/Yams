@@ -18,11 +18,8 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	connect(&m_qTimerFrame, &QTimer::timeout, this, &QCameraWidget::_updateWindow);
 	connect(this, &QCameraWidget::cameraImgUpdated, this, &QCameraWidget::_findDices);
 	m_qTimerFrame.start(20);
-	m_chronoLastSet = chrono::system_clock::now();
 
 	m_ui.setupUi(this);
-
-	m_bThreadsEnabled = false;
 }
 
 QCameraWidget::~QCameraWidget()
@@ -33,31 +30,59 @@ QCameraWidget::~QCameraWidget()
 void QCameraWidget::onWrongDetection()
 {
 	m_lDices.clear();
-	m_pLastDiceSet = nullptr;
+	m_pLastValidatedDiceSet = nullptr;
 	m_bIsWrongDetection = true;
 }
 
+
+
 void QCameraWidget::_updateWindow()
 {
-	// On récupère l'image
-	m_videoCapture >> m_matImageCaptured;
+	Mat matDiff;
+	
+	unique_ptr<Mat> matNewImageCaptured = make_unique<Mat>();
 
+	m_videoCapture >> *matNewImageCaptured;
+	
 	m_ui.label->setPixmap(QPixmap::fromImage(
-		QImage(m_matImageCaptured.data, m_matImageCaptured.cols, m_matImageCaptured.rows, QImage::Format_RGB888)
+		QImage(matNewImageCaptured->data, matNewImageCaptured->cols, matNewImageCaptured->rows, QImage::Format_RGB888)
 	));
 	m_ui.label->resize(m_ui.label->pixmap()->size());
 
-	cv::resize(m_matImageCaptured, m_matImageCaptured, Size(640, 480));
+	// Passage de l'image en niveau de gris
+	cvtColor(*matNewImageCaptured, *matNewImageCaptured, COLOR_BGR2GRAY);
+	// Redimensionnement
+	cv::resize(*matNewImageCaptured, *matNewImageCaptured, Size(640, 480));
 
-	emit cameraImgUpdated();
+	// Suppression du bruit
+	blur(*matNewImageCaptured, *matNewImageCaptured, DEFAULT_KERNEL);
+	
+	// On récupère l'image
+	bool bNotify = true;
+	if (m_matImageCaptured != nullptr)
+	{
+		absdiff(*m_matImageCaptured, *matNewImageCaptured, matDiff);
+		const int iImgSize = matDiff.rows * matDiff.cols;
+		const float fSimilarity = ((static_cast<double>(iImgSize - countNonZero(matDiff)) / iImgSize) * 100);
+		
+		if (fSimilarity < 40)
+			bNotify = false;
+	}
+
+	m_matImageCaptured = std::move(matNewImageCaptured);
+
+	if (bNotify)
+	{
+		emit cameraImgUpdated();
+	}
 }
 
 void QCameraWidget::_findDices()
 {
 	list<shared_ptr<CDice>> lDetectedDices;
 
-	size_t nDotsDetectedByMinArea;
-	size_t nDotsDetectedByBlob;
+	size_t nDotsDetectedByMinArea = 0;
+	size_t nDotsDetectedByBlob = 0;
 
 	if (m_bThreadsEnabled)
 	{
@@ -65,9 +90,7 @@ void QCameraWidget::_findDices()
 		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByBlob, this, ref(nDotsDetectedByBlob)));
 
 		for (unique_ptr<std::thread>& thread : m_lThreads)
-		{
 			thread->join();
-		}
 
 		m_lThreads.clear();
 	}
@@ -76,7 +99,7 @@ void QCameraWidget::_findDices()
 		_findDicesByMinArea(lDetectedDices, nDotsDetectedByMinArea);
 		_findDicesByBlob(nDotsDetectedByBlob);
 	}
-
+	
 	// On regarde si les deux algorithmes comptent le même total 
 	if (nDotsDetectedByMinArea == nDotsDetectedByBlob)
 	{
@@ -87,43 +110,43 @@ void QCameraWidget::_findDices()
 		}
 		else
 		{
+			bool bProcess = true;
 			// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d'être détéctés
-			for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); itDetectedDices++)
+			for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); ++itDetectedDices)
 			{
-				for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); itDice++)
+				// Si le dé est un faux positif on passe
+				if (((*itDetectedDices)->getCount() == 0)
+					|| (*itDetectedDices)->getCount() > 6)
+					continue;
+				
+				for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); ++itDice)
 				{
-					// Si le dé est un faux positif ou si on l'a déjà traité, on passe
-					if (((*itDetectedDices)->getCount() == 0) || (*itDetectedDices)->getCount() > 6 || (std::find(m_lDicesBuffer.begin(), m_lDicesBuffer.end(), *itDetectedDices) != m_lDicesBuffer.end()))
-					{
-						continue;
-					}
-
 					// Si le numéro est le même, on compare la position pour savoir si c'est le même dé (avec une marge d'erreur / tolérance)
 					if ((*itDetectedDices)->getCount() == (*itDice)->getCount())
 					{
 						const float fX = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().x - (*itDice)->getDiceRect().boundingRect().x);
 						const float fY = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().y - (*itDice)->getDiceRect().boundingRect().y);
-
+						
 						if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
+						{
 							m_lDicesBuffer.push_back(*itDice);
+							bProcess = false;
+							break;
+						}
 						else
-							m_lDicesBuffer.push_back(*itDetectedDices);
+							bProcess = true;
 					}
 
-					m_lDicesBuffer.push_back(*itDetectedDices);
 				}
+
+				if (bProcess)
+					m_lDicesBuffer.push_back(*itDetectedDices);
 			}
-		}
-		
-		// Si on détecte plus de 5 dés
-		if (m_lDicesBuffer.size() > 5)
-		{
-		/*	QMessageBox messageBox;
-			messageBox.setText(QString::fromLatin1("Plus de 5 dés détectés !"));
-			messageBox.exec();*/
 			
 		}
-		else if (m_lDicesBuffer.size() == 5)
+		
+		// Si on détecte 5 dés
+		if (m_lDicesBuffer.size() == 5)
 		{
 			m_lDices.clear();
 			m_lDices = m_lDicesBuffer;
@@ -133,36 +156,21 @@ void QCameraWidget::_findDices()
 			for (shared_ptr<CDice>& const dice : m_lDices)
 				(*pDiceSet)[dice->getCount()]++;
 
-			//QString st;
-			//for (int i = 1; i < 7; ++i)
-			//	st = st + " " + QString::number((*pDiceSet)[i]);
-
-			//QMessageBox::information(this, "", st);
-			
-
 			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
-
-			const int elapsedTime = chrono::duration_cast<std::chrono::milliseconds>(chrono::system_clock::now() - m_chronoLastSet).count();
-			//QMessageBox::information(this, "", QString::number(elapsedTime));
-			if (elapsedTime > 500)
+			if (m_pLastDiceSet != nullptr && *m_pLastDiceSet == *pDiceSet
+				&& (m_pLastValidatedDiceSet == nullptr || *pDiceSet != *m_pLastValidatedDiceSet))
 			{
-				for (int i = 1; i < 7; ++i)
-				{
-					if (m_pLastDiceSet == nullptr || *pDiceSet != *m_pLastDiceSet)
-					{
-						m_chronoLastSet = chrono::system_clock::now();
-						m_pLastDiceSet = pDiceSet;
+				m_pLastValidatedDiceSet = pDiceSet;
 
-						if (m_bIsWrongDetection)
-							QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dès mis à jour"));
+				if (m_bIsWrongDetection)
+					QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dès mis à jour"));
 
-						emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
-						m_bIsWrongDetection = false;
+				emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
 
-						break;
-					}
-				}
+				m_bIsWrongDetection = false;
 			}
+			else
+				m_pLastDiceSet = pDiceSet;
 			
 		}
 		
@@ -176,15 +184,9 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 
 	Mat matImageBuffer;
 	
-	// Passage de l'image en niveau de gris
-	cvtColor(m_matImageCaptured, matImageBuffer, COLOR_BGR2GRAY);
-	
-	// Suppression du bruit
-	blur(matImageBuffer, matImageBuffer, DEFAULT_KERNEL);
-	
 	// Filtre de Canny afin d'extraire les contours
-	Canny(matImageBuffer, matImageBuffer, MIN_CANNY_THRESHOLD, MAX_CANNY_THRESHOLD);
-
+	Canny(*m_matImageCaptured, matImageBuffer, MIN_CANNY_THRESHOLD, MAX_CANNY_THRESHOLD);
+	
 	// Extraction des contours et de la hierarchie
 	vector<vector<Point>> vContours;
 	vector<Vec4i> vHierarchy;
@@ -244,13 +246,11 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 			const float aspect = std::abs<float>(rect.size.aspectRatio() - 1);
 			if ((aspect < 0.4) && (rect.size.area() > MIN_DICE_DOT_WIDTH) && (rect.size.area() < MAX_DICE_DOT_WIDTH)) {
 				bool process = true;
-
-				//QMessageBox::information((QWidget*)this, QString::fromLatin1("ksj"), QString::number(rect.size.area()));
 				
-				for (RotatedRect dotRect : dice->getDotRects())
+				for (const RotatedRect& dotRect : dice->getDotRects())
 				{
 					float dist = norm(rect.center - dotRect.center);
-					if (dist < 10)
+					if (dist < MIN_DISTANCE_FROM_DICE_CENTER)
 					{
 						process = false;
 						break;
@@ -268,9 +268,9 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 
 void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices) const
 {
+	iNDetectedDices = 0;
+	
 	Mat matImageBuffer;
-	cvtColor(m_matImageCaptured, matImageBuffer, COLOR_BGR2GRAY);
-	blur(matImageBuffer, matImageBuffer, Size(3, 3));
 
 	SimpleBlobDetector::Params detectorParams;
 	detectorParams.filterByArea = true;
@@ -279,13 +279,14 @@ void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices) const
 	detectorParams.minThreshold = MIN_BLOB_THRESHOLD;
 	detectorParams.maxThreshold = MAX_BLOB_THRESHOLD;
 	detectorParams.minArea = MIN_AREA;
+	detectorParams.maxArea = MAX_AREA;
 	detectorParams.minCircularity = MIN_CIRCULARITY;
 	detectorParams.minInertiaRatio = MIN_INERTIA_RATIO;
 
 	const Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(detectorParams);
 
-	std::vector<KeyPoint> keypoints;
-	detector->detect(matImageBuffer, keypoints);
+	std::vector<KeyPoint> vKeypoints;
+	detector->detect(*m_matImageCaptured, vKeypoints);
 
-	iNDetectedDices = keypoints.size();
+	iNDetectedDices = vKeypoints.size();
 }

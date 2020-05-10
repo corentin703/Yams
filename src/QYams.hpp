@@ -98,6 +98,7 @@ private:
 	
 public:
 	QYams(QWidget *parent = Q_NULLPTR);
+	~QYams();
 
 	
 private:
