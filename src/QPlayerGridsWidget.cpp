@@ -96,7 +96,7 @@ void QPlayerGridsWidget::actualizeActionButtons(QPlayerGrid& playerGrid) const
 	m_ui.btnSmallStraight->setEnabled(!playerGrid.isSmallStraightAlreadySet());
 	m_ui.btnLargeStraight->setEnabled(!playerGrid.isLargeStraightAlreadySet());
 	m_ui.btnYams->setEnabled(!playerGrid.isYamsAlreadySet());
-	m_ui.btnSuperYams->setEnabled(!playerGrid.IsSuperYamsAlreadySet());
+	m_ui.btnSuperYams->setEnabled(!playerGrid.isSuperYamsAlreadySet());
 	m_ui.btnChance->setEnabled(!playerGrid.isChanceAlreadySet());
 }
 

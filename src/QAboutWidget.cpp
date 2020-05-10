@@ -25,6 +25,7 @@ void QAboutWidget::showAboutOpenCVWindow()
 
 	QMessageBox aboutOpenCV;
 	aboutOpenCV.setIconPixmap(QPixmap(":/about/logo_open_cv"));
+	aboutOpenCV.setWindowIcon(QPixmap(":/about/logo_open_cv"));
 	aboutOpenCV.setWindowTitle("About OpenCV");
 	aboutOpenCV.setText("<h3>About OpenCV</h3>");
 	aboutOpenCV.setInformativeText(

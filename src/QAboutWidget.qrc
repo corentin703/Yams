@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/about">
+        <file alias="logo_open_cv">ressources/About/logo_open_cv.png</file>
+    </qresource>
+</RCC>

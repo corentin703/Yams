@@ -78,21 +78,21 @@ public:
 	 * @brief Associe une action à un texte pour l'affichage
 	 */
 	std::map<EYamsActions, QString> m_YamsActionsNames = {
-		{EYamsActions::ACES, QString::fromLatin1("As")},
-		{EYamsActions::TWOS, QString::fromLatin1("Deux")},
-		{EYamsActions::THREES, QString::fromLatin1("Trois")},
-		{EYamsActions::FOURS, QString::fromLatin1("Quatre")},
-		{EYamsActions::FiVES, QString::fromLatin1("Cinq")},
-		{EYamsActions::SIXES, QString::fromLatin1("Six")},
+		{EYamsActions::ACES, QString::fromUtf8("As")},
+		{EYamsActions::TWOS, QString::fromUtf8("Deux")},
+		{EYamsActions::THREES, QString::fromUtf8("Trois")},
+		{EYamsActions::FOURS, QString::fromUtf8("Quatre")},
+		{EYamsActions::FiVES, QString::fromUtf8("Cinq")},
+		{EYamsActions::SIXES, QString::fromUtf8("Six")},
 		
-		{EYamsActions::BRELAN, QString::fromLatin1("Brelan")},
-		{EYamsActions::CARRE, QString::fromLatin1("Carré")},
-		{EYamsActions::FULL, QString::fromLatin1("Full")},
-		{EYamsActions::SMALL_STRAIGHT, QString::fromLatin1("Petite suite")},
-		{EYamsActions::LARGE_STRAIGHT, QString::fromLatin1("Grande suite")},
-		{EYamsActions::YAMS, QString::fromLatin1("Yams")},
-		{EYamsActions::SUPER_YAMS, QString::fromLatin1("Super Yams")},
-		{EYamsActions::CHANCE, QString::fromLatin1("Chance")},
+		{EYamsActions::BRELAN, QString::fromUtf8("Brelan")},
+		{EYamsActions::CARRE, QString::fromUtf8("Carré")},
+		{EYamsActions::FULL, QString::fromUtf8("Full")},
+		{EYamsActions::SMALL_STRAIGHT, QString::fromUtf8("Petite suite")},
+		{EYamsActions::LARGE_STRAIGHT, QString::fromUtf8("Grande suite")},
+		{EYamsActions::YAMS, QString::fromUtf8("Yams")},
+		{EYamsActions::SUPER_YAMS, QString::fromUtf8("Super Yams")},
+		{EYamsActions::CHANCE, QString::fromUtf8("Chance")},
 	};
 	
 private:
@@ -232,7 +232,7 @@ private:
 	 *
 	 * @param hide : bool - Si vrai : masque, si faux : affiche
 	 */
-	void _hideGameBar(bool hide);
+	void _hideGameBar(bool hide) const;
 
 	/**
 	 * @brief Action à effectuer avant de démarrer la partie

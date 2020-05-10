@@ -14,8 +14,8 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 
 	// On vérifie si la machine prend en charge au moins deux threads sinon l'analyse d'image se fera en monothread
 	m_bThreadsEnabled = (thread::hardware_concurrency() >= 2);
-	
-	connect(&m_qTimerFrame, &QTimer::timeout, this, &QCameraWidget::_updateWindow);
+
+	connect(&m_qTimerFrame, &QTimer::timeout, this, &QCameraWidget::_updateImage);
 	connect(this, &QCameraWidget::cameraImgUpdated, this, &QCameraWidget::_findDices);
 	m_qTimerFrame.start(20);
 
@@ -34,7 +34,7 @@ void QCameraWidget::onWrongDetection()
 	m_bIsWrongDetection = true;
 }
 
-void QCameraWidget::_updateWindow()
+void QCameraWidget::_updateImage()
 {
 	Mat matDiff;
 	
@@ -84,13 +84,15 @@ void QCameraWidget::_findDices()
 
 	if (m_bThreadsEnabled)
 	{
-		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByMinArea, this, ref(lDetectedDices), ref(nDotsDetectedByMinArea)));
-		m_lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByBlob, this, ref(nDotsDetectedByBlob)));
+		std::list<std::unique_ptr<std::thread>> lThreads;
+		
+		lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByMinArea, this, ref(lDetectedDices), ref(nDotsDetectedByMinArea)));
+		lThreads.push_back(make_unique<std::thread>(&QCameraWidget::_findDicesByBlob, this, ref(nDotsDetectedByBlob)));
 
-		for (unique_ptr<std::thread>& thread : m_lThreads)
+		for (unique_ptr<std::thread>& thread : lThreads)
 			thread->join();
 
-		m_lThreads.clear();
+		lThreads.clear();
 	}
 	else
 	{
@@ -101,10 +103,12 @@ void QCameraWidget::_findDices()
 	// On regarde si les deux algorithmes comptent le même total 
 	if (nDotsDetectedByMinArea == nDotsDetectedByBlob)
 	{
+		std::list<std::shared_ptr<CDice>> lDicesBuffer;
+		
 		if (m_lDices.size() == 0)
 		{
 			for (shared_ptr<CDice> dice : lDetectedDices)
-				m_lDicesBuffer.push_back(dice);
+				lDicesBuffer.push_back(dice);
 		}
 		else
 		{
@@ -113,8 +117,7 @@ void QCameraWidget::_findDices()
 			for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); ++itDetectedDices)
 			{
 				// Si le dé est un faux positif on passe
-				if (((*itDetectedDices)->getCount() == 0)
-					|| (*itDetectedDices)->getCount() > 6)
+				if ((*itDetectedDices)->getCount() == 0 || (*itDetectedDices)->getCount() > 6)
 					continue;
 				
 				for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); ++itDice)
@@ -127,7 +130,7 @@ void QCameraWidget::_findDices()
 						
 						if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
 						{
-							m_lDicesBuffer.push_back(*itDice);
+							lDicesBuffer.push_back(*itDice);
 							bProcess = false;
 							break;
 						}
@@ -138,16 +141,16 @@ void QCameraWidget::_findDices()
 				}
 
 				if (bProcess)
-					m_lDicesBuffer.push_back(*itDetectedDices);
+					lDicesBuffer.push_back(*itDetectedDices);
 			}
 			
 		}
 		
 		// Si on détecte 5 dés
-		if (m_lDicesBuffer.size() == 5)
+		if (lDicesBuffer.size() == 5)
 		{
 			m_lDices.clear();
-			m_lDices = m_lDicesBuffer;
+			m_lDices = lDicesBuffer;
 
 			// On compte les dés par capacité
 			shared_ptr<CDiceSet> pDiceSet = make_shared<CDiceSet>();
@@ -172,7 +175,7 @@ void QCameraWidget::_findDices()
 			
 		}
 		
-		m_lDicesBuffer.clear();
+		lDicesBuffer.clear();
 	}
 }
 
@@ -276,8 +279,8 @@ void QCameraWidget::_findDicesByBlob(size_t& iNDetectedDices) const
 	detectorParams.filterByInertia = true;
 	detectorParams.minThreshold = MIN_BLOB_THRESHOLD;
 	detectorParams.maxThreshold = MAX_BLOB_THRESHOLD;
-	detectorParams.minArea = MIN_AREA;
-	detectorParams.maxArea = MAX_AREA;
+	detectorParams.minArea = MIN_BLOB_AREA;
+	detectorParams.maxArea = MAX_BLOB_AREA;
 	detectorParams.minCircularity = MIN_CIRCULARITY;
 	detectorParams.minInertiaRatio = MIN_INERTIA_RATIO;
 

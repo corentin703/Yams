@@ -10,11 +10,15 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>201</height>
+    <height>184</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>À propos du Yams...</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="QYams.qrc">
+    <normaloff>:/icon/48x48</normaloff>:/icon/48x48</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -109,6 +113,9 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="QAboutWidget.qrc"/>
+  <include location="QYams.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -435,7 +435,7 @@ public:
      * @brief Retourne vrai si le super Yams a été défini
      * @return const bool&
      */
-	const bool& IsSuperYamsAlreadySet() const { return m_bIsSuperYamsAlreadySet; } // TODO Is => is
+	const bool& isSuperYamsAlreadySet() const { return m_bIsSuperYamsAlreadySet; }
 
     /**
      * @brief Défini s'il y a super Yams

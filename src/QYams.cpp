@@ -54,9 +54,6 @@ QYams::~QYams()
 	if (m_ptrAboutWindow != nullptr)
 		delete m_ptrAboutWindow;
 
-	if (m_ptrQYamsStartFrom != nullptr)
-		delete m_ptrQYamsStartFrom;
-
 	if (m_ptrEndGameWidget != nullptr)
 		delete m_ptrEndGameWidget;
 }
@@ -226,12 +223,12 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 		});
 	}
 	
-	if (!(*m_itPlayerGrids)->isYamsAlreadySet())
+	if (!(*m_itPlayerGrids)->isSuperYamsAlreadySet())
 	{
 		// Résultat du super Yams (le Yams doit être réalisé)
 		m_mapLastSimulation.insert({
 			EYamsActions::SUPER_YAMS,
-			(bYams && !(*m_itPlayerGrids)->getYams() == 0 && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet()) ? 100 : 0
+			(bYams && !((*m_itPlayerGrids)->getYams() == 0)) ? 100 : 0
 		});
 	}
 
@@ -263,23 +260,18 @@ void QYams::_nextPlayer()
 	
 	if (m_itPlayerGrids == m_lpQPlayerGrids.end())
 	{
-		--m_itPlayerGrids;
+		m_itPlayerGrids = m_lpQPlayerGrids.begin();
 
 		if ((*m_itPlayerGrids)->isGridFinished())
 		{
-			//emit playerUpdated(*(*m_itPlayerGrids));
 			m_ptrQPlayerGridsWidget->enableActionButtons(false);
 			_onEndGame();
 			return;
 		}
-		
-		m_itPlayerGrids = m_lpQPlayerGrids.begin();
 	}
 
 	m_iNbrTurn = 3;
 	m_ui.lblTurn->setText(QString::number(m_iNbrTurn));
-
-	//emit playerUpdated(*(*m_itPlayerGrids));
 	
 	_resetChoices();
 	m_ptrQPlayerGridsWidget->enableActionButtons(false);
@@ -335,7 +327,7 @@ void QYams::doAction(EYamsActions selectedAction)
 		(*m_itPlayerGrids)->setLargeStraight(m_mapLastSimulation[EYamsActions::LARGE_STRAIGHT] > 0);
 		break;
 	case YAMS:
-		if (m_mapLastSimulation[EYamsActions::YAMS] == 0 && !(*m_itPlayerGrids)->IsSuperYamsAlreadySet())
+		if (m_mapLastSimulation[EYamsActions::YAMS] == 0 && !(*m_itPlayerGrids)->isSuperYamsAlreadySet())
 			(*m_itPlayerGrids)->setSuperYams(false); // Le super Yams nécessite que le Yams soit réalisé pour pouvoir être fait
 		else 
 			(*m_itPlayerGrids)->setYams(m_mapLastSimulation[EYamsActions::YAMS] > 0);
@@ -381,7 +373,7 @@ void QYams::_resetChoices(EChoices choice)
 		m_ui.btnRedetection->setEnabled(false);
 }
 
-void QYams::_hideGameBar(bool hide)
+void QYams::_hideGameBar(bool hide) const
 {
 	m_ui.lblTurnText->setHidden(hide);
 	m_ui.lblTurn->setHidden(hide);
@@ -475,11 +467,16 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 	
 	if (m_iNbrTurn > 0 || isDetectionCorrection)
 	{
-		m_ui.btnChoice1->setText(m_YamsActionsNames[vSimulation[0].first] + " (" + QString::number(vSimulation[0].second) + ")");
-		m_choice1 = vSimulation[0].first;
-		m_ui.btnChoice1->setEnabled(true);
+		if (vSimulation.size() > 0)
+		{
+			m_ui.btnChoice1->setText(m_YamsActionsNames[vSimulation[0].first] + " (" + QString::number(vSimulation[0].second) + ")");
+			m_choice1 = vSimulation[0].first;
+			m_ui.btnChoice1->setEnabled(true);
+		}
+		else
+			_resetChoices(EChoices::ONE);
 
-		if (vSimulation[1].second > 0)
+		if (vSimulation.size() > 1 && vSimulation[1].second > 0)
 		{
 			m_ui.btnChoice2->setText(m_YamsActionsNames[vSimulation[1].first] + " (" + QString::number(vSimulation[1].second) + ")");
 			m_choice2 = vSimulation[1].first;
@@ -488,7 +485,7 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 		else
 			_resetChoices(EChoices::TWO);
 		
-		if (vSimulation[2].second > 0)
+		if (vSimulation.size() > 2 && vSimulation[2].second > 0)
 		{
 			m_ui.btnChoice3->setText(m_YamsActionsNames[vSimulation[2].first] + " (" + QString::number(vSimulation[2].second) + ")");
 			m_choice3 = vSimulation[2].first;
@@ -526,6 +523,7 @@ void QYams::showAboutWindow()
 void QYams::launchGame(list<QString>* ptrLPlayerNames)
 {	
 	delete m_ptrQYamsStartFrom;
+	m_ptrQYamsStartFrom = nullptr;
 
 	m_ui.actionRestart->setEnabled(true);
 	

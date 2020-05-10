@@ -285,7 +285,7 @@ bool QPlayerGrid::isGridFinished() const
 		isSmallStraightAlreadySet() &&
 		isLargeStraightAlreadySet() &&
 		isYamsAlreadySet() &&
-		IsSuperYamsAlreadySet() &&
+		isSuperYamsAlreadySet() &&
 		isChanceAlreadySet()
 	);
 }

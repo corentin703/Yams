@@ -91,12 +91,12 @@ private:
     /**
      * @brief Aire minimum
      */
-	const uint MIN_AREA = 5; // TODO MIN_BLOB_AREA
+	const uint MIN_BLOB_AREA = 5;
 
     /**
     * @brief Aire maximum
     */
-	const uint MAX_AREA = 200; // TODO MAX_BLOB_AREA
+	const uint MAX_BLOB_AREA = 200;
 
     /**
     * @brief TODO
@@ -141,8 +141,6 @@ private:
 	 */
 	std::list<std::shared_ptr<CDice>> m_lDices;
 
-	std::list<std::shared_ptr<CDice>> m_lDicesBuffer; // TODO local
-
 	/**
 	 * @brief Jeu de dés nécessitant d'être confirmé par une seconde analyse
 	 *
@@ -167,8 +165,6 @@ private:
 	 */
 	bool m_bThreadsEnabled = false;
 
-	std::list<std::unique_ptr<std::thread>> m_lThreads; // TODO
-
 public:
     /**
      * @brief Contructeur
@@ -190,9 +186,9 @@ public slots:
 	
 private:
     /**
-     * @brief Met à jour l'image // TODO
+     * @brief Met à jour l'image
      */
-	void _updateWindow();
+	void _updateImage();
 
 	/**
 	 * @brief Traitement d'image par aire minimum

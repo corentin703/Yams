@@ -73,6 +73,7 @@ set(QT_VIEW
 
 set(QT_RESSOURCES
     src/QYams.qrc
+    src/QAboutWidget.qrc
 )
 
 add_executable( ${PROJECT_NAME} 
