@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Yams</Name>
+    <Title>Yams</Title>
+	<Version>1.0</Version>
+    <Publisher>Corentin VÉROT</Publisher>
+    <StartMenuDir>Yams</StartMenuDir>
+    <TargetDir>@ApplicationsDir@/Yams</TargetDir>
+</Installer>

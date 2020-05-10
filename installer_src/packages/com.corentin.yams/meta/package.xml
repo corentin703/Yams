@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Yams</DisplayName>
+    <Description>Yams</Description>
+	<Version>1.0</Version>
+    <ReleaseDate>2020-05-15</ReleaseDate>
+    <Licenses>
+        <License name="AGPL 3.0" file="license.txt" />
+    </Licenses>
+	<SortingPriority>1</SortingPriority>
+    <Default>true</Default>
+	<Script>installscript.qs</Script>
+	<ForcedInstallation>true</ForcedInstallation>
+</Package>
