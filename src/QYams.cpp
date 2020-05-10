@@ -20,6 +20,7 @@ QYams::QYams(QWidget *parent)
 	connect(m_ui.actionQuit, &QAction::triggered, this, &QYams::quit);
 	connect(m_ui.actionRestart, &QAction::triggered, this, &QYams::restart);
 	connect(m_ui.actionAbout, &QAction::triggered, this, &QYams::showAboutWindow);
+	connect(m_ui.actionRules, &QAction::triggered, this, &QYams::_showRules);
 
 	// Connexion des boutons choix
 	connect(m_ui.btnChoice1, &QPushButton::clicked, [this]() { doAction(m_choice1); });
@@ -401,6 +402,32 @@ void QYams::_beforeStart()
 
 	m_ptrQPlayerGridsWidget->enableActionButtons(false);
 	_hideGameBar(true);
+}
+
+void QYams::_showRules()
+{
+	QMessageBox::information(this, QString::fromLatin1("Règles du Yams"), QString::fromLatin1(
+		"<p>"
+		"Le Yams ou Yahtzee est un jeu qui se joue avec 5 dés et se finit lorsque tous les joueurs ont remplis leur grille de jeu."
+		"Chaque joueur peut tirer jusqu'à 3 fois une partie ou la totalité des dés afin d'arriver au résultat rapportant le plus de points"
+		"Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille à l'issue de chaque tour"
+		"(il peut compter 0 s'il n'a obtenu aucun résultat probant)."
+		"</p>"
+		"<p>"
+		"La partie supérieure se compléte en inscrivant le total des dés correspondants lors d'un tour"
+		"</p>"
+		"<h4>Explications des combinaisons de la partie inférieure</h4>"
+		"<ul>"
+			"<li>Le Brelan : lorsque le joueur obtient 3 dés identiques, il peut compter le total des dés ;</li>"
+			"<li>Le Carré : lorsque le joueur obtient 4 dés identiques, il peut compter le total des dés ;</li>"
+			"<li>Le Full : lorsque le joueur obtient 3 dés identiques et 2 autres de la même valeur aussi, il peut compter 25 points ;</li>"
+			"<li>La petite suite : lorsque le joueur obtient au moins 4 dés dont la valeur se suit, il peut compter 30 points ;</li>"
+			"<li>La grande suite : lorsque le joueur obtient au moins 5 dés dont la valeur se suit, il peut compter 40 points ;</li>"
+			"<li>Le Yams : lorsque le joueur obtient 5 dés identiques, il peut compter 50 points ;</li>"
+			"<li>Le super Yams : lorsque le joueur obtient 5 dés identiques et a déjà réussi un Yams, il peut compter 100 points.</li>"
+		"</ul>"
+		"</p>"
+	));
 }
 
 void QYams::start()

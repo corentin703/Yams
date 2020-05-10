@@ -34,8 +34,6 @@ void QCameraWidget::onWrongDetection()
 	m_bIsWrongDetection = true;
 }
 
-
-
 void QCameraWidget::_updateWindow()
 {
 	Mat matDiff;

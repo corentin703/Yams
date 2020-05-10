@@ -28,10 +28,6 @@ QYamsStartFormWidget::QYamsStartFormWidget(QWidget *parent)
 	addPlayerNameInput();
 }
 
-QYamsStartFormWidget::~QYamsStartFormWidget()
-{
-}
-
 void QYamsStartFormWidget::addPlayerNameInput()
 {
 	unique_ptr<CPlayerForm> playerForm = make_unique<CPlayerForm>(this, m_lPlayerNameInputs.size() + 1);

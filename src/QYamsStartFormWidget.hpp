@@ -13,6 +13,7 @@
 #include <QLineEdit>
 #include <QMessageBox>
 
+// UI
 #include "ui_QYamsStartFormWidget.h"
 
 class QYamsStartFormWidget : public QWidget
@@ -34,8 +35,7 @@ class QYamsStartFormWidget : public QWidget
 
 public:
 	QYamsStartFormWidget(QWidget* parent = Q_NULLPTR);
-	~QYamsStartFormWidget();
-
+	
 private:
 	Ui::QYamsStartFormWidget m_ui;
 

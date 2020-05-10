@@ -12,7 +12,6 @@
 
 // Qt
 #include <QTimer>
-#include <QtDebug>
 #include <QMessageBox>
 
 // OpenCV

@@ -3,11 +3,16 @@
 
 #pragma once
 
+// Qt
 #include <QWidget>
 #include <QMessageBox>
+#include <QDesktopServices>
+#include <QUrl>
 
+// OpenCV
 #include <opencv2/core.hpp>
 
+// UI
 #include "ui_QAboutWidget.h"
 
 class QAboutWidget : public QWidget
@@ -16,7 +21,6 @@ class QAboutWidget : public QWidget
 
 public:
 	QAboutWidget(QWidget* parent = Q_NULLPTR);
-	~QAboutWidget();
 	
 private:
 	Ui::QAboutWidget m_ui;

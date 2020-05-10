@@ -11,15 +11,21 @@
 // Qt
 #include <QtWidgets/QMainWindow>
 
-#include "QPlayerGridsWidget.hpp"
-#include "QYamsStartFormWidget.hpp"
-#include "QAboutWidget.hpp"
+// UI
+#include "ui_QYams.h"
+
+// Reconnaissance d'image
 #include "image_recognition/QCameraWidget.hpp"
+
+// Modèles
 #include "models/QPlayerGrid.hpp"
 #include "models/CDiceSet.hpp"
-#include "QEndGameWidget.hpp"
 
-#include "ui_QYams.h"
+#include "QAboutWidget.hpp"
+#include "QEndGameWidget.hpp"
+#include "QPlayerGridsWidget.hpp"
+#include "QYamsStartFormWidget.hpp"
+
 
 class QYams : public QMainWindow
 {
@@ -110,6 +116,7 @@ private:
 	void _resetChoices(EChoices choice = ANYTHING);
 	void _hideGameBar(bool hide);
 	void _beforeStart();
+	void _showRules();
 	
 	
 public slots:

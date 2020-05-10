@@ -1,28 +1,16 @@
-#include "QYams.hpp"
+// Qt
 #include <QtWidgets/QApplication>
 
-//#include <QtDebug>
-//#include <exception>
+// Yams
+#include "QYams.hpp"
+
 
 int main(int argc, char *argv[])
 {
-	/*try {
-		QApplication a(argc, argv);
+	QApplication application(argc, argv);
 
-		QYams w;
-		w.show();
+	QYams yams;
+	yams.show();
 
-		return a.exec();
-	}
-	catch (std::exception exception) {
-		qDebug() << exception.what();
-	}*/
-
-
-	QApplication a(argc, argv);
-
-	QYams w;
-	w.show();
-
-	return a.exec();
+	return application.exec();
 }

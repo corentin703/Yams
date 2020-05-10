@@ -3,9 +3,11 @@
 
 #pragma once
 
+// Qt
 #include <QWidget>
 #include <QMessageBox>
 
+// UI
 #include "ui_QEndGameWidget.h"
 
 class QEndGameWidget : public QWidget
@@ -14,7 +16,6 @@ class QEndGameWidget : public QWidget
 
 public:
 	QEndGameWidget(const QString& sWinnerName, QWidget* parent = Q_NULLPTR);
-	~QEndGameWidget();
 
 	const QPushButton* getQuitButton() const { return m_ui.btnQuit; }
 	const QPushButton* getRestartButton() const { return m_ui.btnRestart; }

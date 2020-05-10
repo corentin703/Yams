@@ -9,8 +9,11 @@
 
 // Qt
 #include <QWidget>
+
+// UI
 #include "ui_QPlayerGridsWidget.h"
 
+// Modèles
 #include "models/QPlayerGrid.hpp"
 
 class QPlayerGridsWidget : public QWidget
@@ -56,7 +59,6 @@ private:
 
 public:
 	QPlayerGridsWidget(QWidget *parent = Q_NULLPTR);
-	~QPlayerGridsWidget();
 
 	const QPushButton* getAcesButton() const { return m_ui.btnAces; }
 	const QPushButton* getTwosButton() const { return m_ui.btnTwos; }

@@ -64,7 +64,6 @@ private:
 
 public:
 	QPlayerGrid(const QString& sPlayerName);
-	~QPlayerGrid();
 
 	QString getPlayerName() const { return m_sPlayerName; }
 

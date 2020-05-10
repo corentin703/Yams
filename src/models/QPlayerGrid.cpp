@@ -54,10 +54,6 @@ QPlayerGrid::QPlayerGrid(const QString& sName)
 	
 }
 
-QPlayerGrid::~QPlayerGrid()
-{
-}
-
 void QPlayerGrid::setAces(uint iValue)
 {
 	if (m_bIsAcesAlreadySet)

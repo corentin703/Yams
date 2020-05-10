@@ -8,10 +8,6 @@ QPlayerGridsWidget::QPlayerGridsWidget(QWidget *parent)
 	m_ui.setupUi(this);
 }
 
-QPlayerGridsWidget::~QPlayerGridsWidget()
-{
-}
-
 void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
 {
 	const uint playerNumber = m_mapPlayerGridViews.size() + 1;

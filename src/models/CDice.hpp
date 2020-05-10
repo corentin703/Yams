@@ -19,7 +19,6 @@ private:
 
 public:
 	CDice(const cv::RotatedRect& diceRect);
-	~CDice();
 
 	const cv::RotatedRect& getDiceRect() const { return m_diceRect; }
 	void setDiceRect(const cv::RotatedRect& diceRect) { m_diceRect = diceRect; }
