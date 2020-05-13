@@ -1,0 +1,11 @@
+<map id="QYamsStartFormWidget::playerNameSetUp" name="QYamsStartFormWidget::playerNameSetUp">
+<area shape="rect" id="node1" title="Signal que les noms sont saisis." alt="" coords="1005,35,1171,76"/>
+<area shape="rect" id="node2" href="$class_q_yams_start_form_widget.html#a7a54075deb52b0ec28f0c3999ccf08f2" title="Action à réaliser lorsque l&#39;utilisateur confirme la saisie." alt="" coords="792,5,957,47"/>
+<area shape="rect" id="node4" href="$class_q_yams.html#a3e5d9816ddfb7b1f52165fc4e577ebeb" title="Démarre une partie." alt="" coords="825,71,925,98"/>
+<area shape="rect" id="node3" href="$class_q_yams_start_form_widget.html#a72df43bf077999108db1de6943ff1de0" title="Constructeur." alt="" coords="571,5,744,47"/>
+<area shape="rect" id="node5" href="$class_q_yams.html#ad25e5ecf60b8602603b146eaa6eb77da" title="Constructeur." alt="" coords="387,71,505,98"/>
+<area shape="rect" id="node6" href="$class_q_yams.html#affbff92b06615db967e22a9b69278862" title="Redémarre le jeu." alt="" coords="602,122,713,149"/>
+<area shape="rect" id="node7" href="$class_q_yams.html#abf835c6178f7b9a754a9acb19c5aaae6" title="Action à effectuer à la fin de la partie." alt="" coords="369,122,523,149"/>
+<area shape="rect" id="node8" href="$class_q_yams.html#aa0a5ca106b29cae207f6c75a4de872c1" title="Passe au joueur suivant." alt="" coords="179,122,321,149"/>
+<area shape="rect" id="node9" href="$class_q_yams.html#a005f947079da47296ca74b923ab2f90d" title="Effectue l&#39;action choisie par le joueur." alt="" coords="5,122,131,149"/>
+</map>

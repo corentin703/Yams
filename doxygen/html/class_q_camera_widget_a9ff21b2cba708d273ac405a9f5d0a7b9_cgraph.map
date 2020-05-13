@@ -1,0 +1,5 @@
+<map id="QCameraWidget::_findDices" name="QCameraWidget::_findDices">
+<area shape="rect" id="node1" title="Lance l&#39;analyse de l&#39;image et emmet un jeu de dés si l&#39;analyse est probante." alt="" coords="5,46,192,73"/>
+<area shape="rect" id="node2" href="$class_q_camera_widget.html#a0337353c26fa1a28663876c61763d427" title="Traitement d&#39;image par simple blob." alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node3" href="$class_q_camera_widget.html#adc5e5e2836fd6e9aed5c5a1043c31844" title="Traitement d&#39;image par aire minimum." alt="" coords="240,71,427,112"/>
+</map>

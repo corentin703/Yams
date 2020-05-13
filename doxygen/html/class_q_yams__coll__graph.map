@@ -1,0 +1,10 @@
+<map id="QYams" name="QYams">
+<area shape="rect" id="node1" title="Contôleur du jeu Yams." alt="" coords="499,133,565,160"/>
+<area shape="rect" id="node2" title=" " alt="" coords="157,5,264,32"/>
+<area shape="rect" id="node3" href="$class_q_player_grids_widget.html" title="Vue des grilles de jeu." alt="" coords="140,56,281,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,157,79,184"/>
+<area shape="rect" id="node5" href="$class_q_camera_widget.html" title="Encapsule la détection d&#39;image et le rendu vidéo." alt="" coords="151,107,270,133"/>
+<area shape="rect" id="node6" href="$class_q_end_game_widget.html" title="Menu de fin de partie." alt="" coords="145,157,276,184"/>
+<area shape="rect" id="node7" href="$class_q_about_widget.html" title="Menu À propos de l&#39;application." alt="" coords="157,208,264,235"/>
+<area shape="rect" id="node8" href="$class_q_yams_start_form_widget.html" title="Fenêtre de saisie des noms de joueur." alt="" coords="128,259,293,285"/>
+</map>

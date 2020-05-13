@@ -50,8 +50,8 @@ public:
 		THREES = 3,
 		FOURS = 4,
 		FiVES = 5,
-		SIXES = 6,
-
+		SIXES = 6, 
+		
 		BRELAN = 7,
 		CARRE = 8,
 		FULL = 9,
@@ -73,6 +73,8 @@ public:
 		TWO = 2,
 		THREE = 3,
 	};
+	
+private:
 
 	/**
 	 * @brief Associe une action à un texte pour l'affichage
@@ -84,7 +86,7 @@ public:
 		{EYamsActions::FOURS, QString::fromUtf8("Quatre")},
 		{EYamsActions::FiVES, QString::fromUtf8("Cinq")},
 		{EYamsActions::SIXES, QString::fromUtf8("Six")},
-		
+
 		{EYamsActions::BRELAN, QString::fromUtf8("Brelan")},
 		{EYamsActions::CARRE, QString::fromUtf8("Carré")},
 		{EYamsActions::FULL, QString::fromUtf8("Full")},
@@ -95,8 +97,6 @@ public:
 		{EYamsActions::CHANCE, QString::fromUtf8("Chance")},
 	};
 	
-private:
-
     /**
      * @brief Interface utilisateur / vue
      */
@@ -230,9 +230,9 @@ private:
 	/**
 	 * @brief Cache le layout contenant les boutons de choix et le compteur de tour
 	 *
-	 * @param hide : bool - Si vrai : masque, si faux : affiche
+	 * @param bHide : bool - Si vrai : masque, si faux : affiche
 	 */
-	void _hideGameBar(bool hide) const;
+	void _hideGameBar(bool bHide) const;
 
 	/**
 	 * @brief Action à effectuer avant de démarrer la partie

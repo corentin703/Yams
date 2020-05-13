@@ -1,0 +1,17 @@
+<map id="QPlayerGridsWidget::actualizeActionButtons" name="QPlayerGridsWidget::actualizeActionButtons">
+<area shape="rect" id="node1" title="Active et désactive les boutons des actions en fonction des coups déjà réalisés d&#39;un joueur." alt="" coords="5,331,169,373"/>
+<area shape="rect" id="node2" href="$class_q_player_grid.html#afdb965fe50e335969a57f4263ccca66f" title="Retourne vrai si les as ont été défini." alt="" coords="224,5,429,32"/>
+<area shape="rect" id="node3" href="$class_q_player_grid.html#a8e30217812a929187bfbaae50ef3c3b7" title="Retourne vrai si le Brelan a été défini." alt="" coords="221,56,433,83"/>
+<area shape="rect" id="node4" href="$class_q_player_grid.html#af25f6f47e104555a3d16e35fb74dd894" title="Retourne vrai si le Carré a été défini." alt="" coords="223,107,430,133"/>
+<area shape="rect" id="node5" href="$class_q_player_grid.html#ae02a63d3cd9947f0efd856b15da9cb5d" title="Retourne vrai si la chance a été défini." alt="" coords="217,157,436,184"/>
+<area shape="rect" id="node6" href="$class_q_player_grid.html#a5b4e47e899758ddb315c9d0e6d0d5efa" title="Retourne vrai si les cinq ont été défini." alt="" coords="224,208,429,235"/>
+<area shape="rect" id="node7" href="$class_q_player_grid.html#ac35f7dd54422fb56210798840eff6ed8" title="Retourne vrai si les quatre ont été défini." alt="" coords="223,259,431,285"/>
+<area shape="rect" id="node8" href="$class_q_player_grid.html#a027e1e57a23fbffd4e5cab360b023dce" title="Retourne vrai si le Full a été défini." alt="" coords="229,309,425,336"/>
+<area shape="rect" id="node9" href="$class_q_player_grid.html#a8079a83e384da3b390505777b9b0aacf" title="Retourne vrai si la grande suite a été défini." alt="" coords="233,361,421,402"/>
+<area shape="rect" id="node10" href="$class_q_player_grid.html#a8013927acd300863aad5c4ef8544e412" title="Retourne vrai si les six ont été défini." alt="" coords="223,427,431,453"/>
+<area shape="rect" id="node11" href="$class_q_player_grid.html#a97dd4f1a8c22e300dd46875d954cf603" title="Retourne vrai si la petite suite a été défini." alt="" coords="232,478,421,519"/>
+<area shape="rect" id="node12" href="$class_q_player_grid.html#a1aa8830cbb57685382d87135c0eb8da8" title="Retourne vrai si le super Yams a été défini." alt="" coords="237,543,416,585"/>
+<area shape="rect" id="node13" href="$class_q_player_grid.html#a34663f3a47bcb333bcdcf53270dd1cc4" title="Retourne vrai si les trois ont été défini." alt="" coords="219,609,434,636"/>
+<area shape="rect" id="node14" href="$class_q_player_grid.html#ab5e33f4ad635307631a570a69aa4790a" title="Retourne vrai si les deux ont été défini." alt="" coords="224,660,429,687"/>
+<area shape="rect" id="node15" href="$class_q_player_grid.html#ad566331fa413c66bf3ee0a04ec484012" title="Retourne vrai si le Yams a été défini." alt="" coords="222,711,431,737"/>
+</map>

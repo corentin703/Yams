@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Yams:  Fichier source de src/QYamsStartFormWidget.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="yams_logo_100x100.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Yams
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Adaptation du jeu de Yams à la reconnaissance d&#39;image</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QYamsStartFormWidget.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_q_yams_start_form_widget_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef Q_YAMS_START_FORM_WIDGET_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define Q_YAMS_START_FORM_WIDGET_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// STL</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Qt</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// UI</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;ui_QYamsStartFormWidget.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_q_yams_start_form_widget.html">QYamsStartFormWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget_1_1_c_player_form.html">   32</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html">CPlayerForm</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d934e15558608393a46086241378a96">   39</a></span>&#160;        QHBoxLayout* <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d934e15558608393a46086241378a96">m_HBoxLayout</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a4cfb824f2a8aa42d905a2e3ce4718d9c">   44</a></span>&#160;        QLabel* <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a4cfb824f2a8aa42d905a2e3ce4718d9c">m_lblPlayerNum</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget_1_1_c_player_form.html#adbbb0a672fa97c245340d1e2d4745c8e">   49</a></span>&#160;        QLineEdit* <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#adbbb0a672fa97c245340d1e2d4745c8e">m_iptPlayerName</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a10bba1c5be73e869491a0f173f956583">CPlayerForm</a>(<a class="code" href="class_q_yams_start_form_widget.html">QYamsStartFormWidget</a>* parent, <a class="code" href="_c_dice_set_8hpp.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> iPlayerNumber);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a6d276b9c2b9fea93f05581d6ccd4be46">   65</a></span>&#160;        QString <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a6d276b9c2b9fea93f05581d6ccd4be46">getInputName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#adbbb0a672fa97c245340d1e2d4745c8e">m_iptPlayerName</a>-&gt;text(); }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d0fd3e85eeeb3016caa4559ee67fe21">   72</a></span>&#160;        QHBoxLayout* <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d0fd3e85eeeb3016caa4559ee67fe21">getQWidget</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d934e15558608393a46086241378a96">m_HBoxLayout</a>; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="class_q_yams_start_form_widget.html#a72df43bf077999108db1de6943ff1de0">QYamsStartFormWidget</a>(QWidget* parent = Q_NULLPTR);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget.html#ad83d06c79a0f4ac27ee674412819c3e3">   87</a></span>&#160;    Ui::QYamsStartFormWidget <a class="code" href="class_q_yams_start_form_widget.html#ad83d06c79a0f4ac27ee674412819c3e3">m_ui</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_q_yams_start_form_widget.html#a25f64cc20a21813ca1dc1f1e2a7b8848">   92</a></span>&#160;    std::list&lt;std::unique_ptr&lt;CPlayerForm&gt;&gt; <a class="code" href="class_q_yams_start_form_widget.html#a25f64cc20a21813ca1dc1f1e2a7b8848">m_lPlayerNameInputs</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_q_yams_start_form_widget.html#a20e13620405dc84dc7751a9e071e2dae">addPlayerNameInput</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_q_yams_start_form_widget.html#a7a54075deb52b0ec28f0c3999ccf08f2">onPlayerNameSetUp</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;signals:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_q_yams_start_form_widget.html#a56e941d61bf304e7ff00e6ded2cc8ed5">playerNameSetUp</a>(std::list&lt;QString&gt;* ptrLPlayerNames);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif // Q_YAMS_START_FORM_WIDGET_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html_a10bba1c5be73e869491a0f173f956583"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html#a10bba1c5be73e869491a0f173f956583">QYamsStartFormWidget::CPlayerForm::CPlayerForm</a></div><div class="ttdeci">CPlayerForm(QYamsStartFormWidget *parent, uint iPlayerNumber)</div><div class="ttdoc">Constructeur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8cpp_source.html#l00005">QYamsStartFormWidget.cpp:5</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html_a56e941d61bf304e7ff00e6ded2cc8ed5"><div class="ttname"><a href="class_q_yams_start_form_widget.html#a56e941d61bf304e7ff00e6ded2cc8ed5">QYamsStartFormWidget::playerNameSetUp</a></div><div class="ttdeci">void playerNameSetUp(std::list&lt; QString &gt; *ptrLPlayerNames)</div><div class="ttdoc">Signal que les noms sont saisis.</div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html"><div class="ttname"><a href="class_q_yams_start_form_widget.html">QYamsStartFormWidget</a></div><div class="ttdoc">Fenêtre de saisie des noms de joueur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00025">QYamsStartFormWidget.hpp:25</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html_a20e13620405dc84dc7751a9e071e2dae"><div class="ttname"><a href="class_q_yams_start_form_widget.html#a20e13620405dc84dc7751a9e071e2dae">QYamsStartFormWidget::addPlayerNameInput</a></div><div class="ttdeci">void addPlayerNameInput()</div><div class="ttdoc">Ajoute une entrée supplémentaire pour ajouter un joueur à la liste.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8cpp_source.html#l00031">QYamsStartFormWidget.cpp:31</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html">QYamsStartFormWidget::CPlayerForm</a></div><div class="ttdoc">Encapsule le numéro et le champ de texte pour un joueur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00032">QYamsStartFormWidget.hpp:32</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html_ad83d06c79a0f4ac27ee674412819c3e3"><div class="ttname"><a href="class_q_yams_start_form_widget.html#ad83d06c79a0f4ac27ee674412819c3e3">QYamsStartFormWidget::m_ui</a></div><div class="ttdeci">Ui::QYamsStartFormWidget m_ui</div><div class="ttdoc">Interface utilisateur / vue.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00087">QYamsStartFormWidget.hpp:87</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html_a6d276b9c2b9fea93f05581d6ccd4be46"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html#a6d276b9c2b9fea93f05581d6ccd4be46">QYamsStartFormWidget::CPlayerForm::getInputName</a></div><div class="ttdeci">QString getInputName() const</div><div class="ttdoc">Retourne le nom saisi par l'utilisateur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00065">QYamsStartFormWidget.hpp:65</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html_adbbb0a672fa97c245340d1e2d4745c8e"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html#adbbb0a672fa97c245340d1e2d4745c8e">QYamsStartFormWidget::CPlayerForm::m_iptPlayerName</a></div><div class="ttdeci">QLineEdit * m_iptPlayerName</div><div class="ttdoc">Champ de texte visant à accueillir le nom du joueur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00049">QYamsStartFormWidget.hpp:49</a></div></div>
+<div class="ttc" id="a_c_dice_set_8hpp_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="_c_dice_set_8hpp.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_set_8hpp_source.html#l00006">CDiceSet.hpp:6</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html_a4cfb824f2a8aa42d905a2e3ce4718d9c"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html#a4cfb824f2a8aa42d905a2e3ce4718d9c">QYamsStartFormWidget::CPlayerForm::m_lblPlayerNum</a></div><div class="ttdeci">QLabel * m_lblPlayerNum</div><div class="ttdoc">Label visant affichant le numéro du joueur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00044">QYamsStartFormWidget.hpp:44</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html_a72df43bf077999108db1de6943ff1de0"><div class="ttname"><a href="class_q_yams_start_form_widget.html#a72df43bf077999108db1de6943ff1de0">QYamsStartFormWidget::QYamsStartFormWidget</a></div><div class="ttdeci">QYamsStartFormWidget(QWidget *parent=Q_NULLPTR)</div><div class="ttdoc">Constructeur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8cpp_source.html#l00019">QYamsStartFormWidget.cpp:19</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html_a5d934e15558608393a46086241378a96"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d934e15558608393a46086241378a96">QYamsStartFormWidget::CPlayerForm::m_HBoxLayout</a></div><div class="ttdeci">QHBoxLayout * m_HBoxLayout</div><div class="ttdoc">Layout horizontal.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00039">QYamsStartFormWidget.hpp:39</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_1_1_c_player_form_html_a5d0fd3e85eeeb3016caa4559ee67fe21"><div class="ttname"><a href="class_q_yams_start_form_widget_1_1_c_player_form.html#a5d0fd3e85eeeb3016caa4559ee67fe21">QYamsStartFormWidget::CPlayerForm::getQWidget</a></div><div class="ttdeci">QHBoxLayout * getQWidget() const</div><div class="ttdoc">Retourne le layout.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00072">QYamsStartFormWidget.hpp:72</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html_a7a54075deb52b0ec28f0c3999ccf08f2"><div class="ttname"><a href="class_q_yams_start_form_widget.html#a7a54075deb52b0ec28f0c3999ccf08f2">QYamsStartFormWidget::onPlayerNameSetUp</a></div><div class="ttdeci">void onPlayerNameSetUp()</div><div class="ttdoc">Action à réaliser lorsque l'utilisateur confirme la saisie.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8cpp_source.html#l00039">QYamsStartFormWidget.cpp:39</a></div></div>
+<div class="ttc" id="aclass_q_yams_start_form_widget_html_a25f64cc20a21813ca1dc1f1e2a7b8848"><div class="ttname"><a href="class_q_yams_start_form_widget.html#a25f64cc20a21813ca1dc1f1e2a7b8848">QYamsStartFormWidget::m_lPlayerNameInputs</a></div><div class="ttdeci">std::list&lt; std::unique_ptr&lt; CPlayerForm &gt; &gt; m_lPlayerNameInputs</div><div class="ttdoc">Contient les différentes entrées de noms des joueurs.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_start_form_widget_8hpp_source.html#l00092">QYamsStartFormWidget.hpp:92</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

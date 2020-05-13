@@ -201,6 +201,9 @@ private:
     /**
      * @brief Traitement d'image par simple blob
      *
+     * Un blob / goutte, est un groupe de pixels connectés partageant une même propriété au sein d'une
+     * image (ici les points des dés) 
+     *
      * @param iNDetectedDices : size_t& - Nombre de dés détectés
      */
 	void _findDicesByBlob(size_t& iNDetectedDices) const;

@@ -280,7 +280,7 @@ public slots:
     /**
      * @brief Met à jour la vue d'une grille
      *
-     * @param playerGrid : QPlayerGrid& - Grille du joueur
+     * @param ptrQPlayerGrid : QPlayerGrid& - Grille du joueur
      */
 	void updateGrid(QPlayerGrid* ptrQPlayerGrid);
 };

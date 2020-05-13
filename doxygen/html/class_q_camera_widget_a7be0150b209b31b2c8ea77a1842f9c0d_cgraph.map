@@ -1,0 +1,7 @@
+<map id="QCameraWidget::QCameraWidget" name="QCameraWidget::QCameraWidget">
+<area shape="rect" id="node1" title="Contructeur." alt="" coords="5,70,228,97"/>
+<area shape="rect" id="node2" href="$class_q_camera_widget.html#a9ff21b2cba708d273ac405a9f5d0a7b9" title="Lance l&#39;analyse de l&#39;image et emmet un jeu de dés si l&#39;analyse est probante." alt="" coords="286,45,473,71"/>
+<area shape="rect" id="node5" href="$class_q_camera_widget.html#ab5d61a5294cbab3a01170a77b0daeeb4" title="Met à jour l&#39;image." alt="" coords="276,95,483,122"/>
+<area shape="rect" id="node3" href="$class_q_camera_widget.html#a0337353c26fa1a28663876c61763d427" title="Traitement d&#39;image par simple blob." alt="" coords="531,5,717,47"/>
+<area shape="rect" id="node4" href="$class_q_camera_widget.html#adc5e5e2836fd6e9aed5c5a1043c31844" title="Traitement d&#39;image par aire minimum." alt="" coords="531,71,717,112"/>
+</map>

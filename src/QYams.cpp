@@ -247,10 +247,25 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 
 	std::sort(vSortedSimulationResult.begin(), vSortedSimulationResult.end(), [](pair<QYams::EYamsActions, uint> a, pair<QYams::EYamsActions, uint> b)
 	{
+		// La chance est à utiliser de préférence en derniers recours
 		if (a.first == EYamsActions::CHANCE && b.second > 0)
 			return false;
+		else if (a.first == EYamsActions::ACES && a.second >= 3) // Si on a plus de 3 aus As, il vaut mieux inscrire les As qu'un Brelan ou un Carré
+			return true;
+		else if (a.first == EYamsActions::TWOS && a.second >= 6) // Si on a plus de 6 aux deux, il est plus intéressant d'inscrire les deux
+			return true;
+		else if (a.first == EYamsActions::THREES && a.second >= 9) // Si on a plus de 9 aux trois, il est plus intéressant d'inscrire les deux
+			return true;
+
+		// Mêmes vérifications que ci-dessus mais pour b
+		if (b.first == EYamsActions::ACES && b.second >= 3)
+			return false;
+		else if (b.first == EYamsActions::TWOS && b.second >= 6)
+			return false;
+		else if (b.first == EYamsActions::THREES && b.second >= 9)
+			return false;
 		
-		return a.second > b.second;
+		return a.second > b.second; // Pour le reste on trie selon la grandeur
 	});
 }
 
@@ -272,6 +287,7 @@ void QYams::_nextPlayer()
 
 	m_iNbrTurn = 3;
 	m_ui.lblTurn->setText(QString::number(m_iNbrTurn));
+	m_ui.lblPlayerName->setText((*m_itPlayerGrids)->getPlayerName());
 	
 	_resetChoices();
 	m_ptrQPlayerGridsWidget->enableActionButtons(false);
@@ -373,14 +389,16 @@ void QYams::_resetChoices(EChoices choice)
 		m_ui.btnRedetection->setEnabled(false);
 }
 
-void QYams::_hideGameBar(bool hide) const
+void QYams::_hideGameBar(bool bHide) const
 {
-	m_ui.lblTurnText->setHidden(hide);
-	m_ui.lblTurn->setHidden(hide);
-	m_ui.btnChoice1->setHidden(hide);
-	m_ui.btnChoice2->setHidden(hide);
-	m_ui.btnChoice3->setHidden(hide);
-	m_ui.btnRedetection->setHidden(hide);
+	m_ui.lblTurnText->setHidden(bHide);
+	m_ui.lblTurn->setHidden(bHide);
+	m_ui.lblPlayerNameText->setHidden(bHide);
+	m_ui.lblPlayerName->setHidden(bHide);
+	m_ui.btnChoice1->setHidden(bHide);
+	m_ui.btnChoice2->setHidden(bHide);
+	m_ui.btnChoice3->setHidden(bHide);
+	m_ui.btnRedetection->setHidden(bHide);
 }
 
 void QYams::_beforeStart()
@@ -517,6 +535,7 @@ void QYams::showAboutWindow()
 
 	// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l'application
 	m_ptrAboutWindow->setWindowModality(Qt::ApplicationModal);
+	m_ptrAboutWindow->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
 	m_ptrAboutWindow->show();
 }
 
@@ -548,7 +567,7 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 	m_ui.btnStart->hide();
 	m_ui.btnQuit->hide();
 
-	// On active les 3 boutons de choix
+	// On active les 3 boutons de choix et les indicateurs
 	_hideGameBar(false);
 
 	m_ui.btnChoice1->setDisabled(true);
@@ -557,6 +576,7 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 
 	m_iNbrTurn = 3;
 	m_ui.lblTurn->setText(QString::number(m_iNbrTurn));
+	m_ui.lblPlayerName->setText((*m_itPlayerGrids)->getPlayerName());
 	
 	connect(m_ptrQCameraWidget, &QCameraWidget::dicesUpdated, this, &QYams::updateTurn);
 

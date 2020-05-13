@@ -76,12 +76,13 @@ set(QT_RESSOURCES
     src/QAboutWidget.qrc
 )
 
-add_executable( ${PROJECT_NAME} 
-    ${HEADERS} ${SRCS} 
-    ${CLASS_HEADERS} ${CLASS_SRCS} 
-    ${QT_CLASS_HEADERS} ${QT_CLASS_SRCS} ${QT_VIEW} ${QT_RESSOURCES}  
+add_executable( ${PROJECT_NAME}
+    ${HEADERS} ${SRCS}
+    ${CLASS_HEADERS} ${CLASS_SRCS}
+    ${QT_CLASS_HEADERS} ${QT_CLASS_SRCS} ${QT_VIEW} ${QT_RESSOURCES}
     
     src/main.cpp 
+    src/yams.rc
 )
 
 if(WIN32) # Regarde si on est sous Windows
@@ -106,7 +107,6 @@ else()
 endif(WIN32)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
-# target_link_libraries( ${PROJECT_NAME} ${QT_LIBRARIES} )
 target_link_libraries( ${PROJECT_NAME} Qt5::Core )
 target_link_libraries( ${PROJECT_NAME} Qt5::Widgets )
 
