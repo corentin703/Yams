@@ -12,3 +12,5 @@ Toutefois, une [documentation classique](https://github.com/corentin703/CEGEP-Pr
 sous forme de fichier pdf est incluse dans le dossier doxygen (Doxygen/Documentation.pdf). 
 
 Un installateur sera rendu avec le compte rendu sur Léa.
+
+La conception UML du projet est accessible [ici](https://github.com/corentin703/CEGEP-Projet-Yams/tree/master/Conception) sous formes d'images au format .png.
