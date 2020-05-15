@@ -8,7 +8,7 @@ Vous trouverez une copie du compte rendu (qui a été remis sur Léa) [ici](http
 Une documentation en ligne a été construite avec [Doxygen](http://www.doxygen.nl), et sera accessible sous doxygen/html/index.html 
 quand vous aurez cloné ou téléchargé le dépôt.
 
-Toutefois, une [documentation classique](https://github.com/corentin703/CEGEP-Projet-Yams/blob/master/doxygen/Documentation.pdf)
-sous forme de fichier pdf est incluse dans le dossier doxygen (doxygen/Documentation.pdf). 
+Toutefois, une [documentation classique](https://github.com/corentin703/CEGEP-Projet-Yams/blob/master/Doxygen/Documentation.pdf)
+sous forme de fichier pdf est incluse dans le dossier doxygen (Doxygen/Documentation.pdf). 
 
 Un installateur sera rendu avec le compte rendu sur Léa.
