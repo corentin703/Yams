@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/icon">
-        <file alias="48x48">ressources/yams_logo_48x48.png</file>
-    </qresource>
+  <qresource prefix="/icon">
+    <file alias="128x128">ressources/yams_logo_128x128.png</file>
+    <file alias="48x48">ressources/yams_logo_48x48.png</file>
+  </qresource>
 </RCC>

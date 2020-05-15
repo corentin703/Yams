@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Yams:  Fichier source de src/models/CDice.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="yams_logo_75x75.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Yams
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Adaptation du jeu de Yams à la reconnaissance d&#39;image</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bdeba5f06b852fec80257c0bf4c3c36e.html">models</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CDice.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_c_dice_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef C_DICE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define C_DICE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// STL</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// OpenCV</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;opencv2/imgproc.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_c_dice.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_dice.html">CDice</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>: </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_c_dice.html#a515e19f4becd2635087f4b34c26d8cd6">   28</a></span>&#160;    cv::RotatedRect <a class="code" href="class_c_dice.html#a515e19f4becd2635087f4b34c26d8cd6">m_diceRect</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_c_dice.html#a4891577574fe1713d8211139a3486b21">   33</a></span>&#160;    std::list&lt;cv::RotatedRect&gt; <a class="code" href="class_c_dice.html#a4891577574fe1713d8211139a3486b21">m_lDotRects</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_c_dice.html#aa89f9f5e2be0ab7f0d383e466b0f5fb8">CDice</a>(<span class="keyword">const</span> cv::RotatedRect&amp; diceRect);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_c_dice.html#ab9839afec2befec46ec2db587ebfbd66">   48</a></span>&#160;    <span class="keyword">const</span> cv::RotatedRect&amp; <a class="code" href="class_c_dice.html#ab9839afec2befec46ec2db587ebfbd66">getDiceRect</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_c_dice.html#a515e19f4becd2635087f4b34c26d8cd6">m_diceRect</a>; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_c_dice.html#ab3a15721c7068dadc34883add96c7612">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_dice.html#ab3a15721c7068dadc34883add96c7612">setDiceRect</a>(<span class="keyword">const</span> cv::RotatedRect&amp; diceRect) { <a class="code" href="class_c_dice.html#a515e19f4becd2635087f4b34c26d8cd6">m_diceRect</a> = diceRect; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_c_dice.html#a1df638547e0063f2f807584e055536be">   62</a></span>&#160;    <span class="keyword">const</span> std::list&lt;cv::RotatedRect&gt;&amp; <a class="code" href="class_c_dice.html#a1df638547e0063f2f807584e055536be">getDotRects</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_c_dice.html#a4891577574fe1713d8211139a3486b21">m_lDotRects</a>; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_c_dice.html#a415d10782aa42609353e18631b584b4b">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_dice.html#a415d10782aa42609353e18631b584b4b">addDotRect</a>(<span class="keyword">const</span> cv::RotatedRect&amp; dotRect) { <a class="code" href="class_c_dice.html#a4891577574fe1713d8211139a3486b21">m_lDotRects</a>.push_back(dotRect); }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_c_dice.html#abbddadcd75a0ac8dce59a76e310a7f28">   76</a></span>&#160;    <a class="code" href="_c_dice_set_8hpp.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> <a class="code" href="class_c_dice.html#abbddadcd75a0ac8dce59a76e310a7f28">getCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_c_dice.html#a4891577574fe1713d8211139a3486b21">m_lDotRects</a>.size(); }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif // C_DICE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_c_dice_html_ab3a15721c7068dadc34883add96c7612"><div class="ttname"><a href="class_c_dice.html#ab3a15721c7068dadc34883add96c7612">CDice::setDiceRect</a></div><div class="ttdeci">void setDiceRect(const cv::RotatedRect &amp;diceRect)</div><div class="ttdoc">Définit la position du rectangle du dé</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00055">CDice.hpp:55</a></div></div>
+<div class="ttc" id="aclass_c_dice_html"><div class="ttname"><a href="class_c_dice.html">CDice</a></div><div class="ttdoc">Encapsule un dé détecté</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00020">CDice.hpp:20</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_a1df638547e0063f2f807584e055536be"><div class="ttname"><a href="class_c_dice.html#a1df638547e0063f2f807584e055536be">CDice::getDotRects</a></div><div class="ttdeci">const std::list&lt; cv::RotatedRect &gt; &amp; getDotRects() const</div><div class="ttdoc">Retourne la liste des positions des points du dé</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00062">CDice.hpp:62</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_aa89f9f5e2be0ab7f0d383e466b0f5fb8"><div class="ttname"><a href="class_c_dice.html#aa89f9f5e2be0ab7f0d383e466b0f5fb8">CDice::CDice</a></div><div class="ttdeci">CDice(const cv::RotatedRect &amp;diceRect)</div><div class="ttdoc">Constructeur.</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8cpp_source.html#l00003">CDice.cpp:3</a></div></div>
+<div class="ttc" id="a_c_dice_set_8hpp_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="_c_dice_set_8hpp.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_set_8hpp_source.html#l00006">CDiceSet.hpp:6</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_abbddadcd75a0ac8dce59a76e310a7f28"><div class="ttname"><a href="class_c_dice.html#abbddadcd75a0ac8dce59a76e310a7f28">CDice::getCount</a></div><div class="ttdeci">uint getCount() const</div><div class="ttdoc">Retourne le nombre de points détectés.</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00076">CDice.hpp:76</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_ab9839afec2befec46ec2db587ebfbd66"><div class="ttname"><a href="class_c_dice.html#ab9839afec2befec46ec2db587ebfbd66">CDice::getDiceRect</a></div><div class="ttdeci">const cv::RotatedRect &amp; getDiceRect() const</div><div class="ttdoc">Retourne la position du rectangle du dé</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00048">CDice.hpp:48</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_a4891577574fe1713d8211139a3486b21"><div class="ttname"><a href="class_c_dice.html#a4891577574fe1713d8211139a3486b21">CDice::m_lDotRects</a></div><div class="ttdeci">std::list&lt; cv::RotatedRect &gt; m_lDotRects</div><div class="ttdoc">Liste des positions des points du dé</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00033">CDice.hpp:33</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_a515e19f4becd2635087f4b34c26d8cd6"><div class="ttname"><a href="class_c_dice.html#a515e19f4becd2635087f4b34c26d8cd6">CDice::m_diceRect</a></div><div class="ttdeci">cv::RotatedRect m_diceRect</div><div class="ttdoc">Position du rectangle du dé</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00028">CDice.hpp:28</a></div></div>
+<div class="ttc" id="aclass_c_dice_html_a415d10782aa42609353e18631b584b4b"><div class="ttname"><a href="class_c_dice.html#a415d10782aa42609353e18631b584b4b">CDice::addDotRect</a></div><div class="ttdeci">void addDotRect(const cv::RotatedRect &amp;dotRect)</div><div class="ttdoc">Définit la liste des positions des points du dé</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_8hpp_source.html#l00069">CDice.hpp:69</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

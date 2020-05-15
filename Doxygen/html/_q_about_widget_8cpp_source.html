@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Yams:  Fichier source de src/QAboutWidget.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="yams_logo_75x75.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Yams
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Adaptation du jeu de Yams à la reconnaissance d&#39;image</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QAboutWidget.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_q_about_widget_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_q_about_widget_8hpp.html">QAboutWidget.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_q_about_widget.html#ac2a836b6d828ede2b44de552133cf7fe">    3</a></span>&#160;<a class="code" href="class_q_about_widget.html#ac2a836b6d828ede2b44de552133cf7fe">QAboutWidget::QAboutWidget</a>(QWidget *parent)</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    : QWidget(parent)</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="class_q_about_widget.html#a763b1ad09afccf4fd6c1b53603afb086">m_ui</a>.setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    connect(<a class="code" href="class_q_about_widget.html#a763b1ad09afccf4fd6c1b53603afb086">m_ui</a>.btnAboutQt, &amp;QPushButton::clicked, <span class="keyword">this</span>, &amp;<a class="code" href="class_q_about_widget.html#a932be04e7f3d68a1ea754c8e9dc61732">QAboutWidget::showAboutQtWindow</a>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    connect(<a class="code" href="class_q_about_widget.html#a763b1ad09afccf4fd6c1b53603afb086">m_ui</a>.btnAboutOpenCV, &amp;QPushButton::clicked, <span class="keyword">this</span>, &amp;<a class="code" href="class_q_about_widget.html#a587f2e13a93037cd20b13c7eceef793d">QAboutWidget::showAboutOpenCVWindow</a>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    connect(<a class="code" href="class_q_about_widget.html#a763b1ad09afccf4fd6c1b53603afb086">m_ui</a>.lblCEGEP, &amp;QLabel::linkActivated, [<span class="keyword">this</span>]()</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        QDesktopServices::openUrl(QUrl(<span class="stringliteral">&quot;https://cegepsi.ca&quot;</span>, QUrl::TolerantMode));</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    });</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_q_about_widget.html#a932be04e7f3d68a1ea754c8e9dc61732">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_q_about_widget.html#a932be04e7f3d68a1ea754c8e9dc61732">QAboutWidget::showAboutQtWindow</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QMessageBox::aboutQt(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_q_about_widget.html#a587f2e13a93037cd20b13c7eceef793d">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_q_about_widget.html#a587f2e13a93037cd20b13c7eceef793d">QAboutWidget::showAboutOpenCVWindow</a>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> QString cvVersion = QString::fromLatin1(cv::getVersionString().c_str());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QMessageBox aboutOpenCV;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    aboutOpenCV.setIconPixmap(QPixmap(<span class="stringliteral">&quot;:/about/logo_open_cv&quot;</span>));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    aboutOpenCV.setWindowIcon(QPixmap(<span class="stringliteral">&quot;:/about/logo_open_cv&quot;</span>));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    aboutOpenCV.setWindowTitle(<span class="stringliteral">&quot;About OpenCV&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    aboutOpenCV.setText(<span class="stringliteral">&quot;&lt;h3&gt;About OpenCV&lt;/h3&gt;&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    aboutOpenCV.setInformativeText(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="stringliteral">&quot;&lt;p&gt;This program uses OpenCV version &quot;</span> + cvVersion + <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="stringliteral">&quot;&lt;p&gt;OpenCV (Open Source Computer Vision Library) &quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="stringliteral">&quot;is an open source computer vision and machine learning software library. &quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;OpenCV was built to provide a common infrastructure for computer vision &quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="stringliteral">&quot;applications and to accelerate the use of machine perception in the commercial products. &quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="stringliteral">&quot;Being a BSD-licensed product, &quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="stringliteral">&quot;OpenCV makes it easy for businesses to utilize and modify the code.&lt;/p&gt;&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="stringliteral">&quot;See &lt;a href=&#39;https://opencv.org&#39;&gt;opencv.org&lt;/a&gt;&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    aboutOpenCV.exec();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_q_about_widget_8hpp_html"><div class="ttname"><a href="_q_about_widget_8hpp.html">QAboutWidget.hpp</a></div></div>
+<div class="ttc" id="aclass_q_about_widget_html_ac2a836b6d828ede2b44de552133cf7fe"><div class="ttname"><a href="class_q_about_widget.html#ac2a836b6d828ede2b44de552133cf7fe">QAboutWidget::QAboutWidget</a></div><div class="ttdeci">QAboutWidget(QWidget *parent=Q_NULLPTR)</div><div class="ttdoc">Contructeur.</div><div class="ttdef"><b>Definition:</b> <a href="_q_about_widget_8cpp_source.html#l00003">QAboutWidget.cpp:3</a></div></div>
+<div class="ttc" id="aclass_q_about_widget_html_a932be04e7f3d68a1ea754c8e9dc61732"><div class="ttname"><a href="class_q_about_widget.html#a932be04e7f3d68a1ea754c8e9dc61732">QAboutWidget::showAboutQtWindow</a></div><div class="ttdeci">void showAboutQtWindow()</div><div class="ttdoc">Affiche la fenêtre &quot;About Qt&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="_q_about_widget_8cpp_source.html#l00017">QAboutWidget.cpp:17</a></div></div>
+<div class="ttc" id="aclass_q_about_widget_html_a587f2e13a93037cd20b13c7eceef793d"><div class="ttname"><a href="class_q_about_widget.html#a587f2e13a93037cd20b13c7eceef793d">QAboutWidget::showAboutOpenCVWindow</a></div><div class="ttdeci">void showAboutOpenCVWindow()</div><div class="ttdoc">Crée et affiche une fenêtre &quot;About OpenCV&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="_q_about_widget_8cpp_source.html#l00022">QAboutWidget.cpp:22</a></div></div>
+<div class="ttc" id="aclass_q_about_widget_html_a763b1ad09afccf4fd6c1b53603afb086"><div class="ttname"><a href="class_q_about_widget.html#a763b1ad09afccf4fd6c1b53603afb086">QAboutWidget::m_ui</a></div><div class="ttdeci">Ui::QAboutWidget m_ui</div><div class="ttdoc">Interface utilisateur / vue.</div><div class="ttdef"><b>Definition:</b> <a href="_q_about_widget_8hpp_source.html#l00040">QAboutWidget.hpp:40</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
