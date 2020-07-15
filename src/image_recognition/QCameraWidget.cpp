@@ -9,10 +9,10 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	m_videoCapture.open(0);
 
 	if (!m_videoCapture.isOpened()) {
-		throw new Exception(0, "Problème d'ouverture de la caméra", "", "", 0);
+		throw new Exception(0, "ProblÃ¨me d'ouverture de la camÃ©ra", "", "", 0);
 	}
 
-	// On vérifie si la machine prend en charge au moins deux threads sinon l'analyse d'image se fera en monothread
+	// On vÃ©rifie si la machine prend en charge au moins deux threads sinon l'analyse d'image se fera en monothread
 	m_bThreadsEnabled = (thread::hardware_concurrency() >= 2);
 
 	connect(&m_qTimerFrame, &QTimer::timeout, this, &QCameraWidget::_updateImage);
@@ -55,7 +55,7 @@ void QCameraWidget::_updateImage()
 	// Suppression du bruit
 	blur(*matNewImageCaptured, *matNewImageCaptured, DEFAULT_KERNEL);
 	
-	// On récupère l'image
+	// On rÃ©cupÃ¨re l'image
 	bool bNotify = true;
 	if (m_matImageCaptured != nullptr)
 	{
@@ -100,7 +100,7 @@ void QCameraWidget::_findDices()
 		_findDicesByBlob(nDotsDetectedByBlob);
 	}
 	
-	// On regarde si les deux algorithmes comptent le même total 
+	// On regarde si les deux algorithmes comptent le mÃªme total
 	if (nDotsDetectedByMinArea == nDotsDetectedByBlob)
 	{
 		std::list<std::shared_ptr<CDice>> lDicesBuffer;
@@ -113,16 +113,16 @@ void QCameraWidget::_findDices()
 		else
 		{
 			bool bProcess = true;
-			// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d'être détéctés
+			// On regarde les similitudes entre les dÃ©s dÃ©jÃ  enregistrÃ©s et ceux venant d'Ãªtre dÃ©tÃ©ctÃ©s
 			for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); ++itDetectedDices)
 			{
-				// Si le dé est un faux positif on passe
+				// Si le dÃ© est un faux positif on passe
 				if ((*itDetectedDices)->getCount() == 0 || (*itDetectedDices)->getCount() > 6)
 					continue;
 				
 				for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); ++itDice)
 				{
-					// Si le numéro est le même, on compare la position pour savoir si c'est le même dé (avec une marge d'erreur / tolérance)
+					// Si le numÃ©ro est le mÃªme, on compare la position pour savoir si c'est le mÃªme dÃ© (avec une marge d'erreur / tolÃ©rance)
 					if ((*itDetectedDices)->getCount() == (*itDice)->getCount())
 					{
 						const float fX = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().x - (*itDice)->getDiceRect().boundingRect().x);
@@ -146,25 +146,25 @@ void QCameraWidget::_findDices()
 			
 		}
 		
-		// Si on détecte 5 dés
+		// Si on dÃ©tecte 5 dÃ©s
 		if (lDicesBuffer.size() == 5)
 		{
 			m_lDices.clear();
 			m_lDices = lDicesBuffer;
 
-			// On compte les dés par capacité
+			// On compte les dÃ©s par capacitÃ©
 			shared_ptr<CDiceSet> pDiceSet = make_shared<CDiceSet>();
-			for (shared_ptr<CDice>& const dice : m_lDices)
+			for (shared_ptr<CDice>& dice : m_lDices)
 				(*pDiceSet)[dice->getCount()]++;
 
-			// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
+			// Si on obtient le mÃªme set de dÃ©s que prÃ©cÃ©demment, on passe, sinon on Ã©met le signal
 			if (m_pLastDiceSet != nullptr && *m_pLastDiceSet == *pDiceSet
 				&& (m_pLastValidatedDiceSet == nullptr || *pDiceSet != *m_pLastValidatedDiceSet))
 			{
 				m_pLastValidatedDiceSet = pDiceSet;
 
 				if (m_bIsWrongDetection)
-					QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dès mis à jour"));
+					QMessageBox::information(this, QString::fromLatin1("RedÃ©tection terminÃ©e"), QString::fromLatin1("DÃ©s mis Ã  jour"));
 
 				emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
 
@@ -193,18 +193,18 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 	vector<Vec4i> vHierarchy;
 	findContours(matImageBuffer, vContours, vHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
 	
-	// On veut déterminer les rectangles qui sont contours des dés
+	// On veut dÃ©terminer les rectangles qui sont contours des dÃ©s
 	for (vector<Point>& contour : vContours)
 	{
 		// Pour chaque contour, on cherche l'aire minimum du triangle
 		RotatedRect rect = minAreaRect(contour);
 		
 		// On traite uniquement les rectangles qui n'ont pas des angles droits parfaits
-		// L'aire dépend de la résolution de la webcam
+		// L'aire dÃ©pend de la rÃ©solution de la webcam
 		const float fAspect = fabs(rect.size.aspectRatio() - 1);
 		if ((fAspect < 0.25) && (rect.size.area() > MIN_DICE_WIDTH) && (rect.size.area() < MAX_DICE_WIDTH))
 		{
-			// On vérifie le rectangle ou un rectangle proche n'a pas déjà été assigné
+			// On vÃ©rifie le rectangle ou un rectangle proche n'a pas dÃ©jÃ  Ã©tÃ© assignÃ©
 			bool bProcess = true;
 			for (shared_ptr<CDice>& dice : lDetectedDices)
 			{
@@ -222,10 +222,10 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 	}
 
 	
-	// On compte les points de chaque dé
+	// On compte les points de chaque dÃ©
 	for (shared_ptr<CDice>& dice : lDetectedDices)
 	{
-		// Extraction du dés de l'image
+		// Extraction du dÃ©s de l'image
 		Mat rotation, rotated, cropped;
 		RotatedRect rect = dice->getDiceRect();
 		rotation = getRotationMatrix2D(rect.center, rect.angle, 1.0);

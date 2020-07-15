@@ -5,6 +5,7 @@
 
 // STL
 #include <string>
+#include <exception>
 
 // Qt
 #include <QObject>

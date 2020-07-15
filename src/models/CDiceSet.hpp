@@ -155,7 +155,7 @@ inline uint& CDiceSet::operator[](uint iDiceNumber)
 	case 6 :
 		return m_iSixes;
 	default:
-		throw new std::exception("Dé demandé inconnu");
+		throw new std::runtime_error("Dé demandé inconnu");
 	}
 }
 

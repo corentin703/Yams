@@ -1,5 +1,5 @@
 <map id="QCameraWidget::_findDicesByBlob" name="QCameraWidget::_findDicesByBlob">
-<area shape="rect" id="node1" title="Traitement d&#39;image par simple blob." alt="" coords="511,5,697,47"/>
-<area shape="rect" id="node2" href="$class_q_camera_widget.html#a9ff21b2cba708d273ac405a9f5d0a7b9" title="Lance l&#39;analyse de l&#39;image et emmet un jeu de dés si l&#39;analyse est probante." alt="" coords="276,13,463,39"/>
-<area shape="rect" id="node3" href="$class_q_camera_widget.html#a7be0150b209b31b2c8ea77a1842f9c0d" title="Contructeur." alt="" coords="5,13,228,39"/>
+<area shape="rect" id="node1" title="Traitement d&#39;image par simple blob." alt="" coords="549,5,753,47"/>
+<area shape="rect" id="node2" href="$class_q_camera_widget.html#a9ff21b2cba708d273ac405a9f5d0a7b9" title="Lance l&#39;analyse de l&#39;image et emmet un jeu de dés si l&#39;analyse est probante." alt="" coords="297,13,501,39"/>
+<area shape="rect" id="node3" href="$class_q_camera_widget.html#a7be0150b209b31b2c8ea77a1842f9c0d" title="Contructeur." alt="" coords="5,13,249,39"/>
 </map>

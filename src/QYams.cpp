@@ -12,7 +12,7 @@ QYams::QYams(QWidget *parent)
 
 	_beforeStart();
 
-	// Connexion des boutons démarrer et quitter
+	// Connexion des boutons dÃ©marrer et quitter
 	connect(m_ui.btnStart, &QPushButton::clicked, this, &QYams::start);
 	connect(m_ui.btnQuit, &QPushButton::clicked, this, &QYams::quit);
 
@@ -27,7 +27,7 @@ QYams::QYams(QWidget *parent)
 	connect(m_ui.btnChoice2, &QPushButton::clicked, [this]() { doAction(m_choice2); });
 	connect(m_ui.btnChoice3, &QPushButton::clicked, [this]() { doAction(m_choice3); });
 
-	// Connexion des boutons permettant de choisir l'action que l'on veut réaliser
+	// Connexion des boutons permettant de choisir l'action que l'on veut rÃ©aliser
 	connect(m_ptrQPlayerGridsWidget->getAcesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::ACES); });
 	connect(m_ptrQPlayerGridsWidget->getTwosButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::TWOS); });
 	connect(m_ptrQPlayerGridsWidget->getThreeButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::THREES); });
@@ -136,7 +136,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 		if (diceSet[i] == 3)
 			bIsBrelan = true;
 
-		// Simulation du Carre
+		// Simulation du CarrÃ©
 		if (diceSet[i] == 4)
 			bIsCarre = true;
 
@@ -171,7 +171,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 
 	if (!(*m_itPlayerGrids)->isBrelanAlreadySet())
 	{
-		// Résultat du Brelan
+		// RÃ©sultat du Brelan
 		m_mapLastSimulation.insert({
 			EYamsActions::BRELAN,
 			(bIsBrelan) ? diceSet.getTotal() : 0
@@ -180,7 +180,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 	
 	if (!(*m_itPlayerGrids)->isCarreAlreadySet())
 	{
-		// Résultat du Carré
+		// RÃ©sultat du CarrÃ©
 		m_mapLastSimulation.insert({
 			EYamsActions::CARRE,
 			(bIsCarre) ? diceSet.getTotal() : 0
@@ -189,7 +189,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 	
 	if (!(*m_itPlayerGrids)->isFullAlreadySet())
 	{
-		// Résultat du Full
+		// RÃ©sultat du Full
 		m_mapLastSimulation.insert({
 			EYamsActions::FULL,
 			(bIsFull) ? 25 : 0
@@ -198,7 +198,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 	
 	if (!(*m_itPlayerGrids)->isSmallStraightAlreadySet())
 	{
-		// Résultat de la petite suite
+		// RÃ©sultat de la petite suite
 		m_mapLastSimulation.insert({
 			EYamsActions::SMALL_STRAIGHT,
 			(iSmallStraight >= 4) ? 30 : 0
@@ -207,7 +207,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 	
 	if (!(*m_itPlayerGrids)->isLargeStraightAlreadySet())
 	{
-		// Résultat de la grande suite
+		// RÃ©sultat de la grande suite
 		m_mapLastSimulation.insert({
 			EYamsActions::LARGE_STRAIGHT,
 			(iLargeStraight == 5) ? 40 : 0
@@ -216,7 +216,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 	
 	if (!(*m_itPlayerGrids)->isYamsAlreadySet())
 	{
-		// Résultat du Yams
+		// RÃ©sultat du Yams
 		m_mapLastSimulation.insert({
 			EYamsActions::YAMS,
 			(bYams) ? 50 : 0
@@ -225,7 +225,7 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 	
 	if (!(*m_itPlayerGrids)->isSuperYamsAlreadySet())
 	{
-		// Résultat du super Yams (le Yams doit être réalisé)
+		// RÃ©sultat du super Yams (le Yams doit Ãªtre rÃ©alisÃ©)
 		m_mapLastSimulation.insert({
 			EYamsActions::SUPER_YAMS,
 			(bYams && !((*m_itPlayerGrids)->getYams() == 0)) ? 100 : 0
@@ -247,17 +247,17 @@ void QYams::_simulate(CDiceSet& diceSet, std::vector<std::pair<QYams::EYamsActio
 
 	std::sort(vSortedSimulationResult.begin(), vSortedSimulationResult.end(), [](pair<QYams::EYamsActions, uint> a, pair<QYams::EYamsActions, uint> b)
 	{
-		// La chance est à utiliser de préférence en derniers recours
+		// La chance est Ã  utiliser de prÃ©fÃ©rence en derniers recours
 		if (a.first == EYamsActions::CHANCE && b.second > 0)
 			return false;
-		else if (a.first == EYamsActions::ACES && a.second >= 3) // Si on a plus de 3 aus As, il vaut mieux inscrire les As qu'un Brelan ou un Carré
+		else if (a.first == EYamsActions::ACES && a.second >= 3) // Si on a plus de 3 aus As, il vaut mieux inscrire les As qu'un Brelan ou un CarrÃ©
 			return true;
-		else if (a.first == EYamsActions::TWOS && a.second >= 6) // Si on a plus de 6 aux deux, il est plus intéressant d'inscrire les deux
+		else if (a.first == EYamsActions::TWOS && a.second >= 6) // Si on a plus de 6 aux deux, il est plus intÃ©ressant d'inscrire les deux
 			return true;
-		else if (a.first == EYamsActions::THREES && a.second >= 9) // Si on a plus de 9 aux trois, il est plus intéressant d'inscrire les deux
+		else if (a.first == EYamsActions::THREES && a.second >= 9) // Si on a plus de 9 aux trois, il est plus intÃ©ressant d'inscrire les deux
 			return true;
 
-		// Mêmes vérifications que ci-dessus mais pour b
+		// MÃªmes vÃ©rifications que ci-dessus mais pour b
 		if (b.first == EYamsActions::ACES && b.second >= 3)
 			return false;
 		else if (b.first == EYamsActions::TWOS && b.second >= 6)
@@ -344,7 +344,7 @@ void QYams::doAction(EYamsActions selectedAction)
 		break;
 	case YAMS:
 		if (m_mapLastSimulation[EYamsActions::YAMS] == 0 && !(*m_itPlayerGrids)->isSuperYamsAlreadySet())
-			(*m_itPlayerGrids)->setSuperYams(false); // Le super Yams nécessite que le Yams soit réalisé pour pouvoir être fait
+			(*m_itPlayerGrids)->setSuperYams(false); // Le super Yams nÃ©cessite que le Yams soit rÃ©alisÃ© pour pouvoir Ãªtre fait
 		else 
 			(*m_itPlayerGrids)->setYams(m_mapLastSimulation[EYamsActions::YAMS] > 0);
 		break;
@@ -356,7 +356,7 @@ void QYams::doAction(EYamsActions selectedAction)
 		break;
 
 	default:
-		throw new exception("Choix inconnu");
+		throw new runtime_error("Choix inconnu");
 	}
 
 	_nextPlayer();
@@ -403,7 +403,7 @@ void QYams::_hideGameBar(bool bHide) const
 
 void QYams::_beforeStart()
 {
-	// Affichage des boutons de démarrage et de sortie
+	// Affichage des boutons de dÃ©marrage et de sortie
 	m_ui.btnStart->show();
 	m_ui.btnQuit->show();
 
@@ -416,25 +416,25 @@ void QYams::_beforeStart()
 
 void QYams::_showRules()
 {
-	QMessageBox::information(this, QString::fromLatin1("Règles du Yams"), QString::fromLatin1(
+	QMessageBox::information(this, QString::fromLatin1("RÃ¨gles du Yams"), QString::fromLatin1(
 		"<p>"
-		"Le Yams ou Yahtzee est un jeu qui se joue avec 5 dés et se finit lorsque tous les joueurs ont remplis leur grille de jeu."
-		"Chaque joueur peut tirer jusqu'à 3 fois une partie ou la totalité des dés afin d'arriver au résultat rapportant le plus de points"
-		"Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille à l'issue de chaque tour"
-		"(il peut compter 0 s'il n'a obtenu aucun résultat probant)."
+		"Le Yams ou Yahtzee est un jeu qui se joue avec 5 dÃ©s et se finit lorsque tous les joueurs ont remplis leur grille de jeu."
+		"Chaque joueur peut tirer jusqu'Ã  3 fois une partie ou la totalitÃ© des dÃ©s afin d'arriver au rÃ©sultat rapportant le plus de points"
+		"Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille Ã  l'issue de chaque tour"
+		"(il peut compter 0 s'il n'a obtenu aucun rÃ©sultat probant)."
 		"</p>"
 		"<p>"
-		"La partie supérieure se compléte en inscrivant le total des dés correspondants lors d'un tour"
+		"La partie supÃ©rieure se complÃ¨te en inscrivant le total des dÃ©s correspondants lors d'un tour"
 		"</p>"
-		"<h4>Explications des combinaisons de la partie inférieure</h4>"
+		"<h4>Explications des combinaisons de la partie infÃ©rieure</h4>"
 		"<ul>"
-			"<li>Le Brelan : lorsque le joueur obtient 3 dés identiques, il peut compter le total des dés ;</li>"
-			"<li>Le Carré : lorsque le joueur obtient 4 dés identiques, il peut compter le total des dés ;</li>"
-			"<li>Le Full : lorsque le joueur obtient 3 dés identiques et 2 autres de la même valeur aussi, il peut compter 25 points ;</li>"
-			"<li>La petite suite : lorsque le joueur obtient au moins 4 dés dont la valeur se suit, il peut compter 30 points ;</li>"
-			"<li>La grande suite : lorsque le joueur obtient au moins 5 dés dont la valeur se suit, il peut compter 40 points ;</li>"
-			"<li>Le Yams : lorsque le joueur obtient 5 dés identiques, il peut compter 50 points ;</li>"
-			"<li>Le super Yams : lorsque le joueur obtient 5 dés identiques et a déjà réussi un Yams, il peut compter 100 points.</li>"
+			"<li>Le Brelan : lorsque le joueur obtient 3 dÃ©s identiques, il peut compter le total des dÃ©s ;</li>"
+			"<li>Le CarrÃ© : lorsque le joueur obtient 4 dÃ©s identiques, il peut compter le total des dÃ©s ;</li>"
+			"<li>Le Full : lorsque le joueur obtient 3 dÃ©s identiques et 2 autres de la mÃªme valeur aussi, il peut compter 25 points ;</li>"
+			"<li>La petite suite : lorsque le joueur obtient au moins 4 dÃ©s dont la valeur se suit, il peut compter 30 points ;</li>"
+			"<li>La grande suite : lorsque le joueur obtient au moins 5 dÃ©s dont la valeur se suit, il peut compter 40 points ;</li>"
+			"<li>Le Yams : lorsque le joueur obtient 5 dÃ©s identiques, il peut compter 50 points ;</li>"
+			"<li>Le super Yams : lorsque le joueur obtient 5 dÃ©s identiques et a dÃ©jÃ  rÃ©ussi un Yams, il peut compter 100 points.</li>"
 		"</ul>"
 		"</p>"
 	));
@@ -444,7 +444,7 @@ void QYams::start()
 {
 	m_ptrQYamsStartFrom = new QYamsStartFormWidget();
 
-	// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l'application
+	// On veut que la fenÃªtre reste au dessus et bloque les clics sur les autres fenÃªtres de l'application
 	m_ptrQYamsStartFrom->show();
 
 	connect(m_ptrQYamsStartFrom, &QYamsStartFormWidget::playerNameSetUp, this, &QYams::launchGame);
@@ -533,7 +533,7 @@ void QYams::showAboutWindow()
 	if (m_ptrAboutWindow == nullptr)
 		m_ptrAboutWindow = new QAboutWidget();
 
-	// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l'application
+	// On veut que la fenÃªtre reste au dessus et bloque les clics sur les autres fenÃªtres de l'application
 	m_ptrAboutWindow->setWindowModality(Qt::ApplicationModal);
 	m_ptrAboutWindow->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
 	m_ptrAboutWindow->show();
@@ -563,7 +563,7 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 	// Affichage de la grille de jeu
 	m_ptrQPlayerGridsWidget->show();
 
-	// On masque les boutons de démarrage et de sortie
+	// On masque les boutons de dÃ©marrage et de sortie
 	m_ui.btnStart->hide();
 	m_ui.btnQuit->hide();
 

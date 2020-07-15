@@ -86,7 +86,7 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_q_yams.html#a6b3c8550e0474f4219a52da1a4daacee">_beforeStart</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// Connexion des boutons démarrer et quitter</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// Connexion des boutons dÃ©marrer et quitter</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    connect(<a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnStart, &amp;QPushButton::clicked, <span class="keyword">this</span>, &amp;<a class="code" href="class_q_yams.html#a3e5d9816ddfb7b1f52165fc4e577ebeb">QYams::start</a>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    connect(<a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnQuit, &amp;QPushButton::clicked, <span class="keyword">this</span>, &amp;<a class="code" href="class_q_yams.html#a7b3c3b93cd9d843c6da4e43efd4cb86e">QYams::quit</a>);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    connect(<a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnChoice2, &amp;QPushButton::clicked, [<span class="keyword">this</span>]() { doAction(m_choice2); });</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    connect(<a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnChoice3, &amp;QPushButton::clicked, [<span class="keyword">this</span>]() { doAction(m_choice3); });</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Connexion des boutons permettant de choisir l&#39;action que l&#39;on veut réaliser</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Connexion des boutons permettant de choisir l&#39;action que l&#39;on veut rÃ©aliser</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    connect(<a class="code" href="class_q_yams.html#a0c6174da6a5865808a10fb781367a0c9">m_ptrQPlayerGridsWidget</a>-&gt;<a class="code" href="class_q_player_grids_widget.html#a1bbc28536b197a3c1bd8ad35ea2e0a3e">getAcesButton</a>(), &amp;QPushButton::clicked, [<span class="keyword">this</span>]() { doAction(EYamsActions::ACES); });</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    connect(<a class="code" href="class_q_yams.html#a0c6174da6a5865808a10fb781367a0c9">m_ptrQPlayerGridsWidget</a>-&gt;<a class="code" href="class_q_player_grids_widget.html#a6228ff1c7b3d61c035eddf324d969745">getTwosButton</a>(), &amp;QPushButton::clicked, [<span class="keyword">this</span>]() { doAction(EYamsActions::TWOS); });</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    connect(<a class="code" href="class_q_yams.html#a0c6174da6a5865808a10fb781367a0c9">m_ptrQPlayerGridsWidget</a>-&gt;<a class="code" href="class_q_player_grids_widget.html#a4c4d923883afeebf22386e8ab762ced6">getThreeButton</a>(), &amp;QPushButton::clicked, [<span class="keyword">this</span>]() { doAction(EYamsActions::THREES); });</div>
@@ -210,7 +210,7 @@ $(function() {
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (diceSet[i] == 3)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            bIsBrelan = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// Simulation du Carre</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// Simulation du CarrÃ©</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">if</span> (diceSet[i] == 4)</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            bIsCarre = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
@@ -245,7 +245,7 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isBrelanAlreadySet())</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// Résultat du Brelan</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// RÃ©sultat du Brelan</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            EYamsActions::BRELAN,</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            (bIsBrelan) ? diceSet.<a class="code" href="class_c_dice_set.html#aa98b9ca8fb34bc3a8e92c92cb29199f7">getTotal</a>() : 0</div>
@@ -254,408 +254,7 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isCarreAlreadySet())</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">// Résultat du Carré      m_mapLastSimulation.insert({
-            EYamsActions::CARRE,
-            (bIsCarre) ? diceSet.getTotal() : 0
-        });
-    }
-    
-    if (!(*m_itPlayerGrids)-&gt;isFullAlreadySet())
-    {
-        // Résultat du Full
-        m_mapLastSimulation.insert({
-            EYamsActions::FULL,
-            (bIsFull) ? 25 : 0
-        });
-    }
-    
-    if (!(*m_itPlayerGrids)-&gt;isSmallStraightAlreadySet())
-    {
-        // Résultat de la petite suite
-        m_mapLastSimulation.insert({
-            EYamsActions::SMALL_STRAIGHT,
-            (iSmallStraight &gt;= 4) ? 30 : 0
-        });
-    }
-    
-    if (!(*m_itPlayerGrids)-&gt;isLargeStraightAlreadySet())
-    {
-        // Résultat de la grande suite
-        m_mapLastSimulation.insert({
-            EYamsActions::LARGE_STRAIGHT,
-            (iLargeStraight == 5) ? 40 : 0
-        });
-    }
-    
-    if (!(*m_itPlayerGrids)-&gt;isYamsAlreadySet())
-    {
-        // Résultat du Yams
-        m_mapLastSimulation.insert({
-            EYamsActions::YAMS,
-            (bYams) ? 50 : 0
-        });
-    }
-    
-    if (!(*m_itPlayerGrids)-&gt;isSuperYamsAlreadySet())
-    {
-        // Résultat du super Yams (le Yams doit être réalisé)
-        m_mapLastSimulation.insert({
-            EYamsActions::SUPER_YAMS,
-            (bYams &amp;&amp; !((*m_itPlayerGrids)-&gt;getYams() == 0)) ? 100 : 0
-        });
-    }
-
-    if (!(*m_itPlayerGrids)-&gt;isChanceAlreadySet())
-    {
-        // Simulation de la chance
-        m_mapLastSimulation.insert({
-            EYamsActions::CHANCE,
-            diceSet.getTotal()
-        });
-    }
-    
-    
-    for (pair&lt;EYamsActions, uint&gt; simulation : m_mapLastSimulation)
-        vSortedSimulationResult.push_back(simulation);
-
-    std::sort(vSortedSimulationResult.begin(), vSortedSimulationResult.end(), [](pair&lt;QYams::EYamsActions, uint&gt; a, pair&lt;QYams::EYamsActions, uint&gt; b)
-    {
-        // La chance est à utiliser de préférence en derniers recours
-        if (a.first == EYamsActions::CHANCE &amp;&amp; b.second &gt; 0)
-            return false;
-        else if (a.first == EYamsActions::ACES &amp;&amp; a.second &gt;= 3) // Si on a plus de 3 aus As, il vaut mieux inscrire les As qu&#39;un Brelan ou un Carré
-            return true;
-        else if (a.first == EYamsActions::TWOS &amp;&amp; a.second &gt;= 6) // Si on a plus de 6 aux deux, il est plus intéressant d&#39;inscrire les deux
-            return true;
-        else if (a.first == EYamsActions::THREES &amp;&amp; a.second &gt;= 9) // Si on a plus de 9 aux trois, il est plus intéressant d&#39;inscrire les deux
-            return true;
-
-        // Mêmes vérifications que ci-dessus mais pour b
-        if (b.first == EYamsActions::ACES &amp;&amp; b.second &gt;= 3)
-            return false;
-        else if (b.first == EYamsActions::TWOS &amp;&amp; b.second &gt;= 6)
-            return false;
-        else if (b.first == EYamsActions::THREES &amp;&amp; b.second &gt;= 9)
-            return false;
-        
-        return a.second &gt; b.second; // Pour le reste on trie selon la grandeur
-    });
-}
-
-void QYams::_nextPlayer()
-{   
-    ++m_itPlayerGrids;
-    
-    if (m_itPlayerGrids == m_lpQPlayerGrids.end())
-    {
-        m_itPlayerGrids = m_lpQPlayerGrids.begin();
-
-        if ((*m_itPlayerGrids)-&gt;isGridFinished())
-        {
-            m_ptrQPlayerGridsWidget-&gt;enableActionButtons(false);
-            _onEndGame();
-            return;
-        }
-    }
-
-    m_iNbrTurn = 3;
-    m_ui.lblTurn-&gt;setText(QString::number(m_iNbrTurn));
-    m_ui.lblPlayerName-&gt;setText((*m_itPlayerGrids)-&gt;getPlayerName());
-    
-    _resetChoices();
-    m_ptrQPlayerGridsWidget-&gt;enableActionButtons(false);
-}
-
-void QYams::_onEndGame()
-{
-    if (m_ptrEndGameWidget == nullptr)
-        m_ptrEndGameWidget = new QEndGameWidget((*m_itPlayerGrids)-&gt;getPlayerName());
-    
-    connect(m_ptrEndGameWidget-&gt;getRestartButton(), &amp;QPushButton::clicked, this, &amp;QYams::restart);
-    connect(m_ptrEndGameWidget-&gt;getQuitButton(), &amp;QPushButton::clicked, this, &amp;QYams::quit);
-    m_ptrEndGameWidget-&gt;setWindowModality(Qt::ApplicationModal);
-    m_ptrEndGameWidget-&gt;show();
-}
-
-void QYams::doAction(EYamsActions selectedAction)
-{   
-    switch (selectedAction)
-    {
-    case ACES :
-        (*m_itPlayerGrids)-&gt;setAces(m_mapLastSimulation[EYamsActions::ACES]);
-        break;
-    case TWOS :
-        (*m_itPlayerGrids)-&gt;setTwos(m_mapLastSimulation[EYamsActions::TWOS]);
-        break;
-    case THREES :
-        (*m_itPlayerGrids)-&gt;setThrees(m_mapLastSimulation[EYamsActions::THREES]);
-        break;
-    case FOURS :
-        (*m_itPlayerGrids)-&gt;setFours(m_mapLastSimulation[EYamsActions::FOURS]);
-        break;
-    case FiVES :
-        (*m_itPlayerGrids)-&gt;setFives(m_mapLastSimulation[EYamsActions::FiVES]);
-        break;
-    case SIXES :
-        (*m_itPlayerGrids)-&gt;setSixes(m_mapLastSimulation[EYamsActions::SIXES]);
-        break;
-
-    case BRELAN :
-        (*m_itPlayerGrids)-&gt;setBrelan(m_mapLastSimulation[EYamsActions::BRELAN]);
-        break;
-    case CARRE :
-        (*m_itPlayerGrids)-&gt;setCarre(m_mapLastSimulation[EYamsActions::CARRE]);
-        break;
-    case FULL :
-        (*m_itPlayerGrids)-&gt;setFull(m_mapLastSimulation[EYamsActions::FULL] &gt; 0);
-        break;
-    case SMALL_STRAIGHT :
-        (*m_itPlayerGrids)-&gt;setSmallStraight(m_mapLastSimulation[EYamsActions::SMALL_STRAIGHT] &gt; 0);
-        break;
-    case LARGE_STRAIGHT :
-        (*m_itPlayerGrids)-&gt;setLargeStraight(m_mapLastSimulation[EYamsActions::LARGE_STRAIGHT] &gt; 0);
-        break;
-    case YAMS:
-        if (m_mapLastSimulation[EYamsActions::YAMS] == 0 &amp;&amp; !(*m_itPlayerGrids)-&gt;isSuperYamsAlreadySet())
-            (*m_itPlayerGrids)-&gt;setSuperYams(false); // Le super Yams nécessite que le Yams soit réalisé pour pouvoir être fait
-        else 
-            (*m_itPlayerGrids)-&gt;setYams(m_mapLastSimulation[EYamsActions::YAMS] &gt; 0);
-        break;
-    case SUPER_YAMS:
-        (*m_itPlayerGrids)-&gt;setSuperYams(m_mapLastSimulation[EYamsActions::SUPER_YAMS] &gt; 0);
-        break;
-    case CHANCE :
-        (*m_itPlayerGrids)-&gt;setChance(m_mapLastSimulation[EYamsActions::CHANCE]);
-        break;
-
-    default:
-        throw new exception(&quot;Choix inconnu&quot;);
-    }
-
-    _nextPlayer();
-}
-
-void QYams::_resetChoices(EChoices choice)
-{
-    if (choice == ONE || choice == ANYTHING)
-    {
-        m_ui.btnChoice1-&gt;setText(&quot;Choix 1&quot;);
-        m_choice1 = EYamsActions::NOTHING;
-        m_ui.btnChoice1-&gt;setEnabled(false);
-    }
-
-    if (choice == TWO || choice == ANYTHING)
-    {
-        m_ui.btnChoice2-&gt;setText(&quot;Choix 2&quot;);
-        m_choice2 = EYamsActions::NOTHING;
-        m_ui.btnChoice2-&gt;setEnabled(false);
-    }
-
-    if (choice == THREE || choice == ANYTHING)
-    {
-        m_ui.btnChoice3-&gt;setText(&quot;Choix 3&quot;);
-        m_choice3 = EYamsActions::NOTHING;
-        m_ui.btnChoice3-&gt;setEnabled(false);
-    }
-
-    if (choice == ANYTHING)
-        m_ui.btnRedetection-&gt;setEnabled(false);
-}
-
-void QYams::_hideGameBar(bool bHide) const
-{
-    m_ui.lblTurnText-&gt;setHidden(bHide);
-    m_ui.lblTurn-&gt;setHidden(bHide);
-    m_ui.lblPlayerNameText-&gt;setHidden(bHide);
-    m_ui.lblPlayerName-&gt;setHidden(bHide);
-    m_ui.btnChoice1-&gt;setHidden(bHide);
-    m_ui.btnChoice2-&gt;setHidden(bHide);
-    m_ui.btnChoice3-&gt;setHidden(bHide);
-    m_ui.btnRedetection-&gt;setHidden(bHide);
-}
-
-void QYams::_beforeStart()
-{
-    // Affichage des boutons de démarrage et de sortie
-    m_ui.btnStart-&gt;show();
-    m_ui.btnQuit-&gt;show();
-
-    m_ui.actionRestart-&gt;setEnabled(false);
-    m_ptrQPlayerGridsWidget-&gt;hide();
-
-    m_ptrQPlayerGridsWidget-&gt;enableActionButtons(false);
-    _hideGameBar(true);
-}
-
-void QYams::_showRules()
-{
-    QMessageBox::information(this, QString::fromLatin1(&quot;Règles du Yams&quot;), QString::fromLatin1(
-        &quot;&lt;p&gt;&quot;
-        &quot;Le Yams ou Yahtzee est un jeu qui se joue avec 5 dés et se finit lorsque tous les joueurs ont remplis leur grille de jeu.&quot;
-        &quot;Chaque joueur peut tirer jusqu&#39;à 3 fois une partie ou la totalité des dés afin d&#39;arriver au résultat rapportant le plus de points&quot;
-        &quot;Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille à l&#39;issue de chaque tour&quot;
-        &quot;(il peut compter 0 s&#39;il n&#39;a obtenu aucun résultat probant).&quot;
-        &quot;&lt;/p&gt;&quot;
-        &quot;&lt;p&gt;&quot;
-        &quot;La partie supérieure se compléte en inscrivant le total des dés correspondants lors d&#39;un tour&quot;
-        &quot;&lt;/p&gt;&quot;
-        &quot;&lt;h4&gt;Explications des combinaisons de la partie inférieure&lt;/h4&gt;&quot;
-        &quot;&lt;ul&gt;&quot;
-            &quot;&lt;li&gt;Le Brelan : lorsque le joueur obtient 3 dés identiques, il peut compter le total des dés ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le Carré : lorsque le joueur obtient 4 dés identiques, il peut compter le total des dés ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le Full : lorsque le joueur obtient 3 dés identiques et 2 autres de la même valeur aussi, il peut compter 25 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;La petite suite : lorsque le joueur obtient au moins 4 dés dont la valeur se suit, il peut compter 30 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;La grande suite : lorsque le joueur obtient au moins 5 dés dont la valeur se suit, il peut compter 40 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le Yams : lorsque le joueur obtient 5 dés identiques, il peut compter 50 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le super Yams : lorsque le joueur obtient 5 dés identiques et a déjà réussi un Yams, il peut compter 100 points.&lt;/li&gt;&quot;
-        &quot;&lt;/ul&gt;&quot;
-        &quot;&lt;/p&gt;&quot;
-    ));
-}
-
-void QYams::start()
-{
-    m_ptrQYamsStartFrom = new QYamsStartFormWidget();
-
-    // On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l&#39;application
-    m_ptrQYamsStartFrom-&gt;show();
-
-    connect(m_ptrQYamsStartFrom, &amp;QYamsStartFormWidget::playerNameSetUp, this, &amp;QYams::launchGame);
-}
-
-void QYams::restart()
-{   
-    if (m_ptrEndGameWidget != nullptr)
-    {
-        disconnect(m_ptrEndGameWidget-&gt;getRestartButton(), &amp;QPushButton::clicked, this, &amp;QYams::restart);
-        disconnect(m_ptrEndGameWidget-&gt;getQuitButton(), &amp;QPushButton::clicked, this, &amp;QYams::quit);
-        
-        delete m_ptrEndGameWidget;
-        m_ptrEndGameWidget = nullptr;
-    }
-
-    for (QPlayerGrid* playerGrid : m_lpQPlayerGrids)
-    {
-        m_ptrQPlayerGridsWidget-&gt;removeGrid(playerGrid);
-        delete playerGrid;
-    }
-    
-    m_lpQPlayerGrids.clear();
-
-    _beforeStart();
-    start();
-}
-
-void QYams::quit()
-{   
-    QCoreApplication::quit();
-}
-
-void QYams::updateTurn(CDiceSet&amp; diceSet, bool isDetectionCorrection)
-{
-    vector&lt;pair&lt;QYams::EYamsActions, uint&gt;&gt; vSimulation;
-    _simulate(diceSet, vSimulation);
-    
-    if (m_iNbrTurn &gt; 0 || isDetectionCorrection)
-    {
-        if (vSimulation.size() &gt; 0)
-        {
-            m_ui.btnChoice1-&gt;setText(m_YamsActionsNames[vSimulation[0].first] + &quot; (&quot; + QString::number(vSimulation[0].second) + &quot;)&quot;);
-            m_choice1 = vSimulation[0].first;
-            m_ui.btnChoice1-&gt;setEnabled(true);
-        }
-        else
-            _resetChoices(EChoices::ONE);
-
-        if (vSimulation.size() &gt; 1 &amp;&amp; vSimulation[1].second &gt; 0)
-        {
-            m_ui.btnChoice2-&gt;setText(m_YamsActionsNames[vSimulation[1].first] + &quot; (&quot; + QString::number(vSimulation[1].second) + &quot;)&quot;);
-            m_choice2 = vSimulation[1].first;
-            m_ui.btnChoice2-&gt;setEnabled(true);
-        }
-        else
-            _resetChoices(EChoices::TWO);
-        
-        if (vSimulation.size() &gt; 2 &amp;&amp; vSimulation[2].second &gt; 0)
-        {
-            m_ui.btnChoice3-&gt;setText(m_YamsActionsNames[vSimulation[2].first] + &quot; (&quot; + QString::number(vSimulation[2].second) + &quot;)&quot;);
-            m_choice3 = vSimulation[2].first;
-            m_ui.btnChoice3-&gt;setEnabled(true);
-        }
-        else
-            _resetChoices(EChoices::THREE);
-
-        if (!isDetectionCorrection)
-        {
-            --m_iNbrTurn;
-            m_ui.lblTurn-&gt;setText(QString::number(m_iNbrTurn));
-
-            if (!m_ui.btnRedetection-&gt;isEnabled())
-            {
-                m_ui.btnRedetection-&gt;setEnabled(true);
-                m_ptrQPlayerGridsWidget-&gt;enableActionButtons(true);
-            }
-
-            emit playerUpdated(*(*m_itPlayerGrids));
-        }
-    }
-}
-
-void QYams::showAboutWindow()
-{
-    if (m_ptrAboutWindow == nullptr)
-        m_ptrAboutWindow = new QAboutWidget();
-
-    // On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l&#39;application
-    m_ptrAboutWindow-&gt;setWindowModality(Qt::ApplicationModal);
-    m_ptrAboutWindow-&gt;setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
-    m_ptrAboutWindow-&gt;show();
-}
-
-void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
-{   
-    delete m_ptrQYamsStartFrom;
-    m_ptrQYamsStartFrom = nullptr;
-
-    m_ui.actionRestart-&gt;setEnabled(true);
-    
-    QPlayerGrid* playerGrid = nullptr;
-    
-    for (const QString&amp; sPlayerName : *ptrLPlayerNames)
-    {
-        playerGrid = new QPlayerGrid(sPlayerName);
-        
-        m_lpQPlayerGrids.emplace_back(playerGrid);
-        m_ptrQPlayerGridsWidget-&gt;addGrid(playerGrid);
-        
-        playerGrid = nullptr;
-    }
-    
-    m_itPlayerGrids = m_lpQPlayerGrids.begin();
-    
-    // Affichage de la grille de jeu
-    m_ptrQPlayerGridsWidget-&gt;show();
-
-    // On masque les boutons de démarrage et de sortie
-    m_ui.btnStart-&gt;hide();
-    m_ui.btnQuit-&gt;hide();
-
-    // On active les 3 boutons de choix et les indicateurs
-    _hideGameBar(false);
-
-    m_ui.btnChoice1-&gt;setDisabled(true);
-    m_ui.btnChoice2-&gt;setDisabled(true);
-    m_ui.btnChoice3-&gt;setDisabled(true);
-
-    m_iNbrTurn = 3;
-    m_ui.lblTurn-&gt;setText(QString::number(m_iNbrTurn));
-    m_ui.lblPlayerName-&gt;setText((*m_itPlayerGrids)-&gt;getPlayerName());
-    
-    connect(m_ptrQCameraWidget, &amp;QCameraWidget::dicesUpdated, this, &amp;QYams::updateTurn);
-
-    delete ptrLPlayerNames;
-}
-</span> </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">// RÃ©sultat du CarrÃ©</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            EYamsActions::CARRE,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            (bIsCarre) ? diceSet.<a class="code" href="class_c_dice_set.html#aa98b9ca8fb34bc3a8e92c92cb29199f7">getTotal</a>() : 0</div>
@@ -664,7 +263,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isFullAlreadySet())</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// Résultat du Full</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// RÃ©sultat du Full</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            EYamsActions::FULL,</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            (bIsFull) ? 25 : 0</div>
@@ -673,7 +272,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isSmallStraightAlreadySet())</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// Résultat de la petite suite</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// RÃ©sultat de la petite suite</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            EYamsActions::SMALL_STRAIGHT,</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            (iSmallStraight &gt;= 4) ? 30 : 0</div>
@@ -682,7 +281,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isLargeStraightAlreadySet())</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// Résultat de la grande suite</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// RÃ©sultat de la grande suite</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            EYamsActions::LARGE_STRAIGHT,</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            (iLargeStraight == 5) ? 40 : 0</div>
@@ -691,7 +290,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    </div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isYamsAlreadySet())</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// Résultat du Yams</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// RÃ©sultat du Yams</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            EYamsActions::YAMS,</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            (bYams) ? 50 : 0</div>
@@ -700,7 +299,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">if</span> (!(*m_itPlayerGrids)-&gt;isSuperYamsAlreadySet())</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// Résultat du super Yams (le Yams doit être réalisé)</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// RÃ©sultat du super Yams (le Yams doit Ãªtre rÃ©alisÃ©)</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>.insert({</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            EYamsActions::SUPER_YAMS,</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            (bYams &amp;&amp; !((*m_itPlayerGrids)-&gt;getYams() == 0)) ? 100 : 0</div>
@@ -722,348 +321,17 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    std::sort(vSortedSimulationResult.begin(), vSortedSimulationResult.end(), [](pair&lt;QYams::EYamsActions, uint&gt; a, pair&lt;QYams::EYamsActions, uint&gt; b)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// La chance est à utiliser de préférence en derniers recours</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// La chance est Ã  utiliser de prÃ©fÃ©rence en derniers recours</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        if (a.first == EYamsActions::CHANCE &amp;&amp; b.second &gt; 0)</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            return false;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        else if (a.first == EYamsActions::ACES &amp;&amp; a.second &gt;= 3) <span class="comment">// Si on a plus de 3 aus As, il vaut mieux inscrire les As qu&#39;un Brelan ou un Carré             return true;
-        else if (a.first == EYamsActions::TWOS &amp;&amp; a.second &gt;= 6) // Si on a plus de 6 aux deux, il est plus intéressant d&#39;inscrire les deux
-            return true;
-        else if (a.first == EYamsActions::THREES &amp;&amp; a.second &gt;= 9) // Si on a plus de 9 aux trois, il est plus intéressant d&#39;inscrire les deux
-            return true;
-
-        // Mêmes vérifications que ci-dessus mais pour b
-        if (b.first == EYamsActions::ACES &amp;&amp; b.second &gt;= 3)
-            return false;
-        else if (b.first == EYamsActions::TWOS &amp;&amp; b.second &gt;= 6)
-            return false;
-        else if (b.first == EYamsActions::THREES &amp;&amp; b.second &gt;= 9)
-            return false;
-        
-        return a.second &gt; b.second; // Pour le reste on trie selon la grandeur
-    });
-}
-
-void QYams::_nextPlayer()
-{   
-    ++m_itPlayerGrids;
-    
-    if (m_itPlayerGrids == m_lpQPlayerGrids.end())
-    {
-        m_itPlayerGrids = m_lpQPlayerGrids.begin();
-
-        if ((*m_itPlayerGrids)-&gt;isGridFinished())
-        {
-            m_ptrQPlayerGridsWidget-&gt;enableActionButtons(false);
-            _onEndGame();
-            return;
-        }
-    }
-
-    m_iNbrTurn = 3;
-    m_ui.lblTurn-&gt;setText(QString::number(m_iNbrTurn));
-    m_ui.lblPlayerName-&gt;setText((*m_itPlayerGrids)-&gt;getPlayerName());
-    
-    _resetChoices();
-    m_ptrQPlayerGridsWidget-&gt;enableActionButtons(false);
-}
-
-void QYams::_onEndGame()
-{
-    if (m_ptrEndGameWidget == nullptr)
-        m_ptrEndGameWidget = new QEndGameWidget((*m_itPlayerGrids)-&gt;getPlayerName());
-    
-    connect(m_ptrEndGameWidget-&gt;getRestartButton(), &amp;QPushButton::clicked, this, &amp;QYams::restart);
-    connect(m_ptrEndGameWidget-&gt;getQuitButton(), &amp;QPushButton::clicked, this, &amp;QYams::quit);
-    m_ptrEndGameWidget-&gt;setWindowModality(Qt::ApplicationModal);
-    m_ptrEndGameWidget-&gt;show();
-}
-
-void QYams::doAction(EYamsActions selectedAction)
-{   
-    switch (selectedAction)
-    {
-    case ACES :
-        (*m_itPlayerGrids)-&gt;setAces(m_mapLastSimulation[EYamsActions::ACES]);
-        break;
-    case TWOS :
-        (*m_itPlayerGrids)-&gt;setTwos(m_mapLastSimulation[EYamsActions::TWOS]);
-        break;
-    case THREES :
-        (*m_itPlayerGrids)-&gt;setThrees(m_mapLastSimulation[EYamsActions::THREES]);
-        break;
-    case FOURS :
-        (*m_itPlayerGrids)-&gt;setFours(m_mapLastSimulation[EYamsActions::FOURS]);
-        break;
-    case FiVES :
-        (*m_itPlayerGrids)-&gt;setFives(m_mapLastSimulation[EYamsActions::FiVES]);
-        break;
-    case SIXES :
-        (*m_itPlayerGrids)-&gt;setSixes(m_mapLastSimulation[EYamsActions::SIXES]);
-        break;
-
-    case BRELAN :
-        (*m_itPlayerGrids)-&gt;setBrelan(m_mapLastSimulation[EYamsActions::BRELAN]);
-        break;
-    case CARRE :
-        (*m_itPlayerGrids)-&gt;setCarre(m_mapLastSimulation[EYamsActions::CARRE]);
-        break;
-    case FULL :
-        (*m_itPlayerGrids)-&gt;setFull(m_mapLastSimulation[EYamsActions::FULL] &gt; 0);
-        break;
-    case SMALL_STRAIGHT :
-        (*m_itPlayerGrids)-&gt;setSmallStraight(m_mapLastSimulation[EYamsActions::SMALL_STRAIGHT] &gt; 0);
-        break;
-    case LARGE_STRAIGHT :
-        (*m_itPlayerGrids)-&gt;setLargeStraight(m_mapLastSimulation[EYamsActions::LARGE_STRAIGHT] &gt; 0);
-        break;
-    case YAMS:
-        if (m_mapLastSimulation[EYamsActions::YAMS] == 0 &amp;&amp; !(*m_itPlayerGrids)-&gt;isSuperYamsAlreadySet())
-            (*m_itPlayerGrids)-&gt;setSuperYams(false); // Le super Yams nécessite que le Yams soit réalisé pour pouvoir être fait
-        else 
-            (*m_itPlayerGrids)-&gt;setYams(m_mapLastSimulation[EYamsActions::YAMS] &gt; 0);
-        break;
-    case SUPER_YAMS:
-        (*m_itPlayerGrids)-&gt;setSuperYams(m_mapLastSimulation[EYamsActions::SUPER_YAMS] &gt; 0);
-        break;
-    case CHANCE :
-        (*m_itPlayerGrids)-&gt;setChance(m_mapLastSimulation[EYamsActions::CHANCE]);
-        break;
-
-    default:
-        throw new exception(&quot;Choix inconnu&quot;);
-    }
-
-    _nextPlayer();
-}
-
-void QYams::_resetChoices(EChoices choice)
-{
-    if (choice == ONE || choice == ANYTHING)
-    {
-        m_ui.btnChoice1-&gt;setText(&quot;Choix 1&quot;);
-        m_choice1 = EYamsActions::NOTHING;
-        m_ui.btnChoice1-&gt;setEnabled(false);
-    }
-
-    if (choice == TWO || choice == ANYTHING)
-    {
-        m_ui.btnChoice2-&gt;setText(&quot;Choix 2&quot;);
-        m_choice2 = EYamsActions::NOTHING;
-        m_ui.btnChoice2-&gt;setEnabled(false);
-    }
-
-    if (choice == THREE || choice == ANYTHING)
-    {
-        m_ui.btnChoice3-&gt;setText(&quot;Choix 3&quot;);
-        m_choice3 = EYamsActions::NOTHING;
-        m_ui.btnChoice3-&gt;setEnabled(false);
-    }
-
-    if (choice == ANYTHING)
-        m_ui.btnRedetection-&gt;setEnabled(false);
-}
-
-void QYams::_hideGameBar(bool bHide) const
-{
-    m_ui.lblTurnText-&gt;setHidden(bHide);
-    m_ui.lblTurn-&gt;setHidden(bHide);
-    m_ui.lblPlayerNameText-&gt;setHidden(bHide);
-    m_ui.lblPlayerName-&gt;setHidden(bHide);
-    m_ui.btnChoice1-&gt;setHidden(bHide);
-    m_ui.btnChoice2-&gt;setHidden(bHide);
-    m_ui.btnChoice3-&gt;setHidden(bHide);
-    m_ui.btnRedetection-&gt;setHidden(bHide);
-}
-
-void QYams::_beforeStart()
-{
-    // Affichage des boutons de démarrage et de sortie
-    m_ui.btnStart-&gt;show();
-    m_ui.btnQuit-&gt;show();
-
-    m_ui.actionRestart-&gt;setEnabled(false);
-    m_ptrQPlayerGridsWidget-&gt;hide();
-
-    m_ptrQPlayerGridsWidget-&gt;enableActionButtons(false);
-    _hideGameBar(true);
-}
-
-void QYams::_showRules()
-{
-    QMessageBox::information(this, QString::fromLatin1(&quot;Règles du Yams&quot;), QString::fromLatin1(
-        &quot;&lt;p&gt;&quot;
-        &quot;Le Yams ou Yahtzee est un jeu qui se joue avec 5 dés et se finit lorsque tous les joueurs ont remplis leur grille de jeu.&quot;
-        &quot;Chaque joueur peut tirer jusqu&#39;à 3 fois une partie ou la totalité des dés afin d&#39;arriver au résultat rapportant le plus de points&quot;
-        &quot;Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille à l&#39;issue de chaque tour&quot;
-        &quot;(il peut compter 0 s&#39;il n&#39;a obtenu aucun résultat probant).&quot;
-        &quot;&lt;/p&gt;&quot;
-        &quot;&lt;p&gt;&quot;
-        &quot;La partie supérieure se compléte en inscrivant le total des dés correspondants lors d&#39;un tour&quot;
-        &quot;&lt;/p&gt;&quot;
-        &quot;&lt;h4&gt;Explications des combinaisons de la partie inférieure&lt;/h4&gt;&quot;
-        &quot;&lt;ul&gt;&quot;
-            &quot;&lt;li&gt;Le Brelan : lorsque le joueur obtient 3 dés identiques, il peut compter le total des dés ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le Carré : lorsque le joueur obtient 4 dés identiques, il peut compter le total des dés ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le Full : lorsque le joueur obtient 3 dés identiques et 2 autres de la même valeur aussi, il peut compter 25 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;La petite suite : lorsque le joueur obtient au moins 4 dés dont la valeur se suit, il peut compter 30 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;La grande suite : lorsque le joueur obtient au moins 5 dés dont la valeur se suit, il peut compter 40 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le Yams : lorsque le joueur obtient 5 dés identiques, il peut compter 50 points ;&lt;/li&gt;&quot;
-            &quot;&lt;li&gt;Le super Yams : lorsque le joueur obtient 5 dés identiques et a déjà réussi un Yams, il peut compter 100 points.&lt;/li&gt;&quot;
-        &quot;&lt;/ul&gt;&quot;
-        &quot;&lt;/p&gt;&quot;
-    ));
-}
-
-void QYams::start()
-{
-    m_ptrQYamsStartFrom = new QYamsStartFormWidget();
-
-    // On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l&#39;application
-    m_ptrQYamsStartFrom-&gt;show();
-
-    connect(m_ptrQYamsStartFrom, &amp;QYamsStartFormWidget::playerNameSetUp, this, &amp;QYams::launchGame);
-}
-
-void QYams::restart()
-{   
-    if (m_ptrEndGameWidget != nullptr)
-    {
-        disconnect(m_ptrEndGameWidget-&gt;getRestartButton(), &amp;QPushButton::clicked, this, &amp;QYams::restart);
-        disconnect(m_ptrEndGameWidget-&gt;getQuitButton(), &amp;QPushButton::clicked, this, &amp;QYams::quit);
-        
-        delete m_ptrEndGameWidget;
-        m_ptrEndGameWidget = nullptr;
-    }
-
-    for (QPlayerGrid* playerGrid : m_lpQPlayerGrids)
-    {
-        m_ptrQPlayerGridsWidget-&gt;removeGrid(playerGrid);
-        delete playerGrid;
-    }
-    
-    m_lpQPlayerGrids.clear();
-
-    _beforeStart();
-    start();
-}
-
-void QYams::quit()
-{   
-    QCoreApplication::quit();
-}
-
-void QYams::updateTurn(CDiceSet&amp; diceSet, bool isDetectionCorrection)
-{
-    vector&lt;pair&lt;QYams::EYamsActions, uint&gt;&gt; vSimulation;
-    _simulate(diceSet, vSimulation);
-    
-    if (m_iNbrTurn &gt; 0 || isDetectionCorrection)
-    {
-        if (vSimulation.size() &gt; 0)
-        {
-            m_ui.btnChoice1-&gt;setText(m_YamsActionsNames[vSimulation[0].first] + &quot; (&quot; + QString::number(vSimulation[0].second) + &quot;)&quot;);
-            m_choice1 = vSimulation[0].first;
-            m_ui.btnChoice1-&gt;setEnabled(true);
-        }
-        else
-            _resetChoices(EChoices::ONE);
-
-        if (vSimulation.size() &gt; 1 &amp;&amp; vSimulation[1].second &gt; 0)
-        {
-            m_ui.btnChoice2-&gt;setText(m_YamsActionsNames[vSimulation[1].first] + &quot; (&quot; + QString::number(vSimulation[1].second) + &quot;)&quot;);
-            m_choice2 = vSimulation[1].first;
-            m_ui.btnChoice2-&gt;setEnabled(true);
-        }
-        else
-            _resetChoices(EChoices::TWO);
-        
-        if (vSimulation.size() &gt; 2 &amp;&amp; vSimulation[2].second &gt; 0)
-        {
-            m_ui.btnChoice3-&gt;setText(m_YamsActionsNames[vSimulation[2].first] + &quot; (&quot; + QString::number(vSimulation[2].second) + &quot;)&quot;);
-            m_choice3 = vSimulation[2].first;
-            m_ui.btnChoice3-&gt;setEnabled(true);
-        }
-        else
-            _resetChoices(EChoices::THREE);
-
-        if (!isDetectionCorrection)
-        {
-            --m_iNbrTurn;
-            m_ui.lblTurn-&gt;setText(QString::number(m_iNbrTurn));
-
-            if (!m_ui.btnRedetection-&gt;isEnabled())
-            {
-                m_ui.btnRedetection-&gt;setEnabled(true);
-                m_ptrQPlayerGridsWidget-&gt;enableActionButtons(true);
-            }
-
-            emit playerUpdated(*(*m_itPlayerGrids));
-        }
-    }
-}
-
-void QYams::showAboutWindow()
-{
-    if (m_ptrAboutWindow == nullptr)
-        m_ptrAboutWindow = new QAboutWidget();
-
-    // On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l&#39;application
-    m_ptrAboutWindow-&gt;setWindowModality(Qt::ApplicationModal);
-    m_ptrAboutWindow-&gt;setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
-    m_ptrAboutWindow-&gt;show();
-}
-
-void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
-{   
-    delete m_ptrQYamsStartFrom;
-    m_ptrQYamsStartFrom = nullptr;
-
-    m_ui.actionRestart-&gt;setEnabled(true);
-    
-    QPlayerGrid* playerGrid = nullptr;
-    
-    for (const QString&amp; sPlayerName : *ptrLPlayerNames)
-    {
-        playerGrid = new QPlayerGrid(sPlayerName);
-        
-        m_lpQPlayerGrids.emplace_back(playerGrid);
-        m_ptrQPlayerGridsWidget-&gt;addGrid(playerGrid);
-        
-        playerGrid = nullptr;
-    }
-    
-    m_itPlayerGrids = m_lpQPlayerGrids.begin();
-    
-    // Affichage de la grille de jeu
-    m_ptrQPlayerGridsWidget-&gt;show();
-
-    // On masque les boutons de démarrage et de sortie
-    m_ui.btnStart-&gt;hide();
-    m_ui.btnQuit-&gt;hide();
-
-    // On active les 3 boutons de choix et les indicateurs
-    _hideGameBar(false);
-
-    m_ui.btnChoice1-&gt;setDisabled(true);
-    m_ui.btnChoice2-&gt;setDisabled(true);
-    m_ui.btnChoice3-&gt;setDisabled(true);
-
-    m_iNbrTurn = 3;
-    m_ui.lblTurn-&gt;setText(QString::number(m_iNbrTurn));
-    m_ui.lblPlayerName-&gt;setText((*m_itPlayerGrids)-&gt;getPlayerName());
-    
-    connect(m_ptrQCameraWidget, &amp;QCameraWidget::dicesUpdated, this, &amp;QYams::updateTurn);
-
-    delete ptrLPlayerNames;
-}
-</span> </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        else if (a.first == EYamsActions::ACES &amp;&amp; a.second &gt;= 3) <span class="comment">// Si on a plus de 3 aus As, il vaut mieux inscrire les As qu&#39;un Brelan ou un CarrÃ©</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            return true;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        else if (a.first == EYamsActions::TWOS &amp;&amp; a.second &gt;= 6) <span class="comment">// Si on a plus de 6 aux deux, il est plus intéressant d&#39;inscrire les deux</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        else if (a.first == EYamsActions::TWOS &amp;&amp; a.second &gt;= 6) <span class="comment">// Si on a plus de 6 aux deux, il est plus intÃ©ressant d&#39;inscrire les deux</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            return true;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        else if (a.first == EYamsActions::THREES &amp;&amp; a.second &gt;= 9) <span class="comment">// Si on a plus de 9 aux trois, il est plus intéressant d&#39;inscrire les deux</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        else if (a.first == EYamsActions::THREES &amp;&amp; a.second &gt;= 9) <span class="comment">// Si on a plus de 9 aux trois, il est plus intÃ©ressant d&#39;inscrire les deux</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            return true;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// Mêmes vérifications que ci-dessus mais pour b</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// MÃªmes vÃ©rifications que ci-dessus mais pour b</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        if (b.first == EYamsActions::ACES &amp;&amp; b.second &gt;= 3)</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            return false;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        else if (b.first == EYamsActions::TWOS &amp;&amp; b.second &gt;= 6)</div>
@@ -1150,7 +418,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="class_q_yams.html#ae218a70b957eb1d142927929bb75cdbca990ef733f5e5a3a93950f4cd42c4444e">YAMS</a>:</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>[EYamsActions::YAMS] == 0 &amp;&amp; !(*m_itPlayerGrids)-&gt;isSuperYamsAlreadySet())</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            (*m_itPlayerGrids)-&gt;setSuperYams(<span class="keyword">false</span>); <span class="comment">// Le super Yams nécessite que le Yams soit réalisé pour pouvoir être fait</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            (*m_itPlayerGrids)-&gt;setSuperYams(<span class="keyword">false</span>); <span class="comment">// Le super Yams nÃ©cessite que le Yams soit rÃ©alisÃ© pour pouvoir Ãªtre fait</span></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            (*m_itPlayerGrids)-&gt;setYams(<a class="code" href="class_q_yams.html#a636b19f0b769cc9d27c6cb96ad65cfde">m_mapLastSimulation</a>[EYamsActions::YAMS] &gt; 0);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">break</span>;</div>
@@ -1162,7 +430,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> exception(<span class="stringliteral">&quot;Choix inconnu&quot;</span>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> runtime_error(<span class="stringliteral">&quot;Choix inconnu&quot;</span>);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="class_q_yams.html#aa0a5ca106b29cae207f6c75a4de872c1">_nextPlayer</a>();</div>
@@ -1209,7 +477,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
 <div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="class_q_yams.html#a6b3c8550e0474f4219a52da1a4daacee">  404</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_q_yams.html#a6b3c8550e0474f4219a52da1a4daacee">QYams::_beforeStart</a>()</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">// Affichage des boutons de démarrage et de sortie</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">// Affichage des boutons de dÃ©marrage et de sortie</span></div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnStart-&gt;show();</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnQuit-&gt;show();</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
@@ -1222,25 +490,25 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
 <div class="line"><a name="l00417"></a><span class="lineno"><a class="line" href="class_q_yams.html#a8d7d5e5a812a7e8766335e11aa5fdf02">  417</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_q_yams.html#a8d7d5e5a812a7e8766335e11aa5fdf02">QYams::_showRules</a>()</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;{</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    QMessageBox::information(<span class="keyword">this</span>, QString::fromLatin1(<span class="stringliteral">&quot;Règles du Yams&quot;</span>), QString::fromLatin1(</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    QMessageBox::information(<span class="keyword">this</span>, QString::fromLatin1(<span class="stringliteral">&quot;RÃ¨gles du Yams&quot;</span>), QString::fromLatin1(</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="stringliteral">&quot;&lt;p&gt;&quot;</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="stringliteral">&quot;Le Yams ou Yahtzee est un jeu qui se joue avec 5 dés et se finit lorsque tous les joueurs ont remplis leur grille de jeu.&quot;</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="stringliteral">&quot;Chaque joueur peut tirer jusqu&#39;à 3 fois une partie ou la totalité des dés afin d&#39;arriver au résultat rapportant le plus de points&quot;</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="stringliteral">&quot;Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille à l&#39;issue de chaque tour&quot;</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="stringliteral">&quot;(il peut compter 0 s&#39;il n&#39;a obtenu aucun résultat probant).&quot;</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="stringliteral">&quot;Le Yams ou Yahtzee est un jeu qui se joue avec 5 dÃ©s et se finit lorsque tous les joueurs ont remplis leur grille de jeu.&quot;</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="stringliteral">&quot;Chaque joueur peut tirer jusqu&#39;Ã  3 fois une partie ou la totalitÃ© des dÃ©s afin d&#39;arriver au rÃ©sultat rapportant le plus de points&quot;</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="stringliteral">&quot;Le joueur doit obligatoirement inscrire un score dans une des cases de sa feuille Ã  l&#39;issue de chaque tour&quot;</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="stringliteral">&quot;(il peut compter 0 s&#39;il n&#39;a obtenu aucun rÃ©sultat probant).&quot;</span></div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span></div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="stringliteral">&quot;&lt;p&gt;&quot;</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="stringliteral">&quot;La partie supérieure se compléte en inscrivant le total des dés correspondants lors d&#39;un tour&quot;</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="stringliteral">&quot;La partie supÃ©rieure se complÃ¨te en inscrivant le total des dÃ©s correspondants lors d&#39;un tour&quot;</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="stringliteral">&quot;&lt;h4&gt;Explications des combinaisons de la partie inférieure&lt;/h4&gt;&quot;</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="stringliteral">&quot;&lt;h4&gt;Explications des combinaisons de la partie infÃ©rieure&lt;/h4&gt;&quot;</span></div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="stringliteral">&quot;&lt;ul&gt;&quot;</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Brelan : lorsque le joueur obtient 3 dés identiques, il peut compter le total des dés ;&lt;/li&gt;&quot;</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Carré : lorsque le joueur obtient 4 dés identiques, il peut compter le total des dés ;&lt;/li&gt;&quot;</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Full : lorsque le joueur obtient 3 dés identiques et 2 autres de la même valeur aussi, il peut compter 25 points ;&lt;/li&gt;&quot;</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;La petite suite : lorsque le joueur obtient au moins 4 dés dont la valeur se suit, il peut compter 30 points ;&lt;/li&gt;&quot;</span></div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;La grande suite : lorsque le joueur obtient au moins 5 dés dont la valeur se suit, il peut compter 40 points ;&lt;/li&gt;&quot;</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Yams : lorsque le joueur obtient 5 dés identiques, il peut compter 50 points ;&lt;/li&gt;&quot;</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le super Yams : lorsque le joueur obtient 5 dés identiques et a déjà réussi un Yams, il peut compter 100 points.&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Brelan : lorsque le joueur obtient 3 dÃ©s identiques, il peut compter le total des dÃ©s ;&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le CarrÃ© : lorsque le joueur obtient 4 dÃ©s identiques, il peut compter le total des dÃ©s ;&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Full : lorsque le joueur obtient 3 dÃ©s identiques et 2 autres de la mÃªme valeur aussi, il peut compter 25 points ;&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;La petite suite : lorsque le joueur obtient au moins 4 dÃ©s dont la valeur se suit, il peut compter 30 points ;&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;La grande suite : lorsque le joueur obtient au moins 5 dÃ©s dont la valeur se suit, il peut compter 40 points ;&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le Yams : lorsque le joueur obtient 5 dÃ©s identiques, il peut compter 50 points ;&lt;/li&gt;&quot;</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <span class="stringliteral">&quot;&lt;li&gt;Le super Yams : lorsque le joueur obtient 5 dÃ©s identiques et a dÃ©jÃ  rÃ©ussi un Yams, il peut compter 100 points.&lt;/li&gt;&quot;</span></div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="stringliteral">&quot;&lt;/ul&gt;&quot;</span></div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    ));</div>
@@ -1250,7 +518,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;{</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <a class="code" href="class_q_yams.html#ace57f5bf67523f97b8d55800af50e292">m_ptrQYamsStartFrom</a> = <span class="keyword">new</span> <a class="code" href="class_q_yams_start_form_widget.html">QYamsStartFormWidget</a>();</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="comment">// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l&#39;application</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="comment">// On veut que la fenÃªtre reste au dessus et bloque les clics sur les autres fenÃªtres de l&#39;application</span></div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <a class="code" href="class_q_yams.html#ace57f5bf67523f97b8d55800af50e292">m_ptrQYamsStartFrom</a>-&gt;show();</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    connect(<a class="code" href="class_q_yams.html#ace57f5bf67523f97b8d55800af50e292">m_ptrQYamsStartFrom</a>, &amp;<a class="code" href="class_q_yams_start_form_widget.html#a56e941d61bf304e7ff00e6ded2cc8ed5">QYamsStartFormWidget::playerNameSetUp</a>, <span class="keyword">this</span>, &amp;<a class="code" href="class_q_yams.html#a2e2be6edcdce001fcacf77073f8d71ee">QYams::launchGame</a>);</div>
@@ -1339,7 +607,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_q_yams.html#ab920e48eaed9de06747891ff73c3fa98">m_ptrAboutWindow</a> == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="class_q_yams.html#ab920e48eaed9de06747891ff73c3fa98">m_ptrAboutWindow</a> = <span class="keyword">new</span> <a class="code" href="class_q_about_widget.html">QAboutWidget</a>();</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="comment">// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l&#39;application</span></div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="comment">// On veut que la fenÃªtre reste au dessus et bloque les clics sur les autres fenÃªtres de l&#39;application</span></div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <a class="code" href="class_q_yams.html#ab920e48eaed9de06747891ff73c3fa98">m_ptrAboutWindow</a>-&gt;setWindowModality(Qt::ApplicationModal);</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <a class="code" href="class_q_yams.html#ab920e48eaed9de06747891ff73c3fa98">m_ptrAboutWindow</a>-&gt;setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <a class="code" href="class_q_yams.html#ab920e48eaed9de06747891ff73c3fa98">m_ptrAboutWindow</a>-&gt;show();</div>
@@ -1369,7 +637,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">// Affichage de la grille de jeu</span></div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <a class="code" href="class_q_yams.html#a0c6174da6a5865808a10fb781367a0c9">m_ptrQPlayerGridsWidget</a>-&gt;show();</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="comment">// On masque les boutons de démarrage et de sortie</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="comment">// On masque les boutons de dÃ©marrage et de sortie</span></div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnStart-&gt;hide();</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <a class="code" href="class_q_yams.html#a99cfb9793b7db790ef9d6670fcaf993a">m_ui</a>.btnQuit-&gt;hide();</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
@@ -1440,7 +708,7 @@ void QYams::launchGame(list&lt;QString&gt;* ptrLPlayerNames)
 <div class="ttc" id="aclass_q_yams_html_ab920e48eaed9de06747891ff73c3fa98"><div class="ttname"><a href="class_q_yams.html#ab920e48eaed9de06747891ff73c3fa98">QYams::m_ptrAboutWindow</a></div><div class="ttdeci">QAboutWidget * m_ptrAboutWindow</div><div class="ttdoc">FenÃªtre &quot;Ã€ propos&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_8hpp_source.html#l00127">QYams.hpp:127</a></div></div>
 <div class="ttc" id="aclass_q_yams_html_a0c6174da6a5865808a10fb781367a0c9"><div class="ttname"><a href="class_q_yams.html#a0c6174da6a5865808a10fb781367a0c9">QYams::m_ptrQPlayerGridsWidget</a></div><div class="ttdeci">QPlayerGridsWidget * m_ptrQPlayerGridsWidget</div><div class="ttdoc">Vue des grilles des joueurs.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_8hpp_source.html#l00108">QYams.hpp:108</a></div></div>
 <div class="ttc" id="aclass_q_yams_html_ae218a70b957eb1d142927929bb75cdbca6b0837594b876e96f7f45116bf02e414"><div class="ttname"><a href="class_q_yams.html#ae218a70b957eb1d142927929bb75cdbca6b0837594b876e96f7f45116bf02e414">QYams::LARGE_STRAIGHT</a></div><div class="ttdeci">@ LARGE_STRAIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_8hpp_source.html#l00059">QYams.hpp:59</a></div></div>
-<div class="ttc" id="aclass_q_player_grid_html"><div class="ttname"><a href="class_q_player_grid.html">QPlayerGrid</a></div><div class="ttdoc">Encapsule une grille de jeu.</div><div class="ttdef"><b>Definition:</b> <a href="_q_player_grid_8hpp_source.html#l00018">QPlayerGrid.hpp:18</a></div></div>
+<div class="ttc" id="aclass_q_player_grid_html"><div class="ttname"><a href="class_q_player_grid.html">QPlayerGrid</a></div><div class="ttdoc">Encapsule une grille de jeu.</div><div class="ttdef"><b>Definition:</b> <a href="_q_player_grid_8hpp_source.html#l00019">QPlayerGrid.hpp:19</a></div></div>
 <div class="ttc" id="aclass_q_yams_html_ae218a70b957eb1d142927929bb75cdbcaf8833a4ee2a0a7b586d4251d64c58e1c"><div class="ttname"><a href="class_q_yams.html#ae218a70b957eb1d142927929bb75cdbcaf8833a4ee2a0a7b586d4251d64c58e1c">QYams::ACES</a></div><div class="ttdeci">@ ACES</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_8hpp_source.html#l00048">QYams.hpp:48</a></div></div>
 <div class="ttc" id="aclass_q_yams_html_aa0a5ca106b29cae207f6c75a4de872c1"><div class="ttname"><a href="class_q_yams.html#aa0a5ca106b29cae207f6c75a4de872c1">QYams::_nextPlayer</a></div><div class="ttdeci">void _nextPlayer()</div><div class="ttdoc">Passe au joueur suivant.</div><div class="ttdef"><b>Definition:</b> <a href="_q_yams_8cpp_source.html#l00272">QYams.cpp:272</a></div></div>
 <div class="ttc" id="aclass_c_dice_set_html_a497cabeea2ea139e834f75925151f551"><div class="ttname"><a href="class_c_dice_set.html#a497cabeea2ea139e834f75925151f551">CDiceSet::getSixes</a></div><div class="ttdeci">uint getSixes() const</div><div class="ttdoc">Retourne le score donnÃ© par les six.</div><div class="ttdef"><b>Definition:</b> <a href="_c_dice_set_8hpp_source.html#l00093">CDiceSet.hpp:93</a></div></div>

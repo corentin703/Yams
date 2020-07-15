@@ -1,37 +1,37 @@
 <map id="QYams::launchGame" name="QYams::launchGame">
-<area shape="rect" id="node1" title="Lance le jeu après la saisie des noms de joueurs." alt="" coords="5,769,152,796"/>
-<area shape="rect" id="node2" href="$class_q_yams.html#a1beb366469b1fcfb1cc488f321a55c9e" title="Cache le layout contenant les boutons de choix et le compteur de tour." alt="" coords="200,711,360,737"/>
-<area shape="rect" id="node3" href="$class_q_player_grids_widget.html#a212d9960ed999a3cdc18721f7c733c2c" title="Ajoute une grille à la liste d&#39;affichage." alt="" coords="209,762,351,803"/>
-<area shape="rect" id="node25" href="$class_q_yams.html#a6e0dcdd72871b5b66724453fc9ae61b9" title="Réagit lorsqu&#39;un nouveau jeu de dés est détecté" alt="" coords="211,1069,349,1096"/>
-<area shape="rect" id="node4" href="$class_q_player_grid.html#afb683e9dfdf3a990b12b9e0c43fda98c" title="Retourne le nom du joueur." alt="" coords="408,769,599,796"/>
-<area shape="rect" id="node5" href="$class_q_player_grids_widget.html#a66ee2c3dbc5c8b2acecc76b9ee75130d" title="Met à jour la vue d&#39;une grille." alt="" coords="433,479,574,521"/>
-<area shape="rect" id="node6" href="$class_q_player_grid.html#a9634ed143485e378baf58f51a0b6081a" title="Retourne la valeur des As." alt="" coords="671,107,820,133"/>
-<area shape="rect" id="node7" href="$class_q_player_grid.html#a88f1e28227ea13a748253ec009e71e65" title="Retourne le bonus s&#39;il y a." alt="" coords="905,179,1061,205"/>
-<area shape="rect" id="node8" href="$class_q_player_grid.html#a2fca38db19f40086aab7448cca3b8115" title="Retourne la valeur du Bralan." alt="" coords="667,411,823,437"/>
-<area shape="rect" id="node9" href="$class_q_player_grid.html#a1a20bc750a77c22b6a8f4905d98627ec" title="Retourne la valeur du Carré" alt="" coords="670,461,821,488"/>
-<area shape="rect" id="node10" href="$class_q_player_grid.html#a3601710dbea81d2010721d28ac17415e" title="Retourne la valeur de la chance." alt="" coords="664,512,827,539"/>
-<area shape="rect" id="node11" href="$class_q_player_grid.html#abafbdb6f69b85f762ee56887c664a902" title="Retourne la valeur des cinq." alt="" coords="671,563,820,589"/>
-<area shape="rect" id="node12" href="$class_q_player_grid.html#aea73a82a4cde9528f0d594b1fc2d7ba3" title="Retourne la valeur des quatre." alt="" coords="669,613,821,640"/>
-<area shape="rect" id="node13" href="$class_q_player_grid.html#a8a05f8fb945805919999ad7ca9b0f091" title="Retourne la valeur du Full." alt="" coords="675,664,815,691"/>
-<area shape="rect" id="node14" href="$class_q_player_grid.html#a28cc87a88f410e7a29dd40a5be604919" title="Retourne la valeur de la grande suite." alt="" coords="647,715,843,741"/>
-<area shape="rect" id="node15" href="$class_q_player_grid.html#a25378d8af0d82a8df60b2cd27f4863f0" title=" " alt="" coords="892,339,1073,365"/>
-<area shape="rect" id="node16" href="$class_q_player_grid.html#abc3a78a77c9cd2ed015a7c591f997bc8" title=" " alt="" coords="896,251,1069,293"/>
-<area shape="rect" id="node17" href="$class_q_player_grid.html#a5387fb6437a74751eab52ed67e2bda06" title="Retourne la valeur des six." alt="" coords="669,765,821,792"/>
-<area shape="rect" id="node18" href="$class_q_player_grid.html#ada175d58fdabd0da809b065446ab4bf7" title="Retourne la valeur de la petite suite." alt="" coords="647,816,844,843"/>
-<area shape="rect" id="node19" href="$class_q_player_grid.html#a2facfac49bb85d66edb8d678ed348b78" title="Retourne la valeur du super Yams." alt="" coords="652,867,839,893"/>
-<area shape="rect" id="node20" href="$class_q_player_grid.html#a5c0e99737747a756d4c9e5f40e402468" title="Retourne la valeur des trois." alt="" coords="666,917,825,944"/>
-<area shape="rect" id="node21" href="$class_q_player_grid.html#a0b54da49b84752609dc296aee54799aa" title=" " alt="" coords="672,309,819,336"/>
-<area shape="rect" id="node22" href="$class_q_player_grid.html#a36190997ee128ff6deccbd537f012cf2" title="Retourne la valeur des deux." alt="" coords="671,5,820,32"/>
-<area shape="rect" id="node23" href="$class_q_player_grid.html#a39427a29fac5878cd20236117e6c9d3d" title=" " alt="" coords="655,208,836,235"/>
-<area shape="rect" id="node24" href="$class_q_player_grid.html#a42df5dd5fc63e90b96bf4894e2da8fa8" title="Retourne la valeur du Yams." alt="" coords="669,56,822,83"/>
-<area shape="rect" id="node26" href="$class_q_yams.html#a8f61350d6c3e647de6a73127443584aa" title="Remet le ou les bouton(s) de choix à leur état d&#39;origine." alt="" coords="425,1044,582,1071"/>
-<area shape="rect" id="node27" href="$class_q_yams.html#a63f0c2be0416e7ff363b61b3217c30ca" title="Simule les score pouvant être obtenus avec la combinaison de dés détectée." alt="" coords="438,1095,569,1121"/>
-<area shape="rect" id="node35" href="$class_q_player_grids_widget.html#a01809d5ebd85726edd74daa26741252a" title="Active / désactive les boutons des actions." alt="" coords="428,1146,579,1187"/>
-<area shape="rect" id="node28" href="$class_c_dice_set.html#a30c0ad7da71fbb8ff4d18657a02106a6" title="Retourne le score donné par les as." alt="" coords="916,993,1049,1020"/>
-<area shape="rect" id="node29" href="$class_c_dice_set.html#a8c8948e7c2a1412baa530998c8e700c0" title="Retourne le score donné par les cinq." alt="" coords="916,1056,1049,1083"/>
-<area shape="rect" id="node30" href="$class_c_dice_set.html#a41283946125d622bc9aafd1dcce8a3ae" title="Retourne le score donné par les quatre." alt="" coords="915,1111,1051,1137"/>
-<area shape="rect" id="node31" href="$class_c_dice_set.html#a497cabeea2ea139e834f75925151f551" title="Retourne le score donné par les six." alt="" coords="915,1168,1051,1195"/>
-<area shape="rect" id="node32" href="$class_c_dice_set.html#a556ee7b5baaab3977515e7cdae27868d" title="Retourne le score donné par les trois." alt="" coords="911,1221,1054,1248"/>
-<area shape="rect" id="node33" href="$class_c_dice_set.html#aa98b9ca8fb34bc3a8e92c92cb29199f7" title="Retourne la somme totale du jeu." alt="" coords="680,1120,811,1147"/>
-<area shape="rect" id="node34" href="$class_c_dice_set.html#aa59fa9a67db3744c472f05ec43af0b0c" title="Retourne le score donné par les deux." alt="" coords="916,1272,1049,1299"/>
+<area shape="rect" id="node1" title="Lance le jeu après la saisie des noms de joueurs." alt="" coords="5,979,161,1005"/>
+<area shape="rect" id="node2" href="$class_q_yams.html#a1beb366469b1fcfb1cc488f321a55c9e" title="Cache le layout contenant les boutons de choix et le compteur de tour." alt="" coords="209,920,380,947"/>
+<area shape="rect" id="node3" href="$class_q_player_grids_widget.html#a212d9960ed999a3cdc18721f7c733c2c" title="Ajoute une grille à la liste d&#39;affichage." alt="" coords="218,971,371,1013"/>
+<area shape="rect" id="node25" href="$class_q_yams.html#a6e0dcdd72871b5b66724453fc9ae61b9" title="Réagit lorsqu&#39;un nouveau jeu de dés est détecté" alt="" coords="221,1059,368,1085"/>
+<area shape="rect" id="node4" href="$class_q_player_grid.html#afb683e9dfdf3a990b12b9e0c43fda98c" title="Retourne le nom du joueur." alt="" coords="428,979,637,1005"/>
+<area shape="rect" id="node5" href="$class_q_player_grids_widget.html#a66ee2c3dbc5c8b2acecc76b9ee75130d" title="Met à jour la vue d&#39;une grille." alt="" coords="456,479,609,521"/>
+<area shape="rect" id="node6" href="$class_q_player_grid.html#a9634ed143485e378baf58f51a0b6081a" title="Retourne la valeur des As." alt="" coords="714,107,874,133"/>
+<area shape="rect" id="node7" href="$class_q_player_grid.html#a88f1e28227ea13a748253ec009e71e65" title="Retourne le bonus s&#39;il y a." alt="" coords="965,179,1135,205"/>
+<area shape="rect" id="node8" href="$class_q_player_grid.html#a2fca38db19f40086aab7448cca3b8115" title="Retourne la valeur du Bralan." alt="" coords="709,411,879,437"/>
+<area shape="rect" id="node9" href="$class_q_player_grid.html#a1a20bc750a77c22b6a8f4905d98627ec" title="Retourne la valeur du Carré" alt="" coords="712,461,876,488"/>
+<area shape="rect" id="node10" href="$class_q_player_grid.html#a3601710dbea81d2010721d28ac17415e" title="Retourne la valeur de la chance." alt="" coords="705,512,883,539"/>
+<area shape="rect" id="node11" href="$class_q_player_grid.html#abafbdb6f69b85f762ee56887c664a902" title="Retourne la valeur des cinq." alt="" coords="713,563,875,589"/>
+<area shape="rect" id="node12" href="$class_q_player_grid.html#aea73a82a4cde9528f0d594b1fc2d7ba3" title="Retourne la valeur des quatre." alt="" coords="712,613,876,640"/>
+<area shape="rect" id="node13" href="$class_q_player_grid.html#a8a05f8fb945805919999ad7ca9b0f091" title="Retourne la valeur du Full." alt="" coords="718,664,870,691"/>
+<area shape="rect" id="node14" href="$class_q_player_grid.html#a28cc87a88f410e7a29dd40a5be604919" title="Retourne la valeur de la grande suite." alt="" coords="686,715,902,741"/>
+<area shape="rect" id="node15" href="$class_q_player_grid.html#a25378d8af0d82a8df60b2cd27f4863f0" title=" " alt="" coords="951,339,1149,365"/>
+<area shape="rect" id="node16" href="$class_q_player_grid.html#abc3a78a77c9cd2ed015a7c591f997bc8" title=" " alt="" coords="955,251,1145,293"/>
+<area shape="rect" id="node17" href="$class_q_player_grid.html#a5387fb6437a74751eab52ed67e2bda06" title="Retourne la valeur des six." alt="" coords="713,765,875,792"/>
+<area shape="rect" id="node18" href="$class_q_player_grid.html#ada175d58fdabd0da809b065446ab4bf7" title="Retourne la valeur de la petite suite." alt="" coords="685,816,903,843"/>
+<area shape="rect" id="node19" href="$class_q_player_grid.html#a2facfac49bb85d66edb8d678ed348b78" title="Retourne la valeur du super Yams." alt="" coords="694,867,894,893"/>
+<area shape="rect" id="node20" href="$class_q_player_grid.html#a5c0e99737747a756d4c9e5f40e402468" title="Retourne la valeur des trois." alt="" coords="707,917,881,944"/>
+<area shape="rect" id="node21" href="$class_q_player_grid.html#a0b54da49b84752609dc296aee54799aa" title=" " alt="" coords="714,309,874,336"/>
+<area shape="rect" id="node22" href="$class_q_player_grid.html#a36190997ee128ff6deccbd537f012cf2" title="Retourne la valeur des deux." alt="" coords="713,5,875,32"/>
+<area shape="rect" id="node23" href="$class_q_player_grid.html#a39427a29fac5878cd20236117e6c9d3d" title=" " alt="" coords="695,208,893,235"/>
+<area shape="rect" id="node24" href="$class_q_player_grid.html#a42df5dd5fc63e90b96bf4894e2da8fa8" title="Retourne la valeur du Yams." alt="" coords="713,56,875,83"/>
+<area shape="rect" id="node26" href="$class_q_yams.html#a8f61350d6c3e647de6a73127443584aa" title="Remet le ou les bouton(s) de choix à leur état d&#39;origine." alt="" coords="450,1044,615,1071"/>
+<area shape="rect" id="node27" href="$class_q_yams.html#a63f0c2be0416e7ff363b61b3217c30ca" title="Simule les score pouvant être obtenus avec la combinaison de dés détectée." alt="" coords="463,1095,602,1121"/>
+<area shape="rect" id="node35" href="$class_q_player_grids_widget.html#a01809d5ebd85726edd74daa26741252a" title="Active / désactive les boutons des actions." alt="" coords="450,1146,615,1187"/>
+<area shape="rect" id="node28" href="$class_c_dice_set.html#a30c0ad7da71fbb8ff4d18657a02106a6" title="Retourne le score donné par les as." alt="" coords="979,993,1121,1020"/>
+<area shape="rect" id="node29" href="$class_c_dice_set.html#a8c8948e7c2a1412baa530998c8e700c0" title="Retourne le score donné par les cinq." alt="" coords="978,1045,1122,1072"/>
+<area shape="rect" id="node30" href="$class_c_dice_set.html#a41283946125d622bc9aafd1dcce8a3ae" title="Retourne le score donné par les quatre." alt="" coords="977,1097,1123,1124"/>
+<area shape="rect" id="node31" href="$class_c_dice_set.html#a497cabeea2ea139e834f75925151f551" title="Retourne le score donné par les six." alt="" coords="978,1151,1122,1177"/>
+<area shape="rect" id="node32" href="$class_c_dice_set.html#a556ee7b5baaab3977515e7cdae27868d" title="Retourne le score donné par les trois." alt="" coords="973,1208,1127,1235"/>
+<area shape="rect" id="node33" href="$class_c_dice_set.html#aa98b9ca8fb34bc3a8e92c92cb29199f7" title="Retourne la somme totale du jeu." alt="" coords="723,1120,865,1147"/>
+<area shape="rect" id="node34" href="$class_c_dice_set.html#aa59fa9a67db3744c472f05ec43af0b0c" title="Retourne le score donné par les deux." alt="" coords="979,1271,1121,1297"/>
 </map>

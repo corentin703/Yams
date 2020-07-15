@@ -13,7 +13,7 @@
 // UI
 #include "ui_QPlayerGridsWidget.h"
 
-// Mod�les
+// Modèles
 #include "models/QPlayerGrid.hpp"
 
 /**

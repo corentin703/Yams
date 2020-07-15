@@ -16,7 +16,7 @@ void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
 	// Ligne 0 : Nom
 	m_ui.gridLayout->addWidget(playerGridView->lblPlayerName, 0, playerNumber);
 
-	// Ligne 1 : ligne, le widget est remplacé avec les nouvelles propriétés s'il existe déjà
+	// Ligne 1 : ligne, le widget est remplacÃ© avec les nouvelles propriÃ©tÃ©s s'il existe dÃ©jÃ 
 	m_ui.gridLayout->addWidget(m_ui.linePlayerName, 1, 0, 1, m_ui.gridLayout->columnCount());
 	
 	// Ligne 2 : As
@@ -31,19 +31,19 @@ void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
 	m_ui.gridLayout->addWidget(playerGridView->lblFives, 6, playerNumber);
 	// Ligne 7 : Six
 	m_ui.gridLayout->addWidget(playerGridView->lblSixes, 7, playerNumber);
-	// Ligne 8 : Pré-total
+	// Ligne 8 : PrÃ©-total
 	m_ui.gridLayout->addWidget(playerGridView->lblPreTotalSup, 8, playerNumber);
 	// Ligne 9 : Bonus
 	m_ui.gridLayout->addWidget(playerGridView->lblBonus, 9, playerNumber);
 	// Ligne 10 : TotalSup
 	m_ui.gridLayout->addWidget(playerGridView->lblTotalSup, 10, playerNumber);
 
-	// Ligne 11 : Ligne supérieure
+	// Ligne 11 : Ligne supÃ©rieure
 	m_ui.gridLayout->addWidget(m_ui.lineSup, 11, 0, 1, m_ui.gridLayout->columnCount());
 
 	// Ligne 12 : Brelan
 	m_ui.gridLayout->addWidget(playerGridView->lblBrelan, 12, playerNumber);
-	// Ligne 13 : Carré
+	// Ligne 13 : CarrÃ©
 	m_ui.gridLayout->addWidget(playerGridView->lblCarre, 13, playerNumber);
 	// Ligne 14 : Full
 	m_ui.gridLayout->addWidget(playerGridView->lblFull, 14, playerNumber);
@@ -57,10 +57,10 @@ void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
 	m_ui.gridLayout->addWidget(playerGridView->lblSuperYams, 18, playerNumber);
 	// Ligne 19 : Chance
 	m_ui.gridLayout->addWidget(playerGridView->lblChance, 19, playerNumber);
-	// Ligne 20 : Total inférieur
+	// Ligne 20 : Total infÃ©rieur
 	m_ui.gridLayout->addWidget(playerGridView->lblTotalInf, 20, playerNumber);
 
-	// Ligne 21 : Ligne inférieure
+	// Ligne 21 : Ligne infÃ©rieure
 	m_ui.gridLayout->addWidget(m_ui.lineInf, 21, 0, 1, m_ui.gridLayout->columnCount());
 
 	// Ligne 22 : Total
@@ -102,7 +102,7 @@ void QPlayerGridsWidget::actualizeActionButtons(QPlayerGrid& playerGrid) const
 
 void QPlayerGridsWidget::updateGrid(QPlayerGrid* ptrQPlayerGrid)
 {
-	// Partie supérieure
+	// Partie supÃ©rieure
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblAs->setText(QString::number(ptrQPlayerGrid->getAces()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTwos->setText(QString::number(ptrQPlayerGrid->getTwos()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblThrees->setText(QString::number(ptrQPlayerGrid->getThrees()));
@@ -113,7 +113,7 @@ void QPlayerGridsWidget::updateGrid(QPlayerGrid* ptrQPlayerGrid)
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblBonus->setText(QString::number(ptrQPlayerGrid->getBonus()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTotalSup->setText(QString::number(ptrQPlayerGrid->getUpperTotal()));
 	
-	// Partie inférieure
+	// Partie infÃ©rieure
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblBrelan->setText(QString::number(ptrQPlayerGrid->getBrelan()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblCarre->setText(QString::number(ptrQPlayerGrid->getCarre()));
 	m_mapPlayerGridViews[ptrQPlayerGrid]->lblFull->setText(QString::number(ptrQPlayerGrid->getFull()));

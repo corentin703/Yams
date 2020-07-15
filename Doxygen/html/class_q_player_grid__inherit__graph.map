@@ -1,4 +1,4 @@
 <map id="QPlayerGrid" name="QPlayerGrid">
-<area shape="rect" id="node1" title="Encapsule une grille de jeu." alt="" coords="5,80,99,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="17,5,87,32"/>
+<area shape="rect" id="node1" title="Encapsule une grille de jeu." alt="" coords="5,80,105,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="18,5,93,32"/>
 </map>

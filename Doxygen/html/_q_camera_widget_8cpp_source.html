@@ -83,10 +83,10 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_q_camera_widget.html#a88e3928c9a06f0ecfe133ddf7f341398">m_videoCapture</a>.open(0);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="class_q_camera_widget.html#a88e3928c9a06f0ecfe133ddf7f341398">m_videoCapture</a>.isOpened()) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(0, <span class="stringliteral">&quot;Problème d&#39;ouverture de la caméra&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(0, <span class="stringliteral">&quot;ProblÃ¨me d&#39;ouverture de la camÃ©ra&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// On vérifie si la machine prend en charge au moins deux threads sinon l&#39;analyse d&#39;image se fera en monothread</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// On vÃ©rifie si la machine prend en charge au moins deux threads sinon l&#39;analyse d&#39;image se fera en monothread</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_q_camera_widget.html#ac9b3cfbf2c91bdb17baf3a40b4aae499">m_bThreadsEnabled</a> = (thread::hardware_concurrency() &gt;= 2);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    connect(&amp;<a class="code" href="class_q_camera_widget.html#a291e240ec2bbfdf1f2faba8fbafe295e">m_qTimerFrame</a>, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;<a class="code" href="class_q_camera_widget.html#ab5d61a5294cbab3a01170a77b0daeeb4">QCameraWidget::_updateImage</a>);</div>
@@ -129,7 +129,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Suppression du bruit</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    blur(*matNewImageCaptured, *matNewImageCaptured, <a class="code" href="class_q_camera_widget.html#abe2df164809a573ca88fe12d22fc1450">DEFAULT_KERNEL</a>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// On récupère l&#39;image</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// On rÃ©cupÃ¨re l&#39;image</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> bNotify = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_q_camera_widget.html#afcedbbddb4d56f8a5577d3030c2abcbe">m_matImageCaptured</a> != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
@@ -174,7 +174,7 @@ $(function() {
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="class_q_camera_widget.html#a0337353c26fa1a28663876c61763d427">_findDicesByBlob</a>(nDotsDetectedByBlob);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// On regarde si les deux algorithmes comptent le même total </span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// On regarde si les deux algorithmes comptent le mÃªme total</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (nDotsDetectedByMinArea == nDotsDetectedByBlob)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::list&lt;std::shared_ptr&lt;CDice&gt;&gt; lDicesBuffer;</div>
@@ -187,16 +187,16 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordtype">bool</span> bProcess = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d&#39;être détéctés</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">// On regarde les similitudes entre les dÃ©s dÃ©jÃ  enregistrÃ©s et ceux venant d&#39;Ãªtre dÃ©tÃ©ctÃ©s</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); ++itDetectedDices)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">// Si le dé est un faux positif on passe</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">// Si le dÃ© est un faux positif on passe</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">if</span> ((*itDetectedDices)-&gt;getCount() == 0 || (*itDetectedDices)-&gt;getCount() &gt; 6)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> itDice = <a class="code" href="class_q_camera_widget.html#ad878ec6b564d8f1ae382ea29ebdb2228">m_lDices</a>.begin(); itDice != <a class="code" href="class_q_camera_widget.html#ad878ec6b564d8f1ae382ea29ebdb2228">m_lDices</a>.end(); ++itDice)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <span class="comment">// Si le numéro est le même, on compare la position pour savoir si c&#39;est le même dé (avec une marge d&#39;erreur / tolérance)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <span class="comment">// Si le numÃ©ro est le mÃªme, on compare la position pour savoir si c&#39;est le mÃªme dÃ© (avec une marge d&#39;erreur / tolÃ©rance)</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    <span class="keywordflow">if</span> ((*itDetectedDices)-&gt;getCount() == (*itDice)-&gt;getCount())</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">float</span> fX = std::abs&lt;float&gt;((*itDetectedDices)-&gt;getDiceRect().boundingRect().x - (*itDice)-&gt;getDiceRect().boundingRect().x);</div>
@@ -220,163 +220,25 @@ $(function() {
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Si on détecte 5 dés</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Si on dÃ©tecte 5 dÃ©s</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (lDicesBuffer.size() == 5)</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="class_q_camera_widget.html#ad878ec6b564d8f1ae382ea29ebdb2228">m_lDices</a>.clear();</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="class_q_camera_widget.html#ad878ec6b564d8f1ae382ea29ebdb2228">m_lDices</a> = lDicesBuffer;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="comment">// On compte les dés par capacité             shared_ptr&lt;CDiceSet&gt; pDiceSet = make_shared&lt;CDiceSet&gt;();
-            for (shared_ptr&lt;CDice&gt;&amp; const dice : m_lDices)
-                (*pDiceSet)[dice-&gt;getCount()]++;
-
-            // Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal
-            if (m_pLastDiceSet != nullptr &amp;&amp; *m_pLastDiceSet == *pDiceSet
-                &amp;&amp; (m_pLastValidatedDiceSet == nullptr || *pDiceSet != *m_pLastValidatedDiceSet))
-            {
-                m_pLastValidatedDiceSet = pDiceSet;
-
-                if (m_bIsWrongDetection)
-                    QMessageBox::information(this, QString::fromLatin1(&quot;Redétection terminée&quot;), QString::fromLatin1(&quot;Dès mis à jour&quot;));
-
-                emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
-
-                m_bIsWrongDetection = false;
-            }
-            else
-                m_pLastDiceSet = pDiceSet;
-            
-        }
-        
-        lDicesBuffer.clear();
-    }
-}
-
-void QCameraWidget::_findDicesByMinArea(list&lt;shared_ptr&lt;CDice&gt;&gt;&amp; lDetectedDices, size_t&amp; iNDetectedDices) const
-{
-    iNDetectedDices = 0;
-
-    Mat matImageBuffer;
-    
-    // Filtre de Canny afin d&#39;extraire les contours
-    Canny(*m_matImageCaptured, matImageBuffer, MIN_CANNY_THRESHOLD, MAX_CANNY_THRESHOLD);
-    
-    // Extraction des contours et de la hierarchie
-    vector&lt;vector&lt;Point&gt;&gt; vContours;
-    vector&lt;Vec4i&gt; vHierarchy;
-    findContours(matImageBuffer, vContours, vHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-    
-    // On veut déterminer les rectangles qui sont contours des dés
-    for (vector&lt;Point&gt;&amp; contour : vContours)
-    {
-        // Pour chaque contour, on cherche l&#39;aire minimum du triangle
-        RotatedRect rect = minAreaRect(contour);
-        
-        // On traite uniquement les rectangles qui n&#39;ont pas des angles droits parfaits
-        // L&#39;aire dépend de la résolution de la webcam
-        const float fAspect = fabs(rect.size.aspectRatio() - 1);
-        if ((fAspect &lt; 0.25) &amp;&amp; (rect.size.area() &gt; MIN_DICE_WIDTH) &amp;&amp; (rect.size.area() &lt; MAX_DICE_WIDTH))
-        {
-            // On vérifie le rectangle ou un rectangle proche n&#39;a pas déjà été assigné
-           bool bProcess = true;
-            for (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)
-            {
-                float dist = norm(rect.center - dice-&gt;getDiceRect().center);
-                if (dist &lt; 10)
-                {
-                    bProcess = false;
-                    break;
-                }
-            }
-
-            if (bProcess)
-                lDetectedDices.push_back(make_shared&lt;CDice&gt;(rect));
-        }
-    }
-
-    
-    // On compte les points de chaque dé
-    for (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)
-    {
-        // Extraction du dés de l&#39;image
-        Mat rotation, rotated, cropped;
-        RotatedRect rect = dice-&gt;getDiceRect();
-        rotation = getRotationMatrix2D(rect.center, rect.angle, 1.0);
-        warpAffine(matImageBuffer, rotated, rotation, matImageBuffer.size(), INTER_CUBIC);
-        getRectSubPix(rotated, Size(rect.size.width - 10, rect.size.height - 10), rect.center, cropped);
-
-        // On cherche les contours
-        vector&lt;vector&lt;Point&gt;&gt; vDotContours;
-        vector&lt;Vec4i&gt; vDotHierarchy;
-        threshold(cropped, cropped, 64, 255, THRESH_BINARY);
-        findContours(cropped, vDotContours, vDotHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-
-        // On cherche les rectangles des points
-        for (vector&lt;Point&gt;&amp; diceContour : vDotContours)
-        {
-            // Pour chaque contour on associe un rectangle
-            RotatedRect rect = minAreaRect(diceContour);
-
-            const float aspect = std::abs&lt;float&gt;(rect.size.aspectRatio() - 1);
-            if ((aspect &lt; 0.4) &amp;&amp; (rect.size.area() &gt; MIN_DICE_DOT_WIDTH) &amp;&amp; (rect.size.area() &lt; MAX_DICE_DOT_WIDTH)) {
-                bool process = true;
-                
-                for (const RotatedRect&amp; dotRect : dice-&gt;getDotRects())
-                {
-                    float dist = norm(rect.center - dotRect.center);
-                    if (dist &lt; MIN_DISTANCE_FROM_DICE_CENTER)
-                    {
-                        process = false;
-                        break;
-                    }
-                }
-
-                if (process) {
-                    dice-&gt;addDotRect(rect);
-                    iNDetectedDices++;
-                }
-            }
-        }
-    }
-}
-
-void QCameraWidget::_findDicesByBlob(size_t&amp; iNDetectedDices) const
-{
-    iNDetectedDices = 0;
-    
-    Mat matImageBuffer;
-
-    SimpleBlobDetector::Params detectorParams;
-    detectorParams.filterByArea = true;
-    detectorParams.filterByCircularity = true;
-    detectorParams.filterByInertia = true;
-    detectorParams.minThreshold = MIN_BLOB_THRESHOLD;
-    detectorParams.maxThreshold = MAX_BLOB_THRESHOLD;
-    detectorParams.minArea = MIN_BLOB_AREA;
-    detectorParams.maxArea = MAX_BLOB_AREA;
-    detectorParams.minCircularity = MIN_CIRCULARITY;
-    detectorParams.minInertiaRatio = MIN_INERTIA_RATIO;
-
-    const Ptr&lt;SimpleBlobDetector&gt; detector = SimpleBlobDetector::create(detectorParams);
-
-    std::vector&lt;KeyPoint&gt; vKeypoints;
-    detector-&gt;detect(*m_matImageCaptured, vKeypoints);
-
-    iNDetectedDices = vKeypoints.size();
-}
-</span> </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="comment">// On compte les dÃ©s par capacitÃ©</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            shared_ptr&lt;CDiceSet&gt; pDiceSet = make_shared&lt;CDiceSet&gt;();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">for</span> (shared_ptr&lt;CDice&gt;&amp; <span class="keyword">const</span> dice : <a class="code" href="class_q_camera_widget.html#ad878ec6b564d8f1ae382ea29ebdb2228">m_lDices</a>)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">for</span> (shared_ptr&lt;CDice&gt;&amp; dice : <a class="code" href="class_q_camera_widget.html#ad878ec6b564d8f1ae382ea29ebdb2228">m_lDices</a>)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                (*pDiceSet)[dice-&gt;getCount()]++;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="comment">// Si on obtient le même set de dés que précédemment, on passe, sinon on émet le signal</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="comment">// Si on obtient le mÃªme set de dÃ©s que prÃ©cÃ©demment, on passe, sinon on Ã©met le signal</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_q_camera_widget.html#ac3a59c1b0f780d55c5a75d57911c587e">m_pLastDiceSet</a> != <span class="keyword">nullptr</span> &amp;&amp; *<a class="code" href="class_q_camera_widget.html#ac3a59c1b0f780d55c5a75d57911c587e">m_pLastDiceSet</a> == *pDiceSet</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                &amp;&amp; (<a class="code" href="class_q_camera_widget.html#a40675760cd37ce046b8f405a277b206e">m_pLastValidatedDiceSet</a> == <span class="keyword">nullptr</span> || *pDiceSet != *<a class="code" href="class_q_camera_widget.html#a40675760cd37ce046b8f405a277b206e">m_pLastValidatedDiceSet</a>))</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <a class="code" href="class_q_camera_widget.html#a40675760cd37ce046b8f405a277b206e">m_pLastValidatedDiceSet</a> = pDiceSet;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_q_camera_widget.html#a1ea52ea910ec73939abc2d1cb32dbc76">m_bIsWrongDetection</a>)</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    QMessageBox::information(<span class="keyword">this</span>, QString::fromLatin1(<span class="stringliteral">&quot;Redétection terminée&quot;</span>), QString::fromLatin1(<span class="stringliteral">&quot;Dès mis à jour&quot;</span>));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    QMessageBox::information(<span class="keyword">this</span>, QString::fromLatin1(<span class="stringliteral">&quot;RedÃ©tection terminÃ©e&quot;</span>), QString::fromLatin1(<span class="stringliteral">&quot;DÃ©s mis Ã  jour&quot;</span>));</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                emit <a class="code" href="class_q_camera_widget.html#a71a69e22f2049e68a6f0ee8e90bd5e9b">dicesUpdated</a>(*pDiceSet, <a class="code" href="class_q_camera_widget.html#a1ea52ea910ec73939abc2d1cb32dbc76">m_bIsWrongDetection</a>);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
@@ -405,104 +267,18 @@ void QCameraWidget::_findDicesByBlob(size_t&amp; iNDetectedDices) const
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    vector&lt;Vec4i&gt; vHierarchy;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    findContours(matImageBuffer, vContours, vHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">// On veut déterminer les rectangles qui sont contours des dés</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">// On veut dÃ©terminer les rectangles qui sont contours des dÃ©s</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">for</span> (vector&lt;Point&gt;&amp; contour : vContours)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="comment">// Pour chaque contour, on cherche l&#39;aire minimum du triangle</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        RotatedRect rect = minAreaRect(contour);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="comment">// On traite uniquement les rectangles qui n&#39;ont pas des angles droits parfaits</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment">// L&#39;aire dépend de la résolution de la webcam</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment">// L&#39;aire dÃ©pend de la rÃ©solution de la webcam</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> fAspect = fabs(rect.size.aspectRatio() - 1);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> ((fAspect &lt; 0.25) &amp;&amp; (rect.size.area() &gt; <a class="code" href="class_q_camera_widget.html#a5b105866d5b50e9df0eff1e2d3c79c27">MIN_DICE_WIDTH</a>) &amp;&amp; (rect.size.area() &lt; <a class="code" href="class_q_camera_widget.html#ae07bb31bd87043c6866339202b851071">MAX_DICE_WIDTH</a>))</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment">// On vérifie le rectangle ou un rectangle proche n&#39;a pas déjà été assigné            bool bProcess = true;
-            for (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)
-            {
-                float dist = norm(rect.center - dice-&gt;getDiceRect().center);
-                if (dist &lt; 10)
-                {
-                    bProcess = false;
-                    break;
-                }
-            }
-
-            if (bProcess)
-                lDetectedDices.push_back(make_shared&lt;CDice&gt;(rect));
-        }
-    }
-
-    
-    // On compte les points de chaque dé
-    for (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)
-    {
-        // Extraction du dés de l&#39;image
-        Mat rotation, rotated, cropped;
-        RotatedRect rect = dice-&gt;getDiceRect();
-        rotation = getRotationMatrix2D(rect.center, rect.angle, 1.0);
-        warpAffine(matImageBuffer, rotated, rotation, matImageBuffer.size(), INTER_CUBIC);
-        getRectSubPix(rotated, Size(rect.size.width - 10, rect.size.height - 10), rect.center, cropped);
-
-        // On cherche les contours
-        vector&lt;vector&lt;Point&gt;&gt; vDotContours;
-        vector&lt;Vec4i&gt; vDotHierarchy;
-        threshold(cropped, cropped, 64, 255, THRESH_BINARY);
-        findContours(cropped, vDotContours, vDotHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-
-        // On cherche les rectangles des points
-        for (vector&lt;Point&gt;&amp; diceContour : vDotContours)
-        {
-            // Pour chaque contour on associe un rectangle
-            RotatedRect rect = minAreaRect(diceContour);
-
-            const float aspect = std::abs&lt;float&gt;(rect.size.aspectRatio() - 1);
-            if ((aspect &lt; 0.4) &amp;&amp; (rect.size.area() &gt; MIN_DICE_DOT_WIDTH) &amp;&amp; (rect.size.area() &lt; MAX_DICE_DOT_WIDTH)) {
-                bool process = true;
-                
-                for (const RotatedRect&amp; dotRect : dice-&gt;getDotRects())
-                {
-                    float dist = norm(rect.center - dotRect.center);
-                    if (dist &lt; MIN_DISTANCE_FROM_DICE_CENTER)
-                    {
-                        process = false;
-                        break;
-                    }
-                }
-
-                if (process) {
-                    dice-&gt;addDotRect(rect);
-                    iNDetectedDices++;
-                }
-            }
-        }
-    }
-}
-
-void QCameraWidget::_findDicesByBlob(size_t&amp; iNDetectedDices) const
-{
-    iNDetectedDices = 0;
-    
-    Mat matImageBuffer;
-
-    SimpleBlobDetector::Params detectorParams;
-    detectorParams.filterByArea = true;
-    detectorParams.filterByCircularity = true;
-    detectorParams.filterByInertia = true;
-    detectorParams.minThreshold = MIN_BLOB_THRESHOLD;
-    detectorParams.maxThreshold = MAX_BLOB_THRESHOLD;
-    detectorParams.minArea = MIN_BLOB_AREA;
-    detectorParams.maxArea = MAX_BLOB_AREA;
-    detectorParams.minCircularity = MIN_CIRCULARITY;
-    detectorParams.minInertiaRatio = MIN_INERTIA_RATIO;
-
-    const Ptr&lt;SimpleBlobDetector&gt; detector = SimpleBlobDetector::create(detectorParams);
-
-    std::vector&lt;KeyPoint&gt; vKeypoints;
-    detector-&gt;detect(*m_matImageCaptured, vKeypoints);
-
-    iNDetectedDices = vKeypoints.size();
-}
-</span> </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment">// On vÃ©rifie le rectangle ou un rectangle proche n&#39;a pas dÃ©jÃ  Ã©tÃ© assignÃ©</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordtype">bool</span> bProcess = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">for</span> (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            {</div>
@@ -520,78 +296,10 @@ void QCameraWidget::_findDicesByBlob(size_t&amp; iNDetectedDices) const
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// On compte les points de chaque dé     for (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)
-    {
-        // Extraction du dés de l&#39;image
-        Mat rotation, rotated, cropped;
-        RotatedRect rect = dice-&gt;getDiceRect();
-        rotation = getRotationMatrix2D(rect.center, rect.angle, 1.0);
-        warpAffine(matImageBuffer, rotated, rotation, matImageBuffer.size(), INTER_CUBIC);
-        getRectSubPix(rotated, Size(rect.size.width - 10, rect.size.height - 10), rect.center, cropped);
-
-        // On cherche les contours
-        vector&lt;vector&lt;Point&gt;&gt; vDotContours;
-        vector&lt;Vec4i&gt; vDotHierarchy;
-        threshold(cropped, cropped, 64, 255, THRESH_BINARY);
-        findContours(cropped, vDotContours, vDotHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-
-        // On cherche les rectangles des points
-        for (vector&lt;Point&gt;&amp; diceContour : vDotContours)
-        {
-            // Pour chaque contour on associe un rectangle
-            RotatedRect rect = minAreaRect(diceContour);
-
-            const float aspect = std::abs&lt;float&gt;(rect.size.aspectRatio() - 1);
-            if ((aspect &lt; 0.4) &amp;&amp; (rect.size.area() &gt; MIN_DICE_DOT_WIDTH) &amp;&amp; (rect.size.area() &lt; MAX_DICE_DOT_WIDTH)) {
-                bool process = true;
-                
-                for (const RotatedRect&amp; dotRect : dice-&gt;getDotRects())
-                {
-                    float dist = norm(rect.center - dotRect.center);
-                    if (dist &lt; MIN_DISTANCE_FROM_DICE_CENTER)
-                    {
-                        process = false;
-                        break;
-                    }
-                }
-
-                if (process) {
-                    dice-&gt;addDotRect(rect);
-                    iNDetectedDices++;
-                }
-            }
-        }
-    }
-}
-
-void QCameraWidget::_findDicesByBlob(size_t&amp; iNDetectedDices) const
-{
-    iNDetectedDices = 0;
-    
-    Mat matImageBuffer;
-
-    SimpleBlobDetector::Params detectorParams;
-    detectorParams.filterByArea = true;
-    detectorParams.filterByCircularity = true;
-    detectorParams.filterByInertia = true;
-    detectorParams.minThreshold = MIN_BLOB_THRESHOLD;
-    detectorParams.maxThreshold = MAX_BLOB_THRESHOLD;
-    detectorParams.minArea = MIN_BLOB_AREA;
-    detectorParams.maxArea = MAX_BLOB_AREA;
-    detectorParams.minCircularity = MIN_CIRCULARITY;
-    detectorParams.minInertiaRatio = MIN_INERTIA_RATIO;
-
-    const Ptr&lt;SimpleBlobDetector&gt; detector = SimpleBlobDetector::create(detectorParams);
-
-    std::vector&lt;KeyPoint&gt; vKeypoints;
-    detector-&gt;detect(*m_matImageCaptured, vKeypoints);
-
-    iNDetectedDices = vKeypoints.size();
-}
-</span> </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// On compte les points de chaque dÃ©</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">for</span> (shared_ptr&lt;CDice&gt;&amp; dice : lDetectedDices)</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// Extraction du dés de l&#39;image</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// Extraction du dÃ©s de l&#39;image</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        Mat rotation, rotated, cropped;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        RotatedRect rect = dice-&gt;getDiceRect();</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        rotation = getRotationMatrix2D(rect.center, rect.angle, 1.0);</div>

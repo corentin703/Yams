@@ -1,0 +1,1782 @@
+\hypertarget{class_q_player_grid}{}\doxysection{Référence de la classe Q\+Player\+Grid}
+\label{class_q_player_grid}\index{QPlayerGrid@{QPlayerGrid}}
+
+
+Encapsule une grille de jeu.  
+
+
+
+
+{\ttfamily \#include $<$Q\+Player\+Grid.\+hpp$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Q\+Player\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_q_player_grid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Q\+Player\+Grid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_q_player_grid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_q_player_grid_a5a0f58d739b567d5b5b18706b151187e}{grid\+Updated}} (\mbox{\hyperlink{class_q_player_grid}{Q\+Player\+Grid}} $\ast$player\+Grid)
+\begin{DoxyCompactList}\small\item\em Signale que la grille a été mise à jour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_player_grid_a7f45a2e748ee9a922fb906ac868ce7d9}{Q\+Player\+Grid}} (const Q\+String \&s\+Player\+Name)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_q_player_grid_afb683e9dfdf3a990b12b9e0c43fda98c}{get\+Player\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom du joueur. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a9634ed143485e378baf58f51a0b6081a}{get\+Aces}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur des As. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_afdb965fe50e335969a57f4263ccca66f}{is\+Aces\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si les as ont été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a4885e0643aa4edd45349b8239cf910d1}{set\+Aces}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur des As. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a36190997ee128ff6deccbd537f012cf2}{get\+Twos}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur des deux. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_ab5e33f4ad635307631a570a69aa4790a}{is\+Twos\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si les deux ont été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a61e0cb9ae3a7edb7fd0ba598881148e9}{set\+Twos}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur des deux. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a5c0e99737747a756d4c9e5f40e402468}{get\+Threes}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur des trois. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a34663f3a47bcb333bcdcf53270dd1cc4}{is\+Threes\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si les trois ont été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a84491527b16b7b04efe617bffdbb1c4d}{set\+Threes}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur des trois. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_aea73a82a4cde9528f0d594b1fc2d7ba3}{get\+Fours}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur des quatre. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_ac35f7dd54422fb56210798840eff6ed8}{is\+Fours\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si les quatre ont été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a658a61db287cabbdefcb4c0ce2554eaa}{set\+Fours}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur des quatre. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_abafbdb6f69b85f762ee56887c664a902}{get\+Fives}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur des cinq. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a5b4e47e899758ddb315c9d0e6d0d5efa}{is\+Fives\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si les cinq ont été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_afbe936347fc4f06737282db27558240b}{set\+Fives}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur des cinq. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a5387fb6437a74751eab52ed67e2bda06}{get\+Sixes}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur des six. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a8013927acd300863aad5c4ef8544e412}{is\+Sixes\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si les six ont été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_aec8af57b23bf2aed53e5f8c48d40dd33}{set\+Sixes}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur des six. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a88f1e28227ea13a748253ec009e71e65}{get\+Bonus}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le bonus s\textquotesingle{}il y a. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a2fca38db19f40086aab7448cca3b8115}{get\+Brelan}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur du Bralan. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a8e30217812a929187bfbaae50ef3c3b7}{is\+Brelan\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si le Brelan a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a14d1991e69111323b9e793275dfd3609}{set\+Brelan}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur du Brelan. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a1a20bc750a77c22b6a8f4905d98627ec}{get\+Carre}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur du Carré \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_af25f6f47e104555a3d16e35fb74dd894}{is\+Carre\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si le Carré a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a143f60300af2e19982ad36c20ed9c72b}{set\+Carre}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Value)
+\begin{DoxyCompactList}\small\item\em Défini la valeur du Carré \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a8a05f8fb945805919999ad7ca9b0f091}{get\+Full}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur du Full. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a027e1e57a23fbffd4e5cab360b023dce}{is\+Full\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si le Full a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a2bb73e1a0a7cc80e9074358b66fe3994}{set\+Full}} (bool b\+Is\+Full)
+\begin{DoxyCompactList}\small\item\em Défini s\textquotesingle{}il y a Full. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_ada175d58fdabd0da809b065446ab4bf7}{get\+Small\+Straight}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur de la petite suite. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a97dd4f1a8c22e300dd46875d954cf603}{is\+Small\+Straight\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si la petite suite a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a81a0037d0a6e314604dc2e3a0038e1a9}{set\+Small\+Straight}} (bool b\+Is\+Small\+Straight)
+\begin{DoxyCompactList}\small\item\em Défini s\textquotesingle{}il y a petite suite. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a28cc87a88f410e7a29dd40a5be604919}{get\+Large\+Straight}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur de la grande suite. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a8079a83e384da3b390505777b9b0aacf}{is\+Large\+Straight\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si la grande suite a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a74ae878a273c13f982060de91214dfdf}{set\+Large\+Straight}} (bool b\+Is\+Large\+Straight)
+\begin{DoxyCompactList}\small\item\em Défini s\textquotesingle{}il y a grande suite. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a42df5dd5fc63e90b96bf4894e2da8fa8}{get\+Yams}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur du Yams. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_ad566331fa413c66bf3ee0a04ec484012}{is\+Yams\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si le Yams a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a236aface4295a44ab1b5ddbe430de0e8}{set\+Yams}} (bool b\+Is\+Yams)
+\begin{DoxyCompactList}\small\item\em Défini s\textquotesingle{}il y a Yams. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a2facfac49bb85d66edb8d678ed348b78}{get\+Super\+Yams}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur du super Yams. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_a1aa8830cbb57685382d87135c0eb8da8}{is\+Super\+Yams\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si le super Yams a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a140a8ca88378ef1ee46f1b05318d5955}{set\+Super\+Yams}} (bool b\+Is\+Super\+Yams)
+\begin{DoxyCompactList}\small\item\em Défini s\textquotesingle{}il y a super Yams. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \& \mbox{\hyperlink{class_q_player_grid_a3601710dbea81d2010721d28ac17415e}{get\+Chance}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la valeur de la chance. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_q_player_grid_ae02a63d3cd9947f0efd856b15da9cb5d}{is\+Chance\+Already\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Retourne vrai si la chance a été défini. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_q_player_grid_a5ad976cd0421158836aeb6647130e7ea}{set\+Chance}} (\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i\+Chance)
+\begin{DoxyCompactList}\small\item\em Défini la valeur de la chance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_abc3a78a77c9cd2ed015a7c591f997bc8}{get\+Pre\+Upper\+Total}} () const
+\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_a39427a29fac5878cd20236117e6c9d3d}{get\+Upper\+Total}} () const
+\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_a25378d8af0d82a8df60b2cd27f4863f0}{get\+Lower\+Total}} () const
+\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_a0b54da49b84752609dc296aee54799aa}{get\+Total}} () const
+\item 
+bool \mbox{\hyperlink{class_q_player_grid_a235a85c6fc287fcc1ba7e8dc6f73c849}{is\+Grid\+Finished}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_q_player_grid_a7a3656021785f5b2291475c91390219b}{\+\_\+check\+Bonus}} ()
+\begin{DoxyCompactList}\small\item\em Vérifie pour la partie supérieure si le joueur a obtenu le bonus ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \mbox{\hyperlink{class_q_player_grid_abdc832f075e12e18b7ec69237c1e53ab}{m\+\_\+s\+Player\+Name}}
+\begin{DoxyCompactList}\small\item\em Nom du joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_ad291aba9628f799dd6cc4a6d06178f98}{m\+\_\+i\+Aces}}
+\begin{DoxyCompactList}\small\item\em Valeur des As. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a146e0bb7d26a2b838ec67286d816dfd4}{m\+\_\+b\+Is\+Aces\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si les as ont déjà étés définis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_ac7b33e3ba1c8055af6e4005a98855f80}{m\+\_\+i\+Twos}}
+\begin{DoxyCompactList}\small\item\em Valeur des deux. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a2cf127c392dfaae0304ca2aebba4cade}{m\+\_\+b\+Is\+Twos\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si les deux ont déjà étés définis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_a8fc029815491523e5613530f73b2c781}{m\+\_\+i\+Threes}}
+\begin{DoxyCompactList}\small\item\em Valeur des trois. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_af93c1de1346e6451ddc6e5e280aad0e5}{m\+\_\+b\+Is\+Threes\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si les trois ont déjà étés définis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_ad01765719a93f4755a7cff470df9326a}{m\+\_\+i\+Fours}}
+\begin{DoxyCompactList}\small\item\em Valeur des quatre. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a3052754c5aab23de0d8dba94f606f87d}{m\+\_\+b\+Is\+Fours\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si les quatre ont déjà étés définis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_adbfdc54b4ea7b40aaf6d93f7e97b1eb6}{m\+\_\+i\+Fives}}
+\begin{DoxyCompactList}\small\item\em Valeur des cinq. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a3a4299ae464c79fe05e6db403e365d30}{m\+\_\+b\+Is\+Fives\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si les cinq ont déjà étés définis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_a8ab573a2c26d6161a0e052f7cbc35077}{m\+\_\+i\+Sixes}}
+\begin{DoxyCompactList}\small\item\em Valeur des six. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_aa91fdb002e30bbf5647e8a067e386ff6}{m\+\_\+b\+Is\+Sixes\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si les six ont déjà étés définis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_af13d007532e7808114f5fcba7a08e64e}{m\+\_\+b\+Is\+Bonus}}
+\begin{DoxyCompactList}\small\item\em Vrai si le bonus est acquis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_ac9b0912a4be61bec497f53f79db21613}{m\+\_\+i\+Brelan}}
+\begin{DoxyCompactList}\small\item\em Valeur du Brelan. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_adcec49378ac42e635c1b9730cd217ba6}{m\+\_\+b\+Is\+Brelan\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si le Brelan a déjà été défini. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_ab91f546412a1373ca0fe6c2a0d6d6259}{m\+\_\+i\+Carre}}
+\begin{DoxyCompactList}\small\item\em Valeur du Carré \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_aeee1a625fae56b2c5dd8e3838e0ebe80}{m\+\_\+b\+Is\+Carre\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si le Carré a déjà été défini. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_ab9ee1ea15ca8e12136ec5c4b999f7154}{m\+\_\+b\+Is\+Full}}
+\begin{DoxyCompactList}\small\item\em Vrai s\textquotesingle{}il y a Full. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a56ff04ef52505186d1c253373f887c68}{m\+\_\+b\+Is\+Full\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si le Full a déjà été défini. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_aa2a0d225ede24997d5e3c1590b1807b7}{m\+\_\+b\+Is\+Small\+Straight}}
+\begin{DoxyCompactList}\small\item\em Vrai s\textquotesingle{}il y a la petite suite. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a7b866dd3fb8706115ce21784b9f49b5e}{m\+\_\+b\+Is\+Small\+Straight\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si la petite suite a déjà été défini. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a5d2083556230e2bb14c17dde5a8ecc31}{m\+\_\+b\+Is\+Large\+Straight}}
+\begin{DoxyCompactList}\small\item\em Vrai s\textquotesingle{}il y a la grande suite. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_ad9f8cea8971232784030032e2d454309}{m\+\_\+b\+Is\+Large\+Straight\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si le grande suite a déjà été défini. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_ae51653ae1386c685e76f114bbce550dd}{m\+\_\+b\+Is\+Yams}}
+\begin{DoxyCompactList}\small\item\em Vrai s\textquotesingle{}il y a le Yams. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a7908d60cfb59a84abf8a238d13bd00d3}{m\+\_\+b\+Is\+Yams\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si le Yams a déjà été défini. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_adb2c313502e2fc0ad9924f483b95a2c3}{m\+\_\+b\+Is\+Super\+Yams}}
+\begin{DoxyCompactList}\small\item\em Vrai s\textquotesingle{}il y a le super Yams. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a7358ba78f5f0b5d4e87a480c786f2483}{m\+\_\+b\+Is\+Super\+Yams\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si le super Yams a déjà été défini. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{class_q_player_grid_acff0f039c76175e3f3da963691a99083}{m\+\_\+i\+Chance}}
+\begin{DoxyCompactList}\small\item\em Valeur de la chance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_q_player_grid_a5453604d698616ac71ae4bc73c3d3221}{m\+\_\+b\+Is\+Chance\+Already\+Set}}
+\begin{DoxyCompactList}\small\item\em Vrai si la chance a déjà été défini. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Encapsule une grille de jeu. 
+
+\begin{DoxyAuthor}{Auteur}
+Corentin VÉ\+R\+OT 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/05-\/15 
+\end{DoxyDate}
+
+
+Définition à la ligne 19 du fichier Q\+Player\+Grid.\+hpp.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_q_player_grid_a7f45a2e748ee9a922fb906ac868ce7d9}\label{class_q_player_grid_a7f45a2e748ee9a922fb906ac868ce7d9}} 
+\index{QPlayerGrid@{QPlayerGrid}!QPlayerGrid@{QPlayerGrid}}
+\index{QPlayerGrid@{QPlayerGrid}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{QPlayerGrid()}{QPlayerGrid()}}
+{\footnotesize\ttfamily Q\+Player\+Grid\+::\+Q\+Player\+Grid (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{s\+Player\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s\+Player\+Name} & \+: Q\+String\& -\/ Nom du joueur \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 5 du fichier Q\+Player\+Grid.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_q_player_grid_a7a3656021785f5b2291475c91390219b}\label{class_q_player_grid_a7a3656021785f5b2291475c91390219b}} 
+\index{QPlayerGrid@{QPlayerGrid}!\_checkBonus@{\_checkBonus}}
+\index{\_checkBonus@{\_checkBonus}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{\_checkBonus()}{\_checkBonus()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::\+\_\+check\+Bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vérifie pour la partie supérieure si le joueur a obtenu le bonus ou non. 
+
+
+
+Définition à la ligne 293 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a9634ed143485e378baf58f51a0b6081a}\label{class_q_player_grid_a9634ed143485e378baf58f51a0b6081a}} 
+\index{QPlayerGrid@{QPlayerGrid}!getAces@{getAces}}
+\index{getAces@{getAces}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getAces()}{getAces()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Aces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur des As. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 197 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a9634ed143485e378baf58f51a0b6081a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a88f1e28227ea13a748253ec009e71e65}\label{class_q_player_grid_a88f1e28227ea13a748253ec009e71e65}} 
+\index{QPlayerGrid@{QPlayerGrid}!getBonus@{getBonus}}
+\index{getBonus@{getBonus}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getBonus()}{getBonus()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le bonus s\textquotesingle{}il y a. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 311 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a88f1e28227ea13a748253ec009e71e65_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a2fca38db19f40086aab7448cca3b8115}\label{class_q_player_grid_a2fca38db19f40086aab7448cca3b8115}} 
+\index{QPlayerGrid@{QPlayerGrid}!getBrelan@{getBrelan}}
+\index{getBrelan@{getBrelan}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getBrelan()}{getBrelan()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Brelan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur du Bralan. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 319 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a2fca38db19f40086aab7448cca3b8115_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a1a20bc750a77c22b6a8f4905d98627ec}\label{class_q_player_grid_a1a20bc750a77c22b6a8f4905d98627ec}} 
+\index{QPlayerGrid@{QPlayerGrid}!getCarre@{getCarre}}
+\index{getCarre@{getCarre}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getCarre()}{getCarre()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Carre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur du Carré 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 338 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a1a20bc750a77c22b6a8f4905d98627ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a3601710dbea81d2010721d28ac17415e}\label{class_q_player_grid_a3601710dbea81d2010721d28ac17415e}} 
+\index{QPlayerGrid@{QPlayerGrid}!getChance@{getChance}}
+\index{getChance@{getChance}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getChance()}{getChance()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Chance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur de la chance. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 452 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a3601710dbea81d2010721d28ac17415e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_abafbdb6f69b85f762ee56887c664a902}\label{class_q_player_grid_abafbdb6f69b85f762ee56887c664a902}} 
+\index{QPlayerGrid@{QPlayerGrid}!getFives@{getFives}}
+\index{getFives@{getFives}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getFives()}{getFives()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Fives (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur des cinq. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 273 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_abafbdb6f69b85f762ee56887c664a902_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_aea73a82a4cde9528f0d594b1fc2d7ba3}\label{class_q_player_grid_aea73a82a4cde9528f0d594b1fc2d7ba3}} 
+\index{QPlayerGrid@{QPlayerGrid}!getFours@{getFours}}
+\index{getFours@{getFours}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getFours()}{getFours()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Fours (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur des quatre. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 254 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_aea73a82a4cde9528f0d594b1fc2d7ba3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a8a05f8fb945805919999ad7ca9b0f091}\label{class_q_player_grid_a8a05f8fb945805919999ad7ca9b0f091}} 
+\index{QPlayerGrid@{QPlayerGrid}!getFull@{getFull}}
+\index{getFull@{getFull}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getFull()}{getFull()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur du Full. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 357 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a8a05f8fb945805919999ad7ca9b0f091_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a28cc87a88f410e7a29dd40a5be604919}\label{class_q_player_grid_a28cc87a88f410e7a29dd40a5be604919}} 
+\index{QPlayerGrid@{QPlayerGrid}!getLargeStraight@{getLargeStraight}}
+\index{getLargeStraight@{getLargeStraight}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getLargeStraight()}{getLargeStraight()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Large\+Straight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur de la grande suite. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 395 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a28cc87a88f410e7a29dd40a5be604919_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a25378d8af0d82a8df60b2cd27f4863f0}\label{class_q_player_grid_a25378d8af0d82a8df60b2cd27f4863f0}} 
+\index{QPlayerGrid@{QPlayerGrid}!getLowerTotal@{getLowerTotal}}
+\index{getLowerTotal@{getLowerTotal}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getLowerTotal()}{getLowerTotal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::get\+Lower\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retourne le total de la partie inférieure
+
+\begin{DoxyReturn}{Renvoie}
+uint 
+\end{DoxyReturn}
+
+
+Définition à la ligne 258 du fichier Q\+Player\+Grid.\+cpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a25378d8af0d82a8df60b2cd27f4863f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_afb683e9dfdf3a990b12b9e0c43fda98c}\label{class_q_player_grid_afb683e9dfdf3a990b12b9e0c43fda98c}} 
+\index{QPlayerGrid@{QPlayerGrid}!getPlayerName@{getPlayerName}}
+\index{getPlayerName@{getPlayerName}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getPlayerName()}{getPlayerName()}}
+{\footnotesize\ttfamily Q\+String Q\+Player\+Grid\+::get\+Player\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le nom du joueur. 
+
+\begin{DoxyReturn}{Renvoie}
+Q\+String -\/ Nom du joueur 
+\end{DoxyReturn}
+
+
+Définition à la ligne 189 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_afb683e9dfdf3a990b12b9e0c43fda98c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_abc3a78a77c9cd2ed015a7c591f997bc8}\label{class_q_player_grid_abc3a78a77c9cd2ed015a7c591f997bc8}} 
+\index{QPlayerGrid@{QPlayerGrid}!getPreUpperTotal@{getPreUpperTotal}}
+\index{getPreUpperTotal@{getPreUpperTotal}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getPreUpperTotal()}{getPreUpperTotal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::get\+Pre\+Upper\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retourne le pré-\/total de la partie supérieure (sans le bonus)
+
+\begin{DoxyReturn}{Renvoie}
+uint 
+\end{DoxyReturn}
+
+
+Définition à la ligne 246 du fichier Q\+Player\+Grid.\+cpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_abc3a78a77c9cd2ed015a7c591f997bc8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a5387fb6437a74751eab52ed67e2bda06}\label{class_q_player_grid_a5387fb6437a74751eab52ed67e2bda06}} 
+\index{QPlayerGrid@{QPlayerGrid}!getSixes@{getSixes}}
+\index{getSixes@{getSixes}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getSixes()}{getSixes()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Sixes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur des six. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 292 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a5387fb6437a74751eab52ed67e2bda06_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_ada175d58fdabd0da809b065446ab4bf7}\label{class_q_player_grid_ada175d58fdabd0da809b065446ab4bf7}} 
+\index{QPlayerGrid@{QPlayerGrid}!getSmallStraight@{getSmallStraight}}
+\index{getSmallStraight@{getSmallStraight}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getSmallStraight()}{getSmallStraight()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Small\+Straight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur de la petite suite. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 376 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_ada175d58fdabd0da809b065446ab4bf7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a2facfac49bb85d66edb8d678ed348b78}\label{class_q_player_grid_a2facfac49bb85d66edb8d678ed348b78}} 
+\index{QPlayerGrid@{QPlayerGrid}!getSuperYams@{getSuperYams}}
+\index{getSuperYams@{getSuperYams}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getSuperYams()}{getSuperYams()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Super\+Yams (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur du super Yams. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 433 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a2facfac49bb85d66edb8d678ed348b78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a5c0e99737747a756d4c9e5f40e402468}\label{class_q_player_grid_a5c0e99737747a756d4c9e5f40e402468}} 
+\index{QPlayerGrid@{QPlayerGrid}!getThrees@{getThrees}}
+\index{getThrees@{getThrees}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getThrees()}{getThrees()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Threes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur des trois. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 235 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a5c0e99737747a756d4c9e5f40e402468_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a0b54da49b84752609dc296aee54799aa}\label{class_q_player_grid_a0b54da49b84752609dc296aee54799aa}} 
+\index{QPlayerGrid@{QPlayerGrid}!getTotal@{getTotal}}
+\index{getTotal@{getTotal}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getTotal()}{getTotal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::get\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retourne le total de la partie
+
+\begin{DoxyReturn}{Renvoie}
+uint 
+\end{DoxyReturn}
+
+
+Définition à la ligne 494 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a0b54da49b84752609dc296aee54799aa_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a0b54da49b84752609dc296aee54799aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a36190997ee128ff6deccbd537f012cf2}\label{class_q_player_grid_a36190997ee128ff6deccbd537f012cf2}} 
+\index{QPlayerGrid@{QPlayerGrid}!getTwos@{getTwos}}
+\index{getTwos@{getTwos}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getTwos()}{getTwos()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Twos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur des deux. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 216 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a36190997ee128ff6deccbd537f012cf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a39427a29fac5878cd20236117e6c9d3d}\label{class_q_player_grid_a39427a29fac5878cd20236117e6c9d3d}} 
+\index{QPlayerGrid@{QPlayerGrid}!getUpperTotal@{getUpperTotal}}
+\index{getUpperTotal@{getUpperTotal}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getUpperTotal()}{getUpperTotal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::get\+Upper\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retourne le total de la partie supérieure en contant le bonus si besoin est
+
+\begin{DoxyReturn}{Renvoie}
+uint 
+\end{DoxyReturn}
+
+
+Définition à la ligne 480 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a39427a29fac5878cd20236117e6c9d3d_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a39427a29fac5878cd20236117e6c9d3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a42df5dd5fc63e90b96bf4894e2da8fa8}\label{class_q_player_grid_a42df5dd5fc63e90b96bf4894e2da8fa8}} 
+\index{QPlayerGrid@{QPlayerGrid}!getYams@{getYams}}
+\index{getYams@{getYams}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{getYams()}{getYams()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\& Q\+Player\+Grid\+::get\+Yams (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la valeur du Yams. 
+
+\begin{DoxyReturn}{Renvoie}
+const uint\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 414 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a42df5dd5fc63e90b96bf4894e2da8fa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a5a0f58d739b567d5b5b18706b151187e}\label{class_q_player_grid_a5a0f58d739b567d5b5b18706b151187e}} 
+\index{QPlayerGrid@{QPlayerGrid}!gridUpdated@{gridUpdated}}
+\index{gridUpdated@{gridUpdated}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{gridUpdated}{gridUpdated}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::grid\+Updated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_player_grid}{Q\+Player\+Grid}} $\ast$}]{player\+Grid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signale que la grille a été mise à jour. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em player\+Grid} & \+: Q\+Player\+Grid$\ast$ \\
+\hline
+\end{DoxyParams}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a5a0f58d739b567d5b5b18706b151187e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_afdb965fe50e335969a57f4263ccca66f}\label{class_q_player_grid_afdb965fe50e335969a57f4263ccca66f}} 
+\index{QPlayerGrid@{QPlayerGrid}!isAcesAlreadySet@{isAcesAlreadySet}}
+\index{isAcesAlreadySet@{isAcesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isAcesAlreadySet()}{isAcesAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Aces\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si les as ont été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 203 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_afdb965fe50e335969a57f4263ccca66f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a8e30217812a929187bfbaae50ef3c3b7}\label{class_q_player_grid_a8e30217812a929187bfbaae50ef3c3b7}} 
+\index{QPlayerGrid@{QPlayerGrid}!isBrelanAlreadySet@{isBrelanAlreadySet}}
+\index{isBrelanAlreadySet@{isBrelanAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isBrelanAlreadySet()}{isBrelanAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Brelan\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si le Brelan a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 325 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a8e30217812a929187bfbaae50ef3c3b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_af25f6f47e104555a3d16e35fb74dd894}\label{class_q_player_grid_af25f6f47e104555a3d16e35fb74dd894}} 
+\index{QPlayerGrid@{QPlayerGrid}!isCarreAlreadySet@{isCarreAlreadySet}}
+\index{isCarreAlreadySet@{isCarreAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isCarreAlreadySet()}{isCarreAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Carre\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si le Carré a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 344 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_af25f6f47e104555a3d16e35fb74dd894_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_ae02a63d3cd9947f0efd856b15da9cb5d}\label{class_q_player_grid_ae02a63d3cd9947f0efd856b15da9cb5d}} 
+\index{QPlayerGrid@{QPlayerGrid}!isChanceAlreadySet@{isChanceAlreadySet}}
+\index{isChanceAlreadySet@{isChanceAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isChanceAlreadySet()}{isChanceAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Chance\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si la chance a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 458 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_ae02a63d3cd9947f0efd856b15da9cb5d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a5b4e47e899758ddb315c9d0e6d0d5efa}\label{class_q_player_grid_a5b4e47e899758ddb315c9d0e6d0d5efa}} 
+\index{QPlayerGrid@{QPlayerGrid}!isFivesAlreadySet@{isFivesAlreadySet}}
+\index{isFivesAlreadySet@{isFivesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isFivesAlreadySet()}{isFivesAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Fives\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si les cinq ont été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 279 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a5b4e47e899758ddb315c9d0e6d0d5efa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_ac35f7dd54422fb56210798840eff6ed8}\label{class_q_player_grid_ac35f7dd54422fb56210798840eff6ed8}} 
+\index{QPlayerGrid@{QPlayerGrid}!isFoursAlreadySet@{isFoursAlreadySet}}
+\index{isFoursAlreadySet@{isFoursAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isFoursAlreadySet()}{isFoursAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Fours\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si les quatre ont été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 260 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_ac35f7dd54422fb56210798840eff6ed8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a027e1e57a23fbffd4e5cab360b023dce}\label{class_q_player_grid_a027e1e57a23fbffd4e5cab360b023dce}} 
+\index{QPlayerGrid@{QPlayerGrid}!isFullAlreadySet@{isFullAlreadySet}}
+\index{isFullAlreadySet@{isFullAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isFullAlreadySet()}{isFullAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Full\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si le Full a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 363 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a027e1e57a23fbffd4e5cab360b023dce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a235a85c6fc287fcc1ba7e8dc6f73c849}\label{class_q_player_grid_a235a85c6fc287fcc1ba7e8dc6f73c849}} 
+\index{QPlayerGrid@{QPlayerGrid}!isGridFinished@{isGridFinished}}
+\index{isGridFinished@{isGridFinished}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isGridFinished()}{isGridFinished()}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::is\+Grid\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retourne vrai si la grille est complétée
+
+\begin{DoxyReturn}{Renvoie}
+bool 
+\end{DoxyReturn}
+
+
+Définition à la ligne 272 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a8079a83e384da3b390505777b9b0aacf}\label{class_q_player_grid_a8079a83e384da3b390505777b9b0aacf}} 
+\index{QPlayerGrid@{QPlayerGrid}!isLargeStraightAlreadySet@{isLargeStraightAlreadySet}}
+\index{isLargeStraightAlreadySet@{isLargeStraightAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isLargeStraightAlreadySet()}{isLargeStraightAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Large\+Straight\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si la grande suite a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 401 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a8079a83e384da3b390505777b9b0aacf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a8013927acd300863aad5c4ef8544e412}\label{class_q_player_grid_a8013927acd300863aad5c4ef8544e412}} 
+\index{QPlayerGrid@{QPlayerGrid}!isSixesAlreadySet@{isSixesAlreadySet}}
+\index{isSixesAlreadySet@{isSixesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isSixesAlreadySet()}{isSixesAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Sixes\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si les six ont été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 298 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a8013927acd300863aad5c4ef8544e412_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a97dd4f1a8c22e300dd46875d954cf603}\label{class_q_player_grid_a97dd4f1a8c22e300dd46875d954cf603}} 
+\index{QPlayerGrid@{QPlayerGrid}!isSmallStraightAlreadySet@{isSmallStraightAlreadySet}}
+\index{isSmallStraightAlreadySet@{isSmallStraightAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isSmallStraightAlreadySet()}{isSmallStraightAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Small\+Straight\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si la petite suite a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 382 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a97dd4f1a8c22e300dd46875d954cf603_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a1aa8830cbb57685382d87135c0eb8da8}\label{class_q_player_grid_a1aa8830cbb57685382d87135c0eb8da8}} 
+\index{QPlayerGrid@{QPlayerGrid}!isSuperYamsAlreadySet@{isSuperYamsAlreadySet}}
+\index{isSuperYamsAlreadySet@{isSuperYamsAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isSuperYamsAlreadySet()}{isSuperYamsAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Super\+Yams\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si le super Yams a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 439 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a1aa8830cbb57685382d87135c0eb8da8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a34663f3a47bcb333bcdcf53270dd1cc4}\label{class_q_player_grid_a34663f3a47bcb333bcdcf53270dd1cc4}} 
+\index{QPlayerGrid@{QPlayerGrid}!isThreesAlreadySet@{isThreesAlreadySet}}
+\index{isThreesAlreadySet@{isThreesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isThreesAlreadySet()}{isThreesAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Threes\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si les trois ont été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 241 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_a34663f3a47bcb333bcdcf53270dd1cc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_ab5e33f4ad635307631a570a69aa4790a}\label{class_q_player_grid_ab5e33f4ad635307631a570a69aa4790a}} 
+\index{QPlayerGrid@{QPlayerGrid}!isTwosAlreadySet@{isTwosAlreadySet}}
+\index{isTwosAlreadySet@{isTwosAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isTwosAlreadySet()}{isTwosAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Twos\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si les deux ont été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 222 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_ab5e33f4ad635307631a570a69aa4790a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_ad566331fa413c66bf3ee0a04ec484012}\label{class_q_player_grid_ad566331fa413c66bf3ee0a04ec484012}} 
+\index{QPlayerGrid@{QPlayerGrid}!isYamsAlreadySet@{isYamsAlreadySet}}
+\index{isYamsAlreadySet@{isYamsAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{isYamsAlreadySet()}{isYamsAlreadySet()}}
+{\footnotesize\ttfamily const bool\& Q\+Player\+Grid\+::is\+Yams\+Already\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne vrai si le Yams a été défini. 
+
+\begin{DoxyReturn}{Renvoie}
+const bool\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne 420 du fichier Q\+Player\+Grid.\+hpp.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_player_grid_ad566331fa413c66bf3ee0a04ec484012_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_player_grid_a4885e0643aa4edd45349b8239cf910d1}\label{class_q_player_grid_a4885e0643aa4edd45349b8239cf910d1}} 
+\index{QPlayerGrid@{QPlayerGrid}!setAces@{setAces}}
+\index{setAces@{setAces}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setAces()}{setAces()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Aces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur des As. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 57 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a14d1991e69111323b9e793275dfd3609}\label{class_q_player_grid_a14d1991e69111323b9e793275dfd3609}} 
+\index{QPlayerGrid@{QPlayerGrid}!setBrelan@{setBrelan}}
+\index{setBrelan@{setBrelan}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setBrelan()}{setBrelan()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Brelan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur du Brelan. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 141 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a143f60300af2e19982ad36c20ed9c72b}\label{class_q_player_grid_a143f60300af2e19982ad36c20ed9c72b}} 
+\index{QPlayerGrid@{QPlayerGrid}!setCarre@{setCarre}}
+\index{setCarre@{setCarre}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setCarre()}{setCarre()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Carre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur du Carré 
+
+i\+Value \+: uint 
+
+Définition à la ligne 154 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a5ad976cd0421158836aeb6647130e7ea}\label{class_q_player_grid_a5ad976cd0421158836aeb6647130e7ea}} 
+\index{QPlayerGrid@{QPlayerGrid}!setChance@{setChance}}
+\index{setChance@{setChance}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setChance()}{setChance()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Chance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Chance }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur de la chance. 
+
+i\+Chance \+: uint 
+
+Définition à la ligne 232 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_afbe936347fc4f06737282db27558240b}\label{class_q_player_grid_afbe936347fc4f06737282db27558240b}} 
+\index{QPlayerGrid@{QPlayerGrid}!setFives@{setFives}}
+\index{setFives@{setFives}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setFives()}{setFives()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Fives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur des cinq. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 113 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a658a61db287cabbdefcb4c0ce2554eaa}\label{class_q_player_grid_a658a61db287cabbdefcb4c0ce2554eaa}} 
+\index{QPlayerGrid@{QPlayerGrid}!setFours@{setFours}}
+\index{setFours@{setFours}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setFours()}{setFours()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Fours (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur des quatre. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 99 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a2bb73e1a0a7cc80e9074358b66fe3994}\label{class_q_player_grid_a2bb73e1a0a7cc80e9074358b66fe3994}} 
+\index{QPlayerGrid@{QPlayerGrid}!setFull@{setFull}}
+\index{setFull@{setFull}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setFull()}{setFull()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Full (\begin{DoxyParamCaption}\item[{bool}]{b\+Is\+Full }\end{DoxyParamCaption})}
+
+
+
+Défini s\textquotesingle{}il y a Full. 
+
+b\+Is\+Full \+: bool 
+
+Définition à la ligne 167 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a74ae878a273c13f982060de91214dfdf}\label{class_q_player_grid_a74ae878a273c13f982060de91214dfdf}} 
+\index{QPlayerGrid@{QPlayerGrid}!setLargeStraight@{setLargeStraight}}
+\index{setLargeStraight@{setLargeStraight}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setLargeStraight()}{setLargeStraight()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Large\+Straight (\begin{DoxyParamCaption}\item[{bool}]{b\+Is\+Large\+Straight }\end{DoxyParamCaption})}
+
+
+
+Défini s\textquotesingle{}il y a grande suite. 
+
+b\+Is\+Large\+Straight \+: bool 
+
+Définition à la ligne 193 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_aec8af57b23bf2aed53e5f8c48d40dd33}\label{class_q_player_grid_aec8af57b23bf2aed53e5f8c48d40dd33}} 
+\index{QPlayerGrid@{QPlayerGrid}!setSixes@{setSixes}}
+\index{setSixes@{setSixes}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setSixes()}{setSixes()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Sixes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur des six. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 127 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a81a0037d0a6e314604dc2e3a0038e1a9}\label{class_q_player_grid_a81a0037d0a6e314604dc2e3a0038e1a9}} 
+\index{QPlayerGrid@{QPlayerGrid}!setSmallStraight@{setSmallStraight}}
+\index{setSmallStraight@{setSmallStraight}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setSmallStraight()}{setSmallStraight()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Small\+Straight (\begin{DoxyParamCaption}\item[{bool}]{b\+Is\+Small\+Straight }\end{DoxyParamCaption})}
+
+
+
+Défini s\textquotesingle{}il y a petite suite. 
+
+b\+Is\+Small\+Straight \+: bool 
+
+Définition à la ligne 180 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a140a8ca88378ef1ee46f1b05318d5955}\label{class_q_player_grid_a140a8ca88378ef1ee46f1b05318d5955}} 
+\index{QPlayerGrid@{QPlayerGrid}!setSuperYams@{setSuperYams}}
+\index{setSuperYams@{setSuperYams}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setSuperYams()}{setSuperYams()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Super\+Yams (\begin{DoxyParamCaption}\item[{bool}]{b\+Is\+Super\+Yams }\end{DoxyParamCaption})}
+
+
+
+Défini s\textquotesingle{}il y a super Yams. 
+
+b\+Is\+Super\+Yams \+: bool 
+
+Définition à la ligne 219 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a84491527b16b7b04efe617bffdbb1c4d}\label{class_q_player_grid_a84491527b16b7b04efe617bffdbb1c4d}} 
+\index{QPlayerGrid@{QPlayerGrid}!setThrees@{setThrees}}
+\index{setThrees@{setThrees}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setThrees()}{setThrees()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Threes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur des trois. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 85 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a61e0cb9ae3a7edb7fd0ba598881148e9}\label{class_q_player_grid_a61e0cb9ae3a7edb7fd0ba598881148e9}} 
+\index{QPlayerGrid@{QPlayerGrid}!setTwos@{setTwos}}
+\index{setTwos@{setTwos}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setTwos()}{setTwos()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Twos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i\+Value }\end{DoxyParamCaption})}
+
+
+
+Défini la valeur des deux. 
+
+i\+Value \+: uint 
+
+Définition à la ligne 71 du fichier Q\+Player\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a236aface4295a44ab1b5ddbe430de0e8}\label{class_q_player_grid_a236aface4295a44ab1b5ddbe430de0e8}} 
+\index{QPlayerGrid@{QPlayerGrid}!setYams@{setYams}}
+\index{setYams@{setYams}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{setYams()}{setYams()}}
+{\footnotesize\ttfamily void Q\+Player\+Grid\+::set\+Yams (\begin{DoxyParamCaption}\item[{bool}]{b\+Is\+Yams }\end{DoxyParamCaption})}
+
+
+
+Défini s\textquotesingle{}il y a Yams. 
+
+b\+Is\+Yams \+: bool 
+
+Définition à la ligne 206 du fichier Q\+Player\+Grid.\+cpp.
+
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_q_player_grid_a146e0bb7d26a2b838ec67286d816dfd4}\label{class_q_player_grid_a146e0bb7d26a2b838ec67286d816dfd4}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsAcesAlreadySet@{m\_bIsAcesAlreadySet}}
+\index{m\_bIsAcesAlreadySet@{m\_bIsAcesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsAcesAlreadySet}{m\_bIsAcesAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Aces\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si les as ont déjà étés définis. 
+
+
+
+Définition à la ligne 38 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_af13d007532e7808114f5fcba7a08e64e}\label{class_q_player_grid_af13d007532e7808114f5fcba7a08e64e}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsBonus@{m\_bIsBonus}}
+\index{m\_bIsBonus@{m\_bIsBonus}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsBonus}{m\_bIsBonus}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Bonus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le bonus est acquis. 
+
+
+
+Définition à la ligne 93 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_adcec49378ac42e635c1b9730cd217ba6}\label{class_q_player_grid_adcec49378ac42e635c1b9730cd217ba6}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsBrelanAlreadySet@{m\_bIsBrelanAlreadySet}}
+\index{m\_bIsBrelanAlreadySet@{m\_bIsBrelanAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsBrelanAlreadySet}{m\_bIsBrelanAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Brelan\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le Brelan a déjà été défini. 
+
+
+
+Définition à la ligne 104 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_aeee1a625fae56b2c5dd8e3838e0ebe80}\label{class_q_player_grid_aeee1a625fae56b2c5dd8e3838e0ebe80}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsCarreAlreadySet@{m\_bIsCarreAlreadySet}}
+\index{m\_bIsCarreAlreadySet@{m\_bIsCarreAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsCarreAlreadySet}{m\_bIsCarreAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Carre\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le Carré a déjà été défini. 
+
+
+
+Définition à la ligne 114 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a5453604d698616ac71ae4bc73c3d3221}\label{class_q_player_grid_a5453604d698616ac71ae4bc73c3d3221}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsChanceAlreadySet@{m\_bIsChanceAlreadySet}}
+\index{m\_bIsChanceAlreadySet@{m\_bIsChanceAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsChanceAlreadySet}{m\_bIsChanceAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Chance\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si la chance a déjà été défini. 
+
+
+
+Définition à la ligne 174 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a3a4299ae464c79fe05e6db403e365d30}\label{class_q_player_grid_a3a4299ae464c79fe05e6db403e365d30}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsFivesAlreadySet@{m\_bIsFivesAlreadySet}}
+\index{m\_bIsFivesAlreadySet@{m\_bIsFivesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsFivesAlreadySet}{m\_bIsFivesAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Fives\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si les cinq ont déjà étés définis. 
+
+
+
+Définition à la ligne 78 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a3052754c5aab23de0d8dba94f606f87d}\label{class_q_player_grid_a3052754c5aab23de0d8dba94f606f87d}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsFoursAlreadySet@{m\_bIsFoursAlreadySet}}
+\index{m\_bIsFoursAlreadySet@{m\_bIsFoursAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsFoursAlreadySet}{m\_bIsFoursAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Fours\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si les quatre ont déjà étés définis. 
+
+
+
+Définition à la ligne 68 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ab9ee1ea15ca8e12136ec5c4b999f7154}\label{class_q_player_grid_ab9ee1ea15ca8e12136ec5c4b999f7154}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsFull@{m\_bIsFull}}
+\index{m\_bIsFull@{m\_bIsFull}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsFull}{m\_bIsFull}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Full\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai s\textquotesingle{}il y a Full. 
+
+
+
+Définition à la ligne 119 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a56ff04ef52505186d1c253373f887c68}\label{class_q_player_grid_a56ff04ef52505186d1c253373f887c68}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsFullAlreadySet@{m\_bIsFullAlreadySet}}
+\index{m\_bIsFullAlreadySet@{m\_bIsFullAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsFullAlreadySet}{m\_bIsFullAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Full\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le Full a déjà été défini. 
+
+
+
+Définition à la ligne 124 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a5d2083556230e2bb14c17dde5a8ecc31}\label{class_q_player_grid_a5d2083556230e2bb14c17dde5a8ecc31}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsLargeStraight@{m\_bIsLargeStraight}}
+\index{m\_bIsLargeStraight@{m\_bIsLargeStraight}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsLargeStraight}{m\_bIsLargeStraight}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Large\+Straight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai s\textquotesingle{}il y a la grande suite. 
+
+
+
+Définition à la ligne 139 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ad9f8cea8971232784030032e2d454309}\label{class_q_player_grid_ad9f8cea8971232784030032e2d454309}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsLargeStraightAlreadySet@{m\_bIsLargeStraightAlreadySet}}
+\index{m\_bIsLargeStraightAlreadySet@{m\_bIsLargeStraightAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsLargeStraightAlreadySet}{m\_bIsLargeStraightAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Large\+Straight\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le grande suite a déjà été défini. 
+
+
+
+Définition à la ligne 144 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_aa91fdb002e30bbf5647e8a067e386ff6}\label{class_q_player_grid_aa91fdb002e30bbf5647e8a067e386ff6}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsSixesAlreadySet@{m\_bIsSixesAlreadySet}}
+\index{m\_bIsSixesAlreadySet@{m\_bIsSixesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsSixesAlreadySet}{m\_bIsSixesAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Sixes\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si les six ont déjà étés définis. 
+
+
+
+Définition à la ligne 88 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_aa2a0d225ede24997d5e3c1590b1807b7}\label{class_q_player_grid_aa2a0d225ede24997d5e3c1590b1807b7}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsSmallStraight@{m\_bIsSmallStraight}}
+\index{m\_bIsSmallStraight@{m\_bIsSmallStraight}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsSmallStraight}{m\_bIsSmallStraight}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Small\+Straight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai s\textquotesingle{}il y a la petite suite. 
+
+
+
+Définition à la ligne 129 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a7b866dd3fb8706115ce21784b9f49b5e}\label{class_q_player_grid_a7b866dd3fb8706115ce21784b9f49b5e}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsSmallStraightAlreadySet@{m\_bIsSmallStraightAlreadySet}}
+\index{m\_bIsSmallStraightAlreadySet@{m\_bIsSmallStraightAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsSmallStraightAlreadySet}{m\_bIsSmallStraightAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Small\+Straight\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si la petite suite a déjà été défini. 
+
+
+
+Définition à la ligne 134 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_adb2c313502e2fc0ad9924f483b95a2c3}\label{class_q_player_grid_adb2c313502e2fc0ad9924f483b95a2c3}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsSuperYams@{m\_bIsSuperYams}}
+\index{m\_bIsSuperYams@{m\_bIsSuperYams}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsSuperYams}{m\_bIsSuperYams}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Super\+Yams\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai s\textquotesingle{}il y a le super Yams. 
+
+
+
+Définition à la ligne 159 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a7358ba78f5f0b5d4e87a480c786f2483}\label{class_q_player_grid_a7358ba78f5f0b5d4e87a480c786f2483}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsSuperYamsAlreadySet@{m\_bIsSuperYamsAlreadySet}}
+\index{m\_bIsSuperYamsAlreadySet@{m\_bIsSuperYamsAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsSuperYamsAlreadySet}{m\_bIsSuperYamsAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Super\+Yams\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le super Yams a déjà été défini. 
+
+
+
+Définition à la ligne 164 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_af93c1de1346e6451ddc6e5e280aad0e5}\label{class_q_player_grid_af93c1de1346e6451ddc6e5e280aad0e5}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsThreesAlreadySet@{m\_bIsThreesAlreadySet}}
+\index{m\_bIsThreesAlreadySet@{m\_bIsThreesAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsThreesAlreadySet}{m\_bIsThreesAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Threes\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si les trois ont déjà étés définis. 
+
+
+
+Définition à la ligne 58 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a2cf127c392dfaae0304ca2aebba4cade}\label{class_q_player_grid_a2cf127c392dfaae0304ca2aebba4cade}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsTwosAlreadySet@{m\_bIsTwosAlreadySet}}
+\index{m\_bIsTwosAlreadySet@{m\_bIsTwosAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsTwosAlreadySet}{m\_bIsTwosAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Twos\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si les deux ont déjà étés définis. 
+
+
+
+Définition à la ligne 48 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ae51653ae1386c685e76f114bbce550dd}\label{class_q_player_grid_ae51653ae1386c685e76f114bbce550dd}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsYams@{m\_bIsYams}}
+\index{m\_bIsYams@{m\_bIsYams}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsYams}{m\_bIsYams}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Yams\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai s\textquotesingle{}il y a le Yams. 
+
+
+
+Définition à la ligne 149 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a7908d60cfb59a84abf8a238d13bd00d3}\label{class_q_player_grid_a7908d60cfb59a84abf8a238d13bd00d3}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_bIsYamsAlreadySet@{m\_bIsYamsAlreadySet}}
+\index{m\_bIsYamsAlreadySet@{m\_bIsYamsAlreadySet}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_bIsYamsAlreadySet}{m\_bIsYamsAlreadySet}}
+{\footnotesize\ttfamily bool Q\+Player\+Grid\+::m\+\_\+b\+Is\+Yams\+Already\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vrai si le Yams a déjà été défini. 
+
+
+
+Définition à la ligne 154 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ad291aba9628f799dd6cc4a6d06178f98}\label{class_q_player_grid_ad291aba9628f799dd6cc4a6d06178f98}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iAces@{m\_iAces}}
+\index{m\_iAces@{m\_iAces}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iAces}{m\_iAces}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Aces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur des As. 
+
+
+
+Définition à la ligne 33 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ac9b0912a4be61bec497f53f79db21613}\label{class_q_player_grid_ac9b0912a4be61bec497f53f79db21613}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iBrelan@{m\_iBrelan}}
+\index{m\_iBrelan@{m\_iBrelan}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iBrelan}{m\_iBrelan}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Brelan\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur du Brelan. 
+
+
+
+Définition à la ligne 99 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ab91f546412a1373ca0fe6c2a0d6d6259}\label{class_q_player_grid_ab91f546412a1373ca0fe6c2a0d6d6259}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iCarre@{m\_iCarre}}
+\index{m\_iCarre@{m\_iCarre}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iCarre}{m\_iCarre}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Carre\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur du Carré 
+
+
+
+Définition à la ligne 109 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_acff0f039c76175e3f3da963691a99083}\label{class_q_player_grid_acff0f039c76175e3f3da963691a99083}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iChance@{m\_iChance}}
+\index{m\_iChance@{m\_iChance}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iChance}{m\_iChance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Chance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur de la chance. 
+
+
+
+Définition à la ligne 169 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_adbfdc54b4ea7b40aaf6d93f7e97b1eb6}\label{class_q_player_grid_adbfdc54b4ea7b40aaf6d93f7e97b1eb6}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iFives@{m\_iFives}}
+\index{m\_iFives@{m\_iFives}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iFives}{m\_iFives}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Fives\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur des cinq. 
+
+
+
+Définition à la ligne 73 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ad01765719a93f4755a7cff470df9326a}\label{class_q_player_grid_ad01765719a93f4755a7cff470df9326a}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iFours@{m\_iFours}}
+\index{m\_iFours@{m\_iFours}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iFours}{m\_iFours}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Fours\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur des quatre. 
+
+
+
+Définition à la ligne 63 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a8ab573a2c26d6161a0e052f7cbc35077}\label{class_q_player_grid_a8ab573a2c26d6161a0e052f7cbc35077}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iSixes@{m\_iSixes}}
+\index{m\_iSixes@{m\_iSixes}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iSixes}{m\_iSixes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Sixes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur des six. 
+
+
+
+Définition à la ligne 83 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_a8fc029815491523e5613530f73b2c781}\label{class_q_player_grid_a8fc029815491523e5613530f73b2c781}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iThrees@{m\_iThrees}}
+\index{m\_iThrees@{m\_iThrees}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iThrees}{m\_iThrees}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Threes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur des trois. 
+
+
+
+Définition à la ligne 53 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_ac7b33e3ba1c8055af6e4005a98855f80}\label{class_q_player_grid_ac7b33e3ba1c8055af6e4005a98855f80}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_iTwos@{m\_iTwos}}
+\index{m\_iTwos@{m\_iTwos}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_iTwos}{m\_iTwos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_c_dice_set_8hpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} Q\+Player\+Grid\+::m\+\_\+i\+Twos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valeur des deux. 
+
+
+
+Définition à la ligne 43 du fichier Q\+Player\+Grid.\+hpp.
+
+\mbox{\Hypertarget{class_q_player_grid_abdc832f075e12e18b7ec69237c1e53ab}\label{class_q_player_grid_abdc832f075e12e18b7ec69237c1e53ab}} 
+\index{QPlayerGrid@{QPlayerGrid}!m\_sPlayerName@{m\_sPlayerName}}
+\index{m\_sPlayerName@{m\_sPlayerName}!QPlayerGrid@{QPlayerGrid}}
+\doxysubsubsection{\texorpdfstring{m\_sPlayerName}{m\_sPlayerName}}
+{\footnotesize\ttfamily Q\+String Q\+Player\+Grid\+::m\+\_\+s\+Player\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Nom du joueur. 
+
+
+
+Définition à la ligne 27 du fichier Q\+Player\+Grid.\+hpp.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/models/\mbox{\hyperlink{_q_player_grid_8hpp}{Q\+Player\+Grid.\+hpp}}\item 
+src/models/\mbox{\hyperlink{_q_player_grid_8cpp}{Q\+Player\+Grid.\+cpp}}\end{DoxyCompactItemize}

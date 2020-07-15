@@ -1,12 +1,12 @@
 <map id="QPlayerGrid::getBrelan" name="QPlayerGrid::getBrelan">
-<area shape="rect" id="node1" title="Retourne la valeur du Bralan." alt="" coords="1451,31,1607,57"/>
-<area shape="rect" id="node2" href="$class_q_player_grids_widget.html#a66ee2c3dbc5c8b2acecc76b9ee75130d" title="Met à jour la vue d&#39;une grille." alt="" coords="1261,23,1403,65"/>
-<area shape="rect" id="node3" href="$class_q_player_grids_widget.html#a212d9960ed999a3cdc18721f7c733c2c" title="Ajoute une grille à la liste d&#39;affichage." alt="" coords="1072,23,1213,65"/>
-<area shape="rect" id="node4" href="$class_q_yams.html#a2e2be6edcdce001fcacf77073f8d71ee" title="Lance le jeu après la saisie des noms de joueurs." alt="" coords="877,31,1024,57"/>
-<area shape="rect" id="node5" href="$class_q_yams.html#a3e5d9816ddfb7b1f52165fc4e577ebeb" title="Démarre une partie." alt="" coords="729,31,829,57"/>
-<area shape="rect" id="node6" href="$class_q_yams.html#ad25e5ecf60b8602603b146eaa6eb77da" title="Constructeur." alt="" coords="387,5,505,32"/>
-<area shape="rect" id="node7" href="$class_q_yams.html#affbff92b06615db967e22a9b69278862" title="Redémarre le jeu." alt="" coords="571,56,681,83"/>
-<area shape="rect" id="node8" href="$class_q_yams.html#abf835c6178f7b9a754a9acb19c5aaae6" title="Action à effectuer à la fin de la partie." alt="" coords="369,56,523,83"/>
-<area shape="rect" id="node9" href="$class_q_yams.html#aa0a5ca106b29cae207f6c75a4de872c1" title="Passe au joueur suivant." alt="" coords="179,56,321,83"/>
-<area shape="rect" id="node10" href="$class_q_yams.html#a005f947079da47296ca74b923ab2f90d" title="Effectue l&#39;action choisie par le joueur." alt="" coords="5,56,131,83"/>
+<area shape="rect" id="node1" title="Retourne la valeur du Bralan." alt="" coords="1515,31,1685,57"/>
+<area shape="rect" id="node2" href="$class_q_player_grids_widget.html#a66ee2c3dbc5c8b2acecc76b9ee75130d" title="Met à jour la vue d&#39;une grille." alt="" coords="1313,23,1467,65"/>
+<area shape="rect" id="node3" href="$class_q_player_grids_widget.html#a212d9960ed999a3cdc18721f7c733c2c" title="Ajoute une grille à la liste d&#39;affichage." alt="" coords="1112,23,1265,65"/>
+<area shape="rect" id="node4" href="$class_q_yams.html#a2e2be6edcdce001fcacf77073f8d71ee" title="Lance le jeu après la saisie des noms de joueurs." alt="" coords="908,31,1064,57"/>
+<area shape="rect" id="node5" href="$class_q_yams.html#a3e5d9816ddfb7b1f52165fc4e577ebeb" title="Démarre une partie." alt="" coords="756,31,860,57"/>
+<area shape="rect" id="node6" href="$class_q_yams.html#ad25e5ecf60b8602603b146eaa6eb77da" title="Constructeur." alt="" coords="403,5,522,32"/>
+<area shape="rect" id="node7" href="$class_q_yams.html#affbff92b06615db967e22a9b69278862" title="Redémarre le jeu." alt="" coords="591,56,708,83"/>
+<area shape="rect" id="node8" href="$class_q_yams.html#abf835c6178f7b9a754a9acb19c5aaae6" title="Action à effectuer à la fin de la partie." alt="" coords="383,56,543,83"/>
+<area shape="rect" id="node9" href="$class_q_yams.html#aa0a5ca106b29cae207f6c75a4de872c1" title="Passe au joueur suivant." alt="" coords="184,56,335,83"/>
+<area shape="rect" id="node10" href="$class_q_yams.html#a005f947079da47296ca74b923ab2f90d" title="Effectue l&#39;action choisie par le joueur." alt="" coords="5,56,136,83"/>
 </map>

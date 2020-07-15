@@ -45,7 +45,7 @@ void QYamsStartFormWidget::onPlayerNameSetUp()
 		for (unique_ptr<CPlayerForm>& playerNameIpt : m_lPlayerNameInputs)
 		{
 			if (playerNameIpt->getInputName() < 1)
-				throw new exception("Nom trop court");
+				throw new runtime_error("Nom trop court");
 			
 			ptrLPlayerNames->push_back(playerNameIpt->getInputName());
 		}
@@ -55,8 +55,8 @@ void QYamsStartFormWidget::onPlayerNameSetUp()
 	} catch (exception* exception)
 	{
 		QMessageBox::warning(this, QString::fromLatin1("Erreur"), QString::fromLatin1(
-			"Vous devez entrer au moins deux noms. \n"
-			"Aucun champ ne doit être vide"));
+			"Vous devez entrer au moins deux noms.Â \n"
+			"Aucun champ ne doit Ãªtre vide"));
 	}
 	
 	

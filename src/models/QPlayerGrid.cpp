@@ -58,7 +58,7 @@ void QPlayerGrid::setAces(uint iValue)
 {
 	if (m_bIsAcesAlreadySet)
 	{
-		throw new exception("Les as ont déjà été défini");
+		throw new runtime_error("Les as ont déjà été défini");
 	}
 	
 	m_iAces = iValue;
@@ -72,7 +72,7 @@ void QPlayerGrid::setTwos(uint iValue)
 {
 	if (m_bIsTwosAlreadySet)
 	{
-		throw new exception("Les deux ont déjà été défini");
+		throw new runtime_error("Les deux ont déjà été défini");
 	}
 	
 	m_iTwos = iValue;
@@ -86,7 +86,7 @@ void QPlayerGrid::setThrees(uint iValue)
 {
 	if (m_bIsThreesAlreadySet)
 	{
-		throw new exception("Les trois ont déjà été défini");
+		throw new runtime_error("Les trois ont déjà été défini");
 	}
 	
 	m_iThrees = iValue;
@@ -100,7 +100,7 @@ void QPlayerGrid::setFours(uint iValue)
 {
 	if (m_bIsFoursAlreadySet)
 	{
-		throw new exception("Les quatre ont déjà été défini");
+		throw new runtime_error("Les quatre ont déjà été défini");
 	}
 	
 	m_iFours = iValue;
@@ -114,7 +114,7 @@ void QPlayerGrid::setFives(uint iValue)
 {
 	if (m_bIsFivesAlreadySet)
 	{
-		throw new exception("Les cinq ont déjà été défini");
+		throw new runtime_error("Les cinq ont déjà été défini");
 	}
 	
 	m_iFives = iValue;
@@ -128,7 +128,7 @@ void QPlayerGrid::setSixes(uint iValue)
 {
 	if (m_bIsSixesAlreadySet)
 	{
-		throw new exception("Les six ont déjà été défini");
+		throw new runtime_error("Les six ont déjà été défini");
 	}
 	
 	m_iSixes = iValue;
@@ -142,7 +142,7 @@ void QPlayerGrid::setBrelan(uint iValue)
 {
 	if (m_bIsBrelanAlreadySet)
 	{
-		throw new exception("Le brelan a déjà été défini");
+		throw new runtime_error("Le brelan a déjà été défini");
 	}
 	
 	m_iBrelan = iValue;
@@ -155,7 +155,7 @@ void QPlayerGrid::setCarre(uint iValue)
 {
 	if (m_bIsCarreAlreadySet)
 	{
-		throw new exception("Le carré a déjà été défini");
+		throw new runtime_error("Le carré a déjà été défini");
 	}
 	
 	m_iCarre = iValue;
@@ -168,7 +168,7 @@ void QPlayerGrid::setFull(bool bIsFull)
 {
 	if (m_bIsFullAlreadySet)
 	{
-		throw new exception("Le full a déjà été défini");
+		throw new runtime_error("Le full a déjà été défini");
 	}
 	
 	m_bIsFull = bIsFull;
@@ -181,7 +181,7 @@ void QPlayerGrid::setSmallStraight(bool bIsSmallStraight)
 {
 	if (m_bIsSmallStraightAlreadySet)
 	{
-		throw new exception("La petite suite a déjà été défini");
+		throw new runtime_error("La petite suite a déjà été défini");
 	}
 	
 	m_bIsSmallStraight = bIsSmallStraight;
@@ -194,7 +194,7 @@ void QPlayerGrid::setLargeStraight(bool bIsLargeStraight)
 {
 	if (m_bIsLargeStraightAlreadySet)
 	{
-		throw new exception("La grande suite a déjà été défini");
+		throw new runtime_error("La grande suite a déjà été défini");
 	}
 	
 	m_bIsLargeStraight = bIsLargeStraight;
@@ -207,7 +207,7 @@ void QPlayerGrid::setYams(bool bIsYams)
 {
 	if (m_bIsYamsAlreadySet)
 	{
-		throw new exception("Le Yams a déjà été défini");
+		throw new runtime_error("Le Yams a déjà été défini");
 	}
 	
 	m_bIsYams = bIsYams;
@@ -220,7 +220,7 @@ void QPlayerGrid::setSuperYams(bool bIsSuperYams)
 {
 	if (m_bIsSuperYamsAlreadySet)
 	{
-		throw new exception("Le Super Yams a déjà été défini");
+		throw new runtime_error("Le Super Yams a déjà été défini");
 	}
 	
 	m_bIsSuperYams = bIsSuperYams;
@@ -233,7 +233,7 @@ void QPlayerGrid::setChance(uint iChance)
 {
 	if (m_bIsChanceAlreadySet)
 	{
-		throw new exception("La chance a déjà été définie");
+		throw new runtime_error("La chance a déjà été définie");
 	}
 	
 	m_iChance = iChance;

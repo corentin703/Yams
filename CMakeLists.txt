@@ -1,29 +1,18 @@
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.8.0)
 project( Yams )
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
-
-if(CMAKE_VERSION VERSION_LESS "3.7.0")
-    set(CMAKE_INCLUDE_CURRENT_DIR ON)
-endif()
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt5 COMPONENTS Core REQUIRED Widgets REQUIRED)
 
 find_package( OpenCV REQUIRED )
 
-
-
-set(HEADERS
-    
-)
-
-set(SRCS
-    
-)
+include_directories(src)
 
 set(CLASS_HEADERS
     src/models/CDice.hpp
@@ -81,7 +70,7 @@ add_executable( ${PROJECT_NAME}
     ${CLASS_HEADERS} ${CLASS_SRCS}
     ${QT_CLASS_HEADERS} ${QT_CLASS_SRCS} ${QT_VIEW} ${QT_RESSOURCES}
     
-    src/main.cpp 
+    src/main.cpp
     src/yams.rc
 )
 
@@ -92,18 +81,18 @@ if(WIN32) # Regarde si on est sous Windows
 			LINK_FLAGS "/ENTRY:mainCRTStartup"
 		)
 	elseif(CMAKE_COMPILER_IS_GNUCXX)
-			# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows") # Pas testé
+			# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows") # Pas testÃ©
 	else()
-		message(SEND_ERROR "Vous utilisez un compilateur non supporté ! (Pas MSVC ou GCC)")
+		message(SEND_ERROR "Vous utilisez un compilateur non supportÃ© ! (Pas MSVC ou GCC)")
 	endif(MSVC)
 elseif(APPLE)
 	set_target_properties(${PROJECT_NAME} PROPERTIES
 			MACOSX_BUNDLE YES
 	)
 elseif(UNIX)
-	# Rien de requis
+	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 else()
-	message(SEND_ERROR "Vous êtes sur une plate-forme non suportée ! (Not Win32, Mac OS X or Unix)")
+	message(SEND_ERROR "Vous Ãªtes sur une plate-forme non suportÃ©e ! (Not Win32, Mac OS X or Unix)")
 endif(WIN32)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
