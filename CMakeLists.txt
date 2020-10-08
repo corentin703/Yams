@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.8.0)
 project( Yams )
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -92,7 +93,7 @@ elseif(APPLE)
 elseif(UNIX)
 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 else()
-	message(SEND_ERROR "Vous êtes sur une plate-forme non suportée ! (Not Win32, Mac OS X or Unix)")
+	message(SEND_ERROR "Vous êtes sur une plate-forme non suportée ! (Non Win32, Mac OS X ou Unix)")
 endif(WIN32)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )

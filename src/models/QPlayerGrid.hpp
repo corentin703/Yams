@@ -192,15 +192,15 @@ public:
 	// Getter / Setter partie supérieure
 	/**
 	 * @brief Retourne la valeur des As
-	 * @return const uint&
+	 * @return uint
 	 */
-	const uint& getAces() const { return m_iAces; }
+	uint getAces() const { return m_iAces; }
 
     /**
      * @brief Retourne vrai si les as ont été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isAcesAlreadySet() const { return m_bIsAcesAlreadySet; }
+	bool isAcesAlreadySet() const { return m_bIsAcesAlreadySet; }
 
     /**
      * @brief Défini la valeur des As
@@ -211,15 +211,15 @@ public:
 
     /**
      * @brief Retourne la valeur des deux
-     * @return const uint&
+     * @return uint
      */
-	const uint& getTwos() const { return m_iTwos; }
+	uint getTwos() const { return m_iTwos; }
 
     /**
      * @brief Retourne vrai si les deux ont été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isTwosAlreadySet() const { return m_bIsTwosAlreadySet; }
+	bool isTwosAlreadySet() const { return m_bIsTwosAlreadySet; }
 
     /**
      * @brief Défini la valeur des deux
@@ -230,15 +230,15 @@ public:
 
     /**
      * @brief Retourne la valeur des trois
-     * @return const uint&
+     * @return uint
      */
-	const uint& getThrees() const { return m_iThrees; }
+	uint getThrees() const { return m_iThrees; }
 
     /**
      * @brief Retourne vrai si les trois ont été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isThreesAlreadySet() const { return m_bIsThreesAlreadySet; }
+	bool isThreesAlreadySet() const { return m_bIsThreesAlreadySet; }
 
     /**
      * @brief Défini la valeur des trois
@@ -249,15 +249,15 @@ public:
 
     /**
      * @brief Retourne la valeur des quatre
-     * @return const uint&
+     * @return uint
      */
-	const uint& getFours() const { return m_iFours; }
+	uint getFours() const { return m_iFours; }
 
 	/**
      * @brief Retourne vrai si les quatre ont été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isFoursAlreadySet() const { return m_bIsFoursAlreadySet; }
+	bool isFoursAlreadySet() const { return m_bIsFoursAlreadySet; }
 
     /**
      * @brief Défini la valeur des quatre
@@ -268,15 +268,15 @@ public:
 
     /**
      * @brief Retourne la valeur des cinq
-     * @return const uint&
+     * @return uint
      */
-	const uint& getFives() const  { return m_iFives; }
+	uint getFives() const  { return m_iFives; }
 
     /**
      * @brief Retourne vrai si les cinq ont été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isFivesAlreadySet() const { return m_bIsFivesAlreadySet; }
+	bool isFivesAlreadySet() const { return m_bIsFivesAlreadySet; }
 
     /**
      * @brief Défini la valeur des cinq
@@ -287,15 +287,15 @@ public:
 
     /**
      * @brief Retourne la valeur des six
-     * @return const uint&
+     * @return uint
      */
-	const uint& getSixes() const { return m_iSixes; }
+	uint getSixes() const { return m_iSixes; }
 
     /**
     * @brief Retourne vrai si les six ont été défini
-    * @return const bool&
+    * @return bool
     */
-	const bool& isSixesAlreadySet() const { return m_bIsSixesAlreadySet; }
+	bool isSixesAlreadySet() const { return m_bIsSixesAlreadySet; }
 
     /**
      * @brief Défini la valeur des six
@@ -306,23 +306,23 @@ public:
 
     /**
      * @brief Retourne le bonus s'il y a
-     * @return const uint&
+     * @return uint
      */
-	const uint& getBonus() const { return (m_bIsBonus) ? 35 : 0; }
+	uint getBonus() const { return (m_bIsBonus) ? 35 : 0; }
 
 
 	// Getter / Setter partie inférieure
     /**
      * @brief Retourne la valeur du Bralan
-     * @return const uint&
+     * @return uint
      */
-	const uint& getBrelan() const { return m_iBrelan; }
+	uint getBrelan() const { return m_iBrelan; }
 
     /**
     * @brief Retourne vrai si le Brelan a été défini
-    * @return const bool&
+    * @return bool
     */
-	const bool& isBrelanAlreadySet() const { return m_bIsBrelanAlreadySet; }
+	bool isBrelanAlreadySet() const { return m_bIsBrelanAlreadySet; }
 
     /**
     * @brief Défini la valeur du Brelan
@@ -333,15 +333,15 @@ public:
 
     /**
      * @brief Retourne la valeur du Carré
-     * @return const uint&
+     * @return uint
      */
-	const uint& getCarre() const { return m_iCarre; }
+	uint getCarre() const { return m_iCarre; }
 
     /**
      * @brief Retourne vrai si le Carré a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isCarreAlreadySet() const { return m_bIsCarreAlreadySet; }
+	bool isCarreAlreadySet() const { return m_bIsCarreAlreadySet; }
 
     /**
      * @brief Défini la valeur du Carré
@@ -352,15 +352,15 @@ public:
 
     /**
      * @brief Retourne la valeur du Full
-     * @return const uint&
+     * @return uint
      */
-	const uint& getFull() const { if (m_bIsFull) return 25; else return 0; }
+	uint getFull() const { if (m_bIsFull) return 25; else return 0; }
 
     /**
      * @brief Retourne vrai si le Full a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isFullAlreadySet() const { return m_bIsFullAlreadySet; }
+	bool isFullAlreadySet() const { return m_bIsFullAlreadySet; }
 
     /**
      * @brief Défini s'il y a Full
@@ -371,15 +371,15 @@ public:
 
     /**
      * @brief Retourne la valeur de la petite suite
-     * @return const uint&
+     * @return uint
      */
-	const uint& getSmallStraight() const { return (m_bIsSmallStraight) ? 30 : 0; }
+	uint getSmallStraight() const { return (m_bIsSmallStraight) ? 30 : 0; }
 
     /**
      * @brief Retourne vrai si la petite suite a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isSmallStraightAlreadySet() const { return m_bIsSmallStraightAlreadySet; }
+	bool isSmallStraightAlreadySet() const { return m_bIsSmallStraightAlreadySet; }
 
     /**
      * @brief Défini s'il y a petite suite
@@ -390,15 +390,15 @@ public:
 
     /**
      * @brief Retourne la valeur de la grande suite
-     * @return const uint&
+     * @return uint
      */
-	const uint& getLargeStraight() const { return (m_bIsLargeStraight) ? 40 : 0; }
+	uint getLargeStraight() const { return (m_bIsLargeStraight) ? 40 : 0; }
 
     /**
      * @brief Retourne vrai si la grande suite a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isLargeStraightAlreadySet() const { return m_bIsLargeStraightAlreadySet; }
+	bool isLargeStraightAlreadySet() const { return m_bIsLargeStraightAlreadySet; }
 
     /**
      * @brief Défini s'il y a grande suite
@@ -409,15 +409,15 @@ public:
 
     /**
      * @brief Retourne la valeur du Yams
-     * @return const uint&
+     * @return uint
      */
-	const uint& getYams() const { return (m_bIsYams) ? 50 : 0; }
+	uint getYams() const { return (m_bIsYams) ? 50 : 0; }
 
     /**
      * @brief Retourne vrai si le Yams a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isYamsAlreadySet() const { return m_bIsYamsAlreadySet; }
+	bool isYamsAlreadySet() const { return m_bIsYamsAlreadySet; }
 
     /**
      * @brief Défini s'il y a Yams
@@ -428,15 +428,15 @@ public:
 
     /**
      * @brief Retourne la valeur du super Yams
-     * @return const uint&
+     * @return uint
      */
-	const uint& getSuperYams() const { return (m_bIsSuperYams) ? 100 : 0; }
+	uint getSuperYams() const { return (m_bIsSuperYams) ? 100 : 0; }
 
     /**
      * @brief Retourne vrai si le super Yams a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isSuperYamsAlreadySet() const { return m_bIsSuperYamsAlreadySet; }
+	bool isSuperYamsAlreadySet() const { return m_bIsSuperYamsAlreadySet; }
 
     /**
      * @brief Défini s'il y a super Yams
@@ -447,15 +447,15 @@ public:
 
     /**
      * @brief Retourne la valeur de la chance
-     * @return const uint&
+     * @return uint
      */
-	const uint& getChance() const { return m_iChance; }
+	uint getChance() const { return m_iChance; }
 
     /**
      * @brief Retourne vrai si la chance a été défini
-     * @return const bool&
+     * @return bool
      */
-	const bool& isChanceAlreadySet() const { return m_bIsChanceAlreadySet; }
+	bool isChanceAlreadySet() const { return m_bIsChanceAlreadySet; }
 
     /**
      * @brief Défini la valeur de la chance

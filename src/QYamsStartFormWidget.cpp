@@ -2,12 +2,14 @@
 
 using namespace std;
 
+#include <QDebug>
+
 QYamsStartFormWidget::CPlayerForm::CPlayerForm(QYamsStartFormWidget* parent, uint iPlayerNumber)
 {
-	m_HBoxLayout = new QHBoxLayout(parent);
+	m_HBoxLayout = new QHBoxLayout();
 	
-	m_lblPlayerNum = new QLabel(QString::number(iPlayerNumber), parent);
-	m_iptPlayerName = new QLineEdit(parent);
+	m_lblPlayerNum = new QLabel(QString::number(iPlayerNumber));
+	m_iptPlayerName = new QLineEdit();
 	m_iptPlayerName->setPlaceholderText("Entrez un nom ici");
 
 	m_HBoxLayout->addWidget(m_lblPlayerNum);
@@ -32,7 +34,7 @@ void QYamsStartFormWidget::addPlayerNameInput()
 {
 	unique_ptr<CPlayerForm> playerForm = make_unique<CPlayerForm>(this, m_lPlayerNameInputs.size() + 1);
 	
-	m_ui.lytInputs->addLayout(playerForm->getQWidget());
+	m_ui.verticalLayout->insertLayout(0, playerForm->getQWidget());
 	m_lPlayerNameInputs.push_back(std::move(playerForm));
 }
 

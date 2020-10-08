@@ -179,6 +179,8 @@ void QCameraWidget::_findDices()
 	}
 }
 
+// #include <QDebug>
+
 void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices, size_t& iNDetectedDices) const
 {
 	iNDetectedDices = 0;
@@ -221,7 +223,8 @@ void QCameraWidget::_findDicesByMinArea(list<shared_ptr<CDice>>& lDetectedDices,
 		}
 	}
 
-	
+	// qDebug() << lDetectedDices.size() << "\n";
+
 	// On compte les points de chaque dé
 	for (shared_ptr<CDice>& dice : lDetectedDices)
 	{

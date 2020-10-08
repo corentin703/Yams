@@ -12,6 +12,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QHBoxLayout>
 
 // UI
 #include "ui_QYamsStartFormWidget.h"
@@ -31,7 +32,7 @@ class QYamsStartFormWidget : public QWidget
 	 */
 	class CPlayerForm
 	{
-	    /**
+		/**
 	     * @brief Layout horizontal
 	     *
 	     * Contient un label à gauche et un champ de texte à droite
@@ -49,7 +50,7 @@ class QYamsStartFormWidget : public QWidget
 		QLineEdit* m_iptPlayerName;
 		
 	public:
-	    /**
+		/**
 	     * @brief Constructeur
 	     *
 	     * @param parent : QYamsStartFormWidget*
@@ -74,10 +75,10 @@ class QYamsStartFormWidget : public QWidget
 
 public:
     /**
-	     * @brief Constructeur
-	     *
-	     * @param parent : QWidget* - Widget parent, défaut Q_NULLPTR
-	     */
+     * @brief Constructeur
+     *
+     * @param parent : QWidget* - Widget parent, défaut Q_NULLPTR
+     */
 	QYamsStartFormWidget(QWidget* parent = Q_NULLPTR);
 	
 private:
@@ -100,7 +101,7 @@ private slots:
 	/**
 	 * @brief Action à réaliser lorsque l'utilisateur confirme la saisie
 	 *
-	 * Vérifie si les saisies ne sont pas vides puis envoie le résulat à @link QYams::launchGame @endlink
+	 * Vérifie si les saisies ne sont pas vides puis envoie le résultat à @link QYams::launchGame @endlink
 	 */
 	void onPlayerNameSetUp();
 

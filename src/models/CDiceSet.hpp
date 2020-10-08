@@ -113,16 +113,16 @@ public:
 	 *
 	 * @param diceSet : CDiceSet& - Jeu de dés
 	 *
-	 * @return const bool&
+	 * @return bool
 	 */
-	const bool& operator==(CDiceSet& diceSet);
+	bool operator==(CDiceSet& diceSet);
 
     /**
      * @brief Teste si un set n'est pas égal à l'autre
      *
      * @param diceSet : CDiceSet& - Jeu de dés
      *
-     * @return const bool&
+     * @return bool
      */
 	bool operator!=(CDiceSet& diceSet) { return !(operator==(diceSet)); }
 	
@@ -159,7 +159,7 @@ inline uint& CDiceSet::operator[](uint iDiceNumber)
 	}
 }
 
-inline const bool& CDiceSet::operator==(CDiceSet& diceSet)
+inline bool CDiceSet::operator==(CDiceSet& diceSet)
 {
 	for (int i = 1; i <= 6; ++i)
 	{
