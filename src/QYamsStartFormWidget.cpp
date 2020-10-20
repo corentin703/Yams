@@ -33,9 +33,11 @@ QYamsStartFormWidget::QYamsStartFormWidget(QWidget *parent)
 void QYamsStartFormWidget::addPlayerNameInput()
 {
 	unique_ptr<CPlayerForm> playerForm = make_unique<CPlayerForm>(this, m_lPlayerNameInputs.size() + 1);
-	
-	m_ui.verticalLayout->insertLayout(0, playerForm->getQWidget());
+
+	m_ui.verticalLayout->insertLayout(m_i_nbrPlayers, playerForm->getQWidget());
 	m_lPlayerNameInputs.push_back(std::move(playerForm));
+
+	m_i_nbrPlayers++;
 }
 
 void QYamsStartFormWidget::onPlayerNameSetUp()

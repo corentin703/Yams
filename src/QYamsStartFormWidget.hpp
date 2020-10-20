@@ -92,6 +92,11 @@ private:
 	 */
 	std::list<std::unique_ptr<CPlayerForm>> m_lPlayerNameInputs;
 
+	/**
+	 * @brief Nombre de champs créés
+	 */
+	uint m_i_nbrPlayers = 0;
+
 private slots:
     /**
      * @brief Ajoute une entrée supplémentaire pour ajouter un joueur à la liste
