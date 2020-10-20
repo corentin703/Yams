@@ -1,8 +1,0 @@
-<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,84,133"/>
-<area shape="rect" id="node2" href="$class_q_about_widget.html" title="Menu À propos de l&#39;application." alt="" coords="162,5,278,32"/>
-<area shape="rect" id="node3" href="$class_q_camera_widget.html" title="Encapsule la détection d&#39;image et le rendu vidéo." alt="" coords="155,56,285,83"/>
-<area shape="rect" id="node4" href="$class_q_end_game_widget.html" title="Menu de fin de partie." alt="" coords="149,107,291,133"/>
-<area shape="rect" id="node5" href="$class_q_player_grids_widget.html" title="Vue des grilles de jeu." alt="" coords="143,157,297,184"/>
-<area shape="rect" id="node6" href="$class_q_yams_start_form_widget.html" title="Fenêtre de saisie des noms de joueur." alt="" coords="132,208,308,235"/>
-</map>

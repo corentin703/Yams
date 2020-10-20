@@ -1,7 +1,0 @@
-<map id="QYams::restart" name="QYams::restart">
-<area shape="rect" id="node1" title="Redémarre le jeu." alt="" coords="591,31,708,57"/>
-<area shape="rect" id="node2" href="$class_q_yams.html#abf835c6178f7b9a754a9acb19c5aaae6" title="Action à effectuer à la fin de la partie." alt="" coords="383,5,543,32"/>
-<area shape="rect" id="node5" href="$class_q_yams.html#ad25e5ecf60b8602603b146eaa6eb77da" title="Constructeur." alt="" coords="403,56,522,83"/>
-<area shape="rect" id="node3" href="$class_q_yams.html#aa0a5ca106b29cae207f6c75a4de872c1" title="Passe au joueur suivant." alt="" coords="184,5,335,32"/>
-<area shape="rect" id="node4" href="$class_q_yams.html#a005f947079da47296ca74b923ab2f90d" title="Effectue l&#39;action choisie par le joueur." alt="" coords="5,5,136,32"/>
-</map>

@@ -416,7 +416,7 @@ void QYams::_beforeStart()
 
 void QYams::_showRules()
 {
-	QMessageBox::information(this, QString::fromLatin1("Règles du Yams"), QString::fromLatin1(
+	QMessageBox::information(this, QString::fromUtf8("Règles du Yams"), QString::fromUtf8(
 		"<p>"
 		"Le Yams ou Yahtzee est un jeu qui se joue avec 5 dés et se finit lorsque tous les joueurs ont remplis leur grille de jeu."
 		"Chaque joueur peut tirer jusqu'à 3 fois une partie ou la totalité des dés afin d'arriver au résultat rapportant le plus de points"

@@ -1,5 +1,0 @@
-<map id="QYams::_beforeStart" name="QYams::_beforeStart">
-<area shape="rect" id="node1" title="Action à effectuer avant de démarrer la partie." alt="" coords="5,35,160,61"/>
-<area shape="rect" id="node2" href="$class_q_yams.html#a1beb366469b1fcfb1cc488f321a55c9e" title="Cache le layout contenant les boutons de choix et le compteur de tour." alt="" coords="208,5,379,32"/>
-<area shape="rect" id="node3" href="$class_q_player_grids_widget.html#a01809d5ebd85726edd74daa26741252a" title="Active / désactive les boutons des actions." alt="" coords="211,57,376,98"/>
-</map>

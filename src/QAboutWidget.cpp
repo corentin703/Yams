@@ -21,7 +21,7 @@ void QAboutWidget::showAboutQtWindow()
 
 void QAboutWidget::showAboutOpenCVWindow()
 {
-	const QString cvVersion = QString::fromLatin1(cv::getVersionString().c_str());
+	const QString cvVersion = QString::fromUtf8(cv::getVersionString().c_str());
 
 	QMessageBox aboutOpenCV;
 	aboutOpenCV.setIconPixmap(QPixmap(":/about/logo_open_cv"));

@@ -378,3 +378,7 @@ ZERO_CHECK.vcxproj
 ZERO_CHECK.vcxproj.filters
 /installer_src/packages/com.corentin.yams/data
 /installer_src/packages/com.corentin.yams.vcredist/data
+
+build/
+Doxygen/html
+Doxygen/latex

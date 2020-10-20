@@ -1,9 +1,0 @@
-<map id="CDiceSet::getTotal" name="CDiceSet::getTotal">
-<area shape="rect" id="node1" title="Retourne la somme totale du jeu." alt="" coords="5,132,147,159"/>
-<area shape="rect" id="node2" href="$class_c_dice_set.html#a30c0ad7da71fbb8ff4d18657a02106a6" title="Retourne le score donné par les as." alt="" coords="201,5,343,32"/>
-<area shape="rect" id="node3" href="$class_c_dice_set.html#a8c8948e7c2a1412baa530998c8e700c0" title="Retourne le score donné par les cinq." alt="" coords="200,56,344,83"/>
-<area shape="rect" id="node4" href="$class_c_dice_set.html#a41283946125d622bc9aafd1dcce8a3ae" title="Retourne le score donné par les quatre." alt="" coords="199,107,345,133"/>
-<area shape="rect" id="node5" href="$class_c_dice_set.html#a497cabeea2ea139e834f75925151f551" title="Retourne le score donné par les six." alt="" coords="200,157,344,184"/>
-<area shape="rect" id="node6" href="$class_c_dice_set.html#a556ee7b5baaab3977515e7cdae27868d" title="Retourne le score donné par les trois." alt="" coords="195,208,349,235"/>
-<area shape="rect" id="node7" href="$class_c_dice_set.html#aa59fa9a67db3744c472f05ec43af0b0c" title="Retourne le score donné par les deux." alt="" coords="201,259,343,285"/>
-</map>

@@ -56,10 +56,8 @@ void QYamsStartFormWidget::onPlayerNameSetUp()
 		
 	} catch (exception* exception)
 	{
-		QMessageBox::warning(this, QString::fromLatin1("Erreur"), QString::fromLatin1(
+		QMessageBox::warning(this, QString::fromUtf8("Erreur"), QString::fromUtf8(
 			"Vous devez entrer au moins deux noms. \n"
 			"Aucun champ ne doit être vide"));
 	}
-	
-	
 }

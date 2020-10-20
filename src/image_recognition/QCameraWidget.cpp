@@ -45,6 +45,7 @@ void QCameraWidget::_updateImage()
 	m_ui.label->setPixmap(QPixmap::fromImage(
 		QImage(matNewImageCaptured->data, matNewImageCaptured->cols, matNewImageCaptured->rows, QImage::Format_RGB888)
 	));
+
 	m_ui.label->resize(m_ui.label->pixmap()->size());
 
 	// Passage de l'image en niveau de gris
@@ -164,7 +165,7 @@ void QCameraWidget::_findDices()
 				m_pLastValidatedDiceSet = pDiceSet;
 
 				if (m_bIsWrongDetection)
-					QMessageBox::information(this, QString::fromLatin1("Redétection terminée"), QString::fromLatin1("Dés mis à jour"));
+					QMessageBox::information(this, QString::fromUtf8("Redétection terminée"), QString::fromUtf8("Dés mis à jour"));
 
 				emit dicesUpdated(*pDiceSet, m_bIsWrongDetection);
 
