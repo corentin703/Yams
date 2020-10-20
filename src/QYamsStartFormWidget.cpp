@@ -18,12 +18,20 @@ QYamsStartFormWidget::CPlayerForm::CPlayerForm(QYamsStartFormWidget* parent, uin
 	m_HBoxLayout->setSpacing(10);
 }
 
+QYamsStartFormWidget::CPlayerForm::~CPlayerForm()
+{
+	delete(m_lblPlayerNum);
+	delete(m_iptPlayerName);
+	delete(m_HBoxLayout);
+}
+
 QYamsStartFormWidget::QYamsStartFormWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	m_ui.setupUi(this);
 
 	connect(m_ui.btnAddPlayer, &QPushButton::clicked, this, &QYamsStartFormWidget::addPlayerNameInput);
+	connect(m_ui.btnDeletePlayer, &QPushButton::clicked, this, &QYamsStartFormWidget::deletePlayerNameInput);
 	connect(m_ui.btnSubmit, &QPushButton::clicked, this, &QYamsStartFormWidget::onPlayerNameSetUp);
 
 	addPlayerNameInput();
@@ -34,10 +42,15 @@ void QYamsStartFormWidget::addPlayerNameInput()
 {
 	unique_ptr<CPlayerForm> playerForm = make_unique<CPlayerForm>(this, m_lPlayerNameInputs.size() + 1);
 
-	m_ui.verticalLayout->insertLayout(m_i_nbrPlayers, playerForm->getQWidget());
+	m_ui.verticalLayout->insertLayout(m_lPlayerNameInputs.size(), playerForm->getLayout());
 	m_lPlayerNameInputs.push_back(std::move(playerForm));
+}
 
-	m_i_nbrPlayers++;
+void QYamsStartFormWidget::deletePlayerNameInput()
+{
+	unique_ptr<CPlayerForm> playerForm = std::move(m_lPlayerNameInputs.back());
+	m_lPlayerNameInputs.pop_back();
+	m_ui.verticalLayout->removeItem(playerForm->getLayout());
 }
 
 void QYamsStartFormWidget::onPlayerNameSetUp()

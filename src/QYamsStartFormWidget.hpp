@@ -59,6 +59,11 @@ class QYamsStartFormWidget : public QWidget
 		CPlayerForm(QYamsStartFormWidget* parent, uint iPlayerNumber);
 
 		/**
+	     * @brief Destructeur
+	     */
+		~CPlayerForm();
+
+		/**
 		 * @brief Retourne le nom saisi par l'utilisateur
 		 *
 		 * @return QString
@@ -70,7 +75,7 @@ class QYamsStartFormWidget : public QWidget
 		 *
 		 * @return QHBoxLayout*
 		 */
-		QHBoxLayout* getQWidget() const { return m_HBoxLayout; }
+		QHBoxLayout* getLayout() { return m_HBoxLayout; }
 	};
 
 public:
@@ -92,16 +97,16 @@ private:
 	 */
 	std::list<std::unique_ptr<CPlayerForm>> m_lPlayerNameInputs;
 
-	/**
-	 * @brief Nombre de champs créés
-	 */
-	uint m_i_nbrPlayers = 0;
-
 private slots:
     /**
      * @brief Ajoute une entrée supplémentaire pour ajouter un joueur à la liste
      */
 	void addPlayerNameInput();
+
+	/**
+     * @brief Ajoute une entrée supplémentaire pour ajouter un joueur à la liste
+     */
+	void deletePlayerNameInput();
 
 	/**
 	 * @brief Action à réaliser lorsque l'utilisateur confirme la saisie
