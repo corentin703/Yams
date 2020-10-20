@@ -75,7 +75,7 @@ class QYamsStartFormWidget : public QWidget
 		 *
 		 * @return QHBoxLayout*
 		 */
-		QHBoxLayout* getLayout() { return m_HBoxLayout; }
+		QHBoxLayout* getLayout() const { return m_HBoxLayout; }
 	};
 
 public:

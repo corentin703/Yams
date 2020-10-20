@@ -8,5 +8,10 @@
         "string": "cpp",
         "vector": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "rot",
+        "v",
+        "vérot"
+    ]
 }
