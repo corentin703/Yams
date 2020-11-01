@@ -5,48 +5,53 @@ using namespace std;
 QYams::QYams(QWidget *parent)
 	: QMainWindow(parent)
 {
-	m_ui.setupUi(this);
+	try {
+		m_ui.setupUi(this);
 
-	m_ptrQPlayerGridsWidget = m_ui.qPlayerGridsWidget;
-	m_ptrQCameraWidget = m_ui.qCameraWidget;
+		m_ptrQPlayerGridsWidget = m_ui.qPlayerGridsWidget;
+		m_ptrQCameraWidget = m_ui.qCameraWidget;
 
-	_beforeStart();
+		_beforeStart();
 
-	// Connexion des boutons démarrer et quitter
-	connect(m_ui.btnStart, &QPushButton::clicked, this, &QYams::start);
-	connect(m_ui.btnQuit, &QPushButton::clicked, this, &QYams::quit);
+		// Connexion des boutons démarrer et quitter
+		connect(m_ui.btnStart, &QPushButton::clicked, this, &QYams::start);
+		connect(m_ui.btnQuit, &QPushButton::clicked, this, &QYams::quit);
 
-	// Connexion des boutons de la barre de menu
-	connect(m_ui.actionQuit, &QAction::triggered, this, &QYams::quit);
-	connect(m_ui.actionRestart, &QAction::triggered, this, &QYams::restart);
-	connect(m_ui.actionAbout, &QAction::triggered, this, &QYams::showAboutWindow);
-	connect(m_ui.actionRules, &QAction::triggered, this, &QYams::_showRules);
+		// Connexion des boutons de la barre de menu
+		connect(m_ui.actionQuit, &QAction::triggered, this, &QYams::quit);
+		connect(m_ui.actionRestart, &QAction::triggered, this, &QYams::restart);
+		connect(m_ui.actionAbout, &QAction::triggered, this, &QYams::showAboutWindow);
+		connect(m_ui.actionRules, &QAction::triggered, this, &QYams::_showRules);
 
-	// Connexion des boutons choix
-	connect(m_ui.btnChoice1, &QPushButton::clicked, [this]() { doAction(m_choice1); });
-	connect(m_ui.btnChoice2, &QPushButton::clicked, [this]() { doAction(m_choice2); });
-	connect(m_ui.btnChoice3, &QPushButton::clicked, [this]() { doAction(m_choice3); });
+		// Connexion des boutons choix
+		connect(m_ui.btnChoice1, &QPushButton::clicked, [this]() { doAction(m_choice1); });
+		connect(m_ui.btnChoice2, &QPushButton::clicked, [this]() { doAction(m_choice2); });
+		connect(m_ui.btnChoice3, &QPushButton::clicked, [this]() { doAction(m_choice3); });
 
-	// Connexion des boutons permettant de choisir l'action que l'on veut réaliser
-	connect(m_ptrQPlayerGridsWidget->getAcesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::ACES); });
-	connect(m_ptrQPlayerGridsWidget->getTwosButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::TWOS); });
-	connect(m_ptrQPlayerGridsWidget->getThreeButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::THREES); });
-	connect(m_ptrQPlayerGridsWidget->getFoursButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FOURS); });
-	connect(m_ptrQPlayerGridsWidget->getFivesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FiVES); });
-	connect(m_ptrQPlayerGridsWidget->getSixesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SIXES); });
-	connect(m_ptrQPlayerGridsWidget->getBrelanButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::BRELAN); });
-	connect(m_ptrQPlayerGridsWidget->getCarreButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CARRE); });
-	connect(m_ptrQPlayerGridsWidget->getFullButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FULL); });
-	connect(m_ptrQPlayerGridsWidget->getSmallStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SMALL_STRAIGHT); });
-	connect(m_ptrQPlayerGridsWidget->getLargeStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::LARGE_STRAIGHT); });
-	connect(m_ptrQPlayerGridsWidget->getYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::YAMS); });
-	connect(m_ptrQPlayerGridsWidget->getSuperYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SUPER_YAMS); });
-	connect(m_ptrQPlayerGridsWidget->getChanceButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CHANCE); });
+		// Connexion des boutons permettant de choisir l'action que l'on veut réaliser
+		connect(m_ptrQPlayerGridsWidget->getAcesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::ACES); });
+		connect(m_ptrQPlayerGridsWidget->getTwosButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::TWOS); });
+		connect(m_ptrQPlayerGridsWidget->getThreeButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::THREES); });
+		connect(m_ptrQPlayerGridsWidget->getFoursButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FOURS); });
+		connect(m_ptrQPlayerGridsWidget->getFivesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FiVES); });
+		connect(m_ptrQPlayerGridsWidget->getSixesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SIXES); });
+		connect(m_ptrQPlayerGridsWidget->getBrelanButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::BRELAN); });
+		connect(m_ptrQPlayerGridsWidget->getCarreButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CARRE); });
+		connect(m_ptrQPlayerGridsWidget->getFullButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FULL); });
+		connect(m_ptrQPlayerGridsWidget->getSmallStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SMALL_STRAIGHT); });
+		connect(m_ptrQPlayerGridsWidget->getLargeStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::LARGE_STRAIGHT); });
+		connect(m_ptrQPlayerGridsWidget->getYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::YAMS); });
+		connect(m_ptrQPlayerGridsWidget->getSuperYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SUPER_YAMS); });
+		connect(m_ptrQPlayerGridsWidget->getChanceButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CHANCE); });
 
-	connect(this, &QYams::playerUpdated, m_ptrQPlayerGridsWidget, &QPlayerGridsWidget::actualizeActionButtons);
-	connect(m_ui.btnRedetection, &QPushButton::clicked, m_ptrQCameraWidget, &QCameraWidget::onWrongDetection);
+		connect(this, &QYams::playerUpdated, m_ptrQPlayerGridsWidget, &QPlayerGridsWidget::actualizeActionButtons);
+		connect(m_ui.btnRedetection, &QPushButton::clicked, m_ptrQCameraWidget, &QCameraWidget::onWrongDetection);
+		
+		_resetChoices();
 	
-	_resetChoices();
+	} catch (std::exception* p_exception) {
+		quit_error(dynamic_cast<cv::Exception*>(p_exception));
+	}
 }
 
 QYams::~QYams()
@@ -473,9 +478,16 @@ void QYams::restart()
 	start();
 }
 
-void QYams::quit()
+inline void QYams::quit(int iCode)
 {	
 	QCoreApplication::quit();
+	std::exit(iCode);
+}
+
+inline void QYams::quit_error(cv::Exception* p_exception) {
+	QMessageBox::critical(this, QString::fromUtf8("Erreur"), QString::fromStdString(p_exception->err));
+
+	quit(p_exception->code);
 }
 
 void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)

@@ -11,6 +11,9 @@
 // Qt
 #include <QtWidgets/QMainWindow>
 
+// OpenCV
+#include <opencv2/core.hpp> // Exception
+
 // UI
 #include "ui_QYams.h"
 
@@ -261,7 +264,12 @@ public slots:
 	/**
 	 * @brief Quitte l'application
 	 */
-	void quit();
+	void quit(int iCode = 0);
+
+	/**
+	 * @brief Quitte l'application lors d'une erreur
+	 */
+	void quit_error(cv::Exception* p_exception);
 
 	/**
 	 * @brief Effectue l'action choisie par le joueur

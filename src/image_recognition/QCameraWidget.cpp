@@ -9,7 +9,7 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	m_videoCapture.open(0);
 
 	if (!m_videoCapture.isOpened()) {
-		throw new Exception(0, "Problème d'ouverture de la caméra", "", "", 0);
+		throw new Exception(1, "Problème d'ouverture de la caméra", "", "", 0);
 	}
 
 	// On vérifie si la machine prend en charge au moins deux threads sinon l'analyse d'image se fera en monothread
@@ -36,43 +36,45 @@ void QCameraWidget::onWrongDetection()
 
 void QCameraWidget::_updateImage()
 {
-	Mat matDiff;
+	if (m_videoCapture.isOpened()) {
+		Mat matDiff;
 	
-	unique_ptr<Mat> matNewImageCaptured = make_unique<Mat>();
+		unique_ptr<Mat> matNewImageCaptured = make_unique<Mat>();
 
-	m_videoCapture >> *matNewImageCaptured;
-	
-	m_ui.label->setPixmap(QPixmap::fromImage(
-		QImage(matNewImageCaptured->data, matNewImageCaptured->cols, matNewImageCaptured->rows, QImage::Format_RGB888)
-	));
-
-	m_ui.label->resize(m_ui.label->pixmap()->size());
-
-	// Passage de l'image en niveau de gris
-	cvtColor(*matNewImageCaptured, *matNewImageCaptured, COLOR_BGR2GRAY);
-	// Redimensionnement
-	cv::resize(*matNewImageCaptured, *matNewImageCaptured, Size(640, 480));
-
-	// Suppression du bruit
-	blur(*matNewImageCaptured, *matNewImageCaptured, DEFAULT_KERNEL);
-	
-	// On récupère l'image
-	bool bNotify = true;
-	if (m_matImageCaptured != nullptr)
-	{
-		absdiff(*m_matImageCaptured, *matNewImageCaptured, matDiff);
-		const int iImgSize = matDiff.rows * matDiff.cols;
-		const float fSimilarity = ((static_cast<double>(iImgSize - countNonZero(matDiff)) / iImgSize) * 100);
+		m_videoCapture >> *matNewImageCaptured;
 		
-		if (fSimilarity < 40)
-			bNotify = false;
-	}
+		m_ui.label->setPixmap(QPixmap::fromImage(
+			QImage(matNewImageCaptured->data, matNewImageCaptured->cols, matNewImageCaptured->rows, QImage::Format_RGB888)
+		));
 
-	m_matImageCaptured = std::move(matNewImageCaptured);
+		m_ui.label->resize(m_ui.label->pixmap()->size());
 
-	if (bNotify)
-	{
-		emit cameraImgUpdated();
+		// Passage de l'image en niveau de gris
+		cvtColor(*matNewImageCaptured, *matNewImageCaptured, COLOR_BGR2GRAY);
+		// Redimensionnement
+		cv::resize(*matNewImageCaptured, *matNewImageCaptured, Size(640, 480));
+
+		// Suppression du bruit
+		blur(*matNewImageCaptured, *matNewImageCaptured, DEFAULT_KERNEL);
+		
+		// On récupère l'image
+		bool bNotify = true;
+		if (m_matImageCaptured != nullptr)
+		{
+			absdiff(*m_matImageCaptured, *matNewImageCaptured, matDiff);
+			const int iImgSize = matDiff.rows * matDiff.cols;
+			const float fSimilarity = ((static_cast<double>(iImgSize - countNonZero(matDiff)) / iImgSize) * 100);
+			
+			if (fSimilarity < 40)
+				bNotify = false;
+		}
+
+		m_matImageCaptured = std::move(matNewImageCaptured);
+
+		if (bNotify)
+		{
+			emit cameraImgUpdated();
+		}
 	}
 }
 
