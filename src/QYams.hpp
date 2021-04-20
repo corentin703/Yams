@@ -108,33 +108,33 @@ private:
 	/**
 	 * @brief Vue des grilles des joueurs
 	 */
-	QPlayerGridsWidget* m_ptrQPlayerGridsWidget;
+	QPlayerGridsWidget* m_pQPlayerGridsWidget;
 
 	/**
 	 * @brief Menu de début de jeu
 	 *
 	 * Permet d'entrer les noms des joueurs
 	 */
-	QYamsStartFormWidget* m_ptrQYamsStartFrom;
+	QYamsStartFormWidget* m_pQYamsStartFrom;
 
 	/**
 	 * @brief Widget réalisant la reconnaissance d'image
 	 *
 	 * La reconnaissance d'image est réalisée grâce à la bibliothèque OpenCV
 	 */
-	QCameraWidget* m_ptrQCameraWidget;
+	QCameraWidget* m_pQCameraWidget;
 
 	/**
 	 * @brief Fenêtre "À propos"
 	 */
-	QAboutWidget* m_ptrAboutWindow = nullptr;
+	QAboutWidget* m_pAboutWindow = nullptr;
 
 	/**
 	 * @brief Menu de fin de jeu
 	 *
 	 * Affiche le nom du gagnant et des boutons permettant de rejouer ou de quitter le jeu
 	 */
-	QEndGameWidget* m_ptrEndGameWidget = nullptr;
+	QEndGameWidget* m_pEndGameWidget = nullptr;
 
 	/**
 	 * @brief Contient la dernière simulation des scores
@@ -289,9 +289,9 @@ public slots:
 	/**
 	 * @brief Lance le jeu après la saisie des noms de joueurs
 	 *
-	 * @param ptrLPlayerNames : std::list<QString>* - Liste des noms saisis
+	 * @param pLPlayerNames : std::list<QString>* - Liste des noms saisis
 	 */
-	void launchGame(std::list<QString>* ptrLPlayerNames);
+	void launchGame(std::list<QString>* pLPlayerNames);
 
 	/**
 	 * @brief Affiche la fenêtre "À propos"

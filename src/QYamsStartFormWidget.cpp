@@ -57,17 +57,17 @@ void QYamsStartFormWidget::onPlayerNameSetUp()
 {
 	try
 	{
-		list<QString>* ptrLPlayerNames = new list<QString>();
+		list<QString>* pLPlayerNames = new list<QString>();
 
 		for (unique_ptr<CPlayerForm>& playerNameIpt : m_lPlayerNameInputs)
 		{
 			if (playerNameIpt->getInputName() < 1)
 				throw new runtime_error("Nom trop court");
 			
-			ptrLPlayerNames->push_back(playerNameIpt->getInputName());
+			pLPlayerNames->push_back(playerNameIpt->getInputName());
 		}
 
-		emit playerNameSetUp(ptrLPlayerNames);
+		emit playerNameSetUp(pLPlayerNames);
 		
 	} catch (exception* exception)
 	{

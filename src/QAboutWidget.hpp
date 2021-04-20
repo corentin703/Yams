@@ -29,7 +29,7 @@ public:
     /**
      * @brief Contructeur
      *
-     * @param parent : QWidget* - Widget parent, défaut Q_NULLPTR
+     * @param parent : QWidget* - Widget parent, défaut Q_NULLp
      */
 	QAboutWidget(QWidget* parent = Q_NULLPTR);
 	

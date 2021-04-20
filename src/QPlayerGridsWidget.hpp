@@ -251,16 +251,16 @@ public:
 	/**
 	 * @brief Ajoute une grille à la liste d'affichage
 	 *
-	 * @param ptrQPlayerGrid : QPlayerGrid* - Grille à ajouter
+	 * @param pQPlayerGrid : QPlayerGrid* - Grille à ajouter
 	 */
-	void addGrid(QPlayerGrid* ptrQPlayerGrid);
+	void addGrid(QPlayerGrid* pQPlayerGrid);
 
     /**
      * @brief Supprime une grille de la liste d'affichage
      *
-     * @param ptrQPlayerGrid : QPlayerGrid* - Grille à supprimer
+     * @param pQPlayerGrid : QPlayerGrid* - Grille à supprimer
      */
-	void removeGrid(QPlayerGrid* ptrQPlayerGrid);
+	void removeGrid(QPlayerGrid* pQPlayerGrid);
 
     /**
     * @brief Active / désactive les boutons des actions
@@ -280,9 +280,9 @@ public slots:
     /**
      * @brief Met à jour la vue d'une grille
      *
-     * @param ptrQPlayerGrid : QPlayerGrid& - Grille du joueur
+     * @param pQPlayerGrid : QPlayerGrid& - Grille du joueur
      */
-	void updateGrid(QPlayerGrid* ptrQPlayerGrid);
+	void updateGrid(QPlayerGrid* pQPlayerGrid);
 };
 
 #endif // Q_PLAYER_GRIDS_WIDGET_H

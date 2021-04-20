@@ -8,10 +8,10 @@ QPlayerGridsWidget::QPlayerGridsWidget(QWidget *parent)
 	m_ui.setupUi(this);
 }
 
-void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
+void QPlayerGridsWidget::addGrid(QPlayerGrid* pQPlayerGrid)
 {
 	const uint playerNumber = m_mapPlayerGridViews.size() + 1;
-	unique_ptr<CPlayerGridView> playerGridView = make_unique<CPlayerGridView>(this, ptrQPlayerGrid->getPlayerName());
+	unique_ptr<CPlayerGridView> playerGridView = make_unique<CPlayerGridView>(this, pQPlayerGrid->getPlayerName());
 
 	// Ligne 0 : Nom
 	m_ui.gridLayout->addWidget(playerGridView->lblPlayerName, 0, playerNumber);
@@ -68,17 +68,17 @@ void QPlayerGridsWidget::addGrid(QPlayerGrid* ptrQPlayerGrid)
 	
 	
 	m_mapPlayerGridViews.insert({
-		ptrQPlayerGrid,
+		pQPlayerGrid,
 		std::move(playerGridView)
 	});
 	
-	connect(ptrQPlayerGrid, &QPlayerGrid::gridUpdated, this, &QPlayerGridsWidget::updateGrid);
+	connect(pQPlayerGrid, &QPlayerGrid::gridUpdated, this, &QPlayerGridsWidget::updateGrid);
 
 }
 
-void QPlayerGridsWidget::removeGrid(QPlayerGrid* ptrQPlayerGrid)
+void QPlayerGridsWidget::removeGrid(QPlayerGrid* pQPlayerGrid)
 {
-	m_mapPlayerGridViews.erase(ptrQPlayerGrid);
+	m_mapPlayerGridViews.erase(pQPlayerGrid);
 }
 
 void QPlayerGridsWidget::actualizeActionButtons(QPlayerGrid& playerGrid) const
@@ -100,32 +100,32 @@ void QPlayerGridsWidget::actualizeActionButtons(QPlayerGrid& playerGrid) const
 	m_ui.btnChance->setEnabled(!playerGrid.isChanceAlreadySet());
 }
 
-void QPlayerGridsWidget::updateGrid(QPlayerGrid* ptrQPlayerGrid)
+void QPlayerGridsWidget::updateGrid(QPlayerGrid* pQPlayerGrid)
 {
 	// Partie supérieure
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblAs->setText(QString::number(ptrQPlayerGrid->getAces()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTwos->setText(QString::number(ptrQPlayerGrid->getTwos()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblThrees->setText(QString::number(ptrQPlayerGrid->getThrees()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblFours->setText(QString::number(ptrQPlayerGrid->getFours()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblFives->setText(QString::number(ptrQPlayerGrid->getFives()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblSixes->setText(QString::number(ptrQPlayerGrid->getSixes()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblPreTotalSup->setText(QString::number(ptrQPlayerGrid->getPreUpperTotal()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblBonus->setText(QString::number(ptrQPlayerGrid->getBonus()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTotalSup->setText(QString::number(ptrQPlayerGrid->getUpperTotal()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblAs->setText(QString::number(pQPlayerGrid->getAces()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblTwos->setText(QString::number(pQPlayerGrid->getTwos()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblThrees->setText(QString::number(pQPlayerGrid->getThrees()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblFours->setText(QString::number(pQPlayerGrid->getFours()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblFives->setText(QString::number(pQPlayerGrid->getFives()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblSixes->setText(QString::number(pQPlayerGrid->getSixes()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblPreTotalSup->setText(QString::number(pQPlayerGrid->getPreUpperTotal()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblBonus->setText(QString::number(pQPlayerGrid->getBonus()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblTotalSup->setText(QString::number(pQPlayerGrid->getUpperTotal()));
 	
 	// Partie inférieure
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblBrelan->setText(QString::number(ptrQPlayerGrid->getBrelan()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblCarre->setText(QString::number(ptrQPlayerGrid->getCarre()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblFull->setText(QString::number(ptrQPlayerGrid->getFull()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblSmallStraight->setText(QString::number(ptrQPlayerGrid->getSmallStraight()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblLargeStraight->setText(QString::number(ptrQPlayerGrid->getLargeStraight()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblYams->setText(QString::number(ptrQPlayerGrid->getYams()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblChance->setText(QString::number(ptrQPlayerGrid->getChance()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblSuperYams->setText(QString::number(ptrQPlayerGrid->getSuperYams()));
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTotalInf->setText(QString::number(ptrQPlayerGrid->getLowerTotal()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblBrelan->setText(QString::number(pQPlayerGrid->getBrelan()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblCarre->setText(QString::number(pQPlayerGrid->getCarre()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblFull->setText(QString::number(pQPlayerGrid->getFull()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblSmallStraight->setText(QString::number(pQPlayerGrid->getSmallStraight()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblLargeStraight->setText(QString::number(pQPlayerGrid->getLargeStraight()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblYams->setText(QString::number(pQPlayerGrid->getYams()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblChance->setText(QString::number(pQPlayerGrid->getChance()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblSuperYams->setText(QString::number(pQPlayerGrid->getSuperYams()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblTotalInf->setText(QString::number(pQPlayerGrid->getLowerTotal()));
 
 	// Total global
-	m_mapPlayerGridViews[ptrQPlayerGrid]->lblTotal->setText(QString::number(ptrQPlayerGrid->getTotal()));
+	m_mapPlayerGridViews[pQPlayerGrid]->lblTotal->setText(QString::number(pQPlayerGrid->getTotal()));
 }
 
 void QPlayerGridsWidget::enableActionButtons(bool bEnable) const

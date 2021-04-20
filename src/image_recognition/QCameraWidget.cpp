@@ -51,6 +51,7 @@ void QCameraWidget::_updateImage()
 
 		// Passage de l'image en niveau de gris
 		cvtColor(*matNewImageCaptured, *matNewImageCaptured, COLOR_BGR2GRAY);
+
 		// Redimensionnement
 		cv::resize(*matNewImageCaptured, *matNewImageCaptured, Size(640, 480));
 
@@ -63,7 +64,7 @@ void QCameraWidget::_updateImage()
 		{
 			absdiff(*m_matImageCaptured, *matNewImageCaptured, matDiff);
 			const int iImgSize = matDiff.rows * matDiff.cols;
-			const float fSimilarity = ((static_cast<double>(iImgSize - countNonZero(matDiff)) / iImgSize) * 100);
+			const float fSimilarity = ((static_cast<float>(iImgSize - countNonZero(matDiff)) / iImgSize) * 100);
 			
 			if (fSimilarity < 40)
 				bNotify = false;

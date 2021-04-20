@@ -119,9 +119,9 @@ signals:
     /**
      * @brief Signal que les noms sont saisis
      *
-     * @param ptrLPlayerNames : std::list<QString>* - Liste des noms saisis
+     * @param pLPlayerNames : std::list<QString>* - Liste des noms saisis
      */
-	void playerNameSetUp(std::list<QString>* ptrLPlayerNames);
+	void playerNameSetUp(std::list<QString>* pLPlayerNames);
 };
 
 #endif // Q_YAMS_START_FORM_WIDGET_H

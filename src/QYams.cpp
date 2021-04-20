@@ -8,8 +8,8 @@ QYams::QYams(QWidget *parent)
 	try {
 		m_ui.setupUi(this);
 
-		m_ptrQPlayerGridsWidget = m_ui.qPlayerGridsWidget;
-		m_ptrQCameraWidget = m_ui.qCameraWidget;
+        m_pQPlayerGridsWidget = m_ui.qPlayerGridsWidget;
+        m_pQCameraWidget = m_ui.qCameraWidget;
 
 		_beforeStart();
 
@@ -29,23 +29,23 @@ QYams::QYams(QWidget *parent)
 		connect(m_ui.btnChoice3, &QPushButton::clicked, [this]() { doAction(m_choice3); });
 
 		// Connexion des boutons permettant de choisir l'action que l'on veut réaliser
-		connect(m_ptrQPlayerGridsWidget->getAcesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::ACES); });
-		connect(m_ptrQPlayerGridsWidget->getTwosButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::TWOS); });
-		connect(m_ptrQPlayerGridsWidget->getThreeButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::THREES); });
-		connect(m_ptrQPlayerGridsWidget->getFoursButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FOURS); });
-		connect(m_ptrQPlayerGridsWidget->getFivesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FiVES); });
-		connect(m_ptrQPlayerGridsWidget->getSixesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SIXES); });
-		connect(m_ptrQPlayerGridsWidget->getBrelanButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::BRELAN); });
-		connect(m_ptrQPlayerGridsWidget->getCarreButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CARRE); });
-		connect(m_ptrQPlayerGridsWidget->getFullButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FULL); });
-		connect(m_ptrQPlayerGridsWidget->getSmallStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SMALL_STRAIGHT); });
-		connect(m_ptrQPlayerGridsWidget->getLargeStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::LARGE_STRAIGHT); });
-		connect(m_ptrQPlayerGridsWidget->getYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::YAMS); });
-		connect(m_ptrQPlayerGridsWidget->getSuperYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SUPER_YAMS); });
-		connect(m_ptrQPlayerGridsWidget->getChanceButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CHANCE); });
+		connect(m_pQPlayerGridsWidget->getAcesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::ACES); });
+		connect(m_pQPlayerGridsWidget->getTwosButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::TWOS); });
+		connect(m_pQPlayerGridsWidget->getThreeButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::THREES); });
+		connect(m_pQPlayerGridsWidget->getFoursButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FOURS); });
+		connect(m_pQPlayerGridsWidget->getFivesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FiVES); });
+		connect(m_pQPlayerGridsWidget->getSixesButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SIXES); });
+		connect(m_pQPlayerGridsWidget->getBrelanButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::BRELAN); });
+		connect(m_pQPlayerGridsWidget->getCarreButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CARRE); });
+		connect(m_pQPlayerGridsWidget->getFullButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::FULL); });
+		connect(m_pQPlayerGridsWidget->getSmallStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SMALL_STRAIGHT); });
+		connect(m_pQPlayerGridsWidget->getLargeStraightButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::LARGE_STRAIGHT); });
+		connect(m_pQPlayerGridsWidget->getYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::YAMS); });
+		connect(m_pQPlayerGridsWidget->getSuperYamsButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::SUPER_YAMS); });
+		connect(m_pQPlayerGridsWidget->getChanceButton(), &QPushButton::clicked, [this]() { doAction(EYamsActions::CHANCE); });
 
-		connect(this, &QYams::playerUpdated, m_ptrQPlayerGridsWidget, &QPlayerGridsWidget::actualizeActionButtons);
-		connect(m_ui.btnRedetection, &QPushButton::clicked, m_ptrQCameraWidget, &QCameraWidget::onWrongDetection);
+		connect(this, &QYams::playerUpdated, m_pQPlayerGridsWidget, &QPlayerGridsWidget::actualizeActionButtons);
+		connect(m_ui.btnRedetection, &QPushButton::clicked, m_pQCameraWidget, &QCameraWidget::onWrongDetection);
 		
 		_resetChoices();
 	
@@ -56,11 +56,31 @@ QYams::QYams(QWidget *parent)
 
 QYams::~QYams()
 {
-	if (m_ptrAboutWindow != nullptr)
-		delete m_ptrAboutWindow;
+	if (m_pAboutWindow != nullptr)
+		delete m_pAboutWindow;
 
-	if (m_ptrEndGameWidget != nullptr)
-		delete m_ptrEndGameWidget;
+	if (m_pEndGameWidget != nullptr)
+		delete m_pEndGameWidget;
+
+//    if (m_pQPlayerGridsWidget != nullptr)
+//        delete m_pQPlayerGridsWidget;
+//
+//    if (m_pQYamsStartFrom != nullptr)
+//        delete m_pQYamsStartFrom;
+//
+//    if (m_pQCameraWidget != nullptr)
+//        delete m_pQCameraWidget;
+//
+//    if (m_pAboutWindow != nullptr)
+//        delete m_pAboutWindow;
+//
+//    if (m_pEndGameWidget != nullptr)
+//        delete m_pEndGameWidget;
+//
+//    for (auto itPlayers : m_lpQPlayerGrids) {
+//        delete itPlayers;
+//    }
+
 }
 
 void QYams::closeEvent(QCloseEvent* event)
@@ -284,7 +304,7 @@ void QYams::_nextPlayer()
 
 		if ((*m_itPlayerGrids)->isGridFinished())
 		{
-			m_ptrQPlayerGridsWidget->enableActionButtons(false);
+			m_pQPlayerGridsWidget->enableActionButtons(false);
 			_onEndGame();
 			return;
 		}
@@ -295,18 +315,18 @@ void QYams::_nextPlayer()
 	m_ui.lblPlayerName->setText((*m_itPlayerGrids)->getPlayerName());
 	
 	_resetChoices();
-	m_ptrQPlayerGridsWidget->enableActionButtons(false);
+	m_pQPlayerGridsWidget->enableActionButtons(false);
 }
 
 void QYams::_onEndGame()
 {
-	if (m_ptrEndGameWidget == nullptr)
-		m_ptrEndGameWidget = new QEndGameWidget((*m_itPlayerGrids)->getPlayerName());
+	if (m_pEndGameWidget == nullptr)
+		m_pEndGameWidget = new QEndGameWidget((*m_itPlayerGrids)->getPlayerName());
 	
-	connect(m_ptrEndGameWidget->getRestartButton(), &QPushButton::clicked, this, &QYams::restart);
-	connect(m_ptrEndGameWidget->getQuitButton(), &QPushButton::clicked, this, &QYams::quit);
-	m_ptrEndGameWidget->setWindowModality(Qt::ApplicationModal);
-	m_ptrEndGameWidget->show();
+	connect(m_pEndGameWidget->getRestartButton(), &QPushButton::clicked, this, &QYams::restart);
+	connect(m_pEndGameWidget->getQuitButton(), &QPushButton::clicked, this, &QYams::quit);
+	m_pEndGameWidget->setWindowModality(Qt::ApplicationModal);
+	m_pEndGameWidget->show();
 }
 
 void QYams::doAction(EYamsActions selectedAction)
@@ -413,9 +433,9 @@ void QYams::_beforeStart()
 	m_ui.btnQuit->show();
 
 	m_ui.actionRestart->setEnabled(false);
-	m_ptrQPlayerGridsWidget->hide();
+	m_pQPlayerGridsWidget->hide();
 
-	m_ptrQPlayerGridsWidget->enableActionButtons(false);
+	m_pQPlayerGridsWidget->enableActionButtons(false);
 	_hideGameBar(true);
 }
 
@@ -447,28 +467,28 @@ void QYams::_showRules()
 
 void QYams::start()
 {
-	m_ptrQYamsStartFrom = new QYamsStartFormWidget();
+    m_pQYamsStartFrom = new QYamsStartFormWidget();
 
 	// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l'application
-	m_ptrQYamsStartFrom->show();
+	m_pQYamsStartFrom->show();
 
-	connect(m_ptrQYamsStartFrom, &QYamsStartFormWidget::playerNameSetUp, this, &QYams::launchGame);
+	connect(m_pQYamsStartFrom, &QYamsStartFormWidget::playerNameSetUp, this, &QYams::launchGame);
 }
 
 void QYams::restart()
 {	
-	if (m_ptrEndGameWidget != nullptr)
+	if (m_pEndGameWidget != nullptr)
 	{
-		disconnect(m_ptrEndGameWidget->getRestartButton(), &QPushButton::clicked, this, &QYams::restart);
-		disconnect(m_ptrEndGameWidget->getQuitButton(), &QPushButton::clicked, this, &QYams::quit);
+		disconnect(m_pEndGameWidget->getRestartButton(), &QPushButton::clicked, this, &QYams::restart);
+		disconnect(m_pEndGameWidget->getQuitButton(), &QPushButton::clicked, this, &QYams::quit);
 		
-		delete m_ptrEndGameWidget;
-		m_ptrEndGameWidget = nullptr;
+		delete m_pEndGameWidget;
+		m_pEndGameWidget = nullptr;
 	}
 
 	for (QPlayerGrid* playerGrid : m_lpQPlayerGrids)
 	{
-		m_ptrQPlayerGridsWidget->removeGrid(playerGrid);
+		m_pQPlayerGridsWidget->removeGrid(playerGrid);
 		delete playerGrid;
 	}
 	
@@ -532,7 +552,7 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 			if (!m_ui.btnRedetection->isEnabled())
 			{
 				m_ui.btnRedetection->setEnabled(true);
-				m_ptrQPlayerGridsWidget->enableActionButtons(true);
+				m_pQPlayerGridsWidget->enableActionButtons(true);
 			}
 
 			emit playerUpdated(*(*m_itPlayerGrids));
@@ -542,30 +562,30 @@ void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)
 
 void QYams::showAboutWindow()
 {
-	if (m_ptrAboutWindow == nullptr)
-		m_ptrAboutWindow = new QAboutWidget();
+	if (m_pAboutWindow == nullptr)
+        m_pAboutWindow = new QAboutWidget();
 
 	// On veut que la fenêtre reste au dessus et bloque les clics sur les autres fenêtres de l'application
-	m_ptrAboutWindow->setWindowModality(Qt::ApplicationModal);
-	m_ptrAboutWindow->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
-	m_ptrAboutWindow->show();
+	m_pAboutWindow->setWindowModality(Qt::ApplicationModal);
+	m_pAboutWindow->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint);
+	m_pAboutWindow->show();
 }
 
-void QYams::launchGame(list<QString>* ptrLPlayerNames)
+void QYams::launchGame(list<QString>* pLPlayerNames)
 {	
-	delete m_ptrQYamsStartFrom;
-	m_ptrQYamsStartFrom = nullptr;
+	delete m_pQYamsStartFrom;
+    m_pQYamsStartFrom = nullptr;
 
 	m_ui.actionRestart->setEnabled(true);
 	
 	QPlayerGrid* playerGrid = nullptr;
 	
-	for (const QString& sPlayerName : *ptrLPlayerNames)
+	for (const QString& sPlayerName : *pLPlayerNames)
 	{
 		playerGrid = new QPlayerGrid(sPlayerName);
 		
 		m_lpQPlayerGrids.emplace_back(playerGrid);
-		m_ptrQPlayerGridsWidget->addGrid(playerGrid);
+		m_pQPlayerGridsWidget->addGrid(playerGrid);
 		
 		playerGrid = nullptr;
 	}
@@ -573,7 +593,7 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 	m_itPlayerGrids = m_lpQPlayerGrids.begin();
 	
 	// Affichage de la grille de jeu
-	m_ptrQPlayerGridsWidget->show();
+	m_pQPlayerGridsWidget->show();
 
 	// On masque les boutons de démarrage et de sortie
 	m_ui.btnStart->hide();
@@ -590,7 +610,7 @@ void QYams::launchGame(list<QString>* ptrLPlayerNames)
 	m_ui.lblTurn->setText(QString::number(m_iNbrTurn));
 	m_ui.lblPlayerName->setText((*m_itPlayerGrids)->getPlayerName());
 	
-	connect(m_ptrQCameraWidget, &QCameraWidget::dicesUpdated, this, &QYams::updateTurn);
+	connect(m_pQCameraWidget, &QCameraWidget::dicesUpdated, this, &QYams::updateTurn);
 
-	delete ptrLPlayerNames;
+	delete pLPlayerNames;
 }
