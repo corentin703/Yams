@@ -1,5 +1,7 @@
 # CEGEP-Projet-Yams
 
+[Ajout de fonctionnalités prévu (possibilités de réglages notamment)]
+
 Projet de programmation dans le cadre du module de projet numéro 420-P66-SI dispensé au CÉGEP de Sept-Îles
 
 Voici les fichiers du projet de Yams avec vision robotique.
