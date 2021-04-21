@@ -49,37 +49,37 @@ QYams::QYams(QWidget *parent)
 		
 		_resetChoices();
 	
-	} catch (std::exception* p_exception) {
-		quit_error(dynamic_cast<cv::Exception*>(p_exception));
+	} catch (cv::Exception& exception) {
+		quit_error(exception);
 	}
 }
 
 QYams::~QYams()
 {
-	if (m_pAboutWindow != nullptr)
-		delete m_pAboutWindow;
+//	if (m_pAboutWindow != nullptr)
+//		delete m_pAboutWindow;
+//
+//	if (m_pEndGameWidget != nullptr)
+//		delete m_pEndGameWidget;
 
-	if (m_pEndGameWidget != nullptr)
-		delete m_pEndGameWidget;
+    if (m_pQPlayerGridsWidget != nullptr)
+        delete m_pQPlayerGridsWidget;
 
-//    if (m_pQPlayerGridsWidget != nullptr)
-//        delete m_pQPlayerGridsWidget;
-//
-//    if (m_pQYamsStartFrom != nullptr)
-//        delete m_pQYamsStartFrom;
-//
-//    if (m_pQCameraWidget != nullptr)
-//        delete m_pQCameraWidget;
-//
-//    if (m_pAboutWindow != nullptr)
-//        delete m_pAboutWindow;
-//
-//    if (m_pEndGameWidget != nullptr)
-//        delete m_pEndGameWidget;
-//
-//    for (auto itPlayers : m_lpQPlayerGrids) {
-//        delete itPlayers;
-//    }
+    if (m_pQYamsStartFrom != nullptr)
+        delete m_pQYamsStartFrom;
+
+    if (m_pQCameraWidget != nullptr)
+        delete m_pQCameraWidget;
+
+    if (m_pAboutWindow != nullptr)
+        delete m_pAboutWindow;
+
+    if (m_pEndGameWidget != nullptr)
+        delete m_pEndGameWidget;
+
+    for (QPlayerGrid* itPlayers : m_lpQPlayerGrids) {
+        delete itPlayers;
+    }
 
 }
 
@@ -504,10 +504,10 @@ inline void QYams::quit(int iCode)
 	std::exit(iCode);
 }
 
-inline void QYams::quit_error(cv::Exception* p_exception) {
-	QMessageBox::critical(this, QString::fromUtf8("Erreur"), QString::fromStdString(p_exception->err));
+inline void QYams::quit_error(cv::Exception& exception) {
+	QMessageBox::critical(this, QString::fromUtf8("Erreur"), QString::fromStdString(exception.err));
 
-	quit(p_exception->code);
+	quit(exception.code);
 }
 
 void QYams::updateTurn(CDiceSet& diceSet, bool isDetectionCorrection)

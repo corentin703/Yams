@@ -9,7 +9,7 @@ QCameraWidget::QCameraWidget(QWidget* parent)
 	m_videoCapture.open(0);
 
 	if (!m_videoCapture.isOpened()) {
-		throw new Exception(1, "Problème d'ouverture de la caméra", "", "", 0);
+		throw Exception(1, "Problème d'ouverture de la caméra", "", "", 0);
 	}
 
 	// On vérifie si la machine prend en charge au moins deux threads sinon l'analyse d'image se fera en monothread
@@ -41,7 +41,7 @@ void QCameraWidget::_updateImage()
 	
 		unique_ptr<Mat> matNewImageCaptured = make_unique<Mat>();
 
-		m_videoCapture >> *matNewImageCaptured;
+		m_videoCapture >> (*matNewImageCaptured);
 		
 		m_ui.label->setPixmap(QPixmap::fromImage(
 			QImage(matNewImageCaptured->data, matNewImageCaptured->cols, matNewImageCaptured->rows, QImage::Format_RGB888)
@@ -50,14 +50,14 @@ void QCameraWidget::_updateImage()
 		m_ui.label->resize(m_ui.label->pixmap()->size());
 
 		// Passage de l'image en niveau de gris
-		cvtColor(*matNewImageCaptured, *matNewImageCaptured, COLOR_BGR2GRAY);
+		cvtColor(matNewImageCaptured->clone(), *matNewImageCaptured, COLOR_BGR2GRAY);
 
 		// Redimensionnement
-		cv::resize(*matNewImageCaptured, *matNewImageCaptured, Size(640, 480));
+		cv::resize(matNewImageCaptured->clone(), *matNewImageCaptured, Size(640, 480));
 
 		// Suppression du bruit
-		blur(*matNewImageCaptured, *matNewImageCaptured, DEFAULT_KERNEL);
-		
+		blur(matNewImageCaptured->clone(), *matNewImageCaptured, DEFAULT_KERNEL);
+
 		// On récupère l'image
 		bool bNotify = true;
 		if (m_matImageCaptured != nullptr)
@@ -109,32 +109,32 @@ void QCameraWidget::_findDices()
 	{
 		std::list<std::shared_ptr<CDice>> lDicesBuffer;
 		
-		if (m_lDices.size() == 0)
+		if (m_lDices.empty())
 		{
-			for (shared_ptr<CDice> dice : lDetectedDices)
-				lDicesBuffer.push_back(dice);
+			for (shared_ptr<CDice> p_dice : lDetectedDices)
+				lDicesBuffer.push_back(p_dice);
 		}
 		else
 		{
 			bool bProcess = true;
 			// On regarde les similitudes entre les dés déjà enregistrés et ceux venant d'être détéctés
-			for (auto itDetectedDices = lDetectedDices.begin(); itDetectedDices != lDetectedDices.end(); ++itDetectedDices)
+			for (auto& lDetectedDice : lDetectedDices)
 			{
 				// Si le dé est un faux positif on passe
-				if ((*itDetectedDices)->getCount() == 0 || (*itDetectedDices)->getCount() > 6)
+				if (lDetectedDice->getCount() == 0 || lDetectedDice->getCount() > 6)
 					continue;
 				
-				for (auto itDice = m_lDices.begin(); itDice != m_lDices.end(); ++itDice)
+				for (auto& m_lDice : m_lDices)
 				{
 					// Si le numéro est le même, on compare la position pour savoir si c'est le même dé (avec une marge d'erreur / tolérance)
-					if ((*itDetectedDices)->getCount() == (*itDice)->getCount())
+					if (lDetectedDice->getCount() == m_lDice->getCount())
 					{
-						const float fX = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().x - (*itDice)->getDiceRect().boundingRect().x);
-						const float fY = std::abs<float>((*itDetectedDices)->getDiceRect().boundingRect().y - (*itDice)->getDiceRect().boundingRect().y);
+						const float fX = std::abs<float>(lDetectedDice->getDiceRect().boundingRect().x - m_lDice->getDiceRect().boundingRect().x);
+						const float fY = std::abs<float>(lDetectedDice->getDiceRect().boundingRect().y - m_lDice->getDiceRect().boundingRect().y);
 						
 						if (fX <= SAME_POS_TOLERANCE && fY <= SAME_POS_TOLERANCE)
 						{
-							lDicesBuffer.push_back(*itDice);
+							lDicesBuffer.push_back(m_lDice);
 							bProcess = false;
 							break;
 						}
@@ -145,7 +145,7 @@ void QCameraWidget::_findDices()
 				}
 
 				if (bProcess)
-					lDicesBuffer.push_back(*itDetectedDices);
+					lDicesBuffer.push_back(lDetectedDice);
 			}
 			
 		}

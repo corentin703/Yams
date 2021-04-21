@@ -269,7 +269,7 @@ public slots:
 	/**
 	 * @brief Quitte l'application lors d'une erreur
 	 */
-	void quit_error(cv::Exception* p_exception);
+	void quit_error(cv::Exception& exception);
 
 	/**
 	 * @brief Effectue l'action choisie par le joueur
