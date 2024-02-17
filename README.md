@@ -1,6 +1,6 @@
-# CEGEP-Projet-Yams
+# Projet-Yams
 
-Il s'agit d'un projet de programmation réalisé dans le cadre du cours numéro 420-P66-SI dispensé au CÉGEP de Sept-Îles. La note finale obtenue a été de 90 %. 
+Il s'agit d'un projet de programmation réalisé au cours de ma scolarité au Québec pour lequel j'ai obtenu la note de 90%.
 
 Il est présenté ici comme un concept et non pas pour une réelle utilisation : de nombreux bogues subsistent : je prévoie néanmoins d'en reprendre le développement afin de le rendre utilisable et stable.
 
